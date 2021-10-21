@@ -1,2 +1,1 @@
-# cwhq-documentation-practice
-# docs
+# CodeWizardsHQ Documentation
