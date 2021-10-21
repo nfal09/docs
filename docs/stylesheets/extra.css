@@ -1,0 +1,6 @@
+:root {
+    --md-primary-fg-color:        #FFC844;
+    --md-primary-fg-color--light: #FFC844;
+    --md-primary-fg-color--dark:  #FFC844;
+    --md-primary-bg-color:        rgba(0, 0, 0, 0.87);
+}

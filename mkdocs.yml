@@ -1,0 +1,55 @@
+site_name: CodeWizardsHQ Documentation
+# Set this whenever it's live
+# site_url: 
+
+plugins:
+  - search # enabled by default, but needs to be added if anymore are added
+#extra_css:
+#    - stylesheets/extra.css  
+
+# Footer config
+copyright: Copyright &copy; 2016 - 2021 CodeWizardsHQ
+extra:
+  # Removes the "Made with MkDocs" from the footer
+  generator: false
+
+# GitHub Repo config
+repo_url: https://github.com/daniel-schroeder-dev/cwhq-docs
+repo_name: cwhq-docs
+edit_uri: edit/main/docs
+
+nav:
+  - Home: index.md
+  - Python: 
+    - 'Python Language': python/python-language.md
+    - 'Wizardlib': python/wizardlib.md
+
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+
+
+theme:
+  name: material
+  features:
+    # Turns into an SPA basically
+    - navigation.instant
+    - search.suggest
+  favicon: assets/favicon.ico
+  # logo: assets/logo.png
+  palette:
+    # - media: "(prefers-color-scheme: light)"
+    #   scheme: default
+    #   toggle:
+    #     icon: material/toggle-switch-off-outline
+    #     name: Switch to dark mode
+    # - media: "(prefers-color-scheme: dark)"
+    scheme: slate 
+    primary: amber # remove to get CWHQ colors from extra.css
+
