@@ -14,7 +14,7 @@ extra:
   generator: false
 
 # GitHub Repo config
-repo_url: https://github.com/daniel-schroeder-dev/cwhq-docs
+repo_url: https://github.com/codewizardshq/docs
 repo_name: cwhq-docs
 edit_uri: edit/main/docs
 
