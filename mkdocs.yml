@@ -4,8 +4,8 @@ site_name: CodeWizardsHQ Documentation
 
 plugins:
   - search # enabled by default, but needs to be added if anymore are added
-#extra_css:
-#    - stylesheets/extra.css  
+extra_css:
+  - stylesheets/extra.css  
 
 # Footer config
 copyright: Copyright &copy; 2016 - 2021 CodeWizardsHQ
@@ -42,7 +42,7 @@ theme:
     - navigation.instant
     - search.suggest
   favicon: assets/favicon.ico
-  # logo: assets/logo.png
+  logo: assets/lightHorizontal.svg
   palette:
     # - media: "(prefers-color-scheme: light)"
     #   scheme: default
@@ -51,5 +51,5 @@ theme:
     #     name: Switch to dark mode
     # - media: "(prefers-color-scheme: dark)"
     scheme: slate 
-    primary: amber # remove to get CWHQ colors from extra.css
+    # primary: amber # remove to get CWHQ colors from extra.css
 

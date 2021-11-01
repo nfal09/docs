@@ -3,7 +3,7 @@
 Python is a beginner-friendly language that we use in these courses at CodeWizardsHQ:
 
 |Elementary              | Middle School                          |High School     |
-|:----------------------:|:--------------------------------------:|:--------------:|
+|------------------------|----------------------------------------|----------------|
 |Python Game Development |Introduction to Programming with Python |Intro to Python
 |                        |Mastering Databases                     |APIs and Databases
 |                        |Application Programming Interfaces      |Professional Web App Development
