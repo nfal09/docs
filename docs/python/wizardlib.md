@@ -18,8 +18,8 @@ Adds an image to the page.
 
 Parameters:
 
-- <strong>filename</strong>(<em>str</em>): The filename.
-- <strong>size</strong>(<em>int</em>): The size, in pixels (optional).
+- **filename**(*str*): The filename.
+- **size**(*int*): The size, in pixels (optional).
 
 Returns:
 
@@ -40,7 +40,7 @@ Example output:
 
 
 <figure markdown>
-![Taco Image](https://github.com/daniel-schroeder-dev/cwhq-docs/blob/main/docs/assets/taco.jpg?raw=true){ width="300" }
+![Taco Image](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/taco.jpg?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
