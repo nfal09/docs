@@ -414,8 +414,32 @@ Parameters:
 Example usage:
 
 ```python
-taco_image = add_image("taco.jpg")
-animate_up(taco_image, 100)
+def cat_caught_taco():
+    clear()
+    text = add_text("The kitty caught the taco!")
+    position_element(text, "center", "center")
+    
+    
+def move(key):
+    if key == "w":
+        move_up(cat_image, 10)
+    elif key == "a":
+        move_left(cat_image, 10)
+    elif key == "s":
+        move_down(cat_image, 10)
+    elif key == "d":
+        move_right(cat_image, 10)
+    
+    
+taco_image = add_image("taco.jpg", 100)
+position_element(taco_image, "center", "center")
+
+cat_image = add_image("flying-cats.jpg", 100)
+position_element(cat_image, 700, 300)
+
+keydown(move)
+
+check_collision(taco_image, cat_image, cat_caught_taco)
 ```
 
 Example output:
