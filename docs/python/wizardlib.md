@@ -66,7 +66,7 @@ Example output:
 
 
 <figure markdown>
-![Flying Cats](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/flying-cats.jpg?raw=true){ width="300" }
+![add_background() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/flying-cats.jpg?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
@@ -129,7 +129,7 @@ button = add_button("Click Me")
 Example output:
 
 <figure markdown>
-![Button](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/button.jpg?raw=true){ width="200" }
+![add_button() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/button.png?raw=true){ width="200" }
 <figcaption></figcaption>
 </figure>
 
@@ -168,7 +168,7 @@ taco_image = add_image("taco.png")
 Example output:
 
 <figure markdown>
-![Taco](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/taco.jpg?raw=true){ width="300" }
+![add_image() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/taco.jpg?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
@@ -205,7 +205,7 @@ wizardlib_text = add_text("Wizardlib is cool!")
 Example output:
 
 <figure markdown>
-![Wizardlib Text](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/add-text-example.jpg?raw=true){ width="300" }
+![add_text() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/add-text-example.png?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
@@ -242,8 +242,152 @@ text_input = add_text_input("Enter your password:")
 Example output:
 
 <figure markdown>
-![Wizardlib Text](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/add-text-input-example.jpg?raw=true){ width="300" }
+![add_text_input() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/add-text-input-example.png?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
 <hr>
+
+
+
+
+### animate_down()
+
+```python
+def animate_down(element, distance, time=8, loop=False)
+```
+
+Animates the element down by the given distance. Can optionally change the amount of time the animation takes and whether the element animates down and up repeatedly.
+
+Parameters:
+
+- **element** (*element*): An element to animate.
+- **distance** (*int*): The distance the element should travel (in pixels).
+- **time** (*int*): The amount of time the animations should take (optional).
+- **loop** (*bool*): Whether to repeatedly animate down and up.
+
+<hr>
+
+Example usage:
+
+```python
+taco_image = add_image("taco.jpg")
+animate_down(taco_image, 100)
+```
+
+Example output:
+
+<figure markdown>
+![animate_down() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/animate-down.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+### animate_left()
+
+```python
+def animate_left(element, distance, time=8, loop=False)
+```
+
+Animates the element left by the given distance. Can optionally change the amount of time the animation takes and whether the element animates left and right repeatedly.
+
+Parameters:
+
+- **element** (*element*): An element to animate.
+- **distance** (*int*): The distance the element should travel (in pixels).
+- **time** (*int*): The amount of time the animations should take (optional).
+- **loop** (*bool*): Whether to repeatedly animate left and right.
+
+<hr>
+
+Example usage:
+
+```python
+taco_image = add_image("taco.jpg")
+animate_left(taco_image, 100)
+```
+
+Example output:
+
+<figure markdown>
+![animate_left() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/animate-left.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+### animate_right()
+
+```python
+def animate_right(element, distance, time=8, loop=False)
+```
+
+Animates the element right by the given distance. Can optionally change the amount of time the animation takes and whether the element animates right and left repeatedly.
+
+Parameters:
+
+- **element** (*element*): An element to animate.
+- **distance** (*int*): The distance the element should travel (in pixels).
+- **time** (*int*): The amount of time the animations should take (optional).
+- **loop** (*bool*): Whether to repeatedly animate right and left.
+
+<hr>
+
+Example usage:
+
+```python
+taco_image = add_image("taco.jpg")
+animate_right(taco_image, 100)
+```
+
+Example output:
+
+<figure markdown>
+![animate_right() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/animate-right.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+### animate_up()
+
+```python
+def animate_up(element, distance, time=8, loop=False)
+```
+
+Animates the element up by the given distance. Can optionally change the amount of time the animation takes and whether the element animates up and down repeatedly.
+
+Parameters:
+
+- **element** (*element*): An element to animate.
+- **distance** (*int*): The distance the element should travel (in pixels).
+- **time** (*int*): The amount of time the animations should take (optional).
+- **loop** (*bool*): Whether to repeatedly animate up and down.
+
+<hr>
+
+Example usage:
+
+```python
+taco_image = add_image("taco.jpg")
+animate_up(taco_image, 100)
+```
+
+Example output:
+
+<figure markdown>
+![animate_up() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/animate-up.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
