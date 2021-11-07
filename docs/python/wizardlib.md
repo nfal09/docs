@@ -105,10 +105,10 @@ add_background_audio("never-gonna-give-you-up.mp3")
 ### add_button()
 
 ```python
-add_image(text)
+add_button(text)
 ```
 
-Adds a button.
+Adds a button. Note, you must position the button with `position_element()` in order to click on it.
 
 Parameters:
 
@@ -124,6 +124,7 @@ Example usage:
 
 ```python
 button = add_button("Click Me")
+position_element(button, "center", "center")
 ```
 
 Example output:
@@ -257,7 +258,7 @@ Example output:
 animate_down(element, distance, time=8, loop=False)
 ```
 
-Animates the `elemen`t down by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates down and up repeatedly.
+Animates the `element` down by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates down and up repeatedly.
 
 Parameters:
 
@@ -512,19 +513,14 @@ Parameters:
 Example usage:
 
 ```python
-def clear_page():
-    clear()
-    after_clear_text = add_text("Page was cleared", 32)
-    position_element(after_clear_text, "center", "center")
+def show_text():
+    text = add_text("Button was clicked!", 32)
+    position_element(text, "center", "center")
 
+button = add_button("Click Me")
+position_element(button, "center", 400)
 
-before_clear_text = add_text("This is on the page before clearing", 32)
-position_element(before_clear_text, "center", "center")
-
-clear_page_button = add_button("Clear Page")
-position_element(clear_page_button, "center", 400)
-
-click(clear_page_button, clear_page)
+click(button, show_text)
 ```
 
 Example output:
