@@ -462,13 +462,6 @@ clear()
 
 Clear the page of all elements.
 
-Parameters:
-
-- `element1` (*element*): An element to check for collisions with.
-- `element2` (*element*): An element to check for collisions with.
-- `function_to_run` (*function*): The function to run if `element1` hits `element2`.
-
-
 <hr>
 
 Example usage:
@@ -493,6 +486,51 @@ Example output:
 
 <figure markdown>
 ![clear() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/clear.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+### click()
+
+```python
+click(element, function_to_run)
+```
+
+Call `function_to_run` when `element` is clicked.
+
+Parameters:
+
+- `element` (*element*): The element to click.
+- `function_to_run` (*function*): The function to run if `element` is clicked.
+
+<hr>
+
+Example usage:
+
+```python
+def clear_page():
+    clear()
+    after_clear_text = add_text("Page was cleared", 32)
+    position_element(after_clear_text, "center", "center")
+
+
+before_clear_text = add_text("This is on the page before clearing", 32)
+position_element(before_clear_text, "center", "center")
+
+clear_page_button = add_button("Clear Page")
+position_element(clear_page_button, "center", 400)
+
+click(clear_page_button, clear_page)
+```
+
+Example output:
+
+<figure markdown>
+![click() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/click.gif?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
