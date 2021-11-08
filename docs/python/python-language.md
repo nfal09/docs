@@ -12,6 +12,10 @@ Python is a beginner-friendly language that we use in these courses at CodeWizar
 
 In this section of our documentation, you'll find references to most of the core Python language features and built-in functions that we use in our CodeWizardsHQ courses.
 
+You'll also find many *Further Reading* sections, which pull from these excellent Python resources:
+
+- [Python.org Documentation](https://www.python.org/doc/)
+- [RealPython.com](https://realpython.com/)
 <hr>
 
 
@@ -51,11 +55,93 @@ names.append("samh")
 print(names)  # ['alecg', 'danielj', 'dimas', 'samh']
 ```
 
+To remove an item from a `list`, you can use the `list.remove()` method:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+names.remove("alecg")
+
+print(names)  # ['danielj', 'dimas']
+```
+
+If you want to remove an item from a `list` by its index number, use the `list.pop()` method:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+names.pop(0)
+
+print(names)  # ['danielj', 'dimas']
+```
+
+To get the number of item in a list, use the `len()` function:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+num_names = len(names)
+
+print(num_names)  # 3
+```
+
+To check if an item is contained in a list, use the `in` operator:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+"alecg" in names  # True
+"samh" in names   # False
+```
+
+The `in` operator is generally used as part of a conditional statement:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+if "alecg" in names:
+    print("alecg is in the 'names' list")
+else:
+    print("alecg is NOT in the 'names' list")
+
+if "samh" in names:
+    print("samh is in the 'names' list")
+else:
+    print("samh is NOT in the 'names' list")
+```
+
+Example Output:
+
+```text
+alecg is in the 'names' list
+samh is NOT in the 'names' list
+```
+
+To loop through the items in a `list`, use a [`for`](#for) loop. Note the convention of a plural `list` (names) and a singular loop-iteration variable (name):
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+print("This documentation is brought to you by:")
+for name in names:
+    print(name)
+```
+
+Example Output:
+
+```text
+This documentation is brought to you by:
+alecg
+danielj
+dimas
+```
+
 Further Reading
 
 - [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
 - [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
 - [The Python Library Reference - Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
+- [The Python Library Reference - `len()`](https://docs.python.org/3/library/functions.html#len)
 
 <hr>
 
@@ -75,7 +161,7 @@ for fruit in fruits:
     print(fruit)
 ```
 
-Example output:
+Example Output:
 
 ```text
 apple
@@ -92,7 +178,7 @@ for letter in name:
     print(letter)
 ```
 
-Example output:
+Example Output:
 
 ```text
 D
@@ -110,7 +196,7 @@ for num in range(1, 4):
     print(f"{num} potato")
 ```
 
-Example output:
+Example Output:
 
 ```text
 1 potato
@@ -146,7 +232,7 @@ while keep_looping:
         print("That's incorrect! Please try again.")
 ```
 
-Example output:
+Example Output:
 
 ```text
 What is the meaning of life? To make money
@@ -170,7 +256,7 @@ while True:
         print("That's incorrect! Please try again.")
 ```
 
-Example output:
+Example Output:
 
 ```text
 What is the meaning of life? To make money
@@ -192,7 +278,7 @@ while counter < 5:
     counter += 1  # If you forget this, you'll have an infinite loop!
 ```
 
-Example output:
+Example Output:
 
 ```text
 0
