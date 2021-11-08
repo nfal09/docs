@@ -12,7 +12,7 @@ Here, you'll find the documentation for CodeWizardHQ's <em>Wizardlib</em> Python
 
 
 
-### add_audio()
+## `add_audio()`
 
 ```python
 add_audio(filename)
@@ -22,7 +22,7 @@ Adds an audio file.
 
 Parameters:
 
-- `filename` (*str*): The filename.
+- `filename` (`str`) : The filename.
 
 Returns:
 
@@ -42,7 +42,7 @@ audio_element = add_audio("never-gonna-give-you-up.mp3")
 
 
 
-### add_background()
+## `add_background()`
 
 ```python
 add_background(filename)
@@ -52,7 +52,7 @@ Adds a background image.
 
 Parameters:
 
-- `filename` (*str*): The filename.
+- `filename` (`str`): The filename.
 
 <hr>
 
@@ -77,7 +77,7 @@ Example output:
 
 
 
-### add_background_audio()
+## `add_background_audio()`
 
 ```python
 add_background_audio(filename)
@@ -87,7 +87,7 @@ Adds background audio which plays when you click the *Start* button.
 
 Parameters:
 
-- `filename` (*str*): The filename.
+- `filename` (`str`): The filename.
 
 <hr>
 
@@ -102,7 +102,7 @@ add_background_audio("never-gonna-give-you-up.mp3")
 
 
 
-### add_button()
+## `add_button()`
 
 ```python
 add_button(text)
@@ -112,7 +112,7 @@ Adds a button. Note, you must position the button with `position_element()` in o
 
 Parameters:
 
-- `text` (*str*): The text on the button.
+- `text` (`str`): The text on the button.
 
 Returns:
 
@@ -141,7 +141,7 @@ Example output:
 
 
 
-### add_image()
+## `add_image()`
 
 ```python
 add_image(filename, size=None)
@@ -151,8 +151,8 @@ Adds an image to the page.
 
 Parameters:
 
-- `filename` (*str*): The filename.
-- `size` (*int*): The size, in pixels (optional).
+- `filename` (`str`): The filename.
+- `size` (`int`): The size, in pixels (optional).
 
 Returns:
 
@@ -178,7 +178,7 @@ Example output:
 
 
 
-### add_text()
+## `add_text()`
 
 ```python
 add_text(text, size=18)
@@ -188,8 +188,8 @@ Adds text to the page.
 
 Parameters:
 
-- `text` (*str*): The text to add to the page.
-- `size` (*int*): The size, in pixels (optional).
+- `text` (`str`): The text to add to the page.
+- `size` (`int`): The size, in pixels (optional).
 
 Returns:
 
@@ -216,7 +216,7 @@ Example output:
 
 
 
-### add_text_input()
+## `add_text_input()`
 
 ```python
 add_text_input(placeholder)
@@ -226,7 +226,7 @@ Adds a text input to the page.
 
 Parameters:
 
-- `placeholder` (*str*): The text to display in the input box.
+- `placeholder` (`str`): The text to display in the input box.
 
 Returns:
 
@@ -252,7 +252,7 @@ Example output:
 
 
 
-### animate_down()
+## `animate_down()`
 
 ```python
 animate_down(element, distance, time=8, loop=False)
@@ -262,10 +262,10 @@ Animates the `element` down by the given `distance`. Can optionally change the a
 
 Parameters:
 
-- `element` (*element*): An element to animate.
-- `distance` (*int*): The distance the element should travel (in pixels).
-- `time` (*int*): The amount of time the animations should take (optional).
-- `loop` (*bool*): Whether to repeatedly animate down and up.
+- `element` (`element`): An element to animate.
+- `distance` (`int`): The distance the element should travel (in pixels).
+- `time` (`int`): The amount of time the animations should take (optional).
+- `loop` (`bool`): Whether to repeatedly animate down and up.
 
 <hr>
 
@@ -288,7 +288,7 @@ Example output:
 
 
 
-### animate_left()
+## `animate_left()`
 
 ```python
 animate_left(element, distance, time=8, loop=False)
@@ -298,10 +298,10 @@ Animates the `element` left by the given `distance`. Can optionally change the a
 
 Parameters:
 
-- `element` (*element*): An element to animate.
-- `distance` (*int*): The distance the element should travel (in pixels).
-- `time` (*int*): The amount of time the animations should take (optional).
-- `loop` (*bool*): Whether to repeatedly animate left and right.
+- `element` (`element`): An element to animate.
+- `distance` (`int`): The distance the element should travel (in pixels).
+- `time` (`int`): The amount of time the animations should take (optional).
+- `loop` (`bool`): Whether to repeatedly animate left and right.
 
 <hr>
 
@@ -324,7 +324,7 @@ Example output:
 
 
 
-### animate_right()
+## `animate_right()`
 
 ```python
 animate_right(element, distance, time=8, loop=False)
@@ -334,10 +334,10 @@ Animates the `element` right by the given `distance`. Can optionally change the 
 
 Parameters:
 
-- `element` (*element*): An element to animate.
-- `distance` (*int*): The distance the element should travel (in pixels).
-- `time` (*int*): The amount of time the animations should take (optional).
-- `loop` (*bool*): Whether to repeatedly animate right and left.
+- `element` (`element`): An element to animate.
+- `distance` (`int`): The distance the element should travel (in pixels).
+- `time` (`int`): The amount of time the animations should take (optional).
+- `loop` (`bool`): Whether to repeatedly animate right and left.
 
 <hr>
 
@@ -359,7 +359,7 @@ Example output:
 
 
 
-### animate_up()
+## `animate_up()`
 
 ```python
 animate_up(element, distance, time=8, loop=False)
@@ -369,10 +369,10 @@ Animates the `element` up by the given `distance`. Can optionally change the amo
 
 Parameters:
 
-- `element` (*element*): An element to animate.
-- `distance` (*int*): The distance the element should travel (in pixels).
-- `time` (*int*): The amount of time the animations should take (optional).
-- `loop` (*bool*): Whether to repeatedly animate up and down.
+- `element` (`element`): An element to animate.
+- `distance` (`int`): The distance the element should travel (in pixels).
+- `time` (`int`): The amount of time the animations should take (optional).
+- `loop` (`bool`): Whether to repeatedly animate up and down.
 
 <hr>
 
@@ -395,7 +395,7 @@ Example output:
 
 
 
-### check_collision()
+## `check_collision()`
 
 ```python
 check_collision(element1, element2, function_to_run)
@@ -405,9 +405,9 @@ If `element1` and `element2` collide, `function_to_run` is called.
 
 Parameters:
 
-- `element1` (*element*): An element to check for collisions with.
-- `element2` (*element*): An element to check for collisions with.
-- `function_to_run` (*function*): The function to run if `element1` hits `element2`.
+- `element1` (`element`): An element to check for collisions with.
+- `element2` (`element`): An element to check for collisions with.
+- `function_to_run` (`function`): The function to run if `element1` hits `element2`.
 
 
 <hr>
@@ -455,7 +455,7 @@ Example output:
 
 
 
-### clear()
+## `clear()`
 
 ```python
 clear()
@@ -495,7 +495,7 @@ Example output:
 
 
 
-### click()
+## `click()`
 
 ```python
 click(element, function_to_run)
@@ -505,8 +505,8 @@ Call `function_to_run` when `element` is clicked.
 
 Parameters:
 
-- `element` (*element*): The element to click.
-- `function_to_run` (*function*): The function to run if `element` is clicked.
+- `element` (`element`): The element to click.
+- `function_to_run` (`function`): The function to run if `element` is clicked.
 
 <hr>
 
