@@ -47,6 +47,11 @@ body .md-nav__title {
     color: #a0cfff;
 }
 
+.md-typeset h4 {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .md-footer__direction {
     color: #ffffff;
 }
@@ -82,4 +87,8 @@ body .md-nav__title {
 
 .md-typeset table:not([class]) td {
     vertical-align: middle;
+}
+
+.md-typeset pre>code {
+    margin-bottom: 24px;
 }

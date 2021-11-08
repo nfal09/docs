@@ -23,6 +23,8 @@ You'll also find many *Further Reading* sections, which pull from these excellen
 
 Data structures allow you to efficiently store and access groups of items.
 
+<hr>
+
 ### `list`
 
 The `list` data structure is used to store data in ordered "slots". It is known as *mutable sequence type*, which means it can be modified after creation.
@@ -35,6 +37,8 @@ menu_prices = [4.50, 5.75, 3.00]
 ids = [184, 294, 832, 98, 4]
 ```
 
+#### Accessing individual list items
+
 You can access individual items in a `list` using the `[]` characters and the index number of the item. The index numbers start at 0:
 
 ```python
@@ -45,6 +49,8 @@ print(names[1])  # danielj
 print(names[2])  # dimas
 ```
 
+#### Adding items to a list
+
 To add an item to a `list` after it has been created, you can use the `list.append()` method. This adds the item to the end of the list:
 
 ```python
@@ -54,6 +60,8 @@ names.append("samh")
 
 print(names)  # ['alecg', 'danielj', 'dimas', 'samh']
 ```
+
+#### Removing items from a list
 
 To remove an item from a `list`, you can use the `list.remove()` method:
 
@@ -75,6 +83,8 @@ names.pop(0)
 print(names)  # ['danielj', 'dimas']
 ```
 
+#### Getting the number of items in a list
+
 To get the number of item in a list, use the `len()` function:
 
 ```python
@@ -84,6 +94,8 @@ num_names = len(names)
 
 print(num_names)  # 3
 ```
+
+#### Checking if an item is contained in a list
 
 To check if an item is contained in a list, use the `in` operator:
 
@@ -117,6 +129,8 @@ alecg is in the 'names' list
 samh is NOT in the 'names' list
 ```
 
+#### Looping through a list
+
 To loop through the items in a `list`, use a [`for`](#for) loop. Note the convention of a plural `list` (names) and a singular loop-iteration variable (name):
 
 ```python
@@ -136,7 +150,7 @@ danielj
 dimas
 ```
 
-Further Reading
+#### Further Reading
 
 - [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
 - [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
@@ -149,7 +163,11 @@ Further Reading
 
 If you need to repeat something in your programs, you'll need to use one of Python's looping mechanisms.
 
+<hr>
+
 ### `for`
+
+#### Looping over a sequence
 
 A `for` loop is generally used to loop over a sequence, such as a `list`:
 
@@ -189,6 +207,8 @@ e
 l
 ```
 
+#### Counter-controlled repetition
+
 You can combine the `range()` function and the `for` loop to create a counter-controlled loop:
 
 ```python
@@ -204,7 +224,7 @@ Example Output:
 3 potato
 ```
 
-Further Reading
+#### Further Reading
 
 - [The Python Tutorial - for Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
 - [The Python Tutorial - The range() function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
@@ -214,6 +234,8 @@ Further Reading
 <hr>
 
 ### `while`
+
+#### Indefininte repetition
 
 A `while` loop is generally used to perform indefinite repetition (when you don't know how many times you want to loop).
 
@@ -267,6 +289,8 @@ What is the meaning of life? 42
 That's correct!
 ```
 
+#### Counter-controlled repetition
+
 You can use a `while` loop to perform counter-controlled repetition as well, but
 the `for` loop with the `range()` function is generally preferred:
 
@@ -288,6 +312,6 @@ Example Output:
 4
 ```
 
-Further Reading
+#### Further Reading
 
 - [Real Python - Python "while" Loops](https://realpython.com/python-while-loop/)
