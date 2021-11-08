@@ -21,7 +21,7 @@ Data structures allow you to efficiently store and access groups of items.
 
 ### `list`
 
-The `list` data structure is used to store data in ordered "slots".
+The `list` data structure is used to store data in ordered "slots". It is known as *mutable sequence type*, which means it can be modified after creation.
 
 Usually, the items in a `list` are homogeneous, which means they represent a group of similar items of the same data type:
 
@@ -41,9 +41,21 @@ print(names[1])  # danielj
 print(names[2])  # dimas
 ```
 
+To add an item to a `list` after it has been created, you can use the `list.append()` method. This adds the item to the end of the list:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+names.append("samh")
+
+print(names)  # ['alecg', 'danielj', 'dimas', 'samh']
+```
+
 Further Reading
 
 - [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
+- [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
+- [The Python Library Reference - Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
 
 <hr>
 
