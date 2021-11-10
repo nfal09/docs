@@ -37,6 +37,8 @@ menu_prices = [4.50, 5.75, 3.00]
 ids = [184, 294, 832, 98, 4]
 ```
 
+
+
 #### Accessing individual list items
 
 You can access individual items in a `list` using the `[]` characters and the index number of the item. The index numbers start at 0:
@@ -49,6 +51,8 @@ print(names[1])  # danielj
 print(names[2])  # dimas
 ```
 
+
+
 #### Adding items to a list
 
 To add an item to a `list` after it has been created, you can use the `list.append()` method. This adds the item to the end of the list:
@@ -60,6 +64,8 @@ names.append("samh")
 
 print(names)  # ['alecg', 'danielj', 'dimas', 'samh']
 ```
+
+
 
 #### Removing items from a list
 
