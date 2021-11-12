@@ -92,7 +92,7 @@ add_background_audio("never-gonna-give-you-up.mp3")
 
 ## add_button(text)
 
-Adds a button. Note, you must position the button with `position_element()` in order to click on it.
+Adds a button.
 
 <hr>
 
@@ -108,7 +108,6 @@ Example usage:
 
 ```python
 button = add_button("Click Me")
-position_element(button, "center", "center")
 ```
 
 Example output:
@@ -234,7 +233,7 @@ Parameters:
 
 - `element` (`element`): An element to animate.
 - `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of time the animations should take (optional, defaults to 8 seconds).
+- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
 - `loop` (`bool`): Whether to repeatedly animate down and up (optional, defaults to `False`).
 
 
@@ -267,7 +266,7 @@ Parameters:
 
 - `element` (`element`): An element to animate.
 - `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of time the animations should take (optional, defaults to 8 seconds).
+- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
 - `loop` (`bool`): Whether to repeatedly animate left and right (optional, defaults to `False`).
 
 
@@ -300,7 +299,7 @@ Parameters:
 
 - `element` (`element`): An element to animate.
 - `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of time the animations should take (optional, defaults to 8 seconds).
+- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
 - `loop` (`bool`): Whether to repeatedly animate right and left (optional, defaults to `False`).
 
 Example usage:
@@ -331,7 +330,7 @@ Parameters:
 
 - `element` (`element`): An element to animate.
 - `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of time the animations should take (optional, defaults to 8 seconds).
+- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
 - `loop` (`bool`): Whether to repeatedly animate up and down (optional, defaults to `False`).
 
 
@@ -463,6 +462,7 @@ def show_text():
     text = add_text("Button was clicked!", 32)
     position_element(text, "center", "center")
 
+
 button = add_button("Click Me")
 position_element(button, "center", 400)
 
@@ -473,6 +473,329 @@ Example output:
 
 <figure markdown>
 ![click() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/click.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## fade_in(element)
+
+Fades the `element` from invisible to visible.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to fade in.
+
+Example usage:
+
+```python
+def fade_text_in():
+    fade_in(hidden_text)
+
+
+hidden_text = add_text("Hidden Text", 32)
+position_element(hidden_text, "center", 400)
+fade_out(hidden_text)
+
+fade_in_button = add_button("Fade In")
+position_element(fade_in_button, "center", "center")
+click(fade_in_button, fade_text_in)
+```
+
+Example output:
+
+<figure markdown>
+![fade_in() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/fade-in.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## fade_out(element)
+
+Fades the `element` from visible to invisible.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to fade out.
+
+Example usage:
+
+```python
+def fade_text_out():
+    fade_out(text_to_hide)
+
+
+text_to_hide = add_text("Text To Hide", 32)
+position_element(text_to_hide, "center", 400)
+
+fade_out_button = add_button("Fade Out")
+position_element(fade_out_button, "center", "center")
+click(fade_out_button, fade_text_out)
+```
+
+Example output:
+
+<figure markdown>
+![fade_out() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/fade-out.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## get_input_value(element)
+
+Gets the value of the input `element`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to get the value from.
+
+Example usage:
+
+```python
+def login():
+    password = get_input_value(password_input)
+    clear()
+    if password == "secretpassword":
+        logged_in_text = add_text("You've logged in!", 32)
+        position_element(logged_in_text, "center", 400)
+
+
+password_input = add_text_input("Enter your password")
+position_element(password_input, "center", 400)
+
+login_button = add_button("Login")
+position_element(login_button, "center", "center")
+click(login_button, login)
+```
+
+Example output:
+
+<figure markdown>
+![get_input_value() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/get-input-value.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## keydown(function_to_run)
+
+Runs `function_to_run` when a key is pressed. The key that is pressed will be passed as the first argument to `function_to_run` and will always be lowercase.
+
+<hr>
+
+Parameters:
+
+- `function_to_run` (`function`): The function to run when a key is pressed.
+
+Example usage:
+
+```python
+def key_logger(pressed_key):
+    update_text(last_key_pressed_text, f"Last key pressed: {pressed_key}")
+
+
+last_key_pressed_text = add_text("Last key pressed: ", 32)
+position_element(last_key_pressed_text, "center", 400)
+
+keydown(key_logger)
+```
+
+Example output:
+
+<figure markdown>
+![keydown() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/keydown.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## move_down(element, distance)
+
+Moves the `element` down by the given `distance`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to move down.
+- `distance` (`int`): The distance the `element` should travel (in pixels).
+
+Example usage:
+
+```python
+def move_taco(pressed_key):
+    if pressed_key == "w":
+        move_up(taco_image, 10)
+    elif pressed_key == "a":
+        move_left(taco_image, 10)
+    elif pressed_key == "s":
+        move_down(taco_image, 10)
+    elif pressed_key == "d":
+        move_right(taco_image, 10)
+
+
+taco_image = add_image("taco.jpg", 100)
+position_element(taco_image, "center", "center")
+
+keydown(move_taco)
+```
+
+Example output:
+
+<figure markdown>
+![move_down() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/move-down.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## move_left(element, distance)
+
+Moves the `element` left by the given `distance`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to move left.
+- `distance` (`int`): The distance the `element` should travel (in pixels).
+
+Example usage:
+
+```python
+def move_taco(pressed_key):
+    if pressed_key == "w":
+        move_up(taco_image, 10)
+    elif pressed_key == "a":
+        move_left(taco_image, 10)
+    elif pressed_key == "s":
+        move_down(taco_image, 10)
+    elif pressed_key == "d":
+        move_right(taco_image, 10)
+
+
+taco_image = add_image("taco.jpg", 100)
+position_element(taco_image, "center", "center")
+
+keydown(move_taco)
+```
+
+Example output:
+
+<figure markdown>
+![move_left() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/move-left.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## move_right(element, distance)
+
+Moves the `element` right by the given `distance`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to move right.
+- `distance` (`int`): The distance the `element` should travel (in pixels).
+
+Example usage:
+
+```python
+def move_taco(pressed_key):
+    if pressed_key == "w":
+        move_up(taco_image, 10)
+    elif pressed_key == "a":
+        move_left(taco_image, 10)
+    elif pressed_key == "s":
+        move_down(taco_image, 10)
+    elif pressed_key == "d":
+        move_right(taco_image, 10)
+
+
+taco_image = add_image("taco.jpg", 100)
+position_element(taco_image, "center", "center")
+
+keydown(move_taco)
+```
+
+Example output:
+
+<figure markdown>
+![move_right() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/move-right.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## move_up(element, distance)
+
+Moves the `element` up by the given `distance`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to move up.
+- `distance` (`int`): The distance the `element` should travel (in pixels).
+
+Example usage:
+
+```python
+def move_taco(pressed_key):
+    if pressed_key == "w":
+        move_up(taco_image, 10)
+    elif pressed_key == "a":
+        move_left(taco_image, 10)
+    elif pressed_key == "s":
+        move_down(taco_image, 10)
+    elif pressed_key == "d":
+        move_right(taco_image, 10)
+
+
+taco_image = add_image("taco.jpg", 100)
+position_element(taco_image, "center", "center")
+
+keydown(move_taco)
+```
+
+Example output:
+
+<figure markdown>
+![move_up() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/move-up.gif?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
