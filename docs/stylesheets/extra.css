@@ -41,6 +41,7 @@ body .md-nav__title {
 
 .md-typeset h2 {
     color: #FFC844;
+    font-family: monospace;
 }
 
 .md-typeset h3 {
