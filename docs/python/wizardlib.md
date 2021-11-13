@@ -800,3 +800,411 @@ Example output:
 </figure>
 
 <hr>
+
+
+
+
+## play_audio(element)
+
+Plays the audio that `element` represents.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The audio element to play.
+
+Example usage:
+
+```python
+laugh_audio = add_audio("laugh.mp3")
+play_audio(laugh_audio)
+```
+
+<hr>
+
+
+
+
+
+## position_element(element, x, y)
+
+Position the `element` at the given `x` and `y` position. The `x` and `y` arguments can be any `int`, or one of the position helpers:
+
+|Position | Helper1  | Helper2    | Helper3    |
+|---------|----------|------------|------------|
+|`x`      | `"left"` | `"center"` | `"right"`  |
+|`y`      | `"top"`  | `"center"` | `"bottom"` |
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to position.
+- `x` (`int`|`str`): The desired x-position of the `element`.
+- `y` (`int`|`str`): The desired y-position of the `element`.
+
+Example usage:
+
+```python
+taco_image = add_image("taco.jpg")
+position_element(taco_image, "center", 400)
+```
+
+<hr>
+
+
+
+
+## set_background_color(color)
+
+Sets the background color of the page to `color`.
+
+<hr>
+
+Parameters:
+
+- `color` (`str`): The desired background color.
+
+Example usage:
+
+```python
+set_background_color("darksalmon")
+```
+
+Example output:
+
+<figure markdown>
+![set_background_color() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/set-background-color.png?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## set_element_width(element, width)
+
+Sets the `element` to the given `width`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to adjust.
+- `width` (`int`): The desired width of the `element`.
+
+Example usage:
+
+```python
+def shrink_taco():
+    set_element_width(taco_image, 100)
+
+
+shrink_taco_button = add_button("Shrink Taco")
+position_element(shrink_taco_button, "center", "center")
+
+taco_image = add_image("taco.jpg", 300)
+position_element(taco_image, "center", 200)
+
+click(shrink_taco_button, shrink_taco)
+```
+
+Example output:
+
+<figure markdown>
+![set_element_width() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/set-element-width.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## set_font_size(element, font_size)
+
+Sets the font size of the `element` to the given `font_size`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to adjust.
+- `font_size` (`int`): The desired font_size of the `element`.
+
+Example usage:
+
+```python
+def shrink_text():
+    set_font_size(text_element, 25)
+
+
+shrink_text_button = add_button("Shrink Font")
+position_element(shrink_text_button, "center", "center")
+
+text_element = add_text("Shrink this text!", 100)
+position_element(text_element, "center", 300)
+
+click(shrink_text_button, shrink_text)
+```
+
+Example output:
+
+<figure markdown>
+![set_font_size() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/set-font-size.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## set_text_color(text_element, color)
+
+Sets the `color` of the `text_element`.
+
+<hr>
+
+Parameters:
+
+- `text_element` (`element`): The text element to adjust.
+- `color` (`str`): The desired color of the `text_element`.
+
+Example usage:
+
+```python
+red_text = add_text("This text is red", 32)
+set_text_color(red_text, "red")
+```
+
+Example output:
+
+<figure markdown>
+![set_text_color() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/set-text-color.png?raw=true){ width="200" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## set_text_decoration(text_element, decoration_string)
+
+Sets the text decoration of the given `text_element`.
+
+<hr>
+
+Parameters:
+
+- `text_element` (`element`): The text element to adjust.
+- `decoration_string` (`str`): The decoration string for the CSS property.
+
+Example usage:
+
+```python
+text_element = add_text("Never Gonna Give You Up", 42)
+set_text_decoration(text_element, "underline dotted blue")
+```
+
+Example output:
+
+<figure markdown>
+![set_text_decoration() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/set-text-decoration.png?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+Read about different options for the decoration_string [here](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+
+<hr>
+
+
+
+
+## set_timeout(function_to_run, time)
+
+Runs `function_to_run` after `time` seconds.
+
+<hr>
+
+Parameters:
+
+- `function_to_run` (`function`): The function to run.
+- `time` (`int`): The time (in seconds) to wait before running the `function_to_run`.
+
+Example usage:
+
+```python
+def show_boo_text():
+    boo_text = add_text("BOO!!!", 100)
+    position_element(boo_text, "center", 300)
+
+
+set_timeout(show_boo_text, 3)
+```
+
+Example output:
+
+<figure markdown>
+![set_timeout() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/set-timeout.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## update_text(text_element, new_text)
+
+Changes the text in `text_element` to the `new_text`.
+
+<hr>
+
+Parameters:
+
+- `text_element` (`element`): The element to adjust.
+- `new_text` (`str`): The new text for the `text_element`.
+
+Example usage:
+
+```python
+def update_text_element():
+    update_text(text_element, "Updated text")
+
+
+text_element = add_text("Original text", 32)
+position_element(text_element, "center", 400)
+
+update_text_button = add_button("Update Text")
+position_element(update_text_button, "center", "center")
+
+click(update_text_button, update_text_element)
+```
+
+Example output:
+
+<figure markdown>
+![update_text() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/update-text.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## remove_element(element)
+
+Removes the `element` from the page.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to remove.
+
+Example usage:
+
+```python
+def remove_taco():
+    remove_element(taco_image)
+
+
+taco_image = add_image("taco.jpg", 200)
+position_element(taco_image, "center", 300)
+
+remove_taco_button = add_button("Remove Taco")
+position_element(remove_taco_button, "center", "center")
+
+click(remove_taco_button, remove_taco)
+```
+
+Example output:
+
+<figure markdown>
+![remove_element() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/remove-element.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## rotate_element(element, degrees)
+
+Rotates the `element` by the given number of `degrees`.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to rotate.
+- `degrees` (`int`): The number of degrees to rotate the `element`. 
+
+Example usage:
+
+```python
+def rotate_taco():
+    rotate_element(taco_image, 180)
+
+
+taco_image = add_image("taco.jpg", 200)
+position_element(taco_image, "center", 300)
+
+rotate_taco_button = add_button("Rotate Taco")
+position_element(rotate_taco_button, "center", "center")
+
+click(rotate_taco_button, rotate_taco)
+```
+
+Example output:
+
+<figure markdown>
+![rotate_element() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/rotate-element.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
+
+
+
+
+## vanish(element)
+
+Removes the `element` from the page over a 1 second interval.
+
+<hr>
+
+Parameters:
+
+- `element` (`element`): The element to remove.
+
+Example usage:
+
+```python
+def vanish_taco():
+    vanish(taco_image)
+
+
+taco_image = add_image("taco.jpg", 200)
+position_element(taco_image, "center", 300)
+
+vanish_taco_button = add_button("Vanish Taco")
+position_element(vanish_taco_button, "center", "center")
+
+click(vanish_taco_button, vanish_taco)
+```
+
+Example output:
+
+<figure markdown>
+![vanish() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/vanish.gif?raw=true){ width="300" }
+<figcaption></figcaption>
+</figure>
+
+<hr>
