@@ -12,10 +12,11 @@ Python is a beginner-friendly language that we use in these courses at CodeWizar
 
 In this section of our documentation, you'll find references to most of the core Python language features and built-in functions that we use in our CodeWizardsHQ courses.
 
-You'll also find many *Further Reading* sections, which pull from these excellent Python resources:
+You'll also find many *Further reading* sections, which pull from these excellent Python resources:
 
 - [Python.org Documentation](https://www.python.org/doc/)
 - [RealPython.com](https://realpython.com/)
+- [Think Python](https://greenteapress.com/wp/think-python-2e/)
 <hr>
 
 
@@ -39,7 +40,7 @@ ids = [184, 294, 832, 98, 4]
 
 
 
-#### Accessing individual list items
+#### Accessing items in a list
 
 You can access individual items in a `list` using the `[]` characters and the index number of the item. The index numbers start at 0:
 
@@ -53,7 +54,7 @@ print(names[2])  # dimas
 
 
 
-#### Adding items to a list
+#### Adding an item to a list
 
 To add an item to a `list` after it has been created, you can use the `list.append()` method. This adds the item to the end of the list:
 
@@ -67,7 +68,20 @@ print(names)  # ['alecg', 'danielj', 'dimas', 'samh']
 
 
 
-#### Removing items from a list
+#### Updating an item in a list
+
+To update a `list` item, replace the value at the index:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+names[1] = "django"
+
+print(names)  # ['alecg', 'django', 'dimas']
+```
+
+
+#### Removing an item from a list
 
 To remove an item from a `list`, you can use the `list.remove()` method:
 
@@ -88,6 +102,28 @@ names.pop(0)
 
 print(names)  # ['danielj', 'dimas']
 ```
+
+#### Looping through a list
+
+To loop through the items in a `list`, use a [`for`](#for) loop. Note the convention of a plural `list` (names) and a singular loop-iteration variable (name):
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+print("This documentation is brought to you by:")
+for name in names:
+    print(name)
+```
+
+Example Output:
+
+```text
+This documentation is brought to you by:
+alecg
+danielj
+dimas
+```
+
 
 #### Getting the number of items in a list
 
@@ -135,35 +171,416 @@ alecg is in the 'names' list
 samh is NOT in the 'names' list
 ```
 
-#### Looping through a list
 
-To loop through the items in a `list`, use a [`for`](#for) loop. Note the convention of a plural `list` (names) and a singular loop-iteration variable (name):
+
+#### Further reading
+
+- [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
+- [The Python Library Reference - Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
+- [The Python Library Reference - `len()`](https://docs.python.org/3/library/functions.html#len)
+- [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
+- [Think Python - Lists](https://greenteapress.com/thinkpython2/html/thinkpython2011.html)
+
+<hr>
+
+
+### `dict`
+
+The `dict` data structure is used to store data in key/value pairs:
 
 ```python
-names = ["alecg", "danielj", "dimas"]
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+```
 
-print("This documentation is brought to you by:")
-for name in names:
-    print(name)
+#### Accessing items in a dict
+
+You have to know the key to access an individual item in a `dict`:
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+daniel_job = staff["danielj"]
+print(f"Daniel is a {daniel_job}.")  # Daniel is a Curriculum Developer.
+
+alec_job = staff["alecg"]
+print(f"Alec is a {alec_job}.")  # Alec is a Curriculum Instructor.
+
+dima_job = staff["dimas"]
+print(f"Dima is a {dima_job}.")  # Dima is a Designer.
+```
+
+
+#### Adding an item to a dict
+
+You can add an item to a `dict` by providing the key/value pair (it's the same syntax as updating an item):
+
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+staff["django"] = "Director Of Pug Snorts"
+
+print(staff)  # {'danielj': 'Curriculum Developer', 'alecg': 'Curriculum Instructor', 'dimas': 'Designer', 'django': 'Director Of Pug Snorts'}
+```
+
+
+#### Updating an item in a dict
+
+To update an item in a `dict`, you must know the key:
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+staff["danielj"] = "Burrito Taste-Tester"
+
+print(staff)  # {'danielj': 'Burrito Taste-Tester', 'alecg': 'Curriculum Instructor', 'dimas': 'Designer'}
+```
+
+
+
+#### Removing an item from a dict
+
+To remove an item from a `dict`, use the `dict.pop()` method:
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+staff.pop("danielj")
+
+print(staff)  # {'alecg': 'Curriculum Instructor', 'dimas': 'Designer'}
+```
+
+
+#### Looping through a dict
+
+The previous example would be easier if we used a loop to print each user's job. To loop through a `dict`, you generally use the `dict.items()` method like this:
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+for name, job in staff.items():
+    print(f"{name} is a {job}.")
+
 ```
 
 Example Output:
 
 ```text
-This documentation is brought to you by:
-alecg
-danielj
-dimas
+danielj is a Curriculum Developer.
+alecg is a Curriculum Instructor.
+dimas is a Designer.
 ```
 
-#### Further Reading
 
-- [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
-- [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
-- [The Python Library Reference - Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
-- [The Python Library Reference - `len()`](https://docs.python.org/3/library/functions.html#len)
+
+
+
+
+#### Getting the keys from a dict
+
+If you need to get all of the keys from a `dict`, use the `dict.keys()` method. Note, you'll need to cast the result to a `list`, which is why the `list()` function is used here:
+
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+names = list(staff.keys())
+
+print(f"Here are all the names in the staff dict: {names}")
+```
+
+Example Output:
+
+```text
+Here are all the names in the staff dict: ['danielj', 'alecg', 'dimas']
+```
+
+#### Getting the values from a dict
+
+If you need to get all of the keys from a `dict`, use the `dict.values()` method. Note, you'll need to cast the result to a `list`, which is why the `list()` function is used here:
+
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+jobs = list(staff.values())
+
+print(f"Here are all the jobs in the staff dict: {jobs}")
+```
+
+Example Output:
+
+```text
+Here are all the jobs in the staff dict: ['Curriculum Developer', 'Curriculum Instructor', 'Designer']
+```
+
+#### Getting the number of items in a dict
+
+You can use the `len()` function to get the number of items in a `dict`:
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+number_of_staff = len(staff)
+
+print(f"We have {number_of_staff} people on our staff.")  # We have 3 people on our staff.
+```
+
+
+
+#### Further reading
+
+- [Real Python - Dictionaries in Python](https://realpython.com/python-dicts/)
+- [The Python Library Reference - Mapping Types: `dict`](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+- [The Python Tutorial - Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+- [Think Python - Dictionaries](https://greenteapress.com/thinkpython2/html/thinkpython2012.html)
+
 
 <hr>
+
+
+## Functions
+
+Functions allow you to group related statements together to perform a task. 
+
+<hr>
+
+### Built-in functions
+
+Python comes with many built-in functions. We'll cover some of the most common that you'll see in CodeWizardsHQ courses below. 
+
+##### `float()`
+
+The `float()` function converts data to a `float`:
+
+```python
+pi = float("3.14")
+
+print(pi)  # 3.14
+type(pi)  # <class 'float'>
+
+two = float(2)
+
+print(two)  # 2.0
+type(two)  # <class 'float'>
+```
+
+##### `input()`
+
+The `input()` function allows you to prompt a user. The user's response is returned as a `str`, which you can store in a variable:
+
+```python
+name = input("What is your name? ")
+print(f"Nice to meet you, {name}!")
+```
+
+Example Output:
+
+```text
+What is your name? Daniel
+Nice to meet you, Daniel!
+```
+
+##### `int()`
+
+The `int()` function converts data to an `int`:
+
+```python
+int_pi = int(3.14)
+
+print(int_pi)  # 3
+type(int_pi)  # <class 'int'>
+
+meaning_of_life = int("42")
+
+print(meaning_of_life)  # 42
+type(meaning_of_life)  # <class 'int'>
+```
+
+##### `len()`
+
+The `len()` function returns the length of a sequence such as a `list` or `str`:
+
+```python
+number_of_characters = len("How many characters are in this str?")
+print(number_of_characters)  # 36
+
+favorite_foods = ["tacos", "pizza", "nachos", "burritos"]
+
+number_of_foods = len(favorite_foods)
+print(number_of_foods)  # 4
+```
+
+
+##### `list()`
+
+The `list()` function creates a list from a sequence such as the result of `dict.keys()`, `dict.values()`, or a `str`:
+
+```python
+character_list = list("Hello!")
+print(character_list)  # ['H', 'e', 'l', 'l', 'o', '!']
+
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+names = list(staff.keys())
+print(names)  # ['danielj', 'alecg', 'dimas']
+
+jobs = list(staff.values())
+print(jobs)  # ['Curriculum Developer', 'Curriculum Instructor', 'Designer']
+```
+
+
+##### `print()`
+
+The `print()` function displays text on the screen:
+
+```python
+print("Hello, world!")  # Hello, world!
+```
+
+
+
+
+
+
+<hr>
+
+### User-defined functions
+
+You define a function using the `def` keyword:
+
+```python
+def say_hello():
+    print("Hello!")
+
+
+```
+
+#### Calling a function
+
+Defining a function does not run the statements in the body of the function. To run a function, you *call* it like this:
+
+```python
+def say_hello():
+    print("Hello!")
+
+
+say_hello()  # Hello!
+
+```
+
+#### Adding parameters to a function
+
+When you define a function, you can add parameters that the function caller should pass in. Parameters are like variables, but the value of the variable is set by the function caller, not the function definer:
+
+```python
+def say_hello(name):
+    print(f"Hello, {name}!")
+
+```
+
+#### Passing arguments to a function
+
+If a function accepts parameters, you need to pass them in when you call the function:
+
+
+```python
+def say_hello(name):
+    print(f"Hello, {name}!")
+
+
+say_hello("Daniel")  # Hello, Daniel!
+```
+
+#### Returning a value from a function
+
+You can return a value from a function by using the `return` keyword:
+
+```python
+def add(number_1, number_2):
+    total = number_1 + number_2
+    return total
+
+```
+
+#### Capturing a function's return value
+
+If a function returns a value, you should capture it in a varible:
+
+```python
+def add(number_1, number_2):
+    total = number_1 + number_2
+    return total
+
+
+total = add(2, 3)
+print(total)  # 5
+```
+
+You can also use the value immediately in a `print()` statement:
+
+```python
+def add(number_1, number_2):
+    total = number_1 + number_2
+    return total
+
+
+print(add(2, 3))  # 5
+print(f"2 + 3 = {add(2, 3)}")  # 2 + 3 = 5
+```
+
+#### Further reading
+
+- [Real Python - Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/)
+- [The Python Tutorial - Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+- [Think Python - Functions](https://greenteapress.com/thinkpython2/html/thinkpython2004.html)
+- [Think Python - Fruitful Functions](https://greenteapress.com/thinkpython2/html/thinkpython2007.html)
+
+<hr>
+
+
+
+
 
 ## Loops
 
@@ -172,8 +589,6 @@ If you need to repeat something in your programs, you'll need to use one of Pyth
 <hr>
 
 ### `for`
-
-#### Looping over a sequence
 
 A `for` loop is generally used to loop over a sequence, such as a `list`:
 
@@ -230,18 +645,16 @@ Example Output:
 3 potato
 ```
 
-#### Further Reading
+#### Further reading
 
-- [The Python Tutorial - for Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
-- [The Python Tutorial - The range() function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
-- [Real Python - Python "for" Loops](https://realpython.com/python-for-loop/)
-
+- [Real Python - Python `for` Loops](https://realpython.com/python-for-loop/)
+- [The Python Tutorial - `for` Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
+- [The Python Tutorial - The `range()` function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
+- [Think Python - Traversal with a `for` loop](https://greenteapress.com/thinkpython2/html/thinkpython2009.html#sec94)
 
 <hr>
 
 ### `while`
-
-#### Indefininte repetition
 
 A `while` loop is generally used to perform indefinite repetition (when you don't know how many times you want to loop).
 
@@ -318,6 +731,7 @@ Example Output:
 4
 ```
 
-#### Further Reading
+#### Further reading
 
-- [Real Python - Python "while" Loops](https://realpython.com/python-while-loop/)
+- [Real Python - Python `while` Loops](https://realpython.com/python-while-loop/)
+- [Think Python - The `while` statement](https://greenteapress.com/thinkpython2/html/thinkpython2008.html#sec84)
