@@ -41,16 +41,23 @@ body .md-nav__title {
 
 .md-typeset h2 {
     color: #FFC844;
-    font-family: monospace;
 }
 
-.md-typeset h3 {
+.md-typeset h3 code {
     color: #a0cfff;
+    font-size: 1.1em;
 }
 
 .md-typeset h4 {
     color: #fff;
     text-decoration: underline;
+    font-size: 1.1em;
+}
+
+.md-typeset h5 code {
+    color: #a0cfff;
+    font-size: 1.3em;
+    text-transform: none;
 }
 
 .md-footer__direction {
@@ -94,7 +101,8 @@ body .md-nav__title {
     margin-bottom: 24px;
 }
 
-.md-typeset h4:before {
+.md-typeset h4:before,
+.md-typeset h5:before {
     content: "";
     border-bottom: 1px solid rgb(218, 218, 218);
     width: 40%;
