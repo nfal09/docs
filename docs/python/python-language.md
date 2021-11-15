@@ -479,6 +479,9 @@ print("Hello, world!")  # Hello, world!
 ```
 
 
+#### Further reading
+
+- [The Python Library Reference - Built-in Functions](https://docs.python.org/3/library/functions.html)
 
 
 
