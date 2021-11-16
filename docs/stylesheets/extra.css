@@ -41,22 +41,22 @@ body .md-nav__title {
 
 .md-typeset h2 {
     color: #FFC844;
+    font-size: 1.5em;
 }
 
 .md-typeset h3 code {
     color: #a0cfff;
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 
 .md-typeset h4 {
-    color: #fff;
-    text-decoration: underline;
-    font-size: 1.1em;
+    color: #a0cfff;
+    font-size: 1.3em;
 }
 
 .md-typeset h5 code {
     color: #a0cfff;
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-transform: none;
 }
 
@@ -70,7 +70,7 @@ body .md-nav__title {
 
 .md-content ul {
     list-style: none;
-  }
+}
 
 .md-content ul li::before {
     content: image-set("../assets/shieldPointer.png" 1x, "../assets/shieldPointer@2x.png" 2x);
@@ -81,7 +81,7 @@ body .md-nav__title {
     width: 2.4em;
     margin-left: -1em;
     vertical-align: middle;
-  }
+}
 
 .md-typeset table:not([class]) th {
     color: #687785;
@@ -104,8 +104,8 @@ body .md-nav__title {
 .md-typeset h4:before,
 .md-typeset h5:before {
     content: "";
-    border-bottom: 1px solid rgb(218, 218, 218);
-    width: 40%;
+    border-bottom: .05rem solid var(--md-default-fg-color--lightest);
+    width: 100%;
     display: block;
     margin: 42px auto 52px auto;
 }
