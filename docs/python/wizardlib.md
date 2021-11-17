@@ -12,7 +12,7 @@ Here, you'll find the documentation for CodeWizardHQ's <em>Wizardlib</em> Python
 
 
 
-## add_audio(filename)
+### `add_audio(filename)`
 
 Adds an audio file.
 
