@@ -55,8 +55,4 @@ Navigate to the provided URL (http://127.0.0.1:8000/ in this case) in your web b
 
 ## Contributing
 
-This documentation is open source, which means you can contribute directly if you find and issue or want to add a missing topic. The core documentation is written in [Markdown](https://www.markdownguide.org/) and you can edit the styles in the [/docs/stylesheets/extra.css](https://github.com/codewizardshq/docs/blob/main/docs/stylesheets/extra.css) file.
-
-If you're not sure how to contribute via GitHub, there are excellent resources such as [First Contributions](https://github.com/firstcontributions/first-contributions) or [Open Source Guides - How to Contribute to Open Source](https://opensource.guide/how-to-contribute/).
-
-If you're not comfortable with making changes yourself on GitHub, you can file an issue [here](https://github.com/codewizardshq/docs/issues) and someone will either implement your suggestions or reject them with comments.
+If you spot a typo or have a suggestion, you can file an issue [here](https://github.com/codewizardshq/docs/issues) and the project maintainers will reach out to you.
