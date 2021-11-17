@@ -12,11 +12,17 @@ Here, you'll find the documentation for CodeWizardHQ's <em>Wizardlib</em> Python
 
 
 
-## add_audio(filename)
+### `add_audio()`
 
 Adds an audio file.
 
 <hr>
+
+Function signature:
+
+```python
+add_audio(filename)
+```
 
 Parameters:
 
@@ -38,11 +44,17 @@ audio_element = add_audio("never-gonna-give-you-up.mp3")
 
 
 
-## add_background(filename)
+### `add_background()`
 
 Adds a background image.
 
 <hr>
+
+Function signature:
+
+```python
+add_background(filename)
+```
 
 Parameters:
 
@@ -69,11 +81,17 @@ Example output:
 
 
 
-## add_background_audio(filename)
+### `add_background_audio()`
 
 Adds background audio which plays when you click the *Start* button.
 
 <hr>
+
+Function signature:
+
+```python
+add_background_audio(filename)
+```
 
 Parameters:
 
@@ -90,11 +108,17 @@ add_background_audio("never-gonna-give-you-up.mp3")
 
 
 
-## add_button(text)
+### `add_button()`
 
 Adds a button.
 
 <hr>
+
+Function signature:
+
+```python
+add_button(text)
+```
 
 Parameters:
 
@@ -124,11 +148,17 @@ Example output:
 
 
 
-## add_image(filename, size)
+### `add_image()`
 
 Adds an image to the page.
 
 <hr>
+
+Function signature:
+
+```python
+add_image(filename, size)
+```
 
 Parameters:
 
@@ -157,11 +187,17 @@ Example output:
 
 
 
-## add_text(text, size)
+### `add_text()`
 
 Adds text to the page.
 
 <hr>
+
+Function signature:
+
+```python
+add_text(text, size)
+```
 
 Parameters:
 
@@ -191,11 +227,17 @@ Example output:
 
 
 
-## add_text_input(placeholder)
+### `add_text_input()`
 
 Adds a text input to the page.
 
 <hr>
+
+Function signature:
+
+```python
+add_text_input(placeholder)
+```
 
 Parameters:
 
@@ -223,11 +265,17 @@ Example output:
 
 
 
-## animate_down(element, distance, time, loop)
+### `animate_down()`
 
 Animates the `element` down by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates down and up repeatedly.
 
 <hr>
+
+Function signature:
+
+```python
+animate_down(element, distance, time, loop)
+```
 
 Parameters:
 
@@ -256,11 +304,17 @@ Example output:
 
 
 
-## `animate_left(element, distance, time, loop)`
+### `animate_left()`
 
 Animates the `element` left by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates left and right repeatedly.
 
 <hr>
+
+Function signature:
+
+```python
+animate_left(element, distance, time, loop)
+```
 
 Parameters:
 
@@ -289,11 +343,17 @@ Example output:
 
 
 
-## animate_right(element, distance, time, loop)
+### `animate_right()`
 
 Animates the `element` right by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates right and left repeatedly.
 
 <hr>
+
+Function signature:
+
+```python
+animate_right(element, distance, time, loop)
+```
 
 Parameters:
 
@@ -320,11 +380,17 @@ Example output:
 
 
 
-## animate_up(element, distance, time, loop)
+### `animate_up()`
 
 Animates the `element` up by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates up and down repeatedly.
 
 <hr>
+
+Function signature:
+
+```python
+animate_up(element, distance, time, loop)
+```
 
 Parameters:
 
@@ -353,11 +419,17 @@ Example output:
 
 
 
-## check_collision(element1, element2, function_to_run)
+### `check_collision()`
 
 If `element1` and `element2` collide, `function_to_run` is called.
 
 <hr>
+
+Function signature:
+
+```python
+check_collision(element1, element2, function_to_run)
+```
 
 Parameters:
 
@@ -408,11 +480,17 @@ Example output:
 
 
 
-## clear()
+### `clear()`
 
 Clear the page of all elements.
 
 <hr>
+
+Function signature:
+
+```python
+clear()
+```
 
 Example usage:
 
@@ -444,11 +522,17 @@ Example output:
 
 
 
-## click(element, function_to_run)
+### `click()`
 
 Call `function_to_run` when `element` is clicked.
 
 <hr>
+
+Function signature:
+
+```python
+click(element, function_to_run)
+```
 
 Parameters:
 
@@ -481,11 +565,17 @@ Example output:
 
 
 
-## fade_in(element)
+### `fade_in()`
 
 Fades the `element` from invisible to visible.
 
 <hr>
+
+Function signature:
+
+```python
+fade_in(element)
+```
 
 Parameters:
 
@@ -519,11 +609,17 @@ Example output:
 
 
 
-## fade_out(element)
+### `fade_out()`
 
 Fades the `element` from visible to invisible.
 
 <hr>
+
+Function signature:
+
+```python
+fade_out(element)
+```
 
 Parameters:
 
@@ -556,11 +652,17 @@ Example output:
 
 
 
-## get_input_value(element)
+### `get_input_value()`
 
 Gets the value of the input `element`.
 
 <hr>
+
+Function signature:
+
+```python
+get_input_value(element)
+```
 
 Parameters:
 
@@ -597,11 +699,17 @@ Example output:
 
 
 
-## keydown(function_to_run)
+### `keydown()`
 
 Runs `function_to_run` when a key is pressed. The key that is pressed will be passed as the first argument to `function_to_run` and will always be lowercase.
 
 <hr>
+
+Function signature:
+
+```python
+keydown(function_to_run)
+```
 
 Parameters:
 
@@ -632,11 +740,17 @@ Example output:
 
 
 
-## move_down(element, distance)
+### `move_down()`
 
 Moves the `element` down by the given `distance`.
 
 <hr>
+
+Function signature:
+
+```python
+move_down(element, distance)
+```
 
 Parameters:
 
@@ -675,11 +789,17 @@ Example output:
 
 
 
-## move_left(element, distance)
+### `move_left()`
 
 Moves the `element` left by the given `distance`.
 
 <hr>
+
+Function signature:
+
+```python
+move_left(element, distance)
+```
 
 Parameters:
 
@@ -718,11 +838,17 @@ Example output:
 
 
 
-## move_right(element, distance)
+### `move_right()`
 
 Moves the `element` right by the given `distance`.
 
 <hr>
+
+Function signature:
+
+```python
+move_right(element, distance)
+```
 
 Parameters:
 
@@ -761,11 +887,17 @@ Example output:
 
 
 
-## move_up(element, distance)
+### `move_up()`
 
 Moves the `element` up by the given `distance`.
 
 <hr>
+
+Function signature:
+
+```python
+move_up(element, distance)
+```
 
 Parameters:
 
@@ -804,11 +936,17 @@ Example output:
 
 
 
-## play_audio(element)
+### `play_audio()`
 
 Plays the audio that `element` represents.
 
 <hr>
+
+Function signature:
+
+```python
+play_audio(element)
+```
 
 Parameters:
 
@@ -827,7 +965,7 @@ play_audio(laugh_audio)
 
 
 
-## position_element(element, x, y)
+### `position_element()`
 
 Position the `element` at the given `x` and `y` position. The `x` and `y` arguments can be any `int`, or one of the position helpers:
 
@@ -837,6 +975,12 @@ Position the `element` at the given `x` and `y` position. The `x` and `y` argume
 |`y`      | `"top"`  | `"center"` | `"bottom"` |
 
 <hr>
+
+Function signature:
+
+```python
+position_element(element, x, y)
+```
 
 Parameters:
 
@@ -856,11 +1000,17 @@ position_element(taco_image, "center", 400)
 
 
 
-## set_background_color(color)
+### `set_background_color()`
 
 Sets the background color of the page to `color`.
 
 <hr>
+
+Function signature:
+
+```python
+set_background_color(color)
+```
 
 Parameters:
 
@@ -884,11 +1034,17 @@ Example output:
 
 
 
-## set_element_width(element, width)
+### `set_element_width()`
 
 Sets the `element` to the given `width`.
 
 <hr>
+
+Function signature:
+
+```python
+set_element_width(element, width)
+```
 
 Parameters:
 
@@ -923,11 +1079,17 @@ Example output:
 
 
 
-## set_font_size(element, font_size)
+### `set_font_size()`
 
 Sets the font size of the `element` to the given `font_size`.
 
 <hr>
+
+Function signature:
+
+```python
+set_font_size(element, font_size)
+```
 
 Parameters:
 
@@ -962,11 +1124,17 @@ Example output:
 
 
 
-## set_text_color(text_element, color)
+### `set_text_color()`
 
 Sets the `color` of the `text_element`.
 
 <hr>
+
+Function signature:
+
+```python
+set_text_color(text_element, color)
+```
 
 Parameters:
 
@@ -992,11 +1160,17 @@ Example output:
 
 
 
-## set_text_decoration(text_element, decoration_string)
+### `set_text_decoration()`
 
 Sets the text decoration of the given `text_element`.
 
 <hr>
+
+Function signature:
+
+```python
+set_text_decoration(text_element, decoration_string)
+```
 
 Parameters:
 
@@ -1024,11 +1198,17 @@ Read about different options for the decoration_string [here](https://developer.
 
 
 
-## set_timeout(function_to_run, time)
+### `set_timeout()`
 
 Runs `function_to_run` after `time` seconds.
 
 <hr>
+
+Function signature:
+
+```python
+set_timeout(function_to_run, time)
+```
 
 Parameters:
 
@@ -1058,11 +1238,17 @@ Example output:
 
 
 
-## update_text(text_element, new_text)
+### `update_text()`
 
 Changes the text in `text_element` to the `new_text`.
 
 <hr>
+
+Function signature:
+
+```python
+update_text(text_element, new_text)
+```
 
 Parameters:
 
@@ -1097,11 +1283,17 @@ Example output:
 
 
 
-## remove_element(element)
+### `remove_element()`
 
 Removes the `element` from the page.
 
 <hr>
+
+Function signature:
+
+```python
+remove_element(element)
+```
 
 Parameters:
 
@@ -1135,11 +1327,17 @@ Example output:
 
 
 
-## rotate_element(element, degrees)
+### `rotate_element()`
 
 Rotates the `element` by the given number of `degrees`.
 
 <hr>
+
+Function signature:
+
+```python
+rotate_element(element, degrees)
+```
 
 Parameters:
 
@@ -1174,11 +1372,17 @@ Example output:
 
 
 
-## vanish(element)
+### `vanish()`
 
 Removes the `element` from the page over a 1 second interval.
 
 <hr>
+
+Function signature:
+
+```python
+vanish(element)
+```
 
 Parameters:
 

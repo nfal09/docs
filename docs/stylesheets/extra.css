@@ -97,10 +97,6 @@ body .md-nav__title {
     vertical-align: middle;
 }
 
-.md-typeset pre>code {
-    margin-bottom: 24px;
-}
-
 .md-typeset h4:before,
 .md-typeset h5:before {
     content: "";
