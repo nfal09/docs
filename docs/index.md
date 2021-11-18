@@ -12,6 +12,4 @@ You can also use the <em>Search</em> bar if you have a specific topic in mind.
 
 ## Contributing
 
-This documentation is hosted on [GitHub](https://github.com/codewizardshq/docs/) and is open source, which means you can contribute directly if you find and issue or want to add a missing topic. 
-
-If you're not comfortable with making changes yourself, you can file an issue [here](https://github.com/codewizardshq/docs/issues) and someone will either implement your suggestions or reject them with comments.
+If you spot a typo or have a suggestion, you can file an issue[here](https://github.com/codewizardshq/docs/issues) and the project maintainers will reach out to you.
