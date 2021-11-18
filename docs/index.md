@@ -12,4 +12,4 @@ You can also use the <em>Search</em> bar if you have a specific topic in mind.
 
 ## Contributing
 
-If you spot a typo or have a suggestion, you can file an issue[here](https://github.com/codewizardshq/docs/issues) and the project maintainers will reach out to you.
+If you spot a typo or have a suggestion, you can file an issue [here](https://github.com/codewizardshq/docs/issues) and the project maintainers will reach out to you.
