@@ -211,6 +211,85 @@ Example Output:
 Let's take a nap.
 ```
 
+### Further reading
+
+- [Real Python - Conditional Statements in Python](https://realpython.com/python-conditional-statements/)
+- [Real Python - Using the `not` Boolean Operator in Python](https://realpython.com/python-not-operator/)
+- [Real Python - Using the `and` Boolean Operator in Python](https://realpython.com/python-and-operator/)
+- [Real Python - How to use the Python `or` Operator ](https://realpython.com/python-or-operator/)
+- [The Python Library Reference - Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+- [The Python Library Reference - Boolean Values](https://docs.python.org/3/library/stdtypes.html#boolean-values)
+- [The Python Library Reference - Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
+- [The Python Library Reference - Truth Value Testing](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+- [The Python Tutorial - `if` Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
+- [Think Python - Conditionals and Recursion](https://greenteapress.com/thinkpython2/html/thinkpython2006.html)
+
+
+
+
+
+## Data Types
+
+Every value has a data type in Python. The data type determines what kinds of operations you can perform on the value.
+
+<hr>
+
+### `bool`
+
+The `bool` data type represents a `True` or a `False` value:
+
+```python
+is_hungry = True
+is_thirsty = False
+```
+
+You normally won't use a `bool` directly, but instead will generate a `bool` through a conditional expression:
+
+```python
+age = 19
+
+# This generates `True`
+if age >= 18:
+    print("You are an adult!")
+
+
+# This generates `False`
+if age < 18:
+    print("You are a child.")
+```
+
+### `float`
+
+The `float` data type represents a decimal number:
+
+```python
+total_cost = 29.99
+```
+
+### `int`
+
+The `int` data type represents a whole number:
+
+```python
+num_tacos_eaten = 12
+```
+
+### `str`
+
+The `str` data type represents a text value:
+
+```python
+my_name = "Daniel"
+```
+
+### Further reading
+
+- [The Python Library Reference - Text Sequence Type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+- [The Python Library Reference - Numeric Types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
+- [Think Python - Values and Types](https://greenteapress.com/thinkpython2/html/thinkpython2002.html#sec10)
+- [Think Python - Strings](https://greenteapress.com/thinkpython2/html/thinkpython2009.html)
+
+
 
 ## Data Structures
 
