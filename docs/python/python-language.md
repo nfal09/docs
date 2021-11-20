@@ -20,6 +20,198 @@ You'll also find many *Further reading* sections, which pull from these excellen
 <hr>
 
 
+## Conditional Statements
+
+Conditional statements allow you to run a block of code when a boolean condition is true. 
+
+<hr>
+
+### `if`
+
+The `if` statement is the simplest form of conditional statement. If the expression to the right of the `if` keyword is `True`, the indented code block will execute:
+
+```python
+is_hungry = True
+
+if is_hungry:
+    print("You should eat!")
+
+```
+
+Example Output:
+
+```text
+You should eat!
+```
+
+Usually, a conditional expression uses [comparison operators](#comparison-operators) to generate a `bool` result:
+
+```python
+age = 19
+
+if age >= 18:
+    print("You are legally an adult, congrats!")
+
+```
+
+Example Output:
+
+```text
+You are legally an adult, congrats!
+```
+
+### `elif`
+
+The `elif` conditional statement is used to string a group of *logically related* conditional statements together. The first conditional expression that evaluates to `True` will run:
+
+```python
+favorite_food = "Tacos"
+
+if favorite_food == "Sushi":
+    print("We're going out for Japanese food to night!")
+elif favorite_food == "Pasta":
+    print("How about we eat some Italian food tonight?")
+elif favorite_food == "Tacos":
+    print("Time for some Mexican food!")
+elif favorite_food == "Samosa":
+    print("Let's eat Indian food tonight!")
+```
+
+Example Output:
+
+```text
+Time for some Mexican food!
+```
+
+### `else`
+
+The `else` conditional statement runs when all other conditional statements in a group are `False`:
+
+```python
+favorite_food = "Hot Dogs with Cream Cheese"
+
+if favorite_food == "Sushi":
+    print("We're going out for Japanese food to night!")
+elif favorite_food == "Pasta":
+    print("How about we eat some Italian food tonight?")
+elif favorite_food == "Tacos":
+    print("Time for some Mexican food!")
+elif favorite_food == "Samosa":
+    print("Let's eat Indian food tonight!")
+else:
+    print("I don't know what that favorite_food is!")
+```
+
+```text
+I don't know what that favorite_food is!
+```
+
+
+### `Comparison Operators`
+
+Here are the comparison operators that you can use in conditional expressions to generate a `bool` value:
+
+
+|Operator| Description               |
+|--------|---------------------------|
+| `>`    | Greater-than              |
+| `>=`   | Greater-than or equal-to  |
+| `<`    | Less-than                 |
+| `<=`   | Less-than or equal-to     |
+| `==`   | Equal-to                  |
+| `!=`   | Not equal-to              |
+
+
+### `Complex Conditional Statements`
+
+Complex conditional statements involve combining more than one conditional expression with [logical operators](#logical-operators):
+
+```python
+age = 15
+height_in_feet = 4.6
+
+if age >= 13 and height_in_feet > 5:
+    print("You may ride the roller coaster.")
+else:
+    print("You may NOT ride the roller coaster.")
+```
+
+Example Output:
+
+```text
+You may NOT ride the roller coaster.
+```
+
+### `Logical Operators`
+
+Logical operators allow you to combine multiple conditional expressions in a single conditional statement:
+
+|Operator| Description                                         |
+|--------|-----------------------------------------------------|
+| `and`  | `True` when both conditional expressions are `True` |
+| `or`   | `True` when either conditional expression is `True` |
+| `not`  | Reverses the value of a conditional expression      |
+
+#### Using the '`and`' operator
+
+The `and` operator evaluates to `True` when both conditional expressions are `True`:
+
+```python
+age = 15
+height_in_feet = 5.2
+
+if age >= 13 and height_in_feet > 5:
+    print("You may ride the roller coaster.")
+else:
+    print("You may NOT ride the roller coaster.")
+```
+
+Example Output:
+
+```text
+You may ride the roller coaster.
+```
+
+#### Using the '`or`' operator
+
+The `or` operator evaluates to `True` when either conditional expression is `True`:
+
+```python
+is_hungry = True
+is_thirsty = False
+
+if is_hungry or is_thirsty:
+    print("You should go to the kitchen.")
+else:
+    print("Do whatever, you're good!")
+```
+
+Example Output:
+
+```text
+You should go to the kitchen.
+```
+
+#### Using the '`not`' operator
+
+The `not` operator reverses a conditional expression:
+
+```python
+is_tired = True
+
+if not is_tired:
+    print("Let's go outside and play.")
+else:
+    print("Let's take a nap.")
+```
+
+Example Output:
+
+```text
+Let's take a nap.
+```
+
+
 ## Data Structures
 
 Data structures allow you to efficiently store and access groups of items.
@@ -476,6 +668,91 @@ The `print()` function displays text on the screen:
 
 ```python
 print("Hello, world!")  # Hello, world!
+```
+
+
+##### `range()`
+
+The `range()` function is mainly used for [counter-controlled repetition](#counter-controlled-repetition) with a `for` loop:
+
+```python
+for num in range(1, 4):
+    print(f"{num} potato")
+```
+
+Example Output:
+
+```text
+1 potato
+2 potato
+3 potato
+```
+
+
+##### `sorted()`
+
+The `sorted()` function is used to sort a `list`:
+
+```python
+names = ["danielj", "alecg", "dimas"]
+sorted_names = sorted(names)
+
+print(sorted_names)  # ['alecg', 'danielj', 'dimas']
+```
+
+You can pass keyword arguments to the `sorted()` function to customize the way the `list` is sorted.
+
+For example, the `key` argument can be a function to run on each item of the `list` before sorting:
+
+```python
+names = ["Danielj", "alecg", "Dimas"]
+sorted_names = sorted(names)
+
+# Notice how these aren't sorted correctly? Uppercase letters are "smaller"
+# than lowercase letters in the sorting algorithm that `sort()` uses!
+print(sorted_names)  # ['Danielj', 'Dimas', 'alecg']
+
+sorted_names = sorted(names, key=str.lower)
+
+# Now, everything is sorted correctly, and the original values haven't been
+# changed. `sort()` only uses the `key` function during the sorting process.
+print(sorted_names)  # ['alecg', 'Danielj', 'Dimas']
+```
+The `reverse` keyword argument of `sort()` is used to sort from high-to-low instead of low-to-high. It expects a `bool` value:
+
+```python
+names = ["danielj", "alecg", "dimas"]
+reverse_sorted_names = sorted(names, reverse=True)
+
+print(reverse_sorted_names)  # ['dimas', 'danielj', 'alecg']
+```
+
+##### `str()`
+
+The `str()` function turns its argument into a `str` data type. This comes in handy if you have a number but want to treat it like a `str`:
+
+```python
+meaning_of_life = 42
+print("The meaning of life is " + str(meaning_of_life)) 
+```
+
+Example Output:
+
+```text
+The meaning of life is 42
+```
+
+If you use `f-strings`, you don't have to worry about converting numbers to `str` when working with `str` data:
+
+```python
+meaning_of_life = 42
+print(f"The meaning of life is {meaning_of_life}")
+```
+
+Example Output:
+
+```text
+The meaning of life is 42
 ```
 
 
