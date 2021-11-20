@@ -20,6 +20,198 @@ You'll also find many *Further reading* sections, which pull from these excellen
 <hr>
 
 
+## Conditional Statements
+
+Conditional statements allow you to run a block of code when a boolean condition is true. 
+
+<hr>
+
+### `if`
+
+The `if` statement is the simplest form of conditional statement. If the expression to the right of the `if` keyword is `True`, the indented code block will execute:
+
+```python
+is_hungry = True
+
+if is_hungry:
+    print("You should eat!")
+
+```
+
+Example Output:
+
+```text
+You should eat!
+```
+
+Usually, a conditional expression uses [comparison operators](#comparison-operators) to generate a `bool` result:
+
+```python
+age = 19
+
+if age >= 18:
+    print("You are legally an adult, congrats!")
+
+```
+
+Example Output:
+
+```text
+You are legally an adult, congrats!
+```
+
+### `elif`
+
+The `elif` conditional statement is used to string a group of *logically related* conditional statements together. The first conditional expression that evaluates to `True` will run:
+
+```python
+favorite_food = "Tacos"
+
+if favorite_food == "Sushi":
+    print("We're going out for Japanese food to night!")
+elif favorite_food == "Pasta":
+    print("How about we eat some Italian food tonight?")
+elif favorite_food == "Tacos":
+    print("Time for some Mexican food!")
+elif favorite_food == "Samosa":
+    print("Let's eat Indian food tonight!")
+```
+
+Example Output:
+
+```text
+Time for some Mexican food!
+```
+
+### `else`
+
+The `else` conditional statement runs when all other conditional statements in a group are `False`:
+
+```python
+favorite_food = "Hot Dogs with Cream Cheese"
+
+if favorite_food == "Sushi":
+    print("We're going out for Japanese food to night!")
+elif favorite_food == "Pasta":
+    print("How about we eat some Italian food tonight?")
+elif favorite_food == "Tacos":
+    print("Time for some Mexican food!")
+elif favorite_food == "Samosa":
+    print("Let's eat Indian food tonight!")
+else:
+    print("I don't know what that favorite_food is!")
+```
+
+```text
+I don't know what that favorite_food is!
+```
+
+
+### `Comparison Operators`
+
+Here are the comparison operators that you can use in conditional expressions to generate a `bool` value:
+
+
+|Operator| Description               |
+|--------|---------------------------|
+| `>`    | Greater-than              |
+| `>=`   | Greater-than or equal-to  |
+| `<`    | Less-than                 |
+| `<=`   | Less-than or equal-to     |
+| `==`   | Equal-to                  |
+| `!=`   | Not equal-to              |
+
+
+### `Complex Conditional Statements`
+
+Complex conditional statements involve combining more than one conditional expression with [logical operators](#logical-operators):
+
+```python
+age = 15
+height_in_feet = 4.6
+
+if age >= 13 and height_in_feet > 5:
+    print("You may ride the roller coaster.")
+else:
+    print("You may NOT ride the roller coaster.")
+```
+
+Example Output:
+
+```text
+You may NOT ride the roller coaster.
+```
+
+### `Logical Operators`
+
+Logical operators allow you to combine multiple conditional expressions in a single conditional statement:
+
+|Operator| Description                                         |
+|--------|-----------------------------------------------------|
+| `and`  | `True` when both conditional expressions are `True` |
+| `or`   | `True` when either conditional expression is `True` |
+| `not`  | Reverses the value of a conditional expression      |
+
+#### Using the '`and`' operator
+
+The `and` operator evaluates to `True` when both conditional expressions are `True`:
+
+```python
+age = 15
+height_in_feet = 5.2
+
+if age >= 13 and height_in_feet > 5:
+    print("You may ride the roller coaster.")
+else:
+    print("You may NOT ride the roller coaster.")
+```
+
+Example Output:
+
+```text
+You may ride the roller coaster.
+```
+
+#### Using the '`or`' operator
+
+The `or` operator evaluates to `True` when either conditional expression is `True`:
+
+```python
+is_hungry = True
+is_thirsty = False
+
+if is_hungry or is_thirsty:
+    print("You should go to the kitchen.")
+else:
+    print("Do whatever, you're good!")
+```
+
+Example Output:
+
+```text
+You should go to the kitchen.
+```
+
+#### Using the '`not`' operator
+
+The `not` operator reverses a conditional expression:
+
+```python
+is_tired = True
+
+if not is_tired:
+    print("Let's go outside and play.")
+else:
+    print("Let's take a nap.")
+```
+
+Example Output:
+
+```text
+Let's take a nap.
+```
+
+
 ## Data Structures
 
 Data structures allow you to efficiently store and access groups of items.
