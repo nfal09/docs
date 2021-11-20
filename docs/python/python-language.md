@@ -479,6 +479,91 @@ print("Hello, world!")  # Hello, world!
 ```
 
 
+##### `range()`
+
+The `range()` function is mainly used for [counter-controlled repetition](#counter-controlled-repetition) with a `for` loop:
+
+```python
+for num in range(1, 4):
+    print(f"{num} potato")
+```
+
+Example Output:
+
+```text
+1 potato
+2 potato
+3 potato
+```
+
+
+##### `sorted()`
+
+The `sorted()` function is used to sort a `list`:
+
+```python
+names = ["danielj", "alecg", "dimas"]
+sorted_names = sorted(names)
+
+print(sorted_names)  # ['alecg', 'danielj', 'dimas']
+```
+
+You can pass keyword arguments to the `sorted()` function to customize the way the `list` is sorted.
+
+For example, the `key` argument can be a function to run on each item of the `list` before sorting:
+
+```python
+names = ["Danielj", "alecg", "Dimas"]
+sorted_names = sorted(names)
+
+# Notice how these aren't sorted correctly? Uppercase letters are "smaller"
+# than lowercase letters in the sorting algorithm that `sort()` uses!
+print(sorted_names)  # ['Danielj', 'Dimas', 'alecg']
+
+sorted_names = sorted(names, key=str.lower)
+
+# Now, everything is sorted correctly, and the original values haven't been
+# changed. `sort()` only uses the `key` function during the sorting process.
+print(sorted_names)  # ['alecg', 'Danielj', 'Dimas']
+```
+The `reverse` keyword argument of `sort()` is used to sort from high-to-low instead of low-to-high. It expects a `bool` value:
+
+```python
+names = ["danielj", "alecg", "dimas"]
+reverse_sorted_names = sorted(names, reverse=True)
+
+print(reverse_sorted_names)  # ['dimas', 'danielj', 'alecg']
+```
+
+##### `str()`
+
+The `str()` function turns its argument into a `str` data type. This comes in handy if you have a number but want to treat it like a `str`:
+
+```python
+meaning_of_life = 42
+print("The meaning of life is " + str(meaning_of_life)) 
+```
+
+Example Output:
+
+```text
+The meaning of life is 42
+```
+
+If you use `f-strings`, you don't have to worry about converting numbers to `str` when working with `str` data:
+
+```python
+meaning_of_life = 42
+print(f"The meaning of life is {meaning_of_life}")
+```
+
+Example Output:
+
+```text
+The meaning of life is 42
+```
+
+
 #### Further reading
 
 - [The Python Library Reference - Built-in Functions](https://docs.python.org/3/library/functions.html)
