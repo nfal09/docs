@@ -1,6 +1,6 @@
 site_name: CodeWizardsHQ Documentation
 # Set this whenever it's live
-site_url: docs.codewizardshq.com
+site_url: http://docs.codewizardshq.com
 
 plugins:
   - search # enabled by default, but needs to be added if anymore are added
