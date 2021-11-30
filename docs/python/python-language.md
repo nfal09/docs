@@ -1094,3 +1094,135 @@ Example Output:
 
 - [Real Python - Python `while` Loops](https://realpython.com/python-while-loop/)
 - [Think Python - The `while` statement](https://greenteapress.com/thinkpython2/html/thinkpython2008.html#sec84)
+
+
+
+
+## Modules
+
+Python is often called a batteries-included language because of the plethora of built-in modules that the language contains. Modules are just Python files full of functionality that you don't have to write yourself; you merely import the things you want from a module and use them in your programs.
+
+<hr>
+
+### Getting access to functions in modules
+
+To get a function from a module, you import it. There are several different types of imports, which we'll briefly cover below.
+
+#### Importing a single function
+
+```python
+from module_name import function_name
+```
+
+#### Importing multiple functions
+
+If you need to import multiple functions from a module, separate them by commas:
+
+```python
+from module_name import some_function, some_other_function
+```
+
+#### Importing all functions
+
+To import all items from a module (not recommended generally, but we do this in some courses like E24 and M112), use the `*` import syntax:
+
+```python
+from module_name import *
+```
+
+#### Renaming imported functions
+
+Sometimes, its nice to rename a function you import from a module. You can do this using the `as` keyword:
+
+```python
+from module_name import function_name as new_function_name
+```
+
+#### Further reading
+
+- [The Python Library Reference](https://docs.python.org/3/library/index.html)
+- [The Python Tutorial - Modules](https://docs.python.org/3/tutorial/modules.html)
+- [Real Python - Python Modules and Packages](https://realpython.com/python-modules-packages/)
+
+
+<hr>
+
+### Built-in modules
+
+Python comes with 100s of built-in modules. We'll briefly cover a few that are used often at CWHQ in this section. See the *Further Reading* section for details on where you can browse all of Python's built-in modules.
+
+#### random
+
+The `random` module is used to add randomness to your programs. 
+
+##### `Getting a random integer`
+
+You use the `randint()` function to get a random integer between two numbers:
+
+```python
+from random import randint
+
+# Get an integer between 1 and 10
+random_integer = randint(1, 10)
+print(random_integer)  # 3
+```
+
+##### `Getting a random value from a sequence`
+
+You use the `choice()` function to get a random value from a sequence (`str`, `list`, or `tuple`):
+
+```python
+from random import choice
+
+names = ["daniel", "alec", "dima"]
+random_name = choice(names)
+
+print(random_name)  # dima
+```
+
+#### Further reading
+
+- [The Python Standard Library](https://docs.python.org/3/library/index.html)
+- [The Python Standard Library - `random`](https://docs.python.org/3/library/random.html)
+
+
+
+## Variables
+
+Variables assign a name to a value. The naming convention in Python is to use *snake_case* for variable names, and *UPPER_SNAKE_CASE* for named constants.
+
+#### Creating a variable
+
+You create a variable by assigning a name to a value using the assignment operator (`=`):
+
+```python
+my_name = "Daniel"
+my_age = 35
+```
+
+#### Creating a named constant
+
+Named constants can replace *magic numbers* in your program.
+
+For example, what does `1` and `2` represent here?
+
+```python
+if user_choice == 1:
+    # Do something cool...
+elif user_choice == 2:
+    # Do another cool thing...
+
+```
+
+`1` and `2` in the example above are *magic numbers* because we would have to hunt down their meaning by reading more of the program. If we instead create a named constant for each, the meaning is clearer:
+
+```python
+ORDER_TACOS = 1
+ORDER_PIZZA = 2
+
+if user_choice == ORDER_TACOS:
+    # Order tacos...
+elif user_choice == ORDER_PIZZA:
+    # Order pizza
+
+```
