@@ -429,7 +429,17 @@ menu_prices = [4.50, 5.75, 3.00]
 ids = [184, 294, 832, 98, 4]
 ```
 
+You can write a list on multiple lines if you want. The trailing comma is recommended but not required:
 
+```python
+foods = [
+    "tacos", 
+    "pizza", 
+    "nachos",
+    "ice cream",
+    "asparagus",
+]
+```
 
 #### Accessing items in a `list`
 
