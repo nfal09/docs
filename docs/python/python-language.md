@@ -592,7 +592,7 @@ staff = {
 }
 ```
 
-#### Accessing items in a dict
+#### Accessing items in a `dict`
 
 You have to know the key to access an individual item in a `dict`:
 
@@ -614,7 +614,7 @@ print(f"Dima is a {dima_job}.")  # Dima is a Designer.
 ```
 
 
-#### Adding an item to a dict
+#### Adding an item to a `dict`
 
 You can add an item to a `dict` by providing the key/value pair (it's the same syntax as updating an item):
 
@@ -632,7 +632,7 @@ print(staff)  # {'danielj': 'Curriculum Developer', 'alecg': 'Curriculum Instruc
 ```
 
 
-#### Updating an item in a dict
+#### Updating an item in a `dict`
 
 To update an item in a `dict`, you must know the key:
 
@@ -650,7 +650,7 @@ print(staff)  # {'danielj': 'Burrito Taste-Tester', 'alecg': 'Curriculum Instruc
 
 
 
-#### Removing an item from a dict
+#### Removing an item from a `dict`
 
 To remove an item from a `dict`, use the `dict.pop()` method:
 
@@ -667,9 +667,9 @@ print(staff)  # {'alecg': 'Curriculum Instructor', 'dimas': 'Designer'}
 ```
 
 
-#### Looping through a dict
+#### Looping through a `dict`
 
-The previous example would be easier if we used a loop to print each user's job. To loop through a `dict`, you generally use the `dict.items()` method like this:
+To loop through a `dict`, you generally use the `dict.items()` method like this:
 
 ```python
 staff = {
@@ -696,9 +696,9 @@ dimas is a Designer.
 
 
 
-#### Getting the keys from a dict
+#### Getting the keys from a `dict`
 
-If you need to get all of the keys from a `dict`, use the `dict.keys()` method. Note, you'll need to cast the result to a `list`, which is why the `list()` function is used here:
+If you need to get all of the keys from a `dict`, use the `dict.keys()` method. Note, you'll usually want to cast the result to a `list`, which is why the `list()` function is used here:
 
 
 ```python
@@ -719,9 +719,9 @@ Example Output:
 Here are all the names in the staff dict: ['danielj', 'alecg', 'dimas']
 ```
 
-#### Getting the values from a dict
+#### Getting the values from a `dict`
 
-If you need to get all of the keys from a `dict`, use the `dict.values()` method. Note, you'll need to cast the result to a `list`, which is why the `list()` function is used here:
+If you need to get all of the keys from a `dict`, use the `dict.values()` method. Note, you'll usually want to cast the result to a `list`, which is why the `list()` function is used here:
 
 
 ```python
@@ -742,7 +742,7 @@ Example Output:
 Here are all the jobs in the staff dict: ['Curriculum Developer', 'Curriculum Instructor', 'Designer']
 ```
 
-#### Getting the number of items in a dict
+#### Getting the number of items in a `dict`
 
 You can use the `len()` function to get the number of items in a `dict`:
 
@@ -777,7 +777,7 @@ print(f"We have {number_of_staff} people on our staff.")  # We have 3 people on 
 
 ## Functions
 
-Functions allow you to group related statements together to perform a task. 
+Functions allow you to group related statements together to perform a task. They help to implement the __D.R.Y.__(Don't Repeat Yourself) principle because they reduce unnecessary repetition.
 
 
 ### Built-in functions
@@ -915,6 +915,7 @@ Example Output:
 3 potato
 ```
 
+Note that the last number is 3 in the example above, not 4!
 
 ##### `sorted()`
 
@@ -997,7 +998,7 @@ The meaning of life is 42
 
 ### User-defined functions
 
-You define a function using the `def` keyword:
+You define a function using the `def` keyword, and function definitions go at the TOP of your file:
 
 ```python
 def say_hello():
@@ -1031,7 +1032,7 @@ def say_hello(name):
 
 #### Passing arguments to a function
 
-If a function accepts parameters, you need to pass them in when you call the function:
+If a function accepts parameters, you need to pass them in when you call the function. The values you pass to the function are called the *arguments* to the function:
 
 
 ```python
@@ -1055,7 +1056,7 @@ def add(number_1, number_2):
 
 #### Capturing a function's return value
 
-If a function returns a value, you should capture it in a varible:
+If a function returns a value, you can capture it in a varible:
 
 ```python
 def add(number_1, number_2):
@@ -1067,7 +1068,7 @@ total = add(2, 3)
 print(total)  # 5
 ```
 
-You can also use the value immediately in a `print()` statement:
+You can also use the value immediately in another function, like `print()`:
 
 ```python
 def add(number_1, number_2):
@@ -1078,6 +1079,36 @@ def add(number_1, number_2):
 print(add(2, 3))  # 5
 print(f"2 + 3 = {add(2, 3)}")  # 2 + 3 = 5
 ```
+
+
+#### Indentation in functions
+
+The base-level of indentation in a function is 4 spaces. If you have another statement inside your function that also requires indentation (like a conditional statement or loop), you need to indent the body of that statement by 4 more spaces:
+
+```python
+def say_hello(name):
+    print(f"Hello, {name}!")
+    if name == "Daniel":
+        print("That's a cool name!")
+    else:
+        print("Nice to meet you!")
+
+
+say_hello("Daniel")
+say_hello("Alec")
+```
+
+Example Output:
+
+```text
+Hello, Daniel!
+That's a cool name!
+
+Hello, Alec!
+Nice to meet you!
+```
+
+
 
 #### Further reading
 
@@ -1268,12 +1299,12 @@ Example Output:
 
 ## Math Operations
 
-Python is used heavily in math-related fields, so there is a large suite of tools for performing mathematical operations built-in to the language.
+Python is used heavily in math-related fields, so there are a large suite of tools for performing mathematical operations built-in to the language.
 
 
 ### Arithmetic Operators
 
-The four basic arithmetic operations (addition, subtraction, multiplication, division) are similar to how you would use them with calculator. 
+The four basic arithmetic operations (addition, subtraction, multiplication, division) are similar to how you would use them with calculator:
 
 ```python
 total = 8 + 2
@@ -1281,26 +1312,17 @@ difference = 8 - 2
 product = 8 * 2
 quotient = 8 / 2
 
-print(f"8 + 2 = {total}")
-print(f"8 - 2 = {difference}")
-print(f"8 * 2 = {product}")
-print(f"8 / 2 = {quotient}")
+print(f"8 + 2 = {total}")       # 8 + 2 = 10
+print(f"8 - 2 = {difference}")  # 8 - 2 = 6
+print(f"8 * 2 = {product}")     # 8 * 2 = 16
+print(f"8 / 2 = {quotient}")    # 8 / 2 = 4.0
 ```
 
-Example Output:
-
-```text
-8 + 2 = 10
-8 - 2 = 6
-8 * 2 = 16
-8 / 2 = 4.0
-```
-
-Note that in the example above, division *always* produces a `float`.
+Note that in the example above, division *always* produces a `float`. 
 
 #### Arithmetic only works between numbers
 
-Both data types *must* be numeric data types, you __cannot__ perform arithmetic between `str` and any number.
+Both data types *must* be numeric data types, you __cannot__ perform arithmetic between a `str` and a number.
 
 ```python
 num_tacos =  2  + "1"  # no
@@ -1335,6 +1357,8 @@ To get a function from a module, you import it. There are several different type
 
 #### Importing a single function
 
+To import a single function, just write the function name (without parentheses) after the `import` keyword:
+
 ```python
 from module_name import function_name
 ```
@@ -1349,7 +1373,7 @@ from module_name import some_function, some_other_function
 
 #### Importing all functions
 
-To import all items from a module (not recommended generally, but we do this in some courses like E24 and M112), use the `*` import syntax:
+To import all items from a module (not recommended generally, but we do this in some courses like E24 and M11), use the `*` import syntax:
 
 ```python
 from module_name import *
@@ -1357,10 +1381,10 @@ from module_name import *
 
 #### Renaming imported functions
 
-Sometimes, its nice to rename a function you import from a module. You can do this using the `as` keyword:
+Sometimes, its nice to rename a function you import from a module (like when the function name is really long or confusing). You can do this using the `as` keyword:
 
 ```python
-from module_name import function_name as new_function_name
+from module_name import some_really_long_function_name as short_name
 ```
 
 #### Further reading
@@ -1497,6 +1521,24 @@ score += 1 	  # 1 + 1
 
 print(score)  # 2
 ```
+
+
+#### Global variables
+
+Any variable created outside of function definition is considered a `global` variable. If you want to modify a `global` variable from *inside* a function definition, you need to use the `global` keyword:
+
+```python
+# This is a global variable
+score = 0 
+
+def update_score():
+    # Must do this to modify the variable
+    global score
+    # Now this is OK
+    score = score + 1	# 2
+```
+
+
 
 ### Further reading
 
