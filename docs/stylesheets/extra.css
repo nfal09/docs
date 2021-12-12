@@ -44,7 +44,7 @@ body .md-nav__title {
     font-size: 1.5em;
 }
 
-.md-typeset h3 code {
+.md-typeset h3, .md-typeset h3 code {
     color: #a0cfff;
     font-size: 1.4em;
 }
@@ -58,6 +58,11 @@ body .md-nav__title {
     color: #a0cfff;
     font-size: 1.3em;
     text-transform: none;
+}
+
+.md-typeset h6 {
+    color: #a0cfff;
+    font-size: 1em;
 }
 
 .md-footer__direction {
@@ -97,6 +102,7 @@ body .md-nav__title {
     vertical-align: middle;
 }
 
+.md-typeset h3:before,
 .md-typeset h4:before,
 .md-typeset h5:before {
     content: "";

@@ -17,14 +17,17 @@ You'll also find many *Further reading* sections, which pull from these excellen
 - [Python.org Documentation](https://www.python.org/doc/)
 - [RealPython.com](https://realpython.com/)
 - [Think Python](https://greenteapress.com/wp/think-python-2e/)
+
 <hr>
+
+
+
+
 
 
 ## Conditional Statements
 
 Conditional statements allow you to run a block of code when a boolean condition is true. 
-
-<hr>
 
 ### `if`
 
@@ -62,7 +65,7 @@ You are legally an adult, congrats!
 
 ### `elif`
 
-The `elif` conditional statement is used to string a group of *logically related* conditional statements together. The first conditional expression that evaluates to `True` will run:
+The `elif` conditional statement is used to group *logically related* conditional statements together. The first conditional expression that evaluates to `True` will run:
 
 ```python
 favorite_food = "Tacos"
@@ -85,7 +88,7 @@ Time for some Mexican food!
 
 ### `else`
 
-The `else` conditional statement runs when all other conditional statements in a group are `False`:
+The `else` conditional statement runs when all other conditional statements in a group are `False`. You can think of it as the *default* option:
 
 ```python
 favorite_food = "Hot Dogs with Cream Cheese"
@@ -152,7 +155,7 @@ Logical operators allow you to combine multiple conditional expressions in a sin
 | `or`   | `True` when either conditional expression is `True` |
 | `not`  | Reverses the value of a conditional expression      |
 
-#### Using the '`and`' operator
+#### Using the `and` operator
 
 The `and` operator evaluates to `True` when both conditional expressions are `True`:
 
@@ -172,7 +175,7 @@ Example Output:
 You may ride the roller coaster.
 ```
 
-#### Using the '`or`' operator
+#### Using the `or` operator
 
 The `or` operator evaluates to `True` when either conditional expression is `True`:
 
@@ -192,7 +195,7 @@ Example Output:
 You should go to the kitchen.
 ```
 
-#### Using the '`not`' operator
+#### Using the `not` operator
 
 The `not` operator reverses a conditional expression:
 
@@ -224,15 +227,20 @@ Let's take a nap.
 - [The Python Tutorial - `if` Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
 - [Think Python - Conditionals and Recursion](https://greenteapress.com/thinkpython2/html/thinkpython2006.html)
 
+<hr>
+
+
+
+
+
 
 
 
 
 ## Data Types
 
-Every value has a data type in Python. The data type determines what kinds of operations you can perform on the value.
+Every value has a data type in Python. The data type determines what kinds of operations you can perform on the value. For example, you [can't perform arithmetic](#arithmetic-only-works-between-numbers) between values that aren't numeric data types.
 
-<hr>
 
 ### `bool`
 
@@ -274,32 +282,144 @@ The `int` data type represents a whole number:
 num_tacos_eaten = 12
 ```
 
+#### Converting `str` to `int`
+
+You can use the `int()` function to convert a `str` to an `int`:
+
+```python
+age = int("13")
+```
+
+This is often combined with the `input()` function when you prompt the user for a numeric data type:
+
+```python
+age = int(input("How old are you? "))
+```
+
 ### `str`
 
 The `str` data type represents a text value:
 
 ```python
-my_name = "Daniel"
+name = "Daniel"
 ```
+
+#### String concatenation
+
+If you need to combine a variable and a `str`, you can use the `+` operator. This technique is called __string concatenation__:
+
+```python
+name = "Daniel"
+greeting = "Hello, " + name
+
+print(greeting) # Hello, Daniel
+```
+
+#### String interpolation
+
+Another way to combine a variable and a `str` is using `f-strings`. This technique is called __string interpolation__, and it is the preferred way to combine variables and `str`:
+
+```python
+name = "Daniel"
+age = 35
+
+print(f"I'm {name} and I'm {age} years old.")
+```
+
+Example Output:
+
+```text
+I'm Daniel and I'm 35 years old.
+```
+
+#### Multiline strings
+
+Multiline strings allow you to write large blocks of text in a single `print()` statement:
+
+```python
+menu = """
+    Welcome to Dan's Taco Stand!
+
+    Tacos       $2
+    Burritos    $5
+    Nachos      $3
+
+    Place your order by clicking *Order Now*
+"""
+
+print(menu)
+```
+
+Example Output:
+
+```text
+    Welcome to Dan's Taco Stand!
+
+    Tacos       $2
+    Burritos    $5
+    Nachos      $3
+
+    Place your order by clicking *Order Now*
+```
+
+#### Raw strings
+
+Raw strings (`str` prefaced with an `r`) tell Python to not interpret special `str` characters. You use them in CWHQ courses to print ASCII art and ensure it formats correctly. 
+
+Generally, `r` strings will also be multiline strings, but this isn't required:
+
+```python
+mr_nibbles = r"""
+        |\---/|
+        | o_o |
+         \_^_/
+"""
+
+print(mr_nibbles)
+```
+
+Example Output:
+
+```text
+
+        |\---/|
+        | o_o |
+         \_^_/
+
+```
+
 
 ### Further reading
 
 - [The Python Library Reference - Text Sequence Type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 - [The Python Library Reference - Numeric Types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
+- [The Python Tutorial - Strings](https://docs.python.org/3/tutorial/introduction.html#strings)
 - [Think Python - Values and Types](https://greenteapress.com/thinkpython2/html/thinkpython2002.html#sec10)
 - [Think Python - Strings](https://greenteapress.com/thinkpython2/html/thinkpython2009.html)
+- [Real Python - Python 3's f-Strings](https://realpython.com/python-f-strings/)
+- [Real Python - Strings and Character Data in Python](https://realpython.com/python-strings/)
+
+<hr>
+
+
+
+
+
+
+
+
+
 
 
 
 ## Data Structures
 
-Data structures allow you to efficiently store and access groups of items.
+Data structures allow you to efficiently store and access groups of items. Think of them like different storage containers you may use around the house.
 
-<hr>
 
 ### `list`
 
-The `list` data structure is used to store data in ordered "slots". It is known as *mutable sequence type*, which means it can be modified after creation.
+The `list` data structure is used to store data in ordered *slots*. It is known as *mutable sequence type*, which means it can be modified after creation.
 
 Usually, the items in a `list` are homogeneous, which means they represent a group of similar items of the same data type:
 
@@ -311,7 +431,7 @@ ids = [184, 294, 832, 98, 4]
 
 
 
-#### Accessing items in a list
+#### Accessing items in a `list`
 
 You can access individual items in a `list` using the `[]` characters and the index number of the item. The index numbers start at 0:
 
@@ -325,9 +445,9 @@ print(names[2])  # dimas
 
 
 
-#### Adding an item to a list
+#### Adding an item to a `list`
 
-To add an item to a `list` after it has been created, you can use the `list.append()` method. This adds the item to the end of the list:
+To add an item to a `list` after it has been created, you can use the `list.append()` method. The `list.append()` method adds the item to the end of the list:
 
 ```python
 names = ["alecg", "danielj", "dimas"]
@@ -339,7 +459,7 @@ print(names)  # ['alecg', 'danielj', 'dimas', 'samh']
 
 
 
-#### Updating an item in a list
+#### Updating an item in a `list`
 
 To update a `list` item, replace the value at the index:
 
@@ -352,7 +472,7 @@ print(names)  # ['alecg', 'django', 'dimas']
 ```
 
 
-#### Removing an item from a list
+#### Removing an item from a `list`
 
 To remove an item from a `list`, you can use the `list.remove()` method:
 
@@ -374,9 +494,9 @@ names.pop(0)
 print(names)  # ['danielj', 'dimas']
 ```
 
-#### Looping through a list
+#### Looping through a `list`
 
-To loop through the items in a `list`, use a [`for`](#for) loop. Note the convention of a plural `list` (names) and a singular loop-iteration variable (name):
+To loop through the items in a `list`, use a [`for`](#for) loop. Note the convention of using the plural `names` for the `list` and the singular `name` for the loop-iteration variable:
 
 ```python
 names = ["alecg", "danielj", "dimas"]
@@ -396,9 +516,9 @@ dimas
 ```
 
 
-#### Getting the number of items in a list
+#### Getting the number of items in a `list`
 
-To get the number of item in a list, use the `len()` function:
+To get the number of items in a `list`, use the [`len()`](#len) function:
 
 ```python
 names = ["alecg", "danielj", "dimas"]
@@ -408,9 +528,9 @@ num_names = len(names)
 print(num_names)  # 3
 ```
 
-#### Checking if an item is contained in a list
+#### Checking if an item is contained in a `list`
 
-To check if an item is contained in a list, use the `in` operator:
+To check if an item is contained in a `list`, use the `in` operator:
 
 ```python
 names = ["alecg", "danielj", "dimas"]
@@ -452,7 +572,12 @@ samh is NOT in the 'names' list
 - [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
 - [Think Python - Lists](https://greenteapress.com/thinkpython2/html/thinkpython2011.html)
 
-<hr>
+
+
+
+
+
+
 
 
 ### `dict`
@@ -642,15 +767,18 @@ print(f"We have {number_of_staff} people on our staff.")  # We have 3 people on 
 - [The Python Tutorial - Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 - [Think Python - Dictionaries](https://greenteapress.com/thinkpython2/html/thinkpython2012.html)
 
-
 <hr>
+
+
+
+
+
 
 
 ## Functions
 
 Functions allow you to group related statements together to perform a task. 
 
-<hr>
 
 ### Built-in functions
 
@@ -749,6 +877,26 @@ The `print()` function displays text on the screen:
 print("Hello, world!")  # Hello, world!
 ```
 
+###### Using special characters with `print()`
+
+You can use special characters such as `\n` and `\t` to format the text a bit. The `\n` adds a newline (like hitting __enter__ on your keyboard) and the `\t` adds a tab:
+
+```python
+print("Line 1\nLine 2\nLine 3\n")
+print("\tThis is tabbed over\n\tThis too.")
+```
+
+Example Output:
+
+```text
+Line 1
+Line 2
+Line 3
+
+        This is tabbed over
+        This too.
+```
+
 
 ##### `range()`
 
@@ -842,7 +990,10 @@ The meaning of life is 42
 
 
 
-<hr>
+
+
+
+
 
 ### User-defined functions
 
@@ -945,7 +1096,6 @@ print(f"2 + 3 = {add(2, 3)}")  # 2 + 3 = 5
 
 If you need to repeat something in your programs, you'll need to use one of Python's looping mechanisms.
 
-<hr>
 
 ### `for`
 
@@ -1011,7 +1161,20 @@ Example Output:
 - [The Python Tutorial - The `range()` function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
 - [Think Python - Traversal with a `for` loop](https://greenteapress.com/thinkpython2/html/thinkpython2009.html#sec94)
 
-<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### `while`
 
@@ -1096,13 +1259,75 @@ Example Output:
 - [Think Python - The `while` statement](https://greenteapress.com/thinkpython2/html/thinkpython2008.html#sec84)
 
 
+<hr>
+
+
+
+
+
+
+## Math Operations
+
+Python is used heavily in math-related fields, so there is a large suite of tools for performing mathematical operations built-in to the language.
+
+
+### Arithmetic Operators
+
+The four basic arithmetic operations (addition, subtraction, multiplication, division) are similar to how you would use them with calculator. 
+
+```python
+total = 8 + 2
+difference = 8 - 2
+product = 8 * 2
+quotient = 8 / 2
+
+print(f"8 + 2 = {total}")
+print(f"8 - 2 = {difference}")
+print(f"8 * 2 = {product}")
+print(f"8 / 2 = {quotient}")
+```
+
+Example Output:
+
+```text
+8 + 2 = 10
+8 - 2 = 6
+8 * 2 = 16
+8 / 2 = 4.0
+```
+
+Note that in the example above, division *always* produces a `float`.
+
+#### Arithmetic only works between numbers
+
+Both data types *must* be numeric data types, you __cannot__ perform arithmetic between `str` and any number.
+
+```python
+num_tacos =  2  + "1"  # no
+num_tacos = "2" + "1"  # no
+
+num_tacos = "1" *  3   # no
+num_tacos = "1" * "3"  # no
+```
+
+
+#### Further reading
+
+- [The Python Tutorial - Numbers](https://docs.python.org/3/tutorial/introduction.html#numbers)
+- [Real Python - Numbers in Python](https://realpython.com/python-numbers/)
+
+<hr>
+
+
+
+
+
 
 
 ## Modules
 
 Python is often called a batteries-included language because of the plethora of built-in modules that the language contains. Modules are just Python files full of functionality that you don't have to write yourself; you merely import the things you want from a module and use them in your programs.
 
-<hr>
 
 ### Getting access to functions in modules
 
@@ -1145,7 +1370,14 @@ from module_name import function_name as new_function_name
 - [Real Python - Python Modules and Packages](https://realpython.com/python-modules-packages/)
 
 
-<hr>
+
+
+
+
+
+
+
+
 
 ### Built-in modules
 
@@ -1184,6 +1416,17 @@ print(random_name)  # dima
 
 - [The Python Standard Library](https://docs.python.org/3/library/index.html)
 - [The Python Standard Library - `random`](https://docs.python.org/3/library/random.html)
+
+<hr>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1226,3 +1469,36 @@ elif user_choice == ORDER_PIZZA:
     # Order pizza
 
 ```
+
+#### Increasing the value of a variable
+
+You can increase the value stored in a variable like this:
+
+```python
+score = 0
+score = score + 1 	# 0 + 1
+
+print(score) 		# 1
+
+score = score + 1 	# 1 + 1
+
+print(score) 		# 2
+```
+
+There's also a shorthand notation that works the same way:
+
+```python
+score = 0
+score += 1 	  # 0 + 1
+
+print(score)  # 1
+
+score += 1 	  # 1 + 1
+
+print(score)  # 2
+```
+
+### Further reading
+
+- [Real Python - Variables in Python](https://realpython.com/python-variables/)
+- [Think Python - Variables, expressions and statements](https://greenteapress.com/thinkpython2/html/thinkpython2003.html)
