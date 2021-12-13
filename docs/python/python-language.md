@@ -21,6 +21,63 @@ You'll also find many *Further reading* sections, which pull from these excellen
 <hr>
 
 
+## Comments
+
+Programmers use comments to make notes in their source code for themselves or other programmers that will read their code later. They can also be used to "deactivate" lines of code that you don't want to run while you're working on a program.
+
+### Single Line Comments
+
+Single line comments begin with the `#` character. You can put them above or to the right of the line of code they reference:
+
+```python
+# Validate the user is logged in and redirect them to the appropriate page.
+if is_logged_in(user):
+    redirect_to_homepage()
+else:
+    redirect_to_login()
+
+
+MIN_HEIGHT = 60  # This is measured in inches, not feet!
+```
+
+### Deactivating Code
+
+You can deactivate sections of code with comments:
+
+```python
+if age < 18:
+    # Turning this off for now
+    # prompt_user()
+    redirect_to_kid_zone()
+else:
+    login_user()
+
+```
+
+### Multiline Comments
+
+You can use multiline strings if you want to make a multiline comment:
+
+```python
+"""
+This calculates the hypotenuse of a right triangle when given the sides
+of the right triangle. It's the Pythagorean Theorem. The ** is how you
+write exponents in Python, and fractional exponents are like roots,
+so 0.5 is the square root.
+"""
+hypotenuse = ((side_a ** 2) + (side_b ** 2)) ** 0.5
+```
+
+### Further reading
+
+- [The Python Tutorial](https://docs.python.org/3/tutorial/introduction.html#an-informal-introduction-to-python)
+- [Real Python - Writing Comments in Python](https://realpython.com/python-comments-guide/)
+- [Think Python - Comments](https://greenteapress.com/thinkpython2/html/thinkpython2003.html#sec22)
+
+<hr>
+
+
+
 
 
 
@@ -1340,6 +1397,35 @@ num_tacos = "2" + "1"  # no
 
 num_tacos = "1" *  3   # no
 num_tacos = "1" * "3"  # no
+```
+
+
+### Other Operators
+
+There are a few other common operators that Pythonistas use when performing math in Python. 
+
+#### Modulo
+
+The modulo operator (`%`) returns the remainder after division:
+
+```python
+10 % 3  # 1
+```
+
+#### Power
+
+The power operator (`**`) multiplies a number by itself a given number of times:
+
+```python
+3 ** 2  # 9
+```
+
+#### Floor division
+
+The floor division operator (`//`) removes any fractional portion after divison:
+
+```python
+10 // 3  # 3
 ```
 
 
