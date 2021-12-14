@@ -271,6 +271,27 @@ Example Output:
 Let's take a nap.
 ```
 
+### Nested Conditional Statements
+
+Conditional statements can be nested inside other conditional statements. You just have to follow the same indentation rules for each nested conditional block:
+
+```python
+role = "admin"
+
+if role == "admin" or role == "developer":
+    print("You can see the secret stuff in this app.")
+    if role == "admin":
+        print("You can also see the SUPER secret stuff in this app.")
+```
+
+Example Output:
+
+```text
+You can see the secret stuff in this app.
+You can also see the SUPER secret stuff in this app.
+```
+
+
 ### Further reading
 
 - [Real Python - Conditional Statements in Python](https://realpython.com/python-conditional-statements/)
@@ -308,7 +329,9 @@ is_hungry = True
 is_thirsty = False
 ```
 
-You normally won't use a `bool` directly, but instead will generate a `bool` through a conditional expression:
+#### Generating `bool` in a conditional statement
+
+You normally won't use a `bool` directly, but instead will generate a `bool` in a conditional statement:
 
 ```python
 age = 19
@@ -322,6 +345,46 @@ if age >= 18:
 if age < 18:
     print("You are a child.")
 ```
+
+#### Truthy and falsy values
+
+Booleans are not the only values that can be True/False. Every value in Python is either *truthy* or *falsy*, which means they can be used in conditional statements without a boolean comparison operation. Empty strings and the number 0 are *falsy*, and all other strings and numbers are *truthy*.
+
+Here's an example of a *falsy* value:
+
+```python
+username = ""
+
+if username:
+    print(f"Hello, {username}!")
+else:
+    print("The username is blank")
+```
+
+Example Output:
+
+```text
+The username is blank
+```
+
+Here's an example of a *truthy* value:
+
+```python
+num_bananas = 2
+
+if num_bananas:
+    print("We have bananas!")
+else:
+    print("We have no bananas!")
+```
+
+Example Output:
+
+```text
+We have bananas!
+```
+
+
 
 ### `float`
 
@@ -1304,6 +1367,8 @@ What is the meaning of life? 42
 That's correct!
 ```
 
+#### Using `break` to exit a loop
+
 You can also use a `break` statement instead of using a variable to control how many times an indefinite `while` loop runs:
 
 ```python
@@ -1350,6 +1415,12 @@ Example Output:
 3
 4
 ```
+
+
+
+
+
+
 
 #### Further reading
 
@@ -1590,9 +1661,9 @@ elif user_choice == ORDER_PIZZA:
 
 ```
 
-#### Increasing the value of a variable
+#### Updating the value of a variable
 
-You can increase the value stored in a variable like this:
+You can update the value stored in a variable like this:
 
 ```python
 score = 0
@@ -1605,7 +1676,22 @@ score = score + 1 	# 1 + 1
 print(score) 		# 2
 ```
 
-There's also a shorthand notation that works the same way:
+The same works for decreasing the value of a variable:
+
+
+```python
+score = 3
+score = score - 1 	# 3 - 1
+
+print(score) 		# 2
+
+score = score - 1 	# 2 - 1
+
+print(score) 		# 1
+```
+
+
+There's also a shorthand notation:
 
 ```python
 score = 0
@@ -1616,6 +1702,14 @@ print(score)  # 1
 score += 1 	  # 1 + 1
 
 print(score)  # 2
+
+score -= 1    # 2 - 1
+
+print(score)  # 1
+
+score -= 1    # 1 - 1
+
+print(score)  # 0
 ```
 
 
