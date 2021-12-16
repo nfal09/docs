@@ -508,6 +508,41 @@ Example Output:
 
 ```
 
+#### Getting the number of characters in a `str`
+
+You can use the `len()` function to get the number of characters in a `str`:
+
+```python
+name = "Daniel"
+
+len(name)  # 6
+```
+
+#### Checking if a `str` ends with a set of characters
+
+The `str.endswith()` method lets you check if a `str` ends with a given pattern:
+
+```python
+email_addresses = ["djs@cwhq.com", "alecg@auburn.edu", "samh@bridges.com"]
+
+for email_address in email_addresses:
+    if email_address.endswith(".edu"):
+        print(f"{email_address} is a school address")
+    elif email_address.endswith("cwhq.com"):
+        print(f"{email_address} is a CWHQ employee address")
+    else:
+        print(f"I don't know what {email_address} is for")
+        
+```
+
+Example Output:
+
+```text
+djs@cwhq.com is a CWHQ employee address
+alecg@auburn.edu is a school address
+I don't know what sam@bridges.com is for
+```
+
 
 ### Further reading
 
@@ -691,6 +726,8 @@ Example Output:
 alecg is in the 'names' list
 samh is NOT in the 'names' list
 ```
+
+
 
 
 
@@ -1027,6 +1064,27 @@ Line 3
         This too.
 ```
 
+###### Using the splat (`*`) operator to print a `list`
+
+You an use the splat (`*`) operator to print the items of a `list`:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+print(*names)  # alecg danielj dimas
+```
+
+###### Using the `sep` parameter
+
+The `sep` parameter of `print()` let's you specifiy a given separator to add between each item passed to `print()`. It is commonly used in combination with the splat (`*`) operator to print the items of a `list` with a given separator between each item:
+
+```python
+names = ["alecg", "danielj", "dimas"]
+
+print(*names, sep=" -- ")  # alecg -- danielj -- dimas
+```
+
+
 
 ##### `range()`
 
@@ -1046,6 +1104,27 @@ Example Output:
 ```
 
 Note that the last number is 3 in the example above, not 4!
+
+###### Using the `step` parameter of the `range()` function
+
+The `range()` function takes a third argument, `step`, which allows you to generate sequences of numbers separated by a given step:
+
+```python
+for num in range(1, 11, 3):
+    print(num)
+
+```
+
+Example Output:
+
+```text
+1
+4
+7
+10
+```
+
+
 
 ##### `sorted()`
 
@@ -1239,6 +1318,25 @@ Nice to meet you!
 ```
 
 
+#### Using an early `return` statement to exit a function
+
+A `return` statement can be used to exit a function. This is normally used when you want to verify (with a conditional statement) that some preconditions are valid before continuing to execute a function body:
+
+```python
+def greet_codewizard(name):
+    if name not in ["danielj", "alecg", "dimas"]:
+        print("I don't know you!")
+        return
+    
+    print(f"Hello, {name}!")
+
+
+greet_codewizard("danielj")  # Hello, danielj!
+greet_codewizard("django")   # I don't know you!
+
+```
+
+
 
 #### Further reading
 
@@ -1314,6 +1412,89 @@ Example Output:
 2 potato
 3 potato
 ```
+
+
+#### Searching for a value in a `for` loop
+
+You can use a conditional statement inside a `for` loop to search for a particular item in a `list` and then do something. Note the indentation:
+
+```python
+fruits = ["orange", "banana", "cherry", "apple"]
+
+for fruit in fruits:
+    if fruit == "orange":
+        print(f"{fruit} is the best fruit")
+```
+
+Example Output:
+
+```text
+orange is the best fruit
+```
+
+
+#### Finding a value in a `for` loop to use after the loop finishes
+
+You can store an item from the `for` loop for later use by creating a variable before the `for` loop with some default value.
+
+```python
+fruits = ["orange", "banana", "cherry", "apple"]
+
+# The best_fruit will be a str, so the empty str is a good default.
+best_fruit = ""
+
+for fruit in fruits:
+    if fruit == "orange":
+        best_fruit = fruit
+
+
+# The best fruit is orange.
+print(f"The best fruit is {best_fruit}.")
+```
+
+
+
+#### Creating a new `list` in a `for` loop
+
+Often, you'll want to loop through a `list` and build a new `list` from the contents of the original `list`. This technique is called mapping, and it's a common thing to do with `lists` and `for` loops:
+
+```python
+prices = [10, 12, 5, 8]
+discounted_prices = []
+
+for price in prices:
+    discounted_price = price - (price * .10)
+    discounted_prices.append(discounted_price)
+
+
+# Here are your discounted prices:[9, 10.8, 4.5, 7.2]
+print(f"Here are your discounted prices: {discounted_prices}")
+```
+
+#### Creating a `list` of a pre-determined size with a `for` loop
+
+Using a `for` loop and the `range()` function, you can fill a `list` to a pre-determined size:
+
+```python
+fruits = []
+
+for num in range(1,5):
+    fruit = input(f"Enter fruit number {num}: ")
+    fruits.append(fruit)
+
+```
+
+Example Output:
+
+```text
+Enter fruit number 1: apples
+Enter fruit number 2: bananas
+Enter fruit number 3: oranges
+Enter fruit number 4: kiwi
+```
+
+
+
 
 #### Further reading
 
@@ -1618,6 +1799,41 @@ print(random_name)  # dima
 
 
 
+## The `pass` statement
+
+You use the pass statement to act as a placeholder in a conditional statement or function definition. Programmers refer to this as "stubbing-out" the code block. No logic will run in the block a `pass` statement appears in. Python needs the `pass` statement because you can't have empty function or conditional blocks.
+
+#### Using `pass` in a function
+
+The `pass` statement can be used in a function definition as a placeholder before you write the main logic. This ensures your program still works but gives you a convenient way to see that you still need to implement some logic:
+
+
+```python
+def order_pizza():
+    pass
+
+```
+
+#### Using `pass` in a conditional statement
+
+The `pass` statement can also be used in a conditioal statement. This comes in handy if you know that you need a conditional statement but you don't have any of the logic ready yet:
+
+
+```python
+action = input("What do you want to do? ")
+
+if action == "Order Pizza":
+    order_pizza()
+elif action == "Order Tacos":
+    pass
+
+```
+
+
+
+
+
+
 
 
 
@@ -1625,7 +1841,7 @@ print(random_name)  # dima
 
 Variables assign a name to a value. The naming convention in Python is to use *snake_case* for variable names, and *UPPER_SNAKE_CASE* for named constants.
 
-#### Creating a variable
+### Creating a variable
 
 You create a variable by assigning a name to a value using the assignment operator (`=`):
 
@@ -1634,7 +1850,7 @@ my_name = "Daniel"
 my_age = 35
 ```
 
-#### Creating a named constant
+### Creating a named constant
 
 Named constants can replace *magic numbers* in your program.
 
@@ -1661,7 +1877,7 @@ elif user_choice == ORDER_PIZZA:
 
 ```
 
-#### Updating the value of a variable
+### Updating the value of a variable
 
 You can update the value stored in a variable like this:
 
@@ -1713,7 +1929,7 @@ print(score)  # 0
 ```
 
 
-#### Global variables
+### Global variables
 
 Any variable created outside of function definition is considered a `global` variable. If you want to modify a `global` variable from *inside* a function definition, you need to use the `global` keyword:
 
