@@ -202,6 +202,43 @@ Example Output:
 You may NOT ride the roller coaster.
 ```
 
+You can string as many logical operators together as you want to build more complex conditional statements:
+
+```python
+is_hungry = False
+is_thirsty = True
+
+food_amount = 10
+drink_amount = 0
+
+if is_hungry and food_amount > 0 or is_thirsty and drink_amount > 0:
+    enter_kitchen()
+else:
+    play_video_games()
+
+```
+
+#### Formatting complex conditional statements
+
+With a large complex conditional statement, it's often easier to read and reason about if you enclose the conditional expression in parentheses and split the statements across multiple lines:
+
+```python
+is_hungry = False
+is_thirsty = True
+
+food_amount = 10
+drink_amount = 0
+
+if (
+    is_hungry  and food_amount  > 0 or 
+    is_thirsty and drink_amount > 0
+):
+    enter_kitchen()
+else:
+    play_video_games()
+```
+
+
 ### `Logical Operators`
 
 Logical operators allow you to combine multiple conditional expressions in a single conditional statement:
@@ -473,6 +510,7 @@ print(menu)
 Example Output:
 
 ```text
+
     Welcome to Dan's Taco Stand!
 
     Tacos       $2
@@ -480,6 +518,28 @@ Example Output:
     Nachos      $3
 
     Place your order by clicking *Order Now*
+```
+
+##### `Removing the intial newline of a multiline string`
+
+You can remove the initial newline from a multiline string using the `\` character:
+
+```python
+options = """\
+    (1) View All Contacts (2) View Contact 
+    (3) Add Contact (4) Update Contact 
+    (5) Remove Contact (6) Exit
+"""
+
+print(options)
+```
+
+Example Output:
+
+```text
+    (1) View All Contacts (2) View Contact 
+    (3) Add Contact (4) Update Contact 
+    (5) Remove Contact (6) Exit
 ```
 
 #### Raw strings
@@ -541,6 +601,61 @@ Example Output:
 djs@cwhq.com is a CWHQ employee address
 alecg@auburn.edu is a school address
 I don't know what sam@bridges.com is for
+```
+
+#### Sanitizing user input
+
+User's do strange things, but using `str.lower()` and `str.strip()` can help your program to validate `str` data types.
+
+`str.lower()` makes a `str` lowercase:
+
+```python
+# Imagine a user entered "Pizza" with an uppercase P
+favorite_food = "Pizza"
+
+if favorite_food.lower() == "pizza":
+    print("That's my favorite food!")
+
+```
+
+Example Output:
+
+```text
+That's my favorite food!
+```
+
+`str.strip()` removes leading or trailing whitespace from a `str`:
+
+```python
+# Imagine a user entered " pizza" with a leading space character
+favorite_food = " pizza"
+
+if favorite_food.strip() == "pizza":
+    print("That's my favorite food!")
+
+```
+
+Example Output:
+
+```text
+That's my favorite food!
+```
+
+You can chain these methods together to sanitize a `str` completely:
+
+```python
+# What a mess! Extra spaces before/after and odd capitalization
+favorite_food = " PIzZa  "
+
+if favorite_food.strip().lower() == "pizza":
+    print("That's my favorite food!")
+
+```
+
+Example Output:
+
+```text
+That's my favorite food!
 ```
 
 
@@ -759,6 +874,16 @@ staff = {
 }
 ```
 
+You can use the `dict()` function to build a `dict` as well, note that the keys are keyword arguments:
+
+```python
+staff = dict(
+    danielj="Curriculum Developer",
+    alecg="Curriculum Instructor",
+    dimas="Designer",
+)
+```
+
 #### Accessing items in a `dict`
 
 You have to know the key to access an individual item in a `dict`:
@@ -778,6 +903,25 @@ print(f"Alec is a {alec_job}.")  # Alec is a Curriculum Instructor.
 
 dima_job = staff["dimas"]
 print(f"Dima is a {dima_job}.")  # Dima is a Designer.
+```
+
+If you need to pull a value from a `dict` inside an `f-string`, you must use different quote characters for the key (if it's a `str`). 
+
+```python
+students = {
+    "Vicki": "3rd grade",
+    "Sam": "4th grade",
+    "Tammy": "4th grade",
+}
+
+print(f"Vicki is in {students['Vicki']}") 
+# Vicki is in 3rd grade
+
+print(f"Sam is in {students['Sam']}")     
+# Sam is in 4th grade
+
+print(f"Tammy is in {students['Tammy']}") 
+# Tammy is in 4th grade
 ```
 
 
@@ -858,6 +1002,28 @@ alecg is a Curriculum Instructor.
 dimas is a Designer.
 ```
 
+If you just want to loop over the keys of a `dict`, you can use a `for` loop just as you would with a `list`:
+
+```python
+staff = {
+    "danielj": "Curriculum Developer",
+    "alecg": "Curriculum Instructor",
+    "dimas": "Designer",
+}
+
+print("CWHQ staff:")
+for name in staff:
+    print(name)
+
+```
+
+Example Output:
+
+```text
+danielj
+alecg
+dimas
+```
 
 
 
@@ -925,6 +1091,76 @@ number_of_staff = len(staff)
 print(f"We have {number_of_staff} people on our staff.")  # We have 3 people on our staff.
 ```
 
+
+
+#### Checking if an item is contained in a `dict`
+
+To check if an item is contained in a `dict`, use the `in` operator:
+
+```python
+students = {
+    "Vicki": "3rd grade",
+    "Sam": "4th grade",
+    "Tammy": "4th grade",
+}  
+
+if "Vicki" in students:
+    print("Vicki is a student here")
+
+```
+
+Example Output:
+
+```text
+Vicki is a student here
+```
+
+You can use the `not` operator before the `in` operator to test if a key is not in a `dict`:
+
+```python
+students = {
+    "Vicki": "3rd grade",
+    "Sam": "4th grade",
+    "Tammy": "4th grade",
+}  
+
+if "Daniel" not in students:
+    print("Daniel is NOT a student here")
+
+```
+
+Example Output:
+
+```text
+Daniel is NOT a student here
+```
+
+##### `Using dict.get() to test if an item is in a dict`
+
+The `dict.get()` method can be used as an alternative to `in` and `not` `in`. It returns the value of the given key or the special `None` value, which is used to indicate the absence of any valid value. The `is` operator is similar to `==`, but it checks if the two values are the same exact thing in memory:
+
+```python
+students = {
+    "Vicki": "3rd grade",
+    "Sam": "4th grade",
+    "Tammy": "4th grade",
+}  
+
+if students.get("Vicki") is not None:
+    print("Vicki is a student here")
+
+
+if students.get("Daniel") is None:
+    print("Daniel is NOT a student here")
+
+```
+
+Example Output:
+
+```text
+Vicki is a student here
+Daniel is NOT a student here
+```
 
 
 #### Further reading
