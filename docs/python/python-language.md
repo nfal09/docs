@@ -1054,7 +1054,7 @@ Here are all the names in the staff dict: ['danielj', 'alecg', 'dimas']
 
 #### Getting the values from a `dict`
 
-If you need to get all of the keys from a `dict`, use the `dict.values()` method. Note, you'll usually want to cast the result to a `list`, which is why the `list()` function is used here:
+If you need to get all of the values from a `dict`, use the `dict.values()` method. Note, you'll usually want to cast the result to a `list`, which is why the `list()` function is used here:
 
 
 ```python
