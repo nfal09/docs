@@ -1,6 +1,6 @@
 # JavaScript Language
 
-JavaScript is the language that powers the interactive web! We use JavaScript in these courses at CodeWizardsHQ:
+JavaScript is the language that powers the interactive web! JavaScript is the primary language in these courses at CodeWizardsHQ:
 
 |Elementary                        | Middle School                           |High School     |
 |----------------------------------|-----------------------------------------|----------------
@@ -12,7 +12,7 @@ JavaScript is the language that powers the interactive web! We use JavaScript in
 
 In this section of our documentation, you'll find references to most of the core JavaScript language features and built-in functions that we use in our CodeWizardsHQ courses.
 
-You'll also find many *Further reading* sections, which pull from these excellent Python resources:
+You'll also find many *Further reading* sections, which pull from these excellent JavaScript resources:
 
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [The Modern JavaScript Tutorial](https://javascript.info/)
