@@ -23,6 +23,9 @@ nav:
   - Python: 
     - 'Python Language': python/python-language.md
     - 'Wizardlib': python/wizardlib.md
+  - JavaScript:
+    - 'JavaScript Language': javascript/javascript-language.md
+    - 'Web APIs': javascript/web-apis.md
 
 
 markdown_extensions:
