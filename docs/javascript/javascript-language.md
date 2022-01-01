@@ -1,6 +1,6 @@
 # JavaScript Language
 
-JavaScript is the language that powers the interactive web! JavaScript is the primary language in these courses at CodeWizardsHQ:
+JavaScript is the language that powers the interactive web! We use JavaScript as the primary language in these courses at CodeWizardsHQ:
 
 |Elementary                        | Middle School                           |High School     |
 |----------------------------------|-----------------------------------------|----------------
@@ -10,7 +10,7 @@ JavaScript is the language that powers the interactive web! JavaScript is the pr
 | Web Development for Kids – 2     | Application Programming Interfaces      | 
 |                                  | Capstone II Online Multiplayer Gaming   |
 
-In this section of our documentation, you'll find references to most of the core JavaScript language features and built-in functions that we use in our CodeWizardsHQ courses.
+In this section of our documentation, you'll find references to most of the core JavaScript language features that we use in our CodeWizardsHQ courses.
 
 You'll also find many *Further reading* sections, which pull from these excellent JavaScript resources:
 
@@ -40,7 +40,7 @@ if (isLoggedIn(user)) {
 }
 
 
-var minHeight = 60  // This is measured in inches, not feet!
+var minHeight = 60;  // This is measured in inches, not feet!
 ```
 
 ### Deactivating Code
@@ -69,7 +69,7 @@ of the right triangle. It's the Pythagorean Theorem. The ** is how you
 write exponents in JavaScript, and fractional exponents are like roots,
 so 0.5 is the square root.
 */
-var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5
+var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5;
 ```
 
 Many programmers perfer to put `*` on each line of a multiline comment and indent a bit for clarity:
@@ -81,7 +81,7 @@ Many programmers perfer to put `*` on each line of a multiline comment and inden
 *   write exponents in JavaScript, and fractional exponents are like roots,
 *   so 0.5 is the square root.
 */
-var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5
+var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5;
 ```
 
 ### Further reading
@@ -175,12 +175,12 @@ if (favoriteFood == "Sushi") {
 } else if (favoriteFood == "Samosa") {
     console.log("Let's eat Indian food tonight!");
 } else {
-    console.log("I don't know what that favorite_food is!");
+    console.log("I don't know what that favorite food is!");
 }
 ```
 
 ```text
-I don't know what that favorite_food is!
+I don't know what that favorite food is!
 ```
 
 
@@ -220,7 +220,7 @@ Example Output:
 You may NOT ride the roller coaster.
 ```
 
-You can string as many logical operators together as you want to build more complex conditional statements:
+You can string as many logical operators together as you want to build more complex conditional statements. Note that it's often easier to read and reason about if you surround each major section with parentheses, as in the example below:
 
 ```javascript
 var isHungry = false;
@@ -229,7 +229,7 @@ var isThirsty = true;
 var foodAmount = 10;
 var drinkAmount = 0;
 
-if (isHungry and foodAmount > 0 or isThirsty and drinkAmount > 0) {
+if ((isHungry && foodAmount > 0) || (isThirsty && drinkAmount > 0)) {
     enterKitchen();
 } else {
     playVideoGames();
@@ -430,18 +430,36 @@ var totalCost = 29.99;
 var numBananas = 2;
 ```
 
-#### Converting `str` to `int`
+#### Converting `string` to `number`
 
 You can use the `parseInt()` function to convert a `string` to an integer `number`:
 
 ```javascript
 var age = parseInt("13");
+console.log(age); // 13
 ```
 
 This is often combined with the `prompt()` function when you prompt the user for a numeric data type:
 
 ```javascript
 var age = parseInt(prompt("How old are you? "));
+```
+
+The `parseFloat()` function works the same way, except the `number` will be a decimal number:
+
+```javascript
+var heightInInches = parseFloat("60.5");
+console.log(heightInInches);  // 60.5
+```
+
+Instead of `parseInt()` or `parseFloat()`, you can use the `+` operator to convert a `string` to a `number`:
+
+```javascript
+var age = +("13");
+console.log(age); // 13
+
+var heightInInches = +("60.5");
+console.log(heightInInches);  // 60.5
 ```
 
 ### `string`
@@ -493,7 +511,7 @@ var menu = `
     Nachos      $3
 
     Place your order by clicking *Order Now*
-`
+`;
 
 console.log(menu);
 ```
@@ -518,7 +536,7 @@ You can use the `string.length` property to get the number of characters in a `s
 ```javascript
 var name = "Daniel";
 
-name.length  // 6
+name.length;  // 6
 ```
 
 #### Checking if a `string` ends with a set of characters
@@ -710,17 +728,17 @@ var names = ["alecg", "danielj", "dimas"];
 
 names.splice(0, 1);
 
-console.log(names)  // ['danielj', 'dimas']
+console.log(names);  // ['danielj', 'dimas']
 ```
 
 If you want to remove an item from the end of an `array`, use the `array.pop()` method:
 
 ```javascript
-var names = ["alecg", "danielj", "dimas"];;
+var names = ["alecg", "danielj", "dimas"];
 
 names.pop();
 
-console.log(names)  // ['alecg', 'danielj'];
+console.log(names);  // ['alecg', 'danielj'];
 ```
 
 #### Looping through an `array`
@@ -1045,7 +1063,7 @@ typeof pi;  // 'number
 
 var two = parseFloat(2);
 
-console.log(two)  // 2.0
+console.log(two);  // 2.0
 typeof two;  // 'number'
 ```
 
@@ -1187,7 +1205,7 @@ If a function returns a value, you can capture it in a varible:
 
 ```javascript
 function add(number1, number2) {
-    var total = number1 + number2
+    var total = number1 + number2;
     return total;
 }
 
@@ -1195,7 +1213,7 @@ var total = add(2, 3);
 console.log(total);  // 5
 ```
 
-You can also use the value immediately in another function, like `console.log()`:
+You can also use the value immediately in another function, like `console.log()` or as part of a `template-literal` string:
 
 ```javascript
 function add(number1, number2) {
@@ -1245,16 +1263,16 @@ A `return` statement can be used to exit a function. This is normally used when 
 ```javascript
 function greetCodewizard(name) {
     var staff = ["danielj", "alecg", "dimas"];
-    if !staff.includes(name):
+    if (!staff.includes(name)) {
         console.log("I don't know you!");
         return;
-    
+    }
     console.log(`Hello, ${name}!`);
 }
 
 
 greetCodewizard("danielj");  // Hello, danielj!
-greeCodewizard("django");   // I don't know you!
+greetCodewizard("django");   // I don't know you!
 ```
 
 
@@ -1266,3 +1284,572 @@ greeCodewizard("django");   // I don't know you!
 - [The Modern JavaScript Tutorial - Functions](https://javascript.info/function-basics)
 
 <hr>
+
+
+
+
+
+
+
+## Loops
+
+If you need to repeat something in your programs, you'll need to use one of JavaScript's looping mechanisms.
+
+
+### `for`
+
+JavaScript's `for` loop is one of the more complicated pieces of syntax in the langauge. The *header* of the `for` loop controls how many times the loop runs, and it consists of three parts:
+
+```javascript
+// header
+for (counter; loopContinuationCondition; incrementOrDecrement) {
+    // body
+}
+```
+The `counter` is a variable that will hold a number representing the current loop iteration (usually). The `loopContinuationCondition` is a `boolean` condition that determines whether the loop should continue. The `incrementOrDecrement` is a statement that modifies the `counter` after each loop completes.
+
+To see all three elements in action, consider this `for` loop, which loops 3 times and prints "Hello" to the console three times:
+
+```javascript
+for (var counter = 0; counter < 3; counter++) {
+    console.log("Hello");
+}
+```
+
+Example Output:
+
+```text
+Hello
+Hello
+Hello
+```
+
+Generally, the `counter` is called `i`. This is a shorthand that many programmers use, and you'll see it in many courses at CWHQ. The name of the variable is completely up to the programmer:
+
+```javascript
+for (var i = 0; i < 3; i++) {
+    console.log("Hello");
+}
+```
+
+Example Output:
+
+```text
+Hello
+Hello
+Hello
+```
+
+
+#### Counter-controlled repetition with the `for` loop
+
+A `for` loop is used to loop a certain number of times (called counter-controlled repetition). You generally perform some action in the body of a `for` loop:
+
+```javascript
+for (var i = 0; i < 3; i++) {
+    console.log(`${i} taco`);
+}
+```
+
+Example Output:
+
+```text
+0 taco
+1 taco
+2 taco
+```
+
+You can use a `for` loop to loop over an `array`, but the `for...of` loop is easier:
+
+```javascript
+var fruits = ["apple", "banana", "cherry"];
+
+for (var i = 0; i < fruits.length; i++) {
+    console.log(`Index number: ${i}  Fruit: ${fruits[i]}`);
+}
+```
+
+Example Output:
+
+```text
+Index number: 0  Fruit: apple
+Index number: 1  Fruit: banana
+Index number: 2  Fruit: cherry
+```
+
+
+#### Looping through `arrays` with the `for...of` loop
+
+The `for...of` loop is the easiest way to loop through the items in an `array`. Note the convention of a plural `array` name (fruits) and a singular loop-iteration variable (fruit):
+
+```javascript
+var fruits = ["apple", "banana", "cherry"];
+
+for (var fruit of fruits) {
+    console.log(fruit);
+}
+```
+
+Example Output:
+
+```text
+apple
+banana
+cherry
+```
+
+
+
+##### Searching for a value in a `for...of` loop
+
+You can use a conditional statement inside a `for...of` loop to search for a particular item in an `array` and then do something:
+
+```javascript
+var fruits = ["orange", "banana", "cherry", "apple"];
+
+for (var fruit of fruits) {
+    if (fruit == "orange") {
+        console.log(`${fruit} is the best fruit`);
+    }
+}
+```
+
+Example Output:
+
+```text
+orange is the best fruit
+```
+
+
+##### Finding a value in a `for...of` loop to use after the loop finishes
+
+You can store an item from the `for...of` loop for later use by creating a variable before the `for...of` loop with some default value.
+
+```javascript
+var fruits = ["orange", "banana", "cherry", "apple"];
+
+var bestFruit;
+
+for (var fruit of fruits) {
+    if (fruit == "orange") {
+        bestFruit = fruit;
+    }
+}
+
+
+// The best fruit is orange.
+console.log(`The best fruit is ${bestFruit}.`)
+```
+
+
+
+##### Creating a new `array` in a `for...of` loop
+
+Often, you'll want to loop through an `array` and build a new `array` from the contents of the original `array`. This technique is called mapping, and it's a common thing to do with `arrays` and `for...of` loops:
+
+```javascript
+var prices = [10, 12, 5, 8];
+var discounted_prices = [];
+
+for (var price of prices) {
+    discounted_price = price - (price * .10);
+    discounted_prices.push(discounted_price);
+}
+
+
+// Here are your discounted prices: [9, 10.8, 4.5, 7.2]
+console.log(`Here are your discounted prices: ${discounted_prices}`)
+```
+
+
+#### Looping through `objects` with the `for...in` loop
+
+The `for...in` loop is the easiest way to loop through the items in an `object`. The `prop` variable name is a convention, it represents each key (property) of the `object`:
+
+```javascript
+var users = {
+    danielj: "Admin",
+    django: "Support Staff",
+    samh: "Platform Developer",
+};
+
+for (var prop in users) {
+    console.log(`Username: ${prop} Role: ${users[prop]}`);
+}
+```
+
+Example Output:
+
+```text
+Username: danielj Role: Admin
+Username: django Role: Support Staff
+Username: samh Role: Platform Developer
+```
+
+
+#### Further reading
+
+- [MDN - JavaScript Reference - for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+- [MDN - JavaScript Reference - for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+- [MDN - JavaScript Reference - for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+- [Eloquent JavaScript - for loops](https://eloquentjavascript.net/02_program_structure.html#h_oupMC+5FKN)
+- [The Modern JavaScript Tutorial - The "for" loop](https://javascript.info/while-for#the-for-loop)
+
+
+
+
+
+
+
+### `while`
+
+A `while` loop is generally used to perform indefinite repetition (when you don't know how many times you want to loop).
+
+For example, you can use a `while` loop to ask a user something until they answer correctly:
+
+```javascript
+var keepLooping = true;  // This variable controls whether we loop or not.
+
+while (keepLooping) {
+    var userGuess = prompt("What is the meaning of life? ");
+    
+    if (userGuess == "42") {
+        console.log("That's correct!");
+        keepLooping = false;  // Stops the loop.
+    } else {
+        console.log("That's incorrect! Please try again.");
+    }
+}
+```
+
+Example Output:
+
+```text
+What is the meaning of life? To make money
+That's incorrect! Please try again.
+What is the meaning of life? To eat tacos
+That's incorrect! Please try again.
+What is the meaning of life? 42
+That's correct!
+```
+
+#### Using `break` to exit a loop
+
+You can also use a `break` statement instead of using a variable to control how many times an indefinite `while` loop runs:
+
+```javascript
+while (true) {
+    userGuess = prompt("What is the meaning of life? ");
+    
+    if (userGuess == "42") {
+        console.log("That's correct!");
+        break;  // Stops the loop.
+    } else {
+        console.log("That's incorrect! Please try again.");
+    }
+}
+```
+
+Example Output:
+
+```text
+What is the meaning of life? To make money
+That's incorrect! Please try again.
+What is the meaning of life? To eat tacos
+That's incorrect! Please try again.
+What is the meaning of life? 42
+That's correct!
+```
+
+#### Counter-controlled repetition
+
+You can use a `while` loop to perform counter-controlled repetition as well, but
+the `for` loop is generally preferred for this:
+
+```javascript
+var counter = 0;
+
+while (counter < 5) {
+    console.log(counter);
+    counter++;  // If you forget this, you'll have an infinite loop!
+}
+```
+
+Example Output:
+
+```text
+0
+1
+2
+3
+4
+```
+
+
+
+
+#### Further reading
+
+- [MDN - JavaScript Rerference: while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+- [Eloquent JavaScript - while and do loops](https://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM)
+- [The Modern JavaScript Tutorial - The "while" loop](https://javascript.info/while-for#the-while-loop)
+
+
+
+<hr>
+
+
+
+
+
+
+## Math Operations
+
+JavaScript can perform most mathematical operations with ease. There are standard operators for all of the arithmetic operations and the `Math` object has access to many more operations for things like Trigonometry. 
+
+#### Arithmetic Operators
+
+The four basic arithmetic operations (addition, subtraction, multiplication, division) are similar to how you would use them with calculator:
+
+```javascript
+var total = 8 + 2;
+var difference = 8 - 2;
+var product = 8 * 2;
+var quotient = 8 / 2;
+
+console.log(`8 + 2 = ${total}`)       // 8 + 2 = 10
+console.log(`8 - 2 = ${difference}`)  // 8 - 2 = 6
+console.log(`8 * 2 = ${product}`)     // 8 * 2 = 16
+console.log(`8 / 2 = ${quotient}`)    // 8 / 2 = 4
+```
+
+
+#### Other Operators
+
+There are a few other common operators that JavaScript provides for common math operations. 
+
+##### Modulo
+
+The modulo operator (`%`) returns the remainder after division:
+
+```javascript
+10 % 3  // 1
+```
+
+##### Power
+
+The power operator (`**`) multiplies a number by itself a given number of times:
+
+```javascript
+3 ** 2  // 9
+```
+
+
+##### Further reading
+
+- [MDN - The JavaScript Guide: Arithmetic Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
+- [Eloquent JavaScript - Arithmetic](https://eloquentjavascript.net/01_values.html#i_RfBT3HMnYs)
+- [The Modern JavaScript Tutorial - Basic operators, maths](https://javascript.info/operators)
+
+
+<hr>
+
+
+
+#### The `Math` object
+
+JavaScript's `Math` object can be used to gain access to certain constants (such as PI), to perform trig calculations, or to get random numbers, among other things.
+
+##### Getting random numbers with `Math.random()`
+
+The `Math.random()` method returns a random decimal number between 0 and 1:
+
+```javascript
+var randomNumber = Math.random();
+console.log(randomNumber);  // 0.1524438866958424
+```
+
+If you'd like to get a random whole number between a `min` and `max`, this helper function is useful:
+
+```javascript
+function random(min, max) {
+  var num = Math.floor(Math.random() * (max - min + 1)) + min;
+  return num;
+}
+
+var randomNumber = random(1, 10);
+console.log(randomNumber);  // 9
+```
+
+##### Rounding with `Math.floor()` and `Math.ceil()`
+
+To round a number down, use `Math.floor()`:
+
+```javascript
+var roundedNumber = Math.floor(4.6);
+console.log(roundedNumber); // 4
+```
+
+To round a number up, use `Math.ceil()`:
+
+```javascript
+var roundedNumber = Math.ceil(4.2);
+console.log(roundedNumber);  // 4
+```
+
+
+
+##### Further reading
+
+- [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+- [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+
+
+<hr>
+
+
+
+
+
+
+
+
+
+## Variables
+
+Variables assign a name to a value. The naming convention in JavaScript is to use *camelCase* for variable names.
+
+### Creating a variable
+
+You create a variable using the `var` keyword:
+
+```javascript
+var myVariable;
+```
+
+
+Usually, you create a variable and assign a value to the variable the assignment operator (`=`) at once:
+
+```javascript
+var myName = "Daniel";
+var myAge = 35;
+```
+
+### Updating a numeric variable
+
+You can update the value stored in a numeric variable like this:
+
+```javascript
+var score = 0;
+score = score + 1; 	 // 0 + 1
+
+console.log(score);  // 1
+
+score = score + 1; 	 // 1 + 1
+
+console.log(score);  // 2
+```
+
+The same works for decreasing the value of a numeric variable:
+
+
+```javascript
+var score = 3;
+score = score - 1; 	 // 3 - 1
+
+console.log(score);  // 2
+
+score = score - 1; 	 // 2 - 1
+
+console.log(score);  // 1
+```
+
+
+There is a shorthand notation for increasing and decreasing the value of a numeric variable:
+
+```javascript
+var score = 0;
+score += 1; 	     // 0 + 1
+
+console.log(score);  // 1
+
+score += 1; 	     // 1 + 1
+
+console.log(score);  // 2
+
+score -= 1;          // 2 - 1
+
+console.log(score);  // 1
+
+score -= 1;          // 1 - 1
+
+console.log(score);  // 0
+```
+
+For an even more compact notation, you can use `++` or `--` to increase/decrease the value of a numeric variable:
+
+```javascript
+var score = 0;
+score++; 	         // 0 + 1
+
+console.log(score);  // 1
+
+score++; 	         // 1 + 1
+
+console.log(score);  // 2
+
+score--;             // 2 - 1
+
+console.log(score);  // 1
+
+score--;             // 1 - 1
+
+console.log(score);  // 0
+```
+
+
+### Global vs. local variables
+
+Any variable created outside of function definition is considered a `global` variable:
+
+```javascript
+// This is a global variable.
+var score = 0;
+
+function updateScore() {
+    score = score + 1;	// 1
+}
+
+console.log(score);  // 0
+
+updateScore();  // Changes the global `score` variable
+
+console.log(score);  // 1
+```
+
+Updates to `global` variables affect the variable throughout the program. If you want a variable to exist only inside of a function, you can make it local to the function by creating the variable (with the `var` keyword) *inside* the function:
+
+
+```javascript
+// This is a global variable.
+var score = 0;
+
+function updateScore() {
+    // This is a local variable, it only exists within `updateScore()`
+    var score = 1;
+}
+
+console.log(score);  // 0
+
+updateScore();  // Doesn't change the global `score` variable
+
+console.log(score);  // 0
+```
+
+
+
+### Further reading
+
+- [MDN - JavaScript First Steps - Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
+- [Eloquent JavaScript - Bindings](https://eloquentjavascript.net/02_program_structure.html#h_lnOC+GBEtu)
+- [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables)

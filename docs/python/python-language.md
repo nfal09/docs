@@ -2177,7 +2177,7 @@ def update_score():
     # Must do this to modify the variable
     global score
     # Now this is OK
-    score = score + 1	# 2
+    score = score + 1	# 1
 ```
 
 
