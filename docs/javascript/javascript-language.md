@@ -72,7 +72,7 @@ so 0.5 is the square root.
 var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5;
 ```
 
-Many programmers perfer to put `*` on each line of a multiline comment and indent a bit for clarity:
+Many programmers prefer to put `*` on each line of a multiline comment and indent a bit for clarity:
 
 ```javascript
 /*
