@@ -1,14 +1,21 @@
 # Python Language
 
-Python is a beginner-friendly language that we use in these courses at CodeWizardsHQ:
+Python is a beginner-friendly language that we use in these courses in the core CodeWizardsHQ curriculum:
 
-|Elementary              | Middle School                          |High School     |
-|------------------------|----------------------------------------|----------------|
-|Python Game Development |Introduction to Programming with Python |Intro to Python
-|                        |Mastering Databases                     |APIs and Databases
-|                        |Application Programming Interfaces      |Professional Web App Development
-|                        |                                        |Mastering MVC Frameworks
-|                        |                                        |Object Relational Mapping
+|Elementary                         | Middle School                          |High School     |
+|-----------------------------------|----------------------------------------|----------------|
+|Intro to Text-Based Programming    |Introduction to Programming with Python |Intro to Python
+|Capstone 1                         |Beyond Basics with Python               |Capstone 1
+|Progamming Fundamentals with Python|Capstone 1                              |APIs and Databases
+|Logic with Python                  |Intro to Databases                      |Professional Web App Development 
+|Modular Programming with Python    |Mastering APIs                          |Capstone 2
+|Capstone 2                         |Mastering Databases                     |Mastering MVC Frameworks 
+|Python Game Development            |Capstone 3                              |Object Relational Mapping
+|                                   |                                        |DevOps and SoftwareEngineering 
+|                                   |                                        |Capstone 3
+
+
+In addition to those courses, Python is used in all courses of the [Python Language Track](https://codewizardshq.com/python-language-track/).
 
 In this section of our documentation, you'll find references to most of the core Python language features and built-in functions that we use in our CodeWizardsHQ courses.
 
