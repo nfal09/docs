@@ -1590,7 +1590,7 @@ Example Output:
 
 #### Further reading
 
-- [MDN - JavaScript Rerference: while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+- [MDN - JavaScript Reference: while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 - [Eloquent JavaScript - while and do loops](https://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM)
 - [The Modern JavaScript Tutorial - The "while" loop](https://javascript.info/while-for#the-while-loop)
 
