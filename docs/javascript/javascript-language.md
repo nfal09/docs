@@ -2,13 +2,15 @@
 
 JavaScript is the language that powers the interactive web! We use JavaScript as the primary language in these courses at CodeWizardsHQ:
 
-|Elementary                        | Middle School                           |High School     |
-|----------------------------------|-----------------------------------------|----------------
-| Intro to Real World Programming  | Interactive Web with JavaScript         | Fundamentals of Web Development
-| Capstone I Minecraft             | Capstone I Virtual Reality Game         | User Interface Development
-| Fundamental Programming Concepts | User Interface Development              | APIs and Databases
-| Web Development for Kids – 2     | Application Programming Interfaces      | 
-|                                  | Capstone II Online Multiplayer Gaming   |
+|Elementary                            | Middle School          |High School     |
+|--------------------------------------|------------------------|----------------
+| Interactive Websites with JavaScript | Interactive JavaScript | Fundamentals of Web Development
+| Capstone 3                           | Web Interfaces         | User Interface Development
+|                                      | Capstone 2             | Capstone 1
+|                                      | Matering APIs          | APIs and Databases
+|                                      | Capstone 3             | Capstone 2
+|                                      |                        | DevOps and Software Engineering
+|                                      |                        | Capstone 3
 
 In this section of our documentation, you'll find references to most of the core JavaScript language features that we use in our CodeWizardsHQ courses.
 
