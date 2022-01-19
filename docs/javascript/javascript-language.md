@@ -7,7 +7,7 @@ JavaScript is the language that powers the interactive web! We use JavaScript as
 | Interactive Websites with JavaScript | Interactive JavaScript | Fundamentals of Web Development
 | Capstone 3                           | Web Interfaces         | User Interface Development
 |                                      | Capstone 2             | Capstone 1
-|                                      | Matering APIs          | APIs and Databases
+|                                      | Mastering APIs          | APIs and Databases
 |                                      | Capstone 3             | Capstone 2
 |                                      |                        | DevOps and Software Engineering
 |                                      |                        | Capstone 3
@@ -1203,7 +1203,7 @@ function add(number1, number2) {
 
 #### Capturing a function's return value
 
-If a function returns a value, you can capture it in a varible:
+If a function returns a value, you can capture it in a variable:
 
 ```javascript
 function add(number1, number2) {
@@ -1300,7 +1300,7 @@ If you need to repeat something in your programs, you'll need to use one of Java
 
 ### `for`
 
-JavaScript's `for` loop is one of the more complicated pieces of syntax in the langauge. The *header* of the `for` loop controls how many times the loop runs, and it consists of three parts:
+JavaScript's `for` loop is one of the more complicated pieces of syntax in the language. The *header* of the `for` loop controls how many times the loop runs, and it consists of three parts:
 
 ```javascript
 // header
