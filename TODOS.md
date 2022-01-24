@@ -9,8 +9,7 @@
 - window.location (or just location)
 
 ### Browser dev tools
-- Elements
-- Console
+- ~~Console~~
 
 ### Browser functions for user interaction
 - alert()
