@@ -113,9 +113,49 @@ Once you've opened the dev tools in your browser of choice (look up how to do it
 <figcaption></figcaption>
 </figure>
 
+#### Modifying the DOM from the console
+
 You have access to the DOM on the page and can edit it from the *Console* tab, just like if you were in a JavaScript program:
 
 <figure markdown>
 ![edit DOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/hot-dogs.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
+#### Debugging errors from the console
+
+If something is not working as you expect, you should open the *Console* tab in the dev tools and see if there are any errors. This can save you hours of debugging time if you learn to do it well!
+
+Often, you'll be given a link that opens the offending file and points at the exact line that caused the issue, as in this example:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daniel's Homepage</title>
+</head>
+
+<body>
+
+    <h1>Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+
+    <!-- HTML abbreviated since it's not important -->
+
+    <script>
+        function thisHasAnError() {
+            // uh oh, this will throw an error!
+            vra rightBehindThis;
+        }
+    </script>
+
+</body>
+
+</html>
+```
+
+<figure markdown>
+![console error example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/console-error.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
