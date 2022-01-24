@@ -19,8 +19,8 @@
 - confirm()
 
 ### Explain `<script>`
-- Placement
-- Use of src attr vs writing JS in the HTML doc
+- ~~Placement~~
+- ~~Use of src attr vs writing JS in the HTML doc~~
 
 ### Explain onclick vs click
 
