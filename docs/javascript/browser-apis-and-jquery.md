@@ -39,9 +39,11 @@ The `<script>` tag is used to insert JavaScript programs directly into an HTML p
 ```html
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Inserting JavaScript with a script tag in the body</title>
 </head>
+
 <body>
     <h1>This is HTML</h1>
     <script>
@@ -49,6 +51,7 @@ The `<script>` tag is used to insert JavaScript programs directly into an HTML p
 
     </script>
 </body>
+
 </html>
 ```
 
@@ -67,15 +70,21 @@ console.log("Hello, world!");
 ```html
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Inserting JavaScript with a script tag in the head</title>
     <script src="my-awesome-script.js"></script>
 </head>
+
 <body>
     <h1>This is HTML</h1>
 </body>
+
 </html>
 ```
+
+
+
 
 
 ## Adding jQuery to Webpages
@@ -85,15 +94,22 @@ The `jQuery` library is not part of the core Browser APIs and must be loaded in 
 ```html
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Adding jQuery to a webpage</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <h1>This is HTML</h1>
 </body>
+
 </html>
 ```
+
+
+
+
 
 
 
@@ -194,5 +210,149 @@ You have access to any global variables and functions in the *Console* tab and c
 
 <figure markdown>
 ![mess with variables/functions example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/variables-and-functions.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
+
+
+
+
+
+
+## Selecting Elements From HTML Documents
+
+The `document` object allows you to interact with HTML documents from a JavaScript program. The most important thing you'll use the `document` object for is querying an HTML document for an element or elements. There are several methods to do this using the native `document` object. `jQuery` also provides a way to query HTML documents, and we'll cover both methods below.
+
+#### Getting an element by `id`
+
+The `document.getElementById()` method allows you to select an HTML element by it's `id` attribute:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daniel's Homepage</title>
+</head>
+
+<body>
+
+    <!-- This is the element we'll grab from our JavaScript program -->
+    <h1 id="page-title">Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+
+    <!-- HTML abbreviated since it's not important -->
+
+    <script>
+        // Get the #page-title element and store it in a variable
+        var pageTitleElement = document.getElementById("page-title");
+        // Change the font color of the #page-title element
+        pageTitleElement.style.color = "blue";
+
+        // Can also do everything in one line
+        document.getElementById("page-title").style.color = "blue";
+    </script>
+
+</body>
+
+</html>
+```
+
+
+<figure markdown>
+![get element by id example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/get-element-by-id.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
+#### Getting elements with `jQuery`
+
+The `jQuery` library allows you to select elements with the `$()` function. You can add any valid CSS selector as the argument.
+
+Here, we use the `id` attribute to select a single element:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daniel's Homepage</title>
+    <!-- Must include the jQuery library in the <head> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- This is the element we'll grab from our JavaScript program -->
+    <h1 id="page-title">Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+
+    <!-- HTML abbreviated since it's not important -->
+
+    <script>
+        // Get the #page-title element and store it in a variable
+        var pageTitleElement = $("#page-title");
+        // Change the font color of the #page-title element
+        pageTitleElement.attr("style", "color: blue");
+
+        // Can also do everything in one line
+        $("#page-title").attr("style", "color: blue");
+    </script>
+
+</body>
+
+</html>
+```
+
+
+<figure markdown>
+![jquery get element example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/get-element-by-id.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
+You can select multiple elements as well. For example, elements that all share the same `class` can be edited together like this:
+
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daniel's Homepage</title>
+    <!-- Must include the jQuery library in the <head> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Other HTML abbreviated since it's not important -->
+
+    <div>
+        <h2>About me</h2>
+        <!-- We'll grab these elements from JavaScript -->
+        <p class="likes">I like to code</p>
+        <p class="likes">I like tacos</p>
+        <p class="likes">I like pugs</p>
+    </div>
+
+
+    <script>
+        // Get the .likes elements and store them in a variable
+        var likesElements = $(".likes");
+        // Change the font color of all the .likes elements
+        likesElements.attr("style", "color: red");
+
+        // Can also do everything in one line
+        $(".likes").attr("style", "color: red");
+    </script>
+
+</body>
+
+</html>
+```
+
+
+<figure markdown>
+![jquery get elements example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/get-elements-by-class-jquery.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
