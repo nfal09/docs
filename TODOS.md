@@ -56,13 +56,13 @@
 - style property
 
 ### Timers
-    - setTimeout()
-    - setInterval()
+- setTimeout()
+- setInterval()
 
 ### Events
-    - jQuery events
-    - addEventListener()
-    - onclick, onthingy
-    - Popular events
-        - click
-        - submit
+- jQuery events
+- addEventListener()
+- onclick, onthingy
+- Popular events
+    - click
+    - submit
