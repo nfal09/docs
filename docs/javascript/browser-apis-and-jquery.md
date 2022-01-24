@@ -106,9 +106,16 @@ When working with JavaScript, the developer tools (dev tools for short) are your
 
 ### The JavaScript console
 
-Once you've opened the dev tools in your browser of choice (look up how to do it for your browser) you'll have access to a *Console* tab:
+Once you've opened the dev tools in your browser of choice (look up how to do it for your browser) you'll have access to a *Console* tab. You can write JavaScript code here to test things out:
 
 <figure markdown>
-![console example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/console.png?raw=true){ width="300" }
+![console example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/console.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+You have access to the DOM on the page and can edit it from the *Console* tab, just like if you were in a JavaScript program:
+
+<figure markdown>
+![edit DOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/hot-dogs.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
