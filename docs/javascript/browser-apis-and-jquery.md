@@ -159,3 +159,40 @@ Often, you'll be given a link that opens the offending file and points at the ex
 ![console error example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/console-error.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+
+#### Testing variables and functions from the console
+
+You have access to any global variables and functions in the *Console* tab and can mess around with them to see if they are doing what you expect:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daniel's Homepage</title>
+</head>
+
+<body>
+
+    <h1>Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+
+    <!-- HTML abbreviated since it's not important -->
+
+    <script>
+        var myFavoriteFood = "Tacos";
+      
+        function sayHello(name) {
+            console.log("Hello, " + name);
+        }
+    </script>
+
+</body>
+
+</html>
+```
+
+<figure markdown>
+![mess with variables/functions example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/variables-and-functions.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
