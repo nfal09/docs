@@ -7,7 +7,7 @@ JavaScript is the language that powers the interactive web! We use JavaScript as
 | Interactive Websites with JavaScript | Interactive JavaScript | Fundamentals of Web Development
 | Capstone 3                           | Web Interfaces         | User Interface Development
 |                                      | Capstone 2             | Capstone 1
-|                                      | Matering APIs          | APIs and Databases
+|                                      | Mastering APIs          | APIs and Databases
 |                                      | Capstone 3             | Capstone 2
 |                                      |                        | DevOps and Software Engineering
 |                                      |                        | Capstone 3
