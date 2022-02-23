@@ -1855,3 +1855,21 @@ console.log(score);  // 0
 - [MDN - JavaScript First Steps - Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
 - [Eloquent JavaScript - Bindings](https://eloquentjavascript.net/02_program_structure.html#h_lnOC+GBEtu)
 - [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables)
+
+
+//what is needed?
+Styling DOM Nodes
+Events
+Timers
+### Styling DOM Nodes 
+
+### Events
+
+### Timers 
+Javascript has two `time intervals` methods that allows us to execute code at a given time. 
+
+The `setInterval` function will execute a given function after a waiting a certain amount of time. 
+
+``` 
+setInterval(function, ms)
+```

@@ -356,3 +356,51 @@ You can select multiple elements as well. For example, elements that all share t
 ![jquery get elements example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/get-elements-by-class-jquery.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+//what is needed?
+Styling DOM Nodes
+Events
+Timers
+### Styling DOM Nodes 
+
+### Events
+
+### Timers 
+Javascript has two `time intervals` methods that allows us to execute code at a given time. 
+
+The `setInterval` function will execute a given function after a waiting a certain amount of time. 
+
+``` 
+setInterval(function, ms)
+```
+
+```html
+<head>
+    <title>Cat TakeOver!</title>
+    <link href="style.css" rel="stylesheet" >
+</head>
+
+<body>
+    <h1>Wait for it......</h1>
+    <img id="cat" src="funny cat.jpg">
+</body>
+
+  
+  <script>
+    
+    function addCat() {
+       var catImage = document.getElementById('cat');
+      catImage.style.opacity = 1;
+      
+    }
+     //setInterval will call the function after 10000 ms or 10 seconds
+    setInterval(addCat, 10000)
+    
+    
+  </script>
+</html>
+```
+
+
+
+
