@@ -357,22 +357,16 @@ You can select multiple elements as well. For example, elements that all share t
 <figcaption></figcaption>
 </figure>
 
-//what is needed?
-Styling DOM Nodes
-Events
-Timers
+
 ### Styling DOM Nodes 
 
 ### Events
 
 ### Timers 
-Javascript has two `time intervals` methods that allows us to execute code at a given time. 
+Javascript has two `time intervals` methods that allow us to execute code at a given time. 
 
-The `setInterval` function will execute a given function after a waiting a certain amount of time. 
 
-``` 
-setInterval(function, ms)
-```
+The `setTimeout` function will execute a given function after waiting a certain amount of time. 
 
 ```html
 <head>
@@ -382,7 +376,7 @@ setInterval(function, ms)
 
 <body>
     <h1>Wait for it......</h1>
-    <img id="cat" src="funny cat.jpg">
+    <img id="cat" src="funny-cat.jpg">
 </body>
 
   
@@ -390,17 +384,63 @@ setInterval(function, ms)
     
     function addCat() {
        var catImage = document.getElementById('cat');
-      catImage.style.opacity = 1;
+       catImage.style.opacity = 1;
       
     }
-     //setInterval will call the function after 10000 ms or 10 seconds
-    setInterval(addCat, 10000)
+     //setTimeout will call the function after 10000 ms or 10 seconds
+    setTimeout(addCat, 10000)
     
     
   </script>
 </html>
 ```
 
+<figure markdown>
+![setTimeout example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/catgif.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+The `setInterval` function will execute a given function repeatedly with a set time . 
 
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cat TakeOver!</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
+  <body>
+    <h1>Wait for it......</h1>
+    <div>
+      <img id="cat" src="funny cat.jpg" />
+      <div id="t">
+        <span id="cl" class="material-icons-outlined"> favorite </span>
+
+        <p id="likes">0</p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var likes = 0;
+
+    function catLikes() {
+      likes++;
+      document.getElementById("likes").innerHTML = likes;
+    }
+    //setInterval will call the function every 1000 ms or 1 second
+    setInterval(catLikes, 5000);
+  </script>
+</html>
+```
+
+<figure markdown>
+![setInterval example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/setInterval.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
