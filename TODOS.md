@@ -2,18 +2,27 @@
 
 ## Browser APIs and jQuery
 
-### Global browser objects
-- document
-- window (can usually omit)
-- window.navigator (or just navigator)
-- window.location (or just location)
 
-### Browser functions for user interaction
+### Timers (in progress)
+- setTimeout()
+- setInterval()
+
+### Events (in progress)
+- jQuery events 
+- onclick
+
+### Browser functions for user interaction (in progress)
 - alert()
 - console.log()
 - prompt()
 - confirm()
 
+
+### Global browser objects
+- document
+- window (can usually omit)
+- window.navigator (or just navigator)
+- window.location (or just location)
 
 ### Querying the document
 - getElementById()
@@ -39,10 +48,8 @@
 - style property
 - jQuery's .css() method
 
-### Timers (in progress)
-- setTimeout()
-- setInterval()
 
-### Events
-- jQuery events (in progress)
-- onclick, onthingy events as attributes of HTML elements
+### Animations
+- jQuery's .animate() method
+
+
