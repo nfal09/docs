@@ -54,12 +54,12 @@
 ### Styling DOM nodes
 - style property
 
-### Timers
+### Timers (in progress)
 - setTimeout()
 - setInterval()
 
 ### Events
-- jQuery events
+- jQuery events (in progress)
 - addEventListener()
 - onclick, onthingy
 - Popular events
