@@ -53,3 +53,5 @@
 - jQuery's .animate() method
 
 
+### Browser Dev Tools
+- Something about how to use the `Elements` tab to adjust HTML and styling
