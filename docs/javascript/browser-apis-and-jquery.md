@@ -315,20 +315,36 @@ You can select multiple elements as well. For example, elements that all share t
 
 ## Timers
 
-There are two `timer` methods that allow us to execute code at a given time.
+There are two `timer` functions that allow us to execute code at a later time.
 
-The `setTimeout()` function will execute a callback function after waiting a given time.
+### `setTimeout()`
+
+The `setTimeout()` function will execute a callback function after waiting for some amount time.
+
+Function signature:
 
 ```javascript
-setTimeout(function, milliseconds);
+var timeoutID = setTimeout(callbackFunction, milliseconds);
 ```
+
+Parameters:
+
+- `callbackFunction` (`function`): The function you want to run after the given interval.
+- `milliseconds` (`number`): The amount of time before the `callbackFunction` should run.
+
+Returns:
+
+- A numeric ID representing the eventual execution of the `callbackFunction`.
+
+Example usage:
 
 ```javascript
 function addCat() {
   var catImage = document.getElementById("cat");
   catImage.style.opacity = 1;
 }
-//execute the callback function after 10000 milliseconds or 10 seconds.
+
+// Execute the `addCat()` function after 10,000 milliseconds (10 seconds).
 setTimeout(addCat, 10000);
 ```
 
@@ -337,37 +353,37 @@ setTimeout(addCat, 10000);
 <figcaption></figcaption>
 </figure>
 
-To cancel the `setTimeout()` use `clearTimeout()`. This function will require an id parameter for the interval you are trying to clear.
+### `setInterval()`
+
+The `setInterval()` function will execute a given callback function repeatedly over a set time interval.
+
+Function signature:
 
 ```javascript
-clearTimeout(id);
+var intervalID = setInterval(callbackFunction, milliseconds);
 ```
 
-```javascript
-function addCat() {
-  var catImage = document.getElementById("cat");
-  catImage.style.opacity = 1;
-  clearInterval(timeout);
-}
+Parameters:
 
-var timeout = setTimeout(addCat, 10000);
-```
+- `callbackFunction` (`function`): The function to run every given `milliseconds`.
+- `milliseconds` (`number`): The amount of time between each execution of `callbackFunction`.
 
-The `setInterval()` function will execute a given callback function repeatedly with a set time.
+Returns:
 
-```javascript
-setInterval(function, milliseconds);
-```
+- A numeric ID representing the interval executing the `callbackFunction`.
+
+Example Usage:
 
 ```javascript
 var likes = 0;
 
-function catLikes() {
+function increaseCatLikes() {
   likes++;
-  document.getElementById("likes").innerHTML = likes;
+  document.getElementById("likes").textContent = likes;
 }
-//execute the callback function every 5000 milliseconds or 5 seconds
-setInterval(catLikes, 5000);
+
+// Execute the `increaseCatLikes()` function every 5,000 milliseconds (5 seconds).
+setInterval(increaseCatLikes, 5000);
 ```
 
 <figure markdown>
@@ -375,25 +391,58 @@ setInterval(catLikes, 5000);
 <figcaption></figcaption>
 </figure>
 
-To cancel the `setInterval()` function use `clearInterval()`. This function will require an interval id as a parameter.
+### `clearTimeout()`
+
+If you need to cancel execution of a callback function setup by `setTimeout()` or `setInterval()` use `clearTimeout()`. This function will require an `intervalID` parameter for the timeout or interval you are trying to clear.
+
+Function signature:
 
 ```javascript
-clearInterval(id);
+clearTimeout(intervalID);
 ```
+
+Parameters:
+
+- `intervalID` (`number`): The interval ID returned from `setTimeout()` or `setInterval()`.
+
+Example usage:
+
+Here's how you can cancel a function that `setTimeout()` is going to execute:
+
+```javascript
+function addCat() {
+  var catImage = document.getElementById("cat");
+  catImage.style.opacity = 1;
+}
+
+// Execute the `addCat()` function after 10,000 milliseconds (10 seconds).
+var catTimeoutID = setTimeout(addCat, 10000);
+
+/*
+ *   This function could be run by another part of the script to cancel
+ *   the execution fo the `addCat()` function. It would only work if the
+ *   time interval (10 seconds) hand't already passed.
+ */
+function stopAddCat() {
+  clearTimeout(catTimeoutID);
+}
+```
+
+Here's how you can cancel a function that `setInterval()` is running:
 
 ```javascript
 var likes = 0;
 
-function catLikes() {
+function increaseCatLikes() {
   likes++;
-  document.getElementById("likes").innerHTML = likes;
+  document.getElementById("likes").textContent = likes;
 
-  //setInterval() will stop after 20 likes
   if (likes == 20) {
     alert("Interval cleared");
-    clearInterval(catInterval);
+    // `clearInterval()` will stop executing `catLikes()` after 20 likes.
+    clearInterval(catIntervalID);
   }
 }
 
-var catInterval = setInterval(catLikes, 5000);
+var catIntervalID = setInterval(increaseCatLikes, 5000);
 ```
