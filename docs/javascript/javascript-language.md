@@ -2,28 +2,25 @@
 
 JavaScript is the language that powers the interactive web! We use JavaScript as the primary language in these courses at CodeWizardsHQ:
 
-|Elementary                            | Middle School          |High School     |
-|--------------------------------------|------------------------|----------------
-| Interactive Websites with JavaScript | Interactive JavaScript | Fundamentals of Web Development
-| Capstone 3                           | Web Interfaces         | User Interface Development
-|                                      | Capstone 2             | Capstone 1
-|                                      | Mastering APIs          | APIs and Databases
-|                                      | Capstone 3             | Capstone 2
-|                                      |                        | DevOps and Software Engineering
-|                                      |                        | Capstone 3
+| Elementary                           | Middle School          | High School                     |
+| ------------------------------------ | ---------------------- | ------------------------------- |
+| Interactive Websites with JavaScript | Interactive JavaScript | Fundamentals of Web Development |
+| Capstone 3                           | Web Interfaces         | User Interface Development      |
+|                                      | Capstone 2             | Capstone 1                      |
+|                                      | Mastering APIs         | APIs and Databases              |
+|                                      | Capstone 3             | Capstone 2                      |
+|                                      |                        | DevOps and Software Engineering |
+|                                      |                        | Capstone 3                      |
 
 In this section of our documentation, you'll find references to most of the core JavaScript language features that we use in our CodeWizardsHQ courses.
 
-You'll also find many *Further reading* sections, which pull from these excellent JavaScript resources:
+You'll also find many _Further reading_ sections, which pull from these excellent JavaScript resources:
 
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [The Modern JavaScript Tutorial](https://javascript.info/)
 - [Eloquent JavaScript](https://eloquentjavascript.net/)
 
 <hr>
-
-
-
 
 ## Comments
 
@@ -36,13 +33,12 @@ Single line comments are denoted by the `//` characters. You can put them above 
 ```javascript
 // Validate the user is logged in and redirect them to the appropriate page.
 if (isLoggedIn(user)) {
-    redirectToHomepage();
+  redirectToHomepage();
 } else {
-    redirectToLogin();
+  redirectToLogin();
 }
 
-
-var minHeight = 60;  // This is measured in inches, not feet!
+var minHeight = 60; // This is measured in inches, not feet!
 ```
 
 ### Deactivating Code
@@ -51,13 +47,12 @@ You can deactivate sections of code with comments:
 
 ```javascript
 if (age < 18) {
-    // Turning this off for now
-    // prompt_user();
-    redirectToKidZone();
+  // Turning this off for now
+  // prompt_user();
+  redirectToKidZone();
 } else {
-    loginUser();
+  loginUser();
 }
-
 ```
 
 ### Multiline Comments
@@ -71,19 +66,19 @@ of the right triangle. It's the Pythagorean Theorem. The ** is how you
 write exponents in JavaScript, and fractional exponents are like roots,
 so 0.5 is the square root.
 */
-var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5;
+var hypotenuse = (sideA ** 2 + sideB ** 2) ** 0.5;
 ```
 
 Many programmers prefer to put `*` on each line of a multiline comment and indent a bit for clarity:
 
 ```javascript
 /*
-*   This calculates the hypotenuse of a right triangle when given the sides
-*   of the right triangle. It's the Pythagorean Theorem. The ** is how you
-*   write exponents in JavaScript, and fractional exponents are like roots,
-*   so 0.5 is the square root.
-*/
-var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5;
+ *   This calculates the hypotenuse of a right triangle when given the sides
+ *   of the right triangle. It's the Pythagorean Theorem. The ** is how you
+ *   write exponents in JavaScript, and fractional exponents are like roots,
+ *   so 0.5 is the square root.
+ */
+var hypotenuse = (sideA ** 2 + sideB ** 2) ** 0.5;
 ```
 
 ### Further reading
@@ -94,14 +89,9 @@ var hypotenuse = ((sideA ** 2) + (sideB ** 2)) ** 0.5;
 
 <hr>
 
-
-
-
-
-
 ## Conditional Statements
 
-Conditional statements allow you to run a block of code when a boolean condition is true. 
+Conditional statements allow you to run a block of code when a boolean condition is true.
 
 ### `if`
 
@@ -111,7 +101,7 @@ The `if` statement is the simplest form of conditional statement. If the express
 var isHungry = true;
 
 if (isHungry) {
-    console.log("You should eat!");
+  console.log("You should eat!");
 }
 ```
 
@@ -127,7 +117,7 @@ Usually, a conditional expression uses [comparison operators](#comparison-operat
 var age = 19;
 
 if (age >= 18) {
-    console.log("You are legally an adult, congrats!");
+  console.log("You are legally an adult, congrats!");
 }
 ```
 
@@ -139,19 +129,19 @@ You are legally an adult, congrats!
 
 ### `else if`
 
-The `else if` conditional statement is used to group *logically related* conditional statements together. The first conditional expression that evaluates to `true` will run:
+The `else if` conditional statement is used to group _logically related_ conditional statements together. The first conditional expression that evaluates to `true` will run:
 
 ```javascript
 var favoriteFood = "Tacos";
 
 if (favoriteFood == "Sushi") {
-    console.log("We're going out for Japanese food to night!");
+  console.log("We're going out for Japanese food to night!");
 } else if (favoriteFood == "Pasta") {
-    console.log("How about we eat some Italian food tonight?");
+  console.log("How about we eat some Italian food tonight?");
 } else if (favoriteFood == "Tacos") {
-    console.log("Time for some Mexican food!");
+  console.log("Time for some Mexican food!");
 } else if (favoriteFood == "Samosa") {
-    console.log("Let's eat Indian food tonight!");
+  console.log("Let's eat Indian food tonight!");
 }
 ```
 
@@ -163,21 +153,21 @@ Time for some Mexican food!
 
 ### `else`
 
-The `else` conditional statement runs when all other conditional statements in a group are `false`. You can think of it as the *default* option:
+The `else` conditional statement runs when all other conditional statements in a group are `false`. You can think of it as the _default_ option:
 
 ```javascript
 var favoriteFood = "Hot Dogs with Cream Cheese";
 
 if (favoriteFood == "Sushi") {
-    console.log("We're going out for Japanese food to night!");
+  console.log("We're going out for Japanese food to night!");
 } else if (favoriteFood == "Pasta") {
-    console.log("How about we eat some Italian food tonight?");
+  console.log("How about we eat some Italian food tonight?");
 } else if (favoriteFood == "Tacos") {
-    console.log("Time for some Mexican food!");
+  console.log("Time for some Mexican food!");
 } else if (favoriteFood == "Samosa") {
-    console.log("Let's eat Indian food tonight!");
+  console.log("Let's eat Indian food tonight!");
 } else {
-    console.log("I don't know what that favorite food is!");
+  console.log("I don't know what that favorite food is!");
 }
 ```
 
@@ -185,21 +175,18 @@ if (favoriteFood == "Sushi") {
 I don't know what that favorite food is!
 ```
 
-
 ### `Comparison Operators`
 
 Here are the comparison operators that you can use in conditional expressions to generate a `boolean` value:
 
-
-|Operator| Description               |
-|--------|---------------------------|
-| `>`    | Greater-than              |
-| `>=`   | Greater-than or equal-to  |
-| `<`    | Less-than                 |
-| `<=`   | Less-than or equal-to     |
-| `==`   | Equal-to                  |
-| `!=`   | Not equal-to              |
-
+| Operator | Description              |
+| -------- | ------------------------ |
+| `>`      | Greater-than             |
+| `>=`     | Greater-than or equal-to |
+| `<`      | Less-than                |
+| `<=`     | Less-than or equal-to    |
+| `==`     | Equal-to                 |
+| `!=`     | Not equal-to             |
 
 ### `Complex Conditional Statements`
 
@@ -210,9 +197,9 @@ var age = 15;
 var heightInFeet = 4.6;
 
 if (age >= 13 && heightInFeet > 5) {
-    console.log("You may ride the roller coaster.");
+  console.log("You may ride the roller coaster.");
 } else {
-    console.log("You may NOT ride the roller coaster.");
+  console.log("You may NOT ride the roller coaster.");
 }
 ```
 
@@ -232,22 +219,21 @@ var foodAmount = 10;
 var drinkAmount = 0;
 
 if ((isHungry && foodAmount > 0) || (isThirsty && drinkAmount > 0)) {
-    enterKitchen();
+  enterKitchen();
 } else {
-    playVideoGames();
+  playVideoGames();
 }
 ```
-
 
 ### `Logical Operators`
 
 Logical operators allow you to combine multiple conditional expressions in a single conditional statement:
 
-|Operator    | Description                                         |
-|------------|-----------------------------------------------------|
+| Operator   | Description                                         |
+| ---------- | --------------------------------------------------- | ------ | --------------------------------------------------- |
 | `&&` (and) | `true` when both conditional expressions are `true` |
-| `||` (or)  | `true` when either conditional expression is `true` |
-| `!`  (not) | Reverses the value of a conditional expression      |
+| `          |                                                     | ` (or) | `true` when either conditional expression is `true` |
+| `!` (not)  | Reverses the value of a conditional expression      |
 
 #### Using the `&&` operator
 
@@ -258,9 +244,9 @@ var age = 15;
 var heightInFeet = 5.2;
 
 if (age >= 13 && heightInFeet > 5) {
-    console.log("You may ride the roller coaster.");
+  console.log("You may ride the roller coaster.");
 } else {
-    console.log("You may NOT ride the roller coaster.");
+  console.log("You may NOT ride the roller coaster.");
 }
 ```
 
@@ -279,9 +265,9 @@ var isHungry = true;
 var isThirsty = false;
 
 if (isHungry || isThirsty) {
-    console.log("You should go to the kitchen.");
+  console.log("You should go to the kitchen.");
 } else {
-    console.log("Do whatever, you're good!");
+  console.log("Do whatever, you're good!");
 }
 ```
 
@@ -299,9 +285,9 @@ The `!` (not) operator reverses a conditional expression:
 var isTired = true;
 
 if (!isTired) {
-    console.log("Let's go outside and play.");
+  console.log("Let's go outside and play.");
 } else {
-    console.log("Let's take a nap.");
+  console.log("Let's take a nap.");
 }
 ```
 
@@ -319,10 +305,10 @@ Conditional statements can be nested inside other conditional statements. Use in
 var role = "admin";
 
 if (role == "admin" || role == "developer") {
-    console.log("You can see the secret stuff in this app.");
-    if (role == "admin") {
-        console.log("You can also see the SUPER secret stuff in this app.");
-    }
+  console.log("You can see the secret stuff in this app.");
+  if (role == "admin") {
+    console.log("You can also see the SUPER secret stuff in this app.");
+  }
 }
 ```
 
@@ -333,26 +319,17 @@ You can see the secret stuff in this app.
 You can also see the SUPER secret stuff in this app.
 ```
 
-
 ### Further reading
 
 - [MDN - JavaScript Building Blocks: Conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
 - [Eloquent JavaScript - Conditional Execution](https://eloquentjavascript.net/02_program_structure.html#h_wpz5oi2dy7)
 - [The Modern JavaScript Tutorial - Conditional Branching](https://javascript.info/ifelse)
 
-
 <hr>
-
-
-
-
-
-
 
 ## Data Types
 
 Every value has a data type in JavaScript. The data type determines what kinds of operations you can perform on the value.
-
 
 ### `boolean`
 
@@ -372,28 +349,28 @@ var age = 19;
 
 // This generates `true`
 if (age >= 18) {
-    console.log("You are an adult!");
+  console.log("You are an adult!");
 }
 
 // This generates `false`
 if (age < 18) {
-    console.log("You are a child.");
+  console.log("You are a child.");
 }
 ```
 
 #### Truthy and falsy values
 
-Booleans are not the only values that can be True/False. Every value in JavaScript is either *truthy* or *falsy*, which means they can be used in conditional statements without a boolean comparison operation. Empty strings and the number 0 are *falsy*, and all other strings and numbers are *truthy*.
+Booleans are not the only values that can be True/False. Every value in JavaScript is either _truthy_ or _falsy_, which means they can be used in conditional statements without a boolean comparison operation. Empty strings and the number 0 are _falsy_, and all other strings and numbers are _truthy_.
 
-Here's an example of a *falsy* value:
+Here's an example of a _falsy_ value:
 
 ```javascript
 var username = "";
 
 if (username) {
-    console.log(`Hello, ${username}!`);
+  console.log(`Hello, ${username}!`);
 } else {
-    console.log("The username is blank");
+  console.log("The username is blank");
 }
 ```
 
@@ -403,15 +380,15 @@ Example Output:
 The username is blank
 ```
 
-Here's an example of a *truthy* value:
+Here's an example of a _truthy_ value:
 
 ```javascript
 var numBananas = 2;
 
 if (numBananas) {
-    console.log("We have bananas!");
+  console.log("We have bananas!");
 } else {
-    console.log("We have no bananas!");
+  console.log("We have no bananas!");
 }
 ```
 
@@ -420,8 +397,6 @@ Example Output:
 ```text
 We have bananas!
 ```
-
-
 
 ### `number`
 
@@ -451,17 +426,17 @@ The `parseFloat()` function works the same way, except the `number` will be a de
 
 ```javascript
 var heightInInches = parseFloat("60.5");
-console.log(heightInInches);  // 60.5
+console.log(heightInInches); // 60.5
 ```
 
 Instead of `parseInt()` or `parseFloat()`, you can use the `+` operator to convert a `string` to a `number`:
 
 ```javascript
-var age = +("13");
+var age = +"13";
 console.log(age); // 13
 
-var heightInInches = +("60.5");
-console.log(heightInInches);  // 60.5
+var heightInInches = +"60.5";
+console.log(heightInInches); // 60.5
 ```
 
 ### `string`
@@ -474,18 +449,18 @@ var name = "Daniel";
 
 #### String concatenation
 
-If you need to combine a variable and a `string`, you can use the `+` operator. This technique is called __string concatenation__:
+If you need to combine a variable and a `string`, you can use the `+` operator. This technique is called **string concatenation**:
 
 ```javascript
 var name = "Daniel";
 var greeting = "Hello, " + name;
 
-console.log(greeting);  // Hello, Daniel
+console.log(greeting); // Hello, Daniel
 ```
 
 #### String interpolation
 
-Another way to combine a variable and a `string` is using `template-literal` strings. This technique is called __string interpolation__, and it is the preferred way to combine variables and `strings`. Note that the string must be surrounded by backtick quotes, which are usually near the 1 key on your keyboard:
+Another way to combine a variable and a `string` is using `template-literal` strings. This technique is called **string interpolation**, and it is the preferred way to combine variables and `strings`. Note that the string must be surrounded by backtick quotes, which are usually near the 1 key on your keyboard:
 
 ```javascript
 var name = "Daniel";
@@ -538,7 +513,7 @@ You can use the `string.length` property to get the number of characters in a `s
 ```javascript
 var name = "Daniel";
 
-name.length;  // 6
+name.length; // 6
 ```
 
 #### Checking if a `string` ends with a set of characters
@@ -549,13 +524,13 @@ The `string.endsWith()` method lets you check if a `string` ends with a given pa
 var emailAddresses = ["djs@cwhq.com", "alecg@auburn.edu", "samh@bridges.com"];
 
 for (var emailAddress of emailAddresses) {
-    if (emailAddress.endsWith(".edu")) {
-        console.log(`${emailAddress} is a school address`);
-    } else if (emailAddress.endsWith("cwhq.com")) {
-        console.log(`${emailAddress} is a CWHQ employee address`);
-    } else {
-        console.log(`I don't know what ${emailAddress} is for`);
-    }
+  if (emailAddress.endsWith(".edu")) {
+    console.log(`${emailAddress} is a school address`);
+  } else if (emailAddress.endsWith("cwhq.com")) {
+    console.log(`${emailAddress} is a CWHQ employee address`);
+  } else {
+    console.log(`I don't know what ${emailAddress} is for`);
+  }
 }
 ```
 
@@ -578,7 +553,7 @@ User's do strange things, but using `string.toLowerCase()` and `string.trim()` c
 var favoriteFood = "Pizza";
 
 if (favoriteFood.toLowerCase() == "pizza") {
-    console.log("That's my favorite food!");
+  console.log("That's my favorite food!");
 }
 ```
 
@@ -595,7 +570,7 @@ That's my favorite food!
 var favoriteFood = " pizza";
 
 if (favoriteFood.trim() == "pizza") {
-    console.log("That's my favorite food!");
+  console.log("That's my favorite food!");
 }
 ```
 
@@ -612,9 +587,8 @@ You can chain these methods together to sanitize a `string` completely:
 var favoriteFood = " PIzZa  ";
 
 if (favoriteFood.trim().toLowerCase() == "pizza") {
-    console.log("That's my favorite food!");
+  console.log("That's my favorite food!");
 }
-
 ```
 
 Example Output:
@@ -622,7 +596,6 @@ Example Output:
 ```text
 That's my favorite food!
 ```
-
 
 ### Further reading
 
@@ -637,41 +610,26 @@ That's my favorite food!
 
 <hr>
 
-
-
-
-
-
-
-
-
 ## Data Structures
 
 Data structures allow you to efficiently store and access groups of items. Think of them like different storage containers you may use around the house.
 
-
 ### `array`
 
-The `array` data structure is used to store data in ordered *slots*. It is known as *mutable sequence type*, which means it can be modified after creation.
+The `array` data structure is used to store data in ordered _slots_. It is known as _mutable sequence type_, which means it can be modified after creation.
 
 Usually, the items in a `array` are homogeneous, which means they represent a group of similar items of the same data type:
 
 ```javascript
 var names = ["alecg", "danielj", "dimas"];
-var menuPrices = [4.50, 5.75, 3.00];
+var menuPrices = [4.5, 5.75, 3.0];
 var ids = [184, 294, 832, 98, 4];
 ```
 
 You can write an `array` on multiple lines if you want. The trailing comma is recommended but not required:
 
 ```javascript
-var foods = [
-    "tacos", 
-    "pizza", 
-    "nachos",
-    "ice cream",
-    "asparagus",
-];
+var foods = ["tacos", "pizza", "nachos", "ice cream", "asparagus"];
 ```
 
 #### Accessing items in an `array`
@@ -681,12 +639,10 @@ You can access individual items in an `array` using the `[]` characters and the 
 ```javascript
 var names = ["alecg", "danielj", "dimas"];
 
-console.log(names[0]);  // alecg
-console.log(names[1]);  // danielj
-console.log(names[2]);  // dimas
+console.log(names[0]); // alecg
+console.log(names[1]); // danielj
+console.log(names[2]); // dimas
 ```
-
-
 
 #### Adding an item to an `array`
 
@@ -697,10 +653,8 @@ var names = ["alecg", "danielj", "dimas"];
 
 names.push("samh");
 
-console.log(names);  // ['alecg', 'danielj', 'dimas', 'samh'];
+console.log(names); // ['alecg', 'danielj', 'dimas', 'samh'];
 ```
-
-
 
 #### Updating an item in an `array`
 
@@ -711,9 +665,8 @@ var names = ["alecg", "danielj", "dimas"];
 
 names[1] = "django";
 
-console.log(names);  // ['alecg', 'django', 'dimas']
+console.log(names); // ['alecg', 'django', 'dimas']
 ```
-
 
 #### Removing an item from an `array`
 
@@ -730,7 +683,7 @@ var names = ["alecg", "danielj", "dimas"];
 
 names.splice(0, 1);
 
-console.log(names);  // ['danielj', 'dimas']
+console.log(names); // ['danielj', 'dimas']
 ```
 
 If you want to remove an item from the end of an `array`, use the `array.pop()` method:
@@ -740,7 +693,7 @@ var names = ["alecg", "danielj", "dimas"];
 
 names.pop();
 
-console.log(names);  // ['alecg', 'danielj'];
+console.log(names); // ['alecg', 'danielj'];
 ```
 
 #### Looping through an `array`
@@ -752,7 +705,7 @@ var names = ["alecg", "danielj", "dimas"];
 
 console.log("This documentation is brought to you by:");
 for (var name of names) {
-    console.log(name);
+  console.log(name);
 }
 ```
 
@@ -772,7 +725,7 @@ var names = ["alecg", "danielj", "dimas"];
 
 console.log("This documentation is brought to you by:");
 for (var i = 0; i < names.length; i++) {
-    console.log(names[i]);
+  console.log(names[i]);
 }
 ```
 
@@ -785,7 +738,6 @@ danielj
 dimas
 ```
 
-
 #### Getting the number of items in an `array`
 
 To get the number of items in an `array`, use the `array.length()` method:
@@ -795,7 +747,7 @@ var names = ["alecg", "danielj", "dimas"];
 
 var numNames = names.length;
 
-console.log(numNames);  // 3
+console.log(numNames); // 3
 ```
 
 #### Checking if an item is contained in an `array`
@@ -805,11 +757,9 @@ To check if an item is contained in an `array`, use the `array.includes()` metho
 ```javascript
 var names = ["alecg", "danielj", "dimas"];
 
-console.log(names.includes("alecg"));  // True
-console.log(names.includes("samh"));  // False
+console.log(names.includes("alecg")); // True
+console.log(names.includes("samh")); // False
 ```
-
-
 
 #### Further reading
 
@@ -821,23 +771,15 @@ console.log(names.includes("samh"));  // False
 - [MDN - The JavaScript Reference - Array.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 - [MDN - The JavaScript Reference - Array.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
-
-
-
-
-
-
-
-
 ### `object`
 
-The `object` data structure is used to store data in key/value pairs. 
+The `object` data structure is used to store data in key/value pairs.
 
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 ```
 
@@ -845,12 +787,11 @@ You can use strings for the keys as well, but we'll follow the above form in the
 
 ```javascript
 var staff = {
-    "danielj": "Curriculum Developer",
-    "alecg": "Curriculum Instructor",
-    "dimas": "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 ```
-
 
 #### Accessing items in an `object`
 
@@ -873,25 +814,21 @@ var dimaJob = staff.dimas.;
 console.log(`Dima is a ${dimaJob}.`);  // Dima is a Designer.
 ```
 
-
 #### Adding an item to an `object`
 
 You can add an item to an `object` by providing the key/value pair (it's the same syntax as updating an item):
 
-
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 
 staff.django = "Director Of Pug Snorts";
 
-console.log(staff);  // {danielj: 'Curriculum Developer', alecg: 'Curriculum Instructor', dimas: 'Designer', django: 'Director Of Pug Snorts'}
+console.log(staff); // {danielj: 'Curriculum Developer', alecg: 'Curriculum Instructor', dimas: 'Designer', django: 'Director Of Pug Snorts'}
 ```
-
-
 
 #### Updating an item in an `object`
 
@@ -899,17 +836,15 @@ To update an item in an `object`, you must know the key:
 
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 
-staff.danielj = "Burrito Taste-Tester"
+staff.danielj = "Burrito Taste-Tester";
 
-console.log(staff);  // {danielj: 'Burrito Taste-Tester', alecg: 'Curriculum Instructor', dimas: 'Designer'}
+console.log(staff); // {danielj: 'Burrito Taste-Tester', alecg: 'Curriculum Instructor', dimas: 'Designer'}
 ```
-
-
 
 #### Removing an item from an `object`
 
@@ -917,16 +852,15 @@ To remove an item from an `object`, use the `delete` operator:
 
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
-}; 
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
+};
 
 delete staff.danielj;
 
-console.log(staff)  // {alecg: 'Curriculum Instructor', dimas: 'Designer'}
+console.log(staff); // {alecg: 'Curriculum Instructor', dimas: 'Designer'}
 ```
-
 
 #### Looping through an `object`
 
@@ -934,14 +868,14 @@ To loop through an `object`, you use the `for...in` loop like this:
 
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 
 for (var key in staff) {
-    // Note the [] used to access the value in the object
-    console.log(`${key} is a ${staff[key]}.`);
+  // Note the [] used to access the value in the object
+  console.log(`${key} is a ${staff[key]}.`);
 }
 ```
 
@@ -953,19 +887,15 @@ alecg is a Curriculum Instructor.
 dimas is a Designer.
 ```
 
-
-
-
 #### Getting the keys from an `object`
 
 If you need to get all of the keys from an `object`, use the `object.keys()` method. Note that the keys will be returned as an `array`:
 
-
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 
 var names = staff.keys();
@@ -983,12 +913,11 @@ Here are all the names in the staff object: ['danielj', 'alecg', 'dimas']
 
 If you need to get all of the values from an `object`, use the `object.values()` method. Note, the values will be returned as an `array`:
 
-
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 
 var jobs = staff.values();
@@ -1008,18 +937,15 @@ You can get the keys from an `object` and then use the `array.length` method to 
 
 ```javascript
 var staff = {
-    danielj: "Curriculum Developer",
-    alecg: "Curriculum Instructor",
-    dimas: "Designer",
+  danielj: "Curriculum Developer",
+  alecg: "Curriculum Instructor",
+  dimas: "Designer",
 };
 
 var numberOfStaff = staff.keys().length;
 
-console.log(`We have ${numberOfStaff} people on our staff.`);  // We have 3 people on our staff.
+console.log(`We have ${numberOfStaff} people on our staff.`); // We have 3 people on our staff.
 ```
-
-
-
 
 #### Further reading
 
@@ -1033,25 +959,13 @@ console.log(`We have ${numberOfStaff} people on our staff.`);  // We have 3 peop
 
 <hr>
 
-
-
-
-
-
-
-
-
-
-
-
 ## Functions
 
-Functions allow you to group related statements together to perform a task. They help to implement the __D.R.Y.__(Don't Repeat Yourself) principle because they reduce unnecessary repetition.
-
+Functions allow you to group related statements together to perform a task. They help to implement the **D.R.Y.**(Don't Repeat Yourself) principle because they reduce unnecessary repetition.
 
 ### Built-in functions
 
-JavaScript comes with many built-in functions. We'll cover some of the most common that you'll see in CodeWizardsHQ courses below. 
+JavaScript comes with many built-in functions. We'll cover some of the most common that you'll see in CodeWizardsHQ courses below.
 
 ##### `parseFloat()`
 
@@ -1060,13 +974,13 @@ The `parseFloat()` function converts data to a `number` data type with a decimal
 ```javascript
 var pi = parseFloat("3.14");
 
-console.log(pi);  // 3.14
-typeof pi;  // 'number
+console.log(pi); // 3.14
+typeof pi; // 'number
 
 var two = parseFloat(2);
 
-console.log(two);  // 2.0
-typeof two;  // 'number'
+console.log(two); // 2.0
+typeof two; // 'number'
 ```
 
 ##### `prompt()`
@@ -1092,27 +1006,26 @@ The `parseInt()` function converts data to a `number` data type without a decima
 ```javascript
 var intPI = parseInt(3.14);
 
-console.log(intPI);  // 3
-typeof intPI;  // 'number'
+console.log(intPI); // 3
+typeof intPI; // 'number'
 
 var meaningOfLife = parseInt("42");
 
-console.log(meaningOfLife);  // 42
-typeof meaningOfLife;  // 'number'
+console.log(meaningOfLife); // 42
+typeof meaningOfLife; // 'number'
 ```
-
 
 ##### `console.log()`
 
 The `console.log()` function displays text in the developer console:
 
 ```javascript
-console.log("Hello, world!");  // Hello, world!
+console.log("Hello, world!"); // Hello, world!
 ```
 
 ###### Using special characters with `console.log()`
 
-You can use special characters such as `\n` and `\t` to format the text a bit. The `\n` adds a newline (like hitting __enter__ on your keyboard) and the `\t` adds a tab:
+You can use special characters such as `\n` and `\t` to format the text a bit. The `\n` adds a newline (like hitting **enter** on your keyboard) and the `\t` adds a tab:
 
 ```javascript
 console.log("Line 1\nLine 2\nLine 3\n");
@@ -1130,20 +1043,12 @@ Line 3
         This too.
 ```
 
-
-
-
 #### Further reading
-
 
 - [MDN - Web APIs: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
 - [MDN - The JavaScript Reference: parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
 - [MDN - The JavaScript Reference: parseFloat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
 - [MDN - The JavaScript Reference: window.prompt()](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
-
-
-
-
 
 ### User-defined functions
 
@@ -1151,20 +1056,20 @@ You define a function using the `function` keyword. Functions definitions can go
 
 ```javascript
 function sayHello() {
-    console.log("Hello!");
+  console.log("Hello!");
 }
 ```
 
 #### Calling a function
 
-Defining a function does not run the statements in the body of the function. To run a function, you *call* it like this:
+Defining a function does not run the statements in the body of the function. To run a function, you _call_ it like this:
 
 ```javascript
 function sayHello() {
-    console.log("Hello!");
+  console.log("Hello!");
 }
 
-sayHello();  // Hello!
+sayHello(); // Hello!
 ```
 
 #### Adding parameters to a function
@@ -1173,21 +1078,20 @@ When you define a function, you can add parameters that the function caller shou
 
 ```javascript
 function sayHello(name) {
-    console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
 }
 ```
 
 #### Passing arguments to a function
 
-If a function accepts parameters, you need to pass them in when you call the function. The values you pass to the function are called the *arguments* to the function:
-
+If a function accepts parameters, you need to pass them in when you call the function. The values you pass to the function are called the _arguments_ to the function:
 
 ```javascript
 function sayHello(name) {
-    console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
 }
 
-sayHello("Daniel");  // Hello, Daniel!
+sayHello("Daniel"); // Hello, Daniel!
 ```
 
 #### Returning a value from a function
@@ -1196,8 +1100,8 @@ You can return a value from a function by using the `return` keyword:
 
 ```javascript
 function add(number1, number2) {
-    var total = number1 + number2;
-    return total;
+  var total = number1 + number2;
+  return total;
 }
 ```
 
@@ -1207,26 +1111,25 @@ If a function returns a value, you can capture it in a variable:
 
 ```javascript
 function add(number1, number2) {
-    var total = number1 + number2;
-    return total;
+  var total = number1 + number2;
+  return total;
 }
 
 var total = add(2, 3);
-console.log(total);  // 5
+console.log(total); // 5
 ```
 
 You can also use the value immediately in another function, like `console.log()` or as part of a `template-literal` string:
 
 ```javascript
 function add(number1, number2) {
-    var total = number1 + number2;
-    return total;
+  var total = number1 + number2;
+  return total;
 }
 
-console.log(add(2, 3))  // 5
-console.log(`2 + 3 = ${add(2, 3)}`);  // 2 + 3 = 5
+console.log(add(2, 3)); // 5
+console.log(`2 + 3 = ${add(2, 3)}`); // 2 + 3 = 5
 ```
-
 
 #### Indentation in functions
 
@@ -1234,14 +1137,13 @@ Indentation is not required in JavaScript, but you should do it for readability.
 
 ```javascript
 function sayHello(name) {
-    console.log(`Hello, ${name}!`);
-    if (name == "Daniel") {
-        console.log("That's a cool name!");
-    } else {
-        console.log("Nice to meet you!");
-    }
+  console.log(`Hello, ${name}!`);
+  if (name == "Daniel") {
+    console.log("That's a cool name!");
+  } else {
+    console.log("Nice to meet you!");
+  }
 }
-
 
 sayHello("Daniel");
 sayHello("Alec");
@@ -1257,27 +1159,23 @@ Hello, Alec!
 Nice to meet you!
 ```
 
-
 #### Using an early `return` statement to exit a function
 
 A `return` statement can be used to exit a function. This is normally used when you want to verify (with a conditional statement) that some preconditions are valid before continuing to execute a function body:
 
 ```javascript
 function greetCodewizard(name) {
-    var staff = ["danielj", "alecg", "dimas"];
-    if (!staff.includes(name)) {
-        console.log("I don't know you!");
-        return;
-    }
-    console.log(`Hello, ${name}!`);
+  var staff = ["danielj", "alecg", "dimas"];
+  if (!staff.includes(name)) {
+    console.log("I don't know you!");
+    return;
+  }
+  console.log(`Hello, ${name}!`);
 }
 
-
-greetCodewizard("danielj");  // Hello, danielj!
-greetCodewizard("django");   // I don't know you!
+greetCodewizard("danielj"); // Hello, danielj!
+greetCodewizard("django"); // I don't know you!
 ```
-
-
 
 #### Further reading
 
@@ -1287,34 +1185,28 @@ greetCodewizard("django");   // I don't know you!
 
 <hr>
 
-
-
-
-
-
-
 ## Loops
 
 If you need to repeat something in your programs, you'll need to use one of JavaScript's looping mechanisms.
 
-
 ### `for`
 
-JavaScript's `for` loop is one of the more complicated pieces of syntax in the language. The *header* of the `for` loop controls how many times the loop runs, and it consists of three parts:
+JavaScript's `for` loop is one of the more complicated pieces of syntax in the language. The _header_ of the `for` loop controls how many times the loop runs, and it consists of three parts:
 
 ```javascript
 // header
 for (counter; loopContinuationCondition; incrementOrDecrement) {
-    // body
+  // body
 }
 ```
+
 The `counter` is a variable that will hold a number representing the current loop iteration (usually). The `loopContinuationCondition` is a `boolean` condition that determines whether the loop should continue. The `incrementOrDecrement` is a statement that modifies the `counter` after each loop completes.
 
 To see all three elements in action, consider this `for` loop, which loops 3 times and prints "Hello" to the console three times:
 
 ```javascript
 for (var counter = 0; counter < 3; counter++) {
-    console.log("Hello");
+  console.log("Hello");
 }
 ```
 
@@ -1330,7 +1222,7 @@ Generally, the `counter` is called `i`. This is a shorthand that many programmer
 
 ```javascript
 for (var i = 0; i < 3; i++) {
-    console.log("Hello");
+  console.log("Hello");
 }
 ```
 
@@ -1342,14 +1234,13 @@ Hello
 Hello
 ```
 
-
 #### Counter-controlled repetition with the `for` loop
 
 A `for` loop is used to loop a certain number of times (called counter-controlled repetition). You generally perform some action in the body of a `for` loop:
 
 ```javascript
 for (var i = 0; i < 3; i++) {
-    console.log(`${i} taco`);
+  console.log(`${i} taco`);
 }
 ```
 
@@ -1367,7 +1258,7 @@ You can use a `for` loop to loop over an `array`, but the `for...of` loop is eas
 var fruits = ["apple", "banana", "cherry"];
 
 for (var i = 0; i < fruits.length; i++) {
-    console.log(`Index number: ${i}  Fruit: ${fruits[i]}`);
+  console.log(`Index number: ${i}  Fruit: ${fruits[i]}`);
 }
 ```
 
@@ -1379,7 +1270,6 @@ Index number: 1  Fruit: banana
 Index number: 2  Fruit: cherry
 ```
 
-
 #### Looping through `arrays` with the `for...of` loop
 
 The `for...of` loop is the easiest way to loop through the items in an `array`. Note the convention of a plural `array` name (fruits) and a singular loop-iteration variable (fruit):
@@ -1388,7 +1278,7 @@ The `for...of` loop is the easiest way to loop through the items in an `array`. 
 var fruits = ["apple", "banana", "cherry"];
 
 for (var fruit of fruits) {
-    console.log(fruit);
+  console.log(fruit);
 }
 ```
 
@@ -1400,8 +1290,6 @@ banana
 cherry
 ```
 
-
-
 ##### Searching for a value in a `for...of` loop
 
 You can use a conditional statement inside a `for...of` loop to search for a particular item in an `array` and then do something:
@@ -1410,9 +1298,9 @@ You can use a conditional statement inside a `for...of` loop to search for a par
 var fruits = ["orange", "banana", "cherry", "apple"];
 
 for (var fruit of fruits) {
-    if (fruit == "orange") {
-        console.log(`${fruit} is the best fruit`);
-    }
+  if (fruit == "orange") {
+    console.log(`${fruit} is the best fruit`);
+  }
 }
 ```
 
@@ -1421,7 +1309,6 @@ Example Output:
 ```text
 orange is the best fruit
 ```
-
 
 ##### Finding a value in a `for...of` loop to use after the loop finishes
 
@@ -1433,17 +1320,14 @@ var fruits = ["orange", "banana", "cherry", "apple"];
 var bestFruit;
 
 for (var fruit of fruits) {
-    if (fruit == "orange") {
-        bestFruit = fruit;
-    }
+  if (fruit == "orange") {
+    bestFruit = fruit;
+  }
 }
 
-
 // The best fruit is orange.
-console.log(`The best fruit is ${bestFruit}.`)
+console.log(`The best fruit is ${bestFruit}.`);
 ```
-
-
 
 ##### Creating a new `array` in a `for...of` loop
 
@@ -1454,15 +1338,13 @@ var prices = [10, 12, 5, 8];
 var discounted_prices = [];
 
 for (var price of prices) {
-    discounted_price = price - (price * .10);
-    discounted_prices.push(discounted_price);
+  discounted_price = price - price * 0.1;
+  discounted_prices.push(discounted_price);
 }
 
-
 // Here are your discounted prices: [9, 10.8, 4.5, 7.2]
-console.log(`Here are your discounted prices: ${discounted_prices}`)
+console.log(`Here are your discounted prices: ${discounted_prices}`);
 ```
-
 
 #### Looping through `objects` with the `for...in` loop
 
@@ -1470,13 +1352,13 @@ The `for...in` loop is the easiest way to loop through the items in an `object`.
 
 ```javascript
 var users = {
-    danielj: "Admin",
-    django: "Support Staff",
-    samh: "Platform Developer",
+  danielj: "Admin",
+  django: "Support Staff",
+  samh: "Platform Developer",
 };
 
 for (var prop in users) {
-    console.log(`Username: ${prop} Role: ${users[prop]}`);
+  console.log(`Username: ${prop} Role: ${users[prop]}`);
 }
 ```
 
@@ -1488,7 +1370,6 @@ Username: django Role: Support Staff
 Username: samh Role: Platform Developer
 ```
 
-
 #### Further reading
 
 - [MDN - JavaScript Reference - for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
@@ -1497,12 +1378,6 @@ Username: samh Role: Platform Developer
 - [Eloquent JavaScript - for loops](https://eloquentjavascript.net/02_program_structure.html#h_oupMC+5FKN)
 - [The Modern JavaScript Tutorial - The "for" loop](https://javascript.info/while-for#the-for-loop)
 
-
-
-
-
-
-
 ### `while`
 
 A `while` loop is generally used to perform indefinite repetition (when you don't know how many times you want to loop).
@@ -1510,17 +1385,17 @@ A `while` loop is generally used to perform indefinite repetition (when you don'
 For example, you can use a `while` loop to ask a user something until they answer correctly:
 
 ```javascript
-var keepLooping = true;  // This variable controls whether we loop or not.
+var keepLooping = true; // This variable controls whether we loop or not.
 
 while (keepLooping) {
-    var userGuess = prompt("What is the meaning of life? ");
-    
-    if (userGuess == "42") {
-        console.log("That's correct!");
-        keepLooping = false;  // Stops the loop.
-    } else {
-        console.log("That's incorrect! Please try again.");
-    }
+  var userGuess = prompt("What is the meaning of life? ");
+
+  if (userGuess == "42") {
+    console.log("That's correct!");
+    keepLooping = false; // Stops the loop.
+  } else {
+    console.log("That's incorrect! Please try again.");
+  }
 }
 ```
 
@@ -1541,14 +1416,14 @@ You can also use a `break` statement instead of using a variable to control how 
 
 ```javascript
 while (true) {
-    userGuess = prompt("What is the meaning of life? ");
-    
-    if (userGuess == "42") {
-        console.log("That's correct!");
-        break;  // Stops the loop.
-    } else {
-        console.log("That's incorrect! Please try again.");
-    }
+  userGuess = prompt("What is the meaning of life? ");
+
+  if (userGuess == "42") {
+    console.log("That's correct!");
+    break; // Stops the loop.
+  } else {
+    console.log("That's incorrect! Please try again.");
+  }
 }
 ```
 
@@ -1572,8 +1447,8 @@ the `for` loop is generally preferred for this:
 var counter = 0;
 
 while (counter < 5) {
-    console.log(counter);
-    counter++;  // If you forget this, you'll have an infinite loop!
+  console.log(counter);
+  counter++; // If you forget this, you'll have an infinite loop!
 }
 ```
 
@@ -1587,27 +1462,17 @@ Example Output:
 4
 ```
 
-
-
-
 #### Further reading
 
 - [MDN - JavaScript Reference: while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 - [Eloquent JavaScript - while and do loops](https://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM)
 - [The Modern JavaScript Tutorial - The "while" loop](https://javascript.info/while-for#the-while-loop)
 
-
-
 <hr>
-
-
-
-
-
 
 ## Math Operations
 
-JavaScript can perform most mathematical operations with ease. There are standard operators for all of the arithmetic operations and the `Math` object has access to many more operations for things like Trigonometry. 
+JavaScript can perform most mathematical operations with ease. There are standard operators for all of the arithmetic operations and the `Math` object has access to many more operations for things like Trigonometry.
 
 #### Arithmetic Operators
 
@@ -1619,23 +1484,22 @@ var difference = 8 - 2;
 var product = 8 * 2;
 var quotient = 8 / 2;
 
-console.log(`8 + 2 = ${total}`)       // 8 + 2 = 10
-console.log(`8 - 2 = ${difference}`)  // 8 - 2 = 6
-console.log(`8 * 2 = ${product}`)     // 8 * 2 = 16
-console.log(`8 / 2 = ${quotient}`)    // 8 / 2 = 4
+console.log(`8 + 2 = ${total}`); // 8 + 2 = 10
+console.log(`8 - 2 = ${difference}`); // 8 - 2 = 6
+console.log(`8 * 2 = ${product}`); // 8 * 2 = 16
+console.log(`8 / 2 = ${quotient}`); // 8 / 2 = 4
 ```
-
 
 #### Other Operators
 
-There are a few other common operators that JavaScript provides for common math operations. 
+There are a few other common operators that JavaScript provides for common math operations.
 
 ##### Modulo
 
 The modulo operator (`%`) returns the remainder after division:
 
 ```javascript
-10 % 3  // 1
+10 % 3; // 1
 ```
 
 ##### Power
@@ -1643,9 +1507,8 @@ The modulo operator (`%`) returns the remainder after division:
 The power operator (`**`) multiplies a number by itself a given number of times:
 
 ```javascript
-3 ** 2  // 9
+3 ** 2; // 9
 ```
-
 
 ##### Further reading
 
@@ -1653,10 +1516,7 @@ The power operator (`**`) multiplies a number by itself a given number of times:
 - [Eloquent JavaScript - Arithmetic](https://eloquentjavascript.net/01_values.html#i_RfBT3HMnYs)
 - [The Modern JavaScript Tutorial - Basic operators, maths](https://javascript.info/operators)
 
-
 <hr>
-
-
 
 #### The `Math` object
 
@@ -1668,7 +1528,7 @@ The `Math.random()` method returns a random decimal number between 0 and 1:
 
 ```javascript
 var randomNumber = Math.random();
-console.log(randomNumber);  // 0.1524438866958424
+console.log(randomNumber); // 0.1524438866958424
 ```
 
 If you'd like to get a random whole number between a `min` and `max`, this helper function is useful:
@@ -1680,7 +1540,7 @@ function random(min, max) {
 }
 
 var randomNumber = random(1, 10);
-console.log(randomNumber);  // 9
+console.log(randomNumber); // 9
 ```
 
 ##### Rounding with `Math.floor()` and `Math.ceil()`
@@ -1696,30 +1556,19 @@ To round a number up, use `Math.ceil()`:
 
 ```javascript
 var roundedNumber = Math.ceil(4.2);
-console.log(roundedNumber);  // 4
+console.log(roundedNumber); // 4
 ```
-
-
 
 ##### Further reading
 
 - [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 - [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
-
 <hr>
-
-
-
-
-
-
-
-
 
 ## Variables
 
-Variables assign a name to a value. The naming convention in JavaScript is to use *camelCase* for variable names.
+Variables assign a name to a value. The naming convention in JavaScript is to use _camelCase_ for variable names.
 
 ### Creating a variable
 
@@ -1728,7 +1577,6 @@ You create a variable using the `var` keyword:
 ```javascript
 var myVariable;
 ```
-
 
 Usually, you create a variable and assign a value to the variable the assignment operator (`=`) at once:
 
@@ -1743,72 +1591,69 @@ You can update the value stored in a numeric variable like this:
 
 ```javascript
 var score = 0;
-score = score + 1; 	 // 0 + 1
+score = score + 1; // 0 + 1
 
-console.log(score);  // 1
+console.log(score); // 1
 
-score = score + 1; 	 // 1 + 1
+score = score + 1; // 1 + 1
 
-console.log(score);  // 2
+console.log(score); // 2
 ```
 
 The same works for decreasing the value of a numeric variable:
 
-
 ```javascript
 var score = 3;
-score = score - 1; 	 // 3 - 1
+score = score - 1; // 3 - 1
 
-console.log(score);  // 2
+console.log(score); // 2
 
-score = score - 1; 	 // 2 - 1
+score = score - 1; // 2 - 1
 
-console.log(score);  // 1
+console.log(score); // 1
 ```
-
 
 There is a shorthand notation for increasing and decreasing the value of a numeric variable:
 
 ```javascript
 var score = 0;
-score += 1; 	     // 0 + 1
+score += 1; // 0 + 1
 
-console.log(score);  // 1
+console.log(score); // 1
 
-score += 1; 	     // 1 + 1
+score += 1; // 1 + 1
 
-console.log(score);  // 2
+console.log(score); // 2
 
-score -= 1;          // 2 - 1
+score -= 1; // 2 - 1
 
-console.log(score);  // 1
+console.log(score); // 1
 
-score -= 1;          // 1 - 1
+score -= 1; // 1 - 1
 
-console.log(score);  // 0
+console.log(score); // 0
 ```
 
 For an even more compact notation, you can use `++` or `--` to increase/decrease the value of a numeric variable:
 
 ```javascript
 var score = 0;
-score++; 	         // 0 + 1
+score++; // 0 + 1
 
-console.log(score);  // 1
+console.log(score); // 1
 
-score++; 	         // 1 + 1
+score++; // 1 + 1
 
-console.log(score);  // 2
+console.log(score); // 2
 
-score--;             // 2 - 1
+score--; // 2 - 1
 
-console.log(score);  // 1
+console.log(score); // 1
 
-score--;             // 1 - 1
+score--; // 1 - 1
 
-console.log(score);  // 0
+console.log(score); // 0
 ```
-
 
 ### Global vs. local variables
 
@@ -1819,39 +1664,36 @@ Any variable created outside of function definition is considered a `global` var
 var score = 0;
 
 function updateScore() {
-    score = score + 1;	// 1
+  score = score + 1; // 1
 }
 
-console.log(score);  // 0
+console.log(score); // 0
 
-updateScore();  // Changes the global `score` variable
+updateScore(); // Changes the global `score` variable
 
-console.log(score);  // 1
+console.log(score); // 1
 ```
 
-Updates to `global` variables affect the variable throughout the program. If you want a variable to exist only inside of a function, you can make it local to the function by creating the variable (with the `var` keyword) *inside* the function:
-
+Updates to `global` variables affect the variable throughout the program. If you want a variable to exist only inside of a function, you can make it local to the function by creating the variable (with the `var` keyword) _inside_ the function:
 
 ```javascript
 // This is a global variable.
 var score = 0;
 
 function updateScore() {
-    // This is a local variable, it only exists within `updateScore()`
-    var score = 1;
+  // This is a local variable, it only exists within `updateScore()`
+  var score = 1;
 }
 
-console.log(score);  // 0
+console.log(score); // 0
 
-updateScore();  // Doesn't change the global `score` variable
+updateScore(); // Doesn't change the global `score` variable
 
-console.log(score);  // 0
+console.log(score); // 0
 ```
-
-
 
 ### Further reading
 
 - [MDN - JavaScript First Steps - Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
 - [Eloquent JavaScript - Bindings](https://eloquentjavascript.net/02_program_structure.html#h_lnOC+GBEtu)
-- [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables)
+- [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables

@@ -2,19 +2,19 @@
 
 JavaScript is the language that powers the interactive web! We use JavaScript as the primary language in these courses at CodeWizardsHQ:
 
-|Elementary                            | Middle School          |High School     |
-|--------------------------------------|------------------------|----------------
-| Interactive Websites with JavaScript | Interactive JavaScript | Fundamentals of Web Development
-| Capstone 3                           | Web Interfaces         | User Interface Development
-|                                      | Capstone 2             | Capstone 1
-|                                      | Mastering APIs          | APIs and Databases
-|                                      | Capstone 3             | Capstone 2
-|                                      |                        | DevOps and Software Engineering
-|                                      |                        | Capstone 3
+| Elementary                           | Middle School          | High School                     |
+| ------------------------------------ | ---------------------- | ------------------------------- |
+| Interactive Websites with JavaScript | Interactive JavaScript | Fundamentals of Web Development |
+| Capstone 3                           | Web Interfaces         | User Interface Development      |
+|                                      | Capstone 2             | Capstone 1                      |
+|                                      | Mastering APIs         | APIs and Databases              |
+|                                      | Capstone 3             | Capstone 2                      |
+|                                      |                        | DevOps and Software Engineering |
+|                                      |                        | Capstone 3                      |
 
 In this section of our documentation, you'll find references on how to use the built-in browser APIs and the `jQuery` library to manipulate webpages.
 
-You'll also find many *Further reading* sections, which pull from these excellent JavaScript resources:
+You'll also find many _Further reading_ sections, which pull from these excellent JavaScript resources:
 
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [The Modern JavaScript Tutorial](https://javascript.info/)
@@ -23,10 +23,6 @@ You'll also find many *Further reading* sections, which pull from these excellen
 - [jQuery API](https://api.jquery.com/)
 
 <hr>
-
-
-
-
 
 ## Adding JavaScript to Webpages
 
@@ -39,19 +35,16 @@ The `<script>` tag is used to insert JavaScript programs directly into an HTML p
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Inserting JavaScript with a script tag in the body</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>This is HTML</h1>
     <script>
-        // Everything in here is JavaScript
-
+      // Everything in here is JavaScript
     </script>
-</body>
-
+  </body>
 </html>
 ```
 
@@ -59,70 +52,57 @@ The `<script>` tag is used to insert JavaScript programs directly into an HTML p
 
 You can link an external JavaScript file to an HTML document using the `<script>` tag in the `<head>` of the document:
 
-*my-awesome-script.js*
+_my-awesome-script.js_
 
 ```javascript
 console.log("Hello, world!");
 ```
 
-*index.html*
+_index.html_
 
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Inserting JavaScript with a script tag in the head</title>
     <script src="my-awesome-script.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>This is HTML</h1>
-</body>
-
+  </body>
 </html>
 ```
-
-
-
-
 
 ## Adding jQuery to Webpages
 
-The `jQuery` library is not part of the core Browser APIs and must be loaded in the `<head>` of your HTML document. You can find the most recent version of the `jQuery` library on their [website](https://code.jquery.com/). Generally, you want the *minified* version of the library, as that has all the core functionality in a smaller payload (which improves browser load times).
+The `jQuery` library is not part of the core Browser APIs and must be loaded in the `<head>` of your HTML document. You can find the most recent version of the `jQuery` library on their [website](https://code.jquery.com/). Generally, you want the _minified_ version of the library, as that has all the core functionality in a smaller payload (which improves browser load times).
 
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Adding jQuery to a webpage</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <h1>This is HTML</h1>
-</body>
-
+  </body>
 </html>
 ```
-
-
-
-
-
-
-
-
 
 ## Using The Browser's Dev Tools
 
 When working with JavaScript, the developer tools (dev tools for short) are your best friend! You should spend some time reading the documentation for the dev tools in your browser of choice. We'll use Chrome in these examples, and they have excellent documentation [here](https://developer.chrome.com/docs/devtools/).
 
-
 ### The JavaScript console
 
-Once you've opened the dev tools in your browser of choice (look up how to do it for your browser) you'll have access to a *Console* tab. You can write JavaScript code here to test things out:
+Once you've opened the dev tools in your browser of choice (look up how to do it for your browser) you'll have access to a _Console_ tab. You can write JavaScript code here to test things out:
 
 <figure markdown>
 ![console example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/console.png?raw=true){ width="100%" }
@@ -131,43 +111,38 @@ Once you've opened the dev tools in your browser of choice (look up how to do it
 
 #### Modifying the DOM from the console
 
-You have access to the DOM on the page and can edit it from the *Console* tab, just like if you were in a JavaScript program:
+You have access to the DOM on the page and can edit it from the _Console_ tab, just like if you were in a JavaScript program:
 
 <figure markdown>
 ![edit DOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/hot-dogs.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
-
 #### Debugging errors from the console
 
-If something is not working as you expect, you should open the *Console* tab in the dev tools and see if there are any errors. This can save you hours of debugging time if you learn to do it well!
+If something is not working as you expect, you should open the _Console_ tab in the dev tools and see if there are any errors. This can save you hours of debugging time if you learn to do it well!
 
 Often, you'll be given a link that opens the offending file and points at the exact line that caused the issue, as in this example:
 
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Daniel's Homepage</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h1>Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
 
     <!-- HTML abbreviated since it's not important -->
 
     <script>
-        function thisHasAnError() {
-            // uh oh, this will throw an error!
-            vra rightBehindThis;
-        }
+      function thisHasAnError() {
+          // uh oh, this will throw an error!
+          vra rightBehindThis;
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
 ```
 
@@ -176,35 +151,30 @@ Often, you'll be given a link that opens the offending file and points at the ex
 <figcaption></figcaption>
 </figure>
 
-
 #### Testing variables and functions from the console
 
-You have access to any global variables and functions in the *Console* tab and can mess around with them to see if they are doing what you expect:
+You have access to any global variables and functions in the _Console_ tab and can mess around with them to see if they are doing what you expect:
 
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Daniel's Homepage</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h1>Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
 
     <!-- HTML abbreviated since it's not important -->
 
     <script>
-        var myFavoriteFood = "Tacos";
-      
-        function sayHello(name) {
-            console.log("Hello, " + name);
-        }
+      var myFavoriteFood = "Tacos";
+
+      function sayHello(name) {
+        console.log("Hello, " + name);
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
 ```
 
@@ -212,13 +182,6 @@ You have access to any global variables and functions in the *Console* tab and c
 ![mess with variables/functions example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/variables-and-functions.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
-
-
-
-
-
-
-
 
 ## Selecting Elements From HTML Documents
 
@@ -231,39 +194,35 @@ The `document.getElementById()` method allows you to select an HTML element by i
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Daniel's Homepage</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- This is the element we'll grab from our JavaScript program -->
-    <h1 id="page-title">Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+    <h1 id="page-title">
+      Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
+    </h1>
 
     <!-- HTML abbreviated since it's not important -->
 
     <script>
-        // Get the #page-title element and store it in a variable
-        var pageTitleElement = document.getElementById("page-title");
-        // Change the font color of the #page-title element
-        pageTitleElement.style.color = "blue";
+      // Get the #page-title element and store it in a variable
+      var pageTitleElement = document.getElementById("page-title");
+      // Change the font color of the #page-title element
+      pageTitleElement.style.color = "blue";
 
-        // Can also do everything in one line
-        document.getElementById("page-title").style.color = "blue";
+      // Can also do everything in one line
+      document.getElementById("page-title").style.color = "blue";
     </script>
-
-</body>
-
+  </body>
 </html>
 ```
-
 
 <figure markdown>
 ![get element by id example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/get-element-by-id.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
-
 
 #### Getting elements with `jQuery`
 
@@ -274,85 +233,167 @@ Here, we use the `id` attribute to select a single element:
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Daniel's Homepage</title>
     <!-- Must include the jQuery library in the <head> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <!-- This is the element we'll grab from our JavaScript program -->
-    <h1 id="page-title">Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+    <h1 id="page-title">
+      Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
+    </h1>
 
     <!-- HTML abbreviated since it's not important -->
 
     <script>
-        // Get the #page-title element and store it in a variable
-        var pageTitleElement = $("#page-title");
-        // Change the font color of the #page-title element
-        pageTitleElement.attr("style", "color: blue");
+      // Get the #page-title element and store it in a variable
+      var pageTitleElement = $("#page-title");
+      // Change the font color of the #page-title element
+      pageTitleElement.attr("style", "color: blue");
 
-        // Can also do everything in one line
-        $("#page-title").attr("style", "color: blue");
+      // Can also do everything in one line
+      $("#page-title").attr("style", "color: blue");
     </script>
-
-</body>
-
+  </body>
 </html>
 ```
-
 
 <figure markdown>
 ![jquery get element example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/get-element-by-id.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
-
 You can select multiple elements as well. For example, elements that all share the same `class` can be edited together like this:
-
 
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Daniel's Homepage</title>
     <!-- Must include the jQuery library in the <head> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <!-- Other HTML abbreviated since it's not important -->
 
     <div>
-        <h2>About me</h2>
-        <!-- We'll grab these elements from JavaScript -->
-        <p class="likes">I like to code</p>
-        <p class="likes">I like tacos</p>
-        <p class="likes">I like pugs</p>
+      <h2>About me</h2>
+      <!-- We'll grab these elements from JavaScript -->
+      <p class="likes">I like to code</p>
+      <p class="likes">I like tacos</p>
+      <p class="likes">I like pugs</p>
     </div>
 
-
     <script>
-        // Get the .likes elements and store them in a variable
-        var likesElements = $(".likes");
-        // Change the font color of all the .likes elements
-        likesElements.attr("style", "color: red");
+      // Get the .likes elements and store them in a variable
+      var likesElements = $(".likes");
+      // Change the font color of all the .likes elements
+      likesElements.attr("style", "color: red");
 
-        // Can also do everything in one line
-        $(".likes").attr("style", "color: red");
+      // Can also do everything in one line
+      $(".likes").attr("style", "color: red");
     </script>
-
-</body>
-
+  </body>
 </html>
 ```
-
 
 <figure markdown>
 ![jquery get elements example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/get-elements-by-class-jquery.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Timers
+
+There are two `timer` methods that allow us to execute code at a given time.
+
+The `setTimeout()` function will execute a callback function after waiting a given time.
+
+```javascript
+setTimeout(function, milliseconds);
+```
+
+```javascript
+function addCat() {
+  var catImage = document.getElementById("cat");
+  catImage.style.opacity = 1;
+}
+//execute the callback function after 10000 milliseconds or 10 seconds.
+setTimeout(addCat, 10000);
+```
+
+<figure markdown>
+![setTimeout example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/catgif.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+To cancel the `setTimeout()` use `clearTimeout()`. This function will require an id parameter for the interval you are trying to clear.
+
+```javascript
+clearTimeout(id);
+```
+
+```javascript
+function addCat() {
+  var catImage = document.getElementById("cat");
+  catImage.style.opacity = 1;
+  clearInterval(timeout);
+}
+
+var timeout = setTimeout(addCat, 10000);
+```
+
+The `setInterval()` function will execute a given callback function repeatedly with a set time.
+
+```javascript
+setInterval(function, milliseconds);
+```
+
+```javascript
+var likes = 0;
+
+function catLikes() {
+  likes++;
+  document.getElementById("likes").innerHTML = likes;
+}
+//execute the callback function every 5000 milliseconds or 5 seconds
+setInterval(catLikes, 5000);
+```
+
+<figure markdown>
+![setInterval example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/setInterval.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+To cancel the `setInterval()` function use `clearInterval()`. This function will require an interval id as a parameter.
+
+```javascript
+clearInterval(id);
+```
+
+```javascript
+var likes = 0;
+
+function catLikes() {
+  likes++;
+  document.getElementById("likes").innerHTML = likes;
+
+  //setInterval() will stop after 20 likes
+  if (likes == 20) {
+    alert("Interval cleared");
+    clearInterval(catInterval);
+  }
+}
+
+var catInterval = setInterval(catLikes, 5000);
+```
