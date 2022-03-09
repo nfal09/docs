@@ -1738,6 +1738,34 @@ Enter fruit number 4: kiwi
 
 
 
+#### Nested loops
+
+You can nest `for` loops inside of each other to perform and action once for each time in the outer `for` loop:
+
+```python
+fruits = ["pizza", "taco"]
+
+for fruit in fruits:
+    for num in range(1, 4):
+        print(f"{num} {fruit}")
+
+
+```
+
+Example Output:
+
+```text
+1 pizza
+2 pizza
+3 pizza
+1 taco
+2 taco
+3 taco
+```
+
+
+
+
 
 #### Further reading
 
