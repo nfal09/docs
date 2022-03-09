@@ -446,3 +446,308 @@ function increaseCatLikes() {
 
 var catIntervalID = setInterval(increaseCatLikes, 5000);
 ```
+
+### jQuery Events
+
+The following `event methods` handle events on our webpage.
+
+The `click()` method allows us to execute a function when element is clicked.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <button id="name">Click</button>
+    <h1 id="heading">Welcome!</h1>
+    <span class="material-icons-outlined" id="wave">
+        waving_hand
+        </span>
+    <form>
+        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+        <input id="sub" type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+    function clickHeading() {
+        $("#heading").show();
+    }
+    // when button is clicked it will show the hidden heading text
+    $("#name").click(clickHeading);
+
+
+    </script>
+
+</div>
+
+</html>
+```
+
+The `dblclick()` method allows us to execute a function when element is double clicked.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <button id="name">Click</button>
+    <h1 id="heading">Welcome!</h1>
+    <span class="material-icons-outlined" id="wave">
+        waving_hand
+        </span>
+    <form>
+        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+        <input id="sub" type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+    function clickTwice() {
+        $("#heading").css("color", "gold");
+    }
+    // double click on heading element to change color
+    $("#name").dblclick(clickTwice);
+
+
+    </script>
+
+</div>
+
+</html>
+```
+
+The `hover()` method allows us to execute a function when element is hovered.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <button id="name">Click</button>
+    <h1 id="heading">Welcome!</h1>
+    <span class="material-icons-outlined" id="wave">
+        waving_hand
+        </span>
+    <form>
+        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+        <input id="sub" type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+    function headingHover() {
+        $("#heading").css({
+         "font-size": "60px",
+        });
+    }
+    //change font size of heading text when user hovers
+    $("#heading").hover(headingHover);
+
+
+
+    </script>
+
+</div>
+
+</html>
+```
+
+The `submit()` method allows us to submit form values.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <button id="name">Click</button>
+    <h1 id="heading">Welcome!</h1>
+    <span class="material-icons-outlined" id="wave">
+        waving_hand
+        </span>
+    <form>
+        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+        <input id="sub" type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+    function submitName(event) {
+        event.preventDefault();
+        var wizardName = $("#wizardName").val();
+        $("#heading").text(`Welcome ${wizardName}!`);
+    }
+    // add the wizardName to our heading element
+    $("form").submit(submitName);
+
+
+
+    </script>
+
+</div>
+
+</html>
+```
+
+The `change()` method will execute a function when the input value has changed.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <button id="name">Click</button>
+    <h1 id="heading">Welcome!</h1>
+    <span class="material-icons-outlined" id="wave">
+        waving_hand
+        </span>
+    <form>
+        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+        <input id="sub" type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+   function vanishInput() {
+        $("form").fadeOut();
+    }
+    // vanish form once the input value has changed
+    $("form").change(vanishInput);
+
+
+    </script>
+
+</div>
+
+</html>
+
+```
+
+The `mouseover()` method allows us to execute a function when the mouse is over the element.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <button id="name">Click</button>
+    <h1 id="heading">Welcome!</h1>
+    <span class="material-icons-outlined" id="wave">
+        waving_hand
+        </span>
+    <form>
+        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+        <input id="sub" type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+    function logoChange() {
+        $("#wave").animate({ fontSize: "100px",}, "2s");
+    }
+    //change logo size once mouse is over the element
+    $("#wave").mouseover(logoChange);
+
+
+    </script>
+
+</div>
+
+</html>
+```
+
+The `mousemove()` method allows us to execute a function when the mouse moves on the given element.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <button id="name">Click</button>
+    <h1 id="heading">Welcome!</h1>
+    <span class="material-icons-outlined" id="wave">
+        waving_hand
+        </span>
+    <form>
+        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+        <input id="sub" type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+    function logoChangeTwo() {
+        $("#wave").css({color: "blue"});
+    }
+    //change color of logo when mouse moves
+    $("#wave").mousemove(logoChangeTwo);
+
+
+    </script>
+
+</div>
+
+</html>
+```
