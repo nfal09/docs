@@ -446,3 +446,307 @@ function increaseCatLikes() {
 
 var catIntervalID = setInterval(increaseCatLikes, 5000);
 ```
+
+### jQuery Events
+
+The following `event methods` handle events on our webpage.
+
+The `click()` method allows us to execute a function when element is clicked.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
+
+
+  <script>
+
+  function clickHeading() {
+      $("#heading").show();
+      $("form").show();
+  }
+  // When the button with the id of `name` is clicked, the `clickHeading()` function will run.
+  $("#name").click(clickHeading);
+
+
+  </script>
+
+</div>
+
+</html>
+```
+
+<figure markdown>
+![clickmethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/clickmethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+The `hover()` method allows us to execute a function when element is hovered.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
+
+
+  <script>
+
+  function headingHover() {
+      var headingCSS = {
+          color: "gold",
+      }
+      $("#heading").css(headingCss);
+  }
+  // When you hover the id of `#heading` call the `headingHover()` function.
+  $("#heading").hover(headingHover);
+
+
+
+  </script>
+
+</div>
+
+</html>
+```
+
+The `submit()` method allows us to submit form values.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
+
+
+  <script>
+
+  function submitName(event) {
+      event.preventDefault();
+      var wizardName = $("#wizardName").val();
+      $("#heading").text(`Welcome ${wizardName}!`);
+  }
+  //When the `<form>` is submitted, run the the `submitName()` function.
+  $("form").submit(submitName);
+
+
+
+  </script>
+
+</div>
+
+</html>
+```
+
+<figure markdown>
+![submitevent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/submitevent.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+The `change()` method will execute a function when the input value has changed.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
+
+
+  <script>
+
+  function vanishInput() {
+      $("form").fadeOut();
+  }
+  //Run the `vanishInput()` function when any `<input>` element in the `<form>` is changed.
+  $("form").change(vanishInput);
+
+
+  </script>
+
+</div>
+
+</html>
+
+```
+
+The `mouseover()` method allows us to execute a function when the mouse is over the element.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
+
+
+  <script>
+
+  function logoChange() {
+      $("#wave").animate({ fontSize: "100px",}, "2s");
+  }
+  //When the mouse moves over the element with an id of `#wave`, run the `logoChange()` function.
+  $("#wave").mouseover(logoChange);
+
+
+  </script>
+
+</div>
+
+</html>
+```
+
+<figure markdown>
+![mouseover example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/mouseoverevent.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+The `mousemove()` method allows us to execute a function when the mouse moves on the given element.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
+
+
+  <script>
+    function logoChangeTwo() {
+
+      var changeLogoCSS = {
+          color: "blue"
+      }
+      $("#wave").css(changeLogoCSS);
+  }
+  //When the mouse moves around the element with an id of `#wave`, run the `logoChangeTwo()` function.
+  $("#wave").mousemove(logoChangeTwo);
+
+  </script>
+
+</div>
+
+</html>
+```
+
+The `On()` method allows us to run one or more events on a given element.
+
+Syntax:
+
+```javascript
+$(selector).on('event1',function)
+```
+
+Example Output:
+
+```javascript
+function clickedBody() {
+  alert("You clicked on the body!");
+}
+$("body").on("click", clickedBody);
+```
+
+<figure markdown>
+![onMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/onmethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
