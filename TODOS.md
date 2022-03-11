@@ -17,6 +17,22 @@
 - prompt()
 - confirm()
 
+### Querying the document (in progress)
+- getElementById()
+- getElementsByTagName()
+- getElementsByClassName()
+- querySelector()
+- querySelectorAll()
+- jQuery's $()
+
+
+### Getting and setting attributes (in progress)
+- getAttribute() and setAttribute()
+    - jQuery's .attr()
+- Some attrs can be set as props
+    - id, src, style
+
+
 
 ### Global browser objects
 - document
@@ -24,22 +40,13 @@
 - window.navigator (or just navigator)
 - window.location (or just location)
 
-### Querying the document
-- getElementById()
-- getElementsByTagName()
-- getElementsByClassName()
-- querySelector()
-- querySelectorAll()
+
     
 ### Changing the document
 - node.innerHTML
 - node.textContent
 
-### Getting and setting attributes
-- getAttribute() and setAttribute()
-    - jQuery's .attr()
-- Some attrs can be set as props
-    - id, src, style
+
 
 ### Getting the size of an element
 - offsetWidth, offsetHeight
