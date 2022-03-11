@@ -466,74 +466,38 @@ The `click()` method allows us to execute a function when element is clicked.
 <body>
 
 <div>
-    <button id="name">Click</button>
-    <h1 id="heading">Welcome!</h1>
-    <span class="material-icons-outlined" id="wave">
-        waving_hand
-        </span>
-    <form>
-        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-        <input id="sub" type="submit" value="Submit">
-    </form>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
 
 
-    <script>
+  <script>
 
-    function clickHeading() {
-        $("#heading").show();
-    }
-    // when button is clicked it will show the hidden heading text
-    $("#name").click(clickHeading);
-
-
-    </script>
-
-</div>
-
-</html>
-```
-
-The `dblclick()` method allows us to execute a function when element is double clicked.
-
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-<title>Events!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-</head>
-
-<body>
-
-<div>
-    <button id="name">Click</button>
-    <h1 id="heading">Welcome!</h1>
-    <span class="material-icons-outlined" id="wave">
-        waving_hand
-        </span>
-    <form>
-        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-        <input id="sub" type="submit" value="Submit">
-    </form>
+  function clickHeading() {
+      $("#heading").show();
+      $("form").show();
+  }
+  // When the button with the id of `name` is clicked, the `clickHeading()` function will run.
+  $("#name").click(clickHeading);
 
 
-    <script>
-
-    function clickTwice() {
-        $("#heading").css("color", "gold");
-    }
-    // double click on heading element to change color
-    $("#name").dblclick(clickTwice);
-
-
-    </script>
+  </script>
 
 </div>
 
 </html>
 ```
+
+<figure markdown>
+![clickmethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/clickmethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 The `hover()` method allows us to execute a function when element is hovered.
 
@@ -550,30 +514,31 @@ The `hover()` method allows us to execute a function when element is hovered.
 <body>
 
 <div>
-    <button id="name">Click</button>
-    <h1 id="heading">Welcome!</h1>
-    <span class="material-icons-outlined" id="wave">
-        waving_hand
-        </span>
-    <form>
-        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-        <input id="sub" type="submit" value="Submit">
-    </form>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
 
 
-    <script>
+  <script>
 
-    function headingHover() {
-        $("#heading").css({
-         "font-size": "60px",
-        });
-    }
-    //change font size of heading text when user hovers
-    $("#heading").hover(headingHover);
+  function headingHover() {
+      var headingCSS = {
+          color: "gold",
+      }
+      $("#heading").css(headingCss);
+  }
+  // When you hover the id of `#heading` call the `headingHover()` function.
+  $("#heading").hover(headingHover);
 
 
 
-    </script>
+  </script>
 
 </div>
 
@@ -595,35 +560,40 @@ The `submit()` method allows us to submit form values.
 <body>
 
 <div>
-    <button id="name">Click</button>
-    <h1 id="heading">Welcome!</h1>
-    <span class="material-icons-outlined" id="wave">
-        waving_hand
-        </span>
-    <form>
-        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-        <input id="sub" type="submit" value="Submit">
-    </form>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
 
 
-    <script>
+  <script>
 
-    function submitName(event) {
-        event.preventDefault();
-        var wizardName = $("#wizardName").val();
-        $("#heading").text(`Welcome ${wizardName}!`);
-    }
-    // add the wizardName to our heading element
-    $("form").submit(submitName);
+  function submitName(event) {
+      event.preventDefault();
+      var wizardName = $("#wizardName").val();
+      $("#heading").text(`Welcome ${wizardName}!`);
+  }
+  //When the `<form>` is submitted, run the the `submitName()` function.
+  $("form").submit(submitName);
 
 
 
-    </script>
+  </script>
 
 </div>
 
 </html>
 ```
+
+<figure markdown>
+![submitevent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/submitevent.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 The `change()` method will execute a function when the input value has changed.
 
@@ -640,27 +610,27 @@ The `change()` method will execute a function when the input value has changed.
 <body>
 
 <div>
-    <button id="name">Click</button>
-    <h1 id="heading">Welcome!</h1>
-    <span class="material-icons-outlined" id="wave">
-        waving_hand
-        </span>
-    <form>
-        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-        <input id="sub" type="submit" value="Submit">
-    </form>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
 
 
-    <script>
+  <script>
 
-   function vanishInput() {
-        $("form").fadeOut();
-    }
-    // vanish form once the input value has changed
-    $("form").change(vanishInput);
+  function vanishInput() {
+      $("form").fadeOut();
+  }
+  //Run the `vanishInput()` function when any `<input>` element in the `<form>` is changed.
+  $("form").change(vanishInput);
 
 
-    </script>
+  </script>
 
 </div>
 
@@ -683,32 +653,37 @@ The `mouseover()` method allows us to execute a function when the mouse is over 
 <body>
 
 <div>
-    <button id="name">Click</button>
-    <h1 id="heading">Welcome!</h1>
-    <span class="material-icons-outlined" id="wave">
-        waving_hand
-        </span>
-    <form>
-        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-        <input id="sub" type="submit" value="Submit">
-    </form>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
 
 
-    <script>
+  <script>
 
-    function logoChange() {
-        $("#wave").animate({ fontSize: "100px",}, "2s");
-    }
-    //change logo size once mouse is over the element
-    $("#wave").mouseover(logoChange);
+  function logoChange() {
+      $("#wave").animate({ fontSize: "100px",}, "2s");
+  }
+  //When the mouse moves over the element with an id of `#wave`, run the `logoChange()` function.
+  $("#wave").mouseover(logoChange);
 
 
-    </script>
+  </script>
 
 </div>
 
 </html>
 ```
+
+<figure markdown>
+![mouseover example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/mouseoverevent.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 The `mousemove()` method allows us to execute a function when the mouse moves on the given element.
 
@@ -725,29 +700,53 @@ The `mousemove()` method allows us to execute a function when the mouse moves on
 <body>
 
 <div>
-    <button id="name">Click</button>
-    <h1 id="heading">Welcome!</h1>
-    <span class="material-icons-outlined" id="wave">
-        waving_hand
-        </span>
-    <form>
-        <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-        <input id="sub" type="submit" value="Submit">
-    </form>
+  <button id="name">Click</button>
+  <h1 id="heading">Welcome!</h1>
+  <span class="material-icons-outlined" id="wave">
+      waving_hand
+      </span>
+  <form>
+      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+      <input id="sub" type="submit" value="Submit">
+  </form>
 
 
-    <script>
-
+  <script>
     function logoChangeTwo() {
-        $("#wave").css({color: "blue"});
-    }
-    //change color of logo when mouse moves
-    $("#wave").mousemove(logoChangeTwo);
 
+      var changeLogoCSS = {
+          color: "blue"
+      }
+      $("#wave").css(changeLogoCSS);
+  }
+  //When the mouse moves around the element with an id of `#wave`, run the `logoChangeTwo()` function.
+  $("#wave").mousemove(logoChangeTwo);
 
-    </script>
+  </script>
 
 </div>
 
 </html>
 ```
+
+The `On()` method allows us to run one or more events on a given element.
+
+Syntax:
+
+```javascript
+$(selector).on('event1',function)
+```
+
+Example Output:
+
+```javascript
+function clickedBody() {
+  alert("You clicked on the body!");
+}
+$("body").on("click", clickedBody);
+```
+
+<figure markdown>
+![onMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/onmethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
