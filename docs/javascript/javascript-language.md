@@ -999,6 +999,39 @@ What is your name? Daniel
 Nice to meet you, Daniel!
 ```
 
+##### `alert()`
+
+The `alert()` function allows you to alert a user with a message box.
+
+```javascript
+alert("Welcome to my page!");
+```
+
+##### `confirm()`
+
+The `confirm()` function allows you create a popup message for the user to confirm or cancel. This function returns `true` if the user has click ok.
+
+```javascript
+var name = prompt("Enter name");
+var nameConfirm = confirm(`Confirm ${name}?`);
+
+if (nameConfirm) {
+  document.getElementById("name").innerHTML = `Welcome ${wizardName}!`;
+} else {
+  document.getElementById("name").innerHTML = `Cancelled`;
+}
+```
+
+<figure markdown>
+![confirm example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/confirm.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+<figure markdown>
+![cancelconfirm example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cancelconfirm.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ##### `parseInt()`
 
 The `parseInt()` function converts data to a `number` data type without a decimal point:
