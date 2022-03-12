@@ -1004,16 +1004,24 @@ Nice to meet you, Daniel!
 The `alert()` function allows you to alert a user with a message box.
 
 ```javascript
-alert("Welcome to my page!");
+function sayHi() {
+  alert("Welcome to my page!");
+}
+sayHi();
 ```
+
+<figure markdown>
+![alert example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/alert.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 ##### `confirm()`
 
 The `confirm()` function allows you create a popup message for the user to confirm or cancel. This function returns `true` if the user has click ok.
 
 ```javascript
-var name = prompt("Enter name");
-var nameConfirm = confirm(`Confirm ${name}?`);
+var wizardName = prompt("Enter name");
+var nameConfirm = confirm(`Confirm ${wizardName}?`);
 
 if (nameConfirm) {
   document.getElementById("name").innerHTML = `Welcome ${wizardName}!`;
