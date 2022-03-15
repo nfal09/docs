@@ -224,6 +224,125 @@ The `document.getElementById()` method allows you to select an HTML element by i
 <figcaption></figcaption>
 </figure>
 
+### Getting an element by `class name`
+
+The `document.getElementsByClassName()` method allows you to return the selected HTML elements by it's class attribute:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div>
+      <div class="square"></div>
+      <div class="circle"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="circle"></div>
+    </div>
+    <script>
+      // Return all elements with the class name of `square`
+      var getSquares = document.getElementsByClassName("square");
+
+      // Add an image to all div's with class name `square`
+      getSquares.style.backgroundImage = "<img src='square.png'>";
+    </script>
+  </body>
+</html>
+```
+
+### Getting an element by `tag name`
+
+The `document.getElementsByTagName()` method allows you to return the selected HTML elements by it's tag name:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div>
+      <div class="square"></div>
+      <div class="circle"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="circle"></div>
+    </div>
+    <script>
+      // Return all div elements
+      var getAllElements = document.getElementsByTagName("div");
+
+      // Add border color to all div tags
+      getAllElements.style.borderColor = "yellow";
+    </script>
+  </body>
+</html>
+```
+
+### `querySelector()`
+
+The `document.querySelector()` method allows you to return the first element with the given name:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div>
+      <div class="square"></div>
+      <div class="circle"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="circle"></div>
+      <div id="triangle"></div>
+    </div>
+    <script>
+      // Return first element with class name of `circle`
+      var getCircle = document.querySelector(".circle");
+
+      // Add color to border of first element with class `circle`
+      getCircle.style.borderColor = "red";
+    </script>
+  </body>
+</html>
+```
+
+### `querySelectorAll()`
+
+The `document.querySelectorAll()` method allows you to return all elements with the given attribute name as a `NodeList`:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div>
+      <div class="square"></div>
+      <div class="circle"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="circle"></div>
+    </div>
+    <script>
+      // Return all elements with the class name of square
+      var getSquares = document.querySelectorAll(".square");
+      console.log(getSquares);
+    </script>
+  </body>
+</html>
+```
+
 #### Getting elements with `jQuery`
 
 The `jQuery` library allows you to select elements with the `$()` function. You can add any valid CSS selector as the argument.
@@ -447,23 +566,15 @@ function increaseCatLikes() {
 var catIntervalID = setInterval(increaseCatLikes, 5000);
 ```
 
-
-
-
-
 <hr>
-
-
-
 
 ## jQuery Events
 
-The following *event methods* handle events on our webpage. They all have a similar function signature (except the `on()` method):
+The following _event methods_ handle events on our webpage. They all have a similar function signature (except the `on()` method):
 
 ```javascript
 $("cssSelector").methodName(callbackFunction);
 ```
-
 
 ### `change()`
 
@@ -510,7 +621,6 @@ The `change()` method will execute a function when the input value has changed.
 </html>
 
 ```
-
 
 ### `click()`
 
@@ -611,8 +721,6 @@ The `hover()` method allows you to execute a function when the cursor hovers ove
 </html>
 ```
 
-
-
 ### `mousemove()`
 
 The `mousemove()` method allows you to execute a function when the mouse moves on top of the given element.
@@ -659,7 +767,6 @@ The `mousemove()` method allows you to execute a function when the mouse moves o
 
 </html>
 ```
-
 
 ### `mouseover()`
 
@@ -714,8 +821,6 @@ The `mouseover()` method allows you to execute a function when the mouse is over
 <figcaption></figcaption>
 </figure>
 
-
-
 ### `submit()`
 
 The `submit()` method allows you to submit form values.
@@ -768,8 +873,6 @@ The `submit()` method allows you to submit form values.
 <figcaption></figcaption>
 </figure>
 
-
-
 ### `on()`
 
 The `on()` method allows you to run any event on an element.
@@ -784,7 +887,7 @@ Example Output:
 
 ```javascript
 function clickedBody() {
-    alert("You clicked on the body!");
+  alert("You clicked on the body!");
 }
 
 $("body").on("click", clickedBody);
