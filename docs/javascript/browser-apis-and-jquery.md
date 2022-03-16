@@ -246,13 +246,13 @@ The `document.getElementsByClassName()` method allows you to return the selected
       var allObjects = document.getElementsByClassName("object");
 
       // changeBackground() will change the background color of the clicked box
-      function changeBackground(pointer) {
-        box = pointer.currentTarget;
+      function changeBackgroundColor(event) {
+        box = event.currentTarget;
         box.style.backgroundColor = "#003566";
       }
       // Here we are looping through each element and attaching an onclick event
-      for (object of allObjects) {
-        object.onclick = changeBackground;
+      for (var object of allObjects) {
+        object.onclick = changeBackgroundColor;
       }
     </script>
   </body>
@@ -287,7 +287,7 @@ The `document.getElementsByTagName()` method allows you to return the selected H
       var allObjects = document.getElementsByTagName("div");
 
       // Add border color to all div tags
-      for (object of allObjects) {
+      for (var object of allObjects) {
         object.style.borderColor = "#ffd60a";
       }
     </script>
@@ -355,7 +355,7 @@ The `document.querySelectorAll()` method allows you to return a list of all elem
       var allObjects = document.querySelectorAll(".object");
 
       // Here we are looping through each element to change the borderWidth
-      for (object of allObjects) {
+      for (var object of allObjects) {
         object.style.borderWidth = "20px";
       }
     </script>
