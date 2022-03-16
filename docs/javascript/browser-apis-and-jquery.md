@@ -647,6 +647,11 @@ The `change()` method will execute a function when the input value has changed.
 
 ```
 
+<figure markdown>
+![change method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/change.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ### `click()`
 
 The `click()` method allows you to execute a function when element is clicked.
@@ -746,6 +751,11 @@ The `hover()` method allows you to execute a function when the cursor hovers ove
 </html>
 ```
 
+<figure markdown>
+![hover method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/hover.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ### `mousemove()`
 
 The `mousemove()` method allows you to execute a function when the mouse moves on top of the given element.
@@ -792,6 +802,11 @@ The `mousemove()` method allows you to execute a function when the mouse moves o
 
 </html>
 ```
+
+<figure markdown>
+![mousemove method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/mousemove.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 ### `mouseover()`
 
@@ -920,5 +935,22 @@ $("body").on("click", clickedBody);
 
 <figure markdown>
 ![onMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/onmethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+To remove any events from an element use the `off()` method
+
+```javascript
+function removeEvent() {
+  $("body").off("click");
+  alert("Click has been deactivated!");
+}
+
+// setTimeout() will call removeEvent() after 5000 milliseconds(5 seconds)
+setTimeout(removeEvent, 5000);
+```
+
+<figure markdown>
+![offMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/offmethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
