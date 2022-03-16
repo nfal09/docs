@@ -938,6 +938,8 @@ $("body").on("click", clickedBody);
 <figcaption></figcaption>
 </figure>
 
+### `off()`
+
 To remove any events from an element use the `off()` method
 
 ```javascript
