@@ -224,7 +224,7 @@ The `document.getElementById()` method allows you to select an HTML element by i
 <figcaption></figcaption>
 </figure>
 
-### Getting an element by `class name`
+#### Getting an element by `class name`
 
 The `document.getElementsByClassName()` method allows you to return the selected HTML elements by it's class attribute:
 
@@ -236,25 +236,35 @@ The `document.getElementsByClassName()` method allows you to return the selected
   </head>
 
   <body>
-    <div>
-      <div class="square"></div>
-      <div class="circle"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="circle"></div>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
     </div>
     <script>
-      // Return all elements with the class name of `square`
-      var getSquares = document.getElementsByClassName("square");
+      // Return all elements with the class name of `object`
+      var allObjects = document.getElementsByClassName("object");
 
-      // Add an image to all div's with class name `square`
-      getSquares.style.backgroundImage = "<img src='square.png'>";
+      // changeBackground() will change the background color of the clicked box
+      function changeBackground(pointer) {
+        box = pointer.currentTarget;
+        box.style.backgroundColor = "#003566";
+      }
+      // Here we are looping through each element and attaching an onclick event
+      for (object of allObjects) {
+        object.onclick = changeBackground;
+      }
     </script>
   </body>
 </html>
 ```
 
-### Getting an element by `tag name`
+<figure markdown>
+![getElementsByClassName example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/className.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Getting an element by `tag name`
 
 The `document.getElementsByTagName()` method allows you to return the selected HTML elements by it's tag name:
 
@@ -266,25 +276,31 @@ The `document.getElementsByTagName()` method allows you to return the selected H
   </head>
 
   <body>
-    <div>
-      <div class="square"></div>
-      <div class="circle"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="circle"></div>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
     </div>
+
     <script>
-      // Return all div elements
-      var getAllElements = document.getElementsByTagName("div");
+      //Return all elements with class name `object`
+      var allObjects = document.getElementsByTagName("div");
 
       // Add border color to all div tags
-      getAllElements.style.borderColor = "yellow";
+      for (object of allObjects) {
+        object.style.borderColor = "#ffd60a";
+      }
     </script>
   </body>
 </html>
 ```
 
-### `querySelector()`
+<figure markdown>
+![getElementsByTagName example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/elementsByTagName.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### `querySelector()`
 
 The `document.querySelector()` method allows you to return the first element with the given name:
 
@@ -296,28 +312,30 @@ The `document.querySelector()` method allows you to return the first element wit
   </head>
 
   <body>
-    <div>
-      <div class="square"></div>
-      <div class="circle"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="circle"></div>
-      <div id="triangle"></div>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
     </div>
     <script>
-      // Return first element with class name of `circle`
-      var getCircle = document.querySelector(".circle");
+      // Return first element with class name of `object`
+      var firstElement = document.querySelector(".object");
 
-      // Add color to border of first element with class `circle`
-      getCircle.style.borderColor = "red";
+      // Add color to border of first element with class `object`
+      firstElement.style.borderColor = "red";
     </script>
   </body>
 </html>
 ```
 
-### `querySelectorAll()`
+<figure markdown>
+![querySelector example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/querySelector.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
-The `document.querySelectorAll()` method allows you to return all elements with the given attribute name as a `NodeList`:
+#### `querySelectorAll()`
+
+The `document.querySelectorAll()` method allows you to return a list of all elements with the given attribute:
 
 ```html
 <!DOCTYPE html>
@@ -327,21 +345,28 @@ The `document.querySelectorAll()` method allows you to return all elements with 
   </head>
 
   <body>
-    <div>
-      <div class="square"></div>
-      <div class="circle"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="circle"></div>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
     </div>
     <script>
-      // Return all elements with the class name of square
-      var getSquares = document.querySelectorAll(".square");
-      console.log(getSquares);
+      // Return all elements with the class name of `object`
+      var allObjects = document.querySelectorAll(".object");
+
+      // Here we are looping through each element to change the borderWidth
+      for (object of allObjects) {
+        object.style.borderWidth = "20px";
+      }
     </script>
   </body>
 </html>
 ```
+
+<figure markdown>
+![querySelectorAll example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/querySelectorAll.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 #### Getting elements with `jQuery`
 
