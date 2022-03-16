@@ -224,6 +224,150 @@ The `document.getElementById()` method allows you to select an HTML element by i
 <figcaption></figcaption>
 </figure>
 
+#### Getting an element by `class name`
+
+The `document.getElementsByClassName()` method allows you to return the selected HTML elements by it's class attribute:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
+    </div>
+    <script>
+      // Return all elements with the class name of `object`
+      var allObjects = document.getElementsByClassName("object");
+
+      // changeBackground() will change the background color of the clicked box
+      function changeBackgroundColor(event) {
+        box = event.currentTarget;
+        box.style.backgroundColor = "#003566";
+      }
+      // Here we are looping through each element and attaching an onclick event
+      for (var object of allObjects) {
+        object.onclick = changeBackgroundColor;
+      }
+    </script>
+  </body>
+</html>
+```
+
+<figure markdown>
+![getElementsByClassName example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/className.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Getting an element by `tag name`
+
+The `document.getElementsByTagName()` method allows you to return the selected HTML elements by it's tag name:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
+    </div>
+
+    <script>
+      //Return all elements with class name `object`
+      var allObjects = document.getElementsByTagName("div");
+
+      // Add border color to all div tags
+      for (var object of allObjects) {
+        object.style.borderColor = "#ffd60a";
+      }
+    </script>
+  </body>
+</html>
+```
+
+<figure markdown>
+![getElementsByTagName example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/elementsByTagName.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### `querySelector()`
+
+The `document.querySelector()` method allows you to return the first element with the given name:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
+    </div>
+    <script>
+      // Return first element with class name of `object`
+      var firstElement = document.querySelector(".object");
+
+      // Add color to border of first element with class `object`
+      firstElement.style.borderColor = "red";
+    </script>
+  </body>
+</html>
+```
+
+<figure markdown>
+![querySelector example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/querySelector.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### `querySelectorAll()`
+
+The `document.querySelectorAll()` method allows you to return a list of all elements with the given attribute:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
+    </div>
+    <script>
+      // Return all elements with the class name of `object`
+      var allObjects = document.querySelectorAll(".object");
+
+      // Here we are looping through each element to change the borderWidth
+      for (var object of allObjects) {
+        object.style.borderWidth = "20px";
+      }
+    </script>
+  </body>
+</html>
+```
+
+<figure markdown>
+![querySelectorAll example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/querySelectorAll.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 #### Getting elements with `jQuery`
 
 The `jQuery` library allows you to select elements with the `$()` function. You can add any valid CSS selector as the argument.
@@ -447,23 +591,15 @@ function increaseCatLikes() {
 var catIntervalID = setInterval(increaseCatLikes, 5000);
 ```
 
-
-
-
-
 <hr>
-
-
-
 
 ## jQuery Events
 
-The following *event methods* handle events on our webpage. They all have a similar function signature (except the `on()` method):
+The following _event methods_ handle events on our webpage. They all have a similar function signature (except the `on()` method):
 
 ```javascript
 $("cssSelector").methodName(callbackFunction);
 ```
-
 
 ### `change()`
 
@@ -510,7 +646,6 @@ The `change()` method will execute a function when the input value has changed.
 </html>
 
 ```
-
 
 ### `click()`
 
@@ -611,8 +746,6 @@ The `hover()` method allows you to execute a function when the cursor hovers ove
 </html>
 ```
 
-
-
 ### `mousemove()`
 
 The `mousemove()` method allows you to execute a function when the mouse moves on top of the given element.
@@ -659,7 +792,6 @@ The `mousemove()` method allows you to execute a function when the mouse moves o
 
 </html>
 ```
-
 
 ### `mouseover()`
 
@@ -714,8 +846,6 @@ The `mouseover()` method allows you to execute a function when the mouse is over
 <figcaption></figcaption>
 </figure>
 
-
-
 ### `submit()`
 
 The `submit()` method allows you to submit form values.
@@ -768,8 +898,6 @@ The `submit()` method allows you to submit form values.
 <figcaption></figcaption>
 </figure>
 
-
-
 ### `on()`
 
 The `on()` method allows you to run any event on an element.
@@ -784,7 +912,7 @@ Example Output:
 
 ```javascript
 function clickedBody() {
-    alert("You clicked on the body!");
+  alert("You clicked on the body!");
 }
 
 $("body").on("click", clickedBody);
