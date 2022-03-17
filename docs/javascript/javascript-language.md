@@ -95,7 +95,7 @@ Conditional statements allow you to run a block of code when a boolean condition
 
 ### `if`
 
-The `if` statement is the simplest form of conditional statement. If the expression to the right of the `if` keyword is `true`, the indented code block will execute:
+The `if` statement is the simplest form of conditional statement. If the expression to the right of the `if` keyword is `true`, the code block will execute:
 
 ```javascript
 var isHungry = true;
