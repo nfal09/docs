@@ -3,27 +3,8 @@
 ## Browser APIs and jQuery
 
 
-### Timers (in progress)
-- setTimeout()
-- setInterval()
-
 ### Events (in progress)
-- jQuery events 
 - onclick
-
-### Browser functions for user interaction (in progress)
-- alert()
-- console.log()
-- prompt()
-- confirm()
-
-### Querying the document (in progress)
-- getElementById()
-- getElementsByTagName()
-- getElementsByClassName()
-- querySelector()
-- querySelectorAll()
-- jQuery's $()
 
 
 ### Getting and setting attributes (in progress)
@@ -32,6 +13,17 @@
 - Some attrs can be set as props
     - id, src, style
 
+
+### Changing an element's content (in progress)
+- node.innerHTML
+- node.textContent
+- $("element").html()
+- $("element").text()
+
+
+### Styling DOM nodes (in progress)
+- style property
+- jQuery's .css() method
 
 
 ### Global browser objects
@@ -42,12 +34,6 @@
 
 
     
-### Changing the document
-- node.innerHTML
-- node.textContent
-
-
-
 ### Getting the size of an element
 - offsetWidth, offsetHeight
 
