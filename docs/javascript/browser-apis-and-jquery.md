@@ -618,28 +618,28 @@ The `change()` method will execute a function when the input value has changed.
 <body>
 
 <div>
-  <button id="name">Click</button>
-  <h1 id="heading">Welcome!</h1>
-  <span class="material-icons-outlined" id="wave">
-      waving_hand
-  </span>
-  <form>
-      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-      <input id="sub" type="submit" value="Submit">
-  </form>
+<button id="name">Click</button>
+<h1 id="heading">Welcome!</h1>
+<span class="material-icons-outlined" id="wave">
+    waving_hand
+</span>
+<form>
+    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+    <input id="sub" type="submit" value="Submit">
+</form>
 
 
-  <script>
+<script>
 
-    function vanishInput() {
-        $("form").fadeOut();
-    }
+  function vanishInput() {
+      $("form").fadeOut();
+  }
 
-    // Run the `vanishInput()` function when any `<input>` element in the `<form>` is changed.
-    $("form").change(vanishInput);
+  // Run the `vanishInput()` function when any `<input>` element in the `<form>` is changed.
+  $("form").change(vanishInput);
 
 
-  </script>
+</script>
 
 </div>
 
@@ -669,29 +669,29 @@ The `click()` method allows you to execute a function when element is clicked.
 <body>
 
 <div>
-  <button id="name">Click</button>
-  <h1 id="heading">Welcome!</h1>
-  <span class="material-icons-outlined" id="wave">
-      waving_hand
-  </span>
-  <form>
-      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-      <input id="sub" type="submit" value="Submit">
-  </form>
+<button id="name">Click</button>
+<h1 id="heading">Welcome!</h1>
+<span class="material-icons-outlined" id="wave">
+    waving_hand
+</span>
+<form>
+    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+    <input id="sub" type="submit" value="Submit">
+</form>
 
 
-  <script>
+<script>
 
-    function clickHeading() {
-        $("#heading").show();
-        $("form").show();
-    }
+  function clickHeading() {
+      $("#heading").show();
+      $("form").show();
+  }
 
-    // When the button with the id of `name` is clicked, the `clickHeading()` function will run.
-    $("#name").click(clickHeading);
+  // When the button with the id of `name` is clicked, the `clickHeading()` function will run.
+  $("#name").click(clickHeading);
 
 
-  </script>
+</script>
 
 </div>
 
@@ -720,31 +720,31 @@ The `hover()` method allows you to execute a function when the cursor hovers ove
 <body>
 
 <div>
-  <button id="name">Click</button>
-  <h1 id="heading">Welcome!</h1>
-  <span class="material-icons-outlined" id="wave">
-      waving_hand
-  </span>
-  <form>
-      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-      <input id="sub" type="submit" value="Submit">
-  </form>
+<button id="name">Click</button>
+<h1 id="heading">Welcome!</h1>
+<span class="material-icons-outlined" id="wave">
+    waving_hand
+</span>
+<form>
+    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+    <input id="sub" type="submit" value="Submit">
+</form>
 
 
-  <script>
+<script>
 
-    function turnToGold() {
-        var headingCSS = {
-            color: "gold",
-        };
-        $("#heading").css(headingCss);
-    }
+  function turnToGold() {
+      var headingCSS = {
+          color: "gold",
+      };
+      $("#heading").css(headingCss);
+  }
 
-    // When you hover over the element with the id of `#heading` call the `turnToGold()` function.
-    $("#heading").hover(turnToGold);
+  // When you hover over the element with the id of `#heading` call the `turnToGold()` function.
+  $("#heading").hover(turnToGold);
 
 
-  </script>
+</script>
 
 </div>
 
@@ -773,30 +773,30 @@ The `mousemove()` method allows you to execute a function when the mouse moves o
 <body>
 
 <div>
-  <button id="name">Click</button>
-  <h1 id="heading">Welcome!</h1>
-  <span class="material-icons-outlined" id="wave">
-      waving_hand
-  </span>
-  <form>
-      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-      <input id="sub" type="submit" value="Submit">
-  </form>
+<button id="name">Click</button>
+<h1 id="heading">Welcome!</h1>
+<span class="material-icons-outlined" id="wave">
+    waving_hand
+</span>
+<form>
+    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+    <input id="sub" type="submit" value="Submit">
+</form>
 
 
-  <script>
+<script>
 
-    function changeLogo() {
-        var changeLogoCSS = {
-            color: "blue",
-        };
-        $("#wave").css(changeLogoCSS);
-    }
+  function changeLogo() {
+      var changeLogoCSS = {
+          color: "blue",
+      };
+      $("#wave").css(changeLogoCSS);
+  }
 
-    // When the mouse moves around the element with an id of `#wave`, run the `changeLogo()` function.
-    $("#wave").mousemove(changeLogo);
+  // When the mouse moves around the element with an id of `#wave`, run the `changeLogo()` function.
+  $("#wave").mousemove(changeLogo);
 
-  </script>
+</script>
 
 </div>
 
@@ -825,31 +825,31 @@ The `mouseover()` method allows you to execute a function when the mouse is over
 <body>
 
 <div>
-  <button id="name">Click</button>
-  <h1 id="heading">Welcome!</h1>
-  <span class="material-icons-outlined" id="wave">
-      waving_hand
-  </span>
-  <form>
-      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-      <input id="sub" type="submit" value="Submit">
-  </form>
+<button id="name">Click</button>
+<h1 id="heading">Welcome!</h1>
+<span class="material-icons-outlined" id="wave">
+    waving_hand
+</span>
+<form>
+    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+    <input id="sub" type="submit" value="Submit">
+</form>
 
 
-  <script>
+<script>
 
-    function changeLogo() {
-        var changeLogoCSS = {
-            fontSize: "100px",
-        };
-        $("#wave").animate(changeLogoCSS, "2s");
-    }
+  function changeLogo() {
+      var changeLogoCSS = {
+          fontSize: "100px",
+      };
+      $("#wave").animate(changeLogoCSS, "2s");
+  }
 
-    // When the mouse moves over the element with an id of `#wave`, run the `changeLogo()` function.
-    $("#wave").mouseover(changeLogo);
+  // When the mouse moves over the element with an id of `#wave`, run the `changeLogo()` function.
+  $("#wave").mouseover(changeLogo);
 
 
-  </script>
+</script>
 
 </div>
 
@@ -878,30 +878,30 @@ The `submit()` method allows you to submit form values.
 <body>
 
 <div>
-  <button id="name">Click</button>
-  <h1 id="heading">Welcome!</h1>
-  <span class="material-icons-outlined" id="wave">
-      waving_hand
-  </span>
-  <form>
-      <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-      <input id="sub" type="submit" value="Submit">
-  </form>
+<button id="name">Click</button>
+<h1 id="heading">Welcome!</h1>
+<span class="material-icons-outlined" id="wave">
+    waving_hand
+</span>
+<form>
+    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+    <input id="sub" type="submit" value="Submit">
+</form>
 
 
-  <script>
+<script>
 
-    function submitWizardName(event) {
-        event.preventDefault();
-        var wizardName = $("#wizardName").val();
-        $("#heading").text(`Welcome ${wizardName}!`);
-    }
+  function submitWizardName(event) {
+      event.preventDefault();
+      var wizardName = $("#wizardName").val();
+      $("#heading").text(`Welcome ${wizardName}!`);
+  }
 
-    // When the `<form>` is submitted, run the the `submitWizardName()` function.
-    $("form").submit(submitWizardName);
+  // When the `<form>` is submitted, run the the `submitWizardName()` function.
+  $("form").submit(submitWizardName);
 
 
-  </script>
+</script>
 
 </div>
 
@@ -954,5 +954,127 @@ setTimeout(removeEvent, 5000);
 
 <figure markdown>
 ![offMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/offmethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## Getting and Setting attributes
+
+### The `getAttribute()` function allows you to access the attribute of an element
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <div class="object" id="one"></div>
+  <img class="object" id="two" src="">
+  <input type="text" placeholder="Dog Name" id="three">
+</div>
+
+<script>
+
+  var element = document.querySelector('#three');
+
+  var elementAttribute = element.getAttribute('type');
+  console.log("The input type is " + elementAttribute)
+
+</script>
+</html>
+```
+
+Example Output:
+
+```javascript
+The input type is : text
+```
+
+### The `setAttribute()` function allows you to set or update the attribute of an element
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+
+  <div class="object" id="one"></div>
+  <img class="object" id="two" src="">
+
+</div>
+<script>
+
+  var imageElement = document.getElementById('two');
+  imageElement.setAttribute('src', 'dog.png');
+
+</script>
+</html>
+
+```
+
+Example Output:
+
+<figure markdown>
+![setAttribute example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/setAttribute.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### jQuery's `attr()` function allows you access or add the attribute to an element
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+
+  <img class="object" id="one" src="">
+  <img class="object" id="two" src="">
+
+</div>
+<script>
+
+   function clickedPicture(event) {
+      var clicked = event.target;
+
+      // Here we are grabbing the id attribute of the clicked image
+      var id = $(clicked).attr('id');
+
+      if (id == 'one') {
+        $('#one').attr('src', 'dog.jpg');
+      } else if (id == 'two') {
+        $('#two').attr('src', 'cat.jpg');
+    }
+  }
+    $('.object').click(clickedPicture);
+
+</script>
+</html>
+
+```
+
+<figure markdown>
+![attr example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/attr.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
