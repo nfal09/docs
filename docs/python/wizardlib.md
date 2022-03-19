@@ -22,11 +22,11 @@ add_audio(filename)
 
 Parameters:
 
-- `filename` (`str`) : The filename.
+-   `filename` (`str`) : The filename.
 
 Returns:
 
-- The audio element.
+-   The audio element.
 
 Example usage:
 
@@ -50,7 +50,7 @@ add_background(filename)
 
 Parameters:
 
-- `filename` (`str`): The filename.
+-   `filename` (`str`): The filename.
 
 Example usage:
 
@@ -81,7 +81,7 @@ add_background_audio(filename)
 
 Parameters:
 
-- `filename` (`str`): The filename.
+-   `filename` (`str`): The filename.
 
 Example usage:
 
@@ -105,11 +105,11 @@ add_button(text)
 
 Parameters:
 
-- `text` (`str`): The text on the button.
+-   `text` (`str`): The text on the button.
 
 Returns:
 
-- The button element.
+-   The button element.
 
 Example usage:
 
@@ -140,12 +140,12 @@ add_image(filename, size)
 
 Parameters:
 
-- `filename` (`str`): The filename.
-- `size` (`int`): The size, in pixels (optional).
+-   `filename` (`str`): The filename.
+-   `size` (`int`): The size, in pixels (optional).
 
 Returns:
 
-- The image element.
+-   The image element.
 
 Example usage:
 
@@ -176,12 +176,12 @@ add_text(text, size)
 
 Parameters:
 
-- `text` (`str`): The text to add to the page.
-- `size` (`int`): The size, in pixels (optional, defaults to 18).
+-   `text` (`str`): The text to add to the page.
+-   `size` (`int`): The size, in pixels (optional, defaults to 18).
 
 Returns:
 
-- The text element.
+-   The text element.
 
 Example usage:
 
@@ -212,11 +212,11 @@ add_text_input(placeholder)
 
 Parameters:
 
-- `placeholder` (`str`): The text to display in the input box.
+-   `placeholder` (`str`): The text to display in the input box.
 
 Returns:
 
-- The text input element.
+-   The text input element.
 
 Example usage:
 
@@ -247,10 +247,10 @@ animate_down(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate down and up (optional, defaults to `False`).
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate down and up (optional, defaults to `False`).
 
 Example usage:
 
@@ -282,10 +282,10 @@ animate_left(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate left and right (optional, defaults to `False`).
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate left and right (optional, defaults to `False`).
 
 Example usage:
 
@@ -317,10 +317,10 @@ animate_right(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate right and left (optional, defaults to `False`).
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate right and left (optional, defaults to `False`).
 
 Example usage:
 
@@ -352,10 +352,10 @@ animate_up(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate up and down (optional, defaults to `False`).
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate up and down (optional, defaults to `False`).
 
 Example usage:
 
@@ -387,9 +387,9 @@ check_collision(element1, element2, function_to_run)
 
 Parameters:
 
-- `element1` (`element`): An element to check for collisions with.
-- `element2` (`element`): An element to check for collisions with.
-- `function_to_run` (`function`): The function to run if `element1` hits `element2`.
+-   `element1` (`element`): An element to check for collisions with.
+-   `element2` (`element`): An element to check for collisions with.
+-   `function_to_run` (`function`): The function to run if `element1` hits `element2`.
 
 Example usage:
 
@@ -484,8 +484,8 @@ click(element, function_to_run)
 
 Parameters:
 
-- `element` (`element`): The element to click.
-- `function_to_run` (`function`): The function to run if `element` is clicked.
+-   `element` (`element`): The element to click.
+-   `function_to_run` (`function`): The function to run if `element` is clicked.
 
 Example usage:
 
@@ -524,7 +524,7 @@ fade_in(element)
 
 Parameters:
 
-- `element` (`element`): The element to fade in.
+-   `element` (`element`): The element to fade in.
 
 Example usage:
 
@@ -565,7 +565,7 @@ fade_out(element)
 
 Parameters:
 
-- `element` (`element`): The element to fade out.
+-   `element` (`element`): The element to fade out.
 
 Example usage:
 
@@ -605,7 +605,7 @@ get_input_value(element)
 
 Parameters:
 
-- `element` (`element`): The element to get the value from.
+-   `element` (`element`): The element to get the value from.
 
 Example usage:
 
@@ -649,7 +649,7 @@ keydown(function_to_run)
 
 Parameters:
 
-- `function_to_run` (`function`): The function to run when a key is pressed.
+-   `function_to_run` (`function`): The function to run when a key is pressed.
 
 Example usage:
 
@@ -687,8 +687,8 @@ move_down(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move down.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move down.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -733,8 +733,8 @@ move_left(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move left.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move left.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -779,8 +779,8 @@ move_right(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move right.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move right.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -825,8 +825,8 @@ move_up(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move up.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move up.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -871,7 +871,7 @@ play_audio(element)
 
 Parameters:
 
-- `element` (`element`): The audio element to play.
+-   `element` (`element`): The audio element to play.
 
 Example usage:
 
@@ -901,9 +901,9 @@ position_element(element, x, y)
 
 Parameters:
 
-- `element` (`element`): The element to position.
-- `x` (`int`|`str`): The desired x-position of the `element`.
-- `y` (`int`|`str`): The desired y-position of the `element`.
+-   `element` (`element`): The element to position.
+-   `x` (`int`|`str`): The desired x-position of the `element`.
+-   `y` (`int`|`str`): The desired y-position of the `element`.
 
 Example usage:
 
@@ -928,7 +928,7 @@ set_background_color(color)
 
 Parameters:
 
-- `color` (`str`): The desired background color.
+-   `color` (`str`): The desired background color.
 
 Example usage:
 
@@ -959,8 +959,8 @@ set_element_width(element, width)
 
 Parameters:
 
-- `element` (`element`): The element to adjust.
-- `width` (`int`): The desired width of the `element`.
+-   `element` (`element`): The element to adjust.
+-   `width` (`int`): The desired width of the `element`.
 
 Example usage:
 
@@ -1001,8 +1001,8 @@ set_font_size(element, font_size)
 
 Parameters:
 
-- `element` (`element`): The element to adjust.
-- `font_size` (`int`): The desired font_size of the `element`.
+-   `element` (`element`): The element to adjust.
+-   `font_size` (`int`): The desired font_size of the `element`.
 
 Example usage:
 
@@ -1043,8 +1043,8 @@ set_text_color(text_element, color)
 
 Parameters:
 
-- `text_element` (`element`): The text element to adjust.
-- `color` (`str`): The desired color of the `text_element`.
+-   `text_element` (`element`): The text element to adjust.
+-   `color` (`str`): The desired color of the `text_element`.
 
 Example usage:
 
@@ -1076,8 +1076,8 @@ set_text_decoration(text_element, decoration_string)
 
 Parameters:
 
-- `text_element` (`element`): The text element to adjust.
-- `decoration_string` (`str`): The decoration string for the CSS property.
+-   `text_element` (`element`): The text element to adjust.
+-   `decoration_string` (`str`): The decoration string for the CSS property.
 
 Example usage:
 
@@ -1111,8 +1111,8 @@ set_timeout(function_to_run, time)
 
 Parameters:
 
-- `function_to_run` (`function`): The function to run.
-- `time` (`int`): The time (in seconds) to wait before running the `function_to_run`.
+-   `function_to_run` (`function`): The function to run.
+-   `time` (`int`): The time (in seconds) to wait before running the `function_to_run`.
 
 Example usage:
 
@@ -1148,8 +1148,8 @@ update_text(text_element, new_text)
 
 Parameters:
 
-- `text_element` (`element`): The element to adjust.
-- `new_text` (`str`): The new text for the `text_element`.
+-   `text_element` (`element`): The element to adjust.
+-   `new_text` (`str`): The new text for the `text_element`.
 
 Example usage:
 
@@ -1190,7 +1190,7 @@ remove_element(element)
 
 Parameters:
 
-- `element` (`element`): The element to remove.
+-   `element` (`element`): The element to remove.
 
 Example usage:
 
@@ -1231,8 +1231,8 @@ rotate_element(element, degrees)
 
 Parameters:
 
-- `element` (`element`): The element to rotate.
-- `degrees` (`int`): The number of degrees to rotate the `element`.
+-   `element` (`element`): The element to rotate.
+-   `degrees` (`int`): The number of degrees to rotate the `element`.
 
 Example usage:
 
@@ -1273,7 +1273,7 @@ vanish(element)
 
 Parameters:
 
-- `element` (`element`): The element to remove.
+-   `element` (`element`): The element to remove.
 
 Example usage:
 

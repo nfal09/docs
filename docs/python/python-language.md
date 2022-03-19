@@ -20,9 +20,9 @@ In this section of our documentation, you'll find references to most of the core
 
 You'll also find many _Further reading_ sections, which pull from these excellent Python resources:
 
-- [Python.org Documentation](https://www.python.org/doc/)
-- [RealPython.com](https://realpython.com/)
-- [Think Python](https://greenteapress.com/wp/think-python-2e/)
+-   [Python.org Documentation](https://www.python.org/doc/)
+-   [RealPython.com](https://realpython.com/)
+-   [Think Python](https://greenteapress.com/wp/think-python-2e/)
 
 <hr>
 
@@ -75,9 +75,9 @@ hypotenuse = ((side_a ** 2) + (side_b ** 2)) ** 0.5
 
 ### Further reading
 
-- [The Python Tutorial](https://docs.python.org/3/tutorial/introduction.html#an-informal-introduction-to-python)
-- [Real Python - Writing Comments in Python](https://realpython.com/python-comments-guide/)
-- [Think Python - Comments](https://greenteapress.com/thinkpython2/html/thinkpython2003.html#sec22)
+-   [The Python Tutorial](https://docs.python.org/3/tutorial/introduction.html#an-informal-introduction-to-python)
+-   [Real Python - Writing Comments in Python](https://realpython.com/python-comments-guide/)
+-   [Think Python - Comments](https://greenteapress.com/thinkpython2/html/thinkpython2003.html#sec22)
 
 <hr>
 
@@ -325,16 +325,16 @@ You can also see the SUPER secret stuff in this app.
 
 ### Further reading
 
-- [Real Python - Conditional Statements in Python](https://realpython.com/python-conditional-statements/)
-- [Real Python - Using the `not` Boolean Operator in Python](https://realpython.com/python-not-operator/)
-- [Real Python - Using the `and` Boolean Operator in Python](https://realpython.com/python-and-operator/)
-- [Real Python - How to use the Python `or` Operator ](https://realpython.com/python-or-operator/)
-- [The Python Library Reference - Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
-- [The Python Library Reference - Boolean Values](https://docs.python.org/3/library/stdtypes.html#boolean-values)
-- [The Python Library Reference - Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
-- [The Python Library Reference - Truth Value Testing](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
-- [The Python Tutorial - `if` Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
-- [Think Python - Conditionals and Recursion](https://greenteapress.com/thinkpython2/html/thinkpython2006.html)
+-   [Real Python - Conditional Statements in Python](https://realpython.com/python-conditional-statements/)
+-   [Real Python - Using the `not` Boolean Operator in Python](https://realpython.com/python-not-operator/)
+-   [Real Python - Using the `and` Boolean Operator in Python](https://realpython.com/python-and-operator/)
+-   [Real Python - How to use the Python `or` Operator ](https://realpython.com/python-or-operator/)
+-   [The Python Library Reference - Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+-   [The Python Library Reference - Boolean Values](https://docs.python.org/3/library/stdtypes.html#boolean-values)
+-   [The Python Library Reference - Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
+-   [The Python Library Reference - Truth Value Testing](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+-   [The Python Tutorial - `if` Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
+-   [Think Python - Conditionals and Recursion](https://greenteapress.com/thinkpython2/html/thinkpython2006.html)
 
 <hr>
 
@@ -643,13 +643,13 @@ That's my favorite food!
 
 ### Further reading
 
-- [The Python Library Reference - Text Sequence Type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [The Python Library Reference - Numeric Types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
-- [The Python Tutorial - Strings](https://docs.python.org/3/tutorial/introduction.html#strings)
-- [Think Python - Values and Types](https://greenteapress.com/thinkpython2/html/thinkpython2002.html#sec10)
-- [Think Python - Strings](https://greenteapress.com/thinkpython2/html/thinkpython2009.html)
-- [Real Python - Python 3's f-Strings](https://realpython.com/python-f-strings/)
-- [Real Python - Strings and Character Data in Python](https://realpython.com/python-strings/)
+-   [The Python Library Reference - Text Sequence Type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+-   [The Python Library Reference - Numeric Types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
+-   [The Python Tutorial - Strings](https://docs.python.org/3/tutorial/introduction.html#strings)
+-   [Think Python - Values and Types](https://greenteapress.com/thinkpython2/html/thinkpython2002.html#sec10)
+-   [Think Python - Strings](https://greenteapress.com/thinkpython2/html/thinkpython2009.html)
+-   [Real Python - Python 3's f-Strings](https://realpython.com/python-f-strings/)
+-   [Real Python - Strings and Character Data in Python](https://realpython.com/python-strings/)
 
 <hr>
 
@@ -808,11 +808,11 @@ samh is NOT in the 'names' list
 
 #### Further reading
 
-- [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
-- [The Python Library Reference - Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
-- [The Python Library Reference - `len()`](https://docs.python.org/3/library/functions.html#len)
-- [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
-- [Think Python - Lists](https://greenteapress.com/thinkpython2/html/thinkpython2011.html)
+-   [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
+-   [The Python Library Reference - Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
+-   [The Python Library Reference - `len()`](https://docs.python.org/3/library/functions.html#len)
+-   [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
+-   [Think Python - Lists](https://greenteapress.com/thinkpython2/html/thinkpython2011.html)
 
 ### `dict`
 
@@ -1102,10 +1102,10 @@ Daniel is NOT a student here
 
 #### Further reading
 
-- [Real Python - Dictionaries in Python](https://realpython.com/python-dicts/)
-- [The Python Library Reference - Mapping Types: `dict`](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
-- [The Python Tutorial - Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
-- [Think Python - Dictionaries](https://greenteapress.com/thinkpython2/html/thinkpython2012.html)
+-   [Real Python - Dictionaries in Python](https://realpython.com/python-dicts/)
+-   [The Python Library Reference - Mapping Types: `dict`](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+-   [The Python Tutorial - Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+-   [Think Python - Dictionaries](https://greenteapress.com/thinkpython2/html/thinkpython2012.html)
 
 <hr>
 
@@ -1355,7 +1355,7 @@ The meaning of life is 42
 
 #### Further reading
 
-- [The Python Library Reference - Built-in Functions](https://docs.python.org/3/library/functions.html)
+-   [The Python Library Reference - Built-in Functions](https://docs.python.org/3/library/functions.html)
 
 ### User-defined functions
 
@@ -1487,10 +1487,10 @@ greet_codewizard("django")   # I don't know you!
 
 #### Further reading
 
-- [Real Python - Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/)
-- [The Python Tutorial - Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
-- [Think Python - Functions](https://greenteapress.com/thinkpython2/html/thinkpython2004.html)
-- [Think Python - Fruitful Functions](https://greenteapress.com/thinkpython2/html/thinkpython2007.html)
+-   [Real Python - Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/)
+-   [The Python Tutorial - Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+-   [Think Python - Functions](https://greenteapress.com/thinkpython2/html/thinkpython2004.html)
+-   [Think Python - Fruitful Functions](https://greenteapress.com/thinkpython2/html/thinkpython2007.html)
 
 <hr>
 
@@ -1657,10 +1657,10 @@ Example Output:
 
 #### Further reading
 
-- [Real Python - Python `for` Loops](https://realpython.com/python-for-loop/)
-- [The Python Tutorial - `for` Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
-- [The Python Tutorial - The `range()` function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
-- [Think Python - Traversal with a `for` loop](https://greenteapress.com/thinkpython2/html/thinkpython2009.html#sec94)
+-   [Real Python - Python `for` Loops](https://realpython.com/python-for-loop/)
+-   [The Python Tutorial - `for` Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
+-   [The Python Tutorial - The `range()` function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
+-   [Think Python - Traversal with a `for` loop](https://greenteapress.com/thinkpython2/html/thinkpython2009.html#sec94)
 
 ### `while`
 
@@ -1743,8 +1743,8 @@ Example Output:
 
 #### Further reading
 
-- [Real Python - Python `while` Loops](https://realpython.com/python-while-loop/)
-- [Think Python - The `while` statement](https://greenteapress.com/thinkpython2/html/thinkpython2008.html#sec84)
+-   [Real Python - Python `while` Loops](https://realpython.com/python-while-loop/)
+-   [Think Python - The `while` statement](https://greenteapress.com/thinkpython2/html/thinkpython2008.html#sec84)
 
 <hr>
 
@@ -1812,8 +1812,8 @@ The floor division operator (`//`) removes any fractional portion after divison:
 
 #### Further reading
 
-- [The Python Tutorial - Numbers](https://docs.python.org/3/tutorial/introduction.html#numbers)
-- [Real Python - Numbers in Python](https://realpython.com/python-numbers/)
+-   [The Python Tutorial - Numbers](https://docs.python.org/3/tutorial/introduction.html#numbers)
+-   [Real Python - Numbers in Python](https://realpython.com/python-numbers/)
 
 <hr>
 
@@ -1859,9 +1859,9 @@ from module_name import some_really_long_function_name as short_name
 
 #### Further reading
 
-- [The Python Library Reference](https://docs.python.org/3/library/index.html)
-- [The Python Tutorial - Modules](https://docs.python.org/3/tutorial/modules.html)
-- [Real Python - Python Modules and Packages](https://realpython.com/python-modules-packages/)
+-   [The Python Library Reference](https://docs.python.org/3/library/index.html)
+-   [The Python Tutorial - Modules](https://docs.python.org/3/tutorial/modules.html)
+-   [Real Python - Python Modules and Packages](https://realpython.com/python-modules-packages/)
 
 ### Built-in modules
 
@@ -1898,8 +1898,8 @@ print(random_name)  # dima
 
 #### Further reading
 
-- [The Python Standard Library](https://docs.python.org/3/library/index.html)
-- [The Python Standard Library - `random`](https://docs.python.org/3/library/random.html)
+-   [The Python Standard Library](https://docs.python.org/3/library/index.html)
+-   [The Python Standard Library - `random`](https://docs.python.org/3/library/random.html)
 
 <hr>
 
@@ -2037,5 +2037,5 @@ def update_score():
 
 ### Further reading
 
-- [Real Python - Variables in Python](https://realpython.com/python-variables/)
-- [Think Python - Variables, expressions and statements](https://greenteapress.com/thinkpython2/html/thinkpython2003.html)
+-   [Real Python - Variables in Python](https://realpython.com/python-variables/)
+-   [Think Python - Variables, expressions and statements](https://greenteapress.com/thinkpython2/html/thinkpython2003.html)

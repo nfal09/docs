@@ -16,9 +16,9 @@ In this section of our documentation, you'll find references to most of the core
 
 You'll also find many _Further reading_ sections, which pull from these excellent JavaScript resources:
 
-- [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [The Modern JavaScript Tutorial](https://javascript.info/)
-- [Eloquent JavaScript](https://eloquentjavascript.net/)
+-   [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+-   [The Modern JavaScript Tutorial](https://javascript.info/)
+-   [Eloquent JavaScript](https://eloquentjavascript.net/)
 
 <hr>
 
@@ -33,9 +33,9 @@ Single line comments are denoted by the `//` characters. You can put them above 
 ```javascript
 // Validate the user is logged in and redirect them to the appropriate page.
 if (isLoggedIn(user)) {
-  redirectToHomepage();
+    redirectToHomepage();
 } else {
-  redirectToLogin();
+    redirectToLogin();
 }
 
 var minHeight = 60; // This is measured in inches, not feet!
@@ -47,11 +47,11 @@ You can deactivate sections of code with comments:
 
 ```javascript
 if (age < 18) {
-  // Turning this off for now
-  // prompt_user();
-  redirectToKidZone();
+    // Turning this off for now
+    // prompt_user();
+    redirectToKidZone();
 } else {
-  loginUser();
+    loginUser();
 }
 ```
 
@@ -83,9 +83,9 @@ var hypotenuse = (sideA ** 2 + sideB ** 2) ** 0.5;
 
 ### Further reading
 
-- [MDN - JavaScript Basics: Comments](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics#comments)
-- [Eloquent JavaScript - Comments](https://eloquentjavascript.net/02_program_structure.html#h_/OBuIOX390)
-- [The Modern JavaScript Tutorial - Comments](https://javascript.info/comments)
+-   [MDN - JavaScript Basics: Comments](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics#comments)
+-   [Eloquent JavaScript - Comments](https://eloquentjavascript.net/02_program_structure.html#h_/OBuIOX390)
+-   [The Modern JavaScript Tutorial - Comments](https://javascript.info/comments)
 
 <hr>
 
@@ -101,7 +101,7 @@ The `if` statement is the simplest form of conditional statement. If the express
 var isHungry = true;
 
 if (isHungry) {
-  console.log("You should eat!");
+    console.log("You should eat!");
 }
 ```
 
@@ -117,7 +117,7 @@ Usually, a conditional expression uses [comparison operators](#comparison-operat
 var age = 19;
 
 if (age >= 18) {
-  console.log("You are legally an adult, congrats!");
+    console.log("You are legally an adult, congrats!");
 }
 ```
 
@@ -135,13 +135,13 @@ The `else if` conditional statement is used to group _logically related_ conditi
 var favoriteFood = "Tacos";
 
 if (favoriteFood == "Sushi") {
-  console.log("We're going out for Japanese food to night!");
+    console.log("We're going out for Japanese food to night!");
 } else if (favoriteFood == "Pasta") {
-  console.log("How about we eat some Italian food tonight?");
+    console.log("How about we eat some Italian food tonight?");
 } else if (favoriteFood == "Tacos") {
-  console.log("Time for some Mexican food!");
+    console.log("Time for some Mexican food!");
 } else if (favoriteFood == "Samosa") {
-  console.log("Let's eat Indian food tonight!");
+    console.log("Let's eat Indian food tonight!");
 }
 ```
 
@@ -159,15 +159,15 @@ The `else` conditional statement runs when all other conditional statements in a
 var favoriteFood = "Hot Dogs with Cream Cheese";
 
 if (favoriteFood == "Sushi") {
-  console.log("We're going out for Japanese food to night!");
+    console.log("We're going out for Japanese food to night!");
 } else if (favoriteFood == "Pasta") {
-  console.log("How about we eat some Italian food tonight?");
+    console.log("How about we eat some Italian food tonight?");
 } else if (favoriteFood == "Tacos") {
-  console.log("Time for some Mexican food!");
+    console.log("Time for some Mexican food!");
 } else if (favoriteFood == "Samosa") {
-  console.log("Let's eat Indian food tonight!");
+    console.log("Let's eat Indian food tonight!");
 } else {
-  console.log("I don't know what that favorite food is!");
+    console.log("I don't know what that favorite food is!");
 }
 ```
 
@@ -197,9 +197,9 @@ var age = 15;
 var heightInFeet = 4.6;
 
 if (age >= 13 && heightInFeet > 5) {
-  console.log("You may ride the roller coaster.");
+    console.log("You may ride the roller coaster.");
 } else {
-  console.log("You may NOT ride the roller coaster.");
+    console.log("You may NOT ride the roller coaster.");
 }
 ```
 
@@ -219,9 +219,9 @@ var foodAmount = 10;
 var drinkAmount = 0;
 
 if ((isHungry && foodAmount > 0) || (isThirsty && drinkAmount > 0)) {
-  enterKitchen();
+    enterKitchen();
 } else {
-  playVideoGames();
+    playVideoGames();
 }
 ```
 
@@ -244,9 +244,9 @@ var age = 15;
 var heightInFeet = 5.2;
 
 if (age >= 13 && heightInFeet > 5) {
-  console.log("You may ride the roller coaster.");
+    console.log("You may ride the roller coaster.");
 } else {
-  console.log("You may NOT ride the roller coaster.");
+    console.log("You may NOT ride the roller coaster.");
 }
 ```
 
@@ -265,9 +265,9 @@ var isHungry = true;
 var isThirsty = false;
 
 if (isHungry || isThirsty) {
-  console.log("You should go to the kitchen.");
+    console.log("You should go to the kitchen.");
 } else {
-  console.log("Do whatever, you're good!");
+    console.log("Do whatever, you're good!");
 }
 ```
 
@@ -285,9 +285,9 @@ The `!` (not) operator reverses a conditional expression:
 var isTired = true;
 
 if (!isTired) {
-  console.log("Let's go outside and play.");
+    console.log("Let's go outside and play.");
 } else {
-  console.log("Let's take a nap.");
+    console.log("Let's take a nap.");
 }
 ```
 
@@ -305,10 +305,10 @@ Conditional statements can be nested inside other conditional statements. Use in
 var role = "admin";
 
 if (role == "admin" || role == "developer") {
-  console.log("You can see the secret stuff in this app.");
-  if (role == "admin") {
-    console.log("You can also see the SUPER secret stuff in this app.");
-  }
+    console.log("You can see the secret stuff in this app.");
+    if (role == "admin") {
+        console.log("You can also see the SUPER secret stuff in this app.");
+    }
 }
 ```
 
@@ -321,9 +321,9 @@ You can also see the SUPER secret stuff in this app.
 
 ### Further reading
 
-- [MDN - JavaScript Building Blocks: Conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
-- [Eloquent JavaScript - Conditional Execution](https://eloquentjavascript.net/02_program_structure.html#h_wpz5oi2dy7)
-- [The Modern JavaScript Tutorial - Conditional Branching](https://javascript.info/ifelse)
+-   [MDN - JavaScript Building Blocks: Conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
+-   [Eloquent JavaScript - Conditional Execution](https://eloquentjavascript.net/02_program_structure.html#h_wpz5oi2dy7)
+-   [The Modern JavaScript Tutorial - Conditional Branching](https://javascript.info/ifelse)
 
 <hr>
 
@@ -349,12 +349,12 @@ var age = 19;
 
 // This generates `true`
 if (age >= 18) {
-  console.log("You are an adult!");
+    console.log("You are an adult!");
 }
 
 // This generates `false`
 if (age < 18) {
-  console.log("You are a child.");
+    console.log("You are a child.");
 }
 ```
 
@@ -368,9 +368,9 @@ Here's an example of a _falsy_ value:
 var username = "";
 
 if (username) {
-  console.log(`Hello, ${username}!`);
+    console.log(`Hello, ${username}!`);
 } else {
-  console.log("The username is blank");
+    console.log("The username is blank");
 }
 ```
 
@@ -386,9 +386,9 @@ Here's an example of a _truthy_ value:
 var numBananas = 2;
 
 if (numBananas) {
-  console.log("We have bananas!");
+    console.log("We have bananas!");
 } else {
-  console.log("We have no bananas!");
+    console.log("We have no bananas!");
 }
 ```
 
@@ -524,13 +524,13 @@ The `string.endsWith()` method lets you check if a `string` ends with a given pa
 var emailAddresses = ["djs@cwhq.com", "alecg@auburn.edu", "samh@bridges.com"];
 
 for (var emailAddress of emailAddresses) {
-  if (emailAddress.endsWith(".edu")) {
-    console.log(`${emailAddress} is a school address`);
-  } else if (emailAddress.endsWith("cwhq.com")) {
-    console.log(`${emailAddress} is a CWHQ employee address`);
-  } else {
-    console.log(`I don't know what ${emailAddress} is for`);
-  }
+    if (emailAddress.endsWith(".edu")) {
+        console.log(`${emailAddress} is a school address`);
+    } else if (emailAddress.endsWith("cwhq.com")) {
+        console.log(`${emailAddress} is a CWHQ employee address`);
+    } else {
+        console.log(`I don't know what ${emailAddress} is for`);
+    }
 }
 ```
 
@@ -553,7 +553,7 @@ User's do strange things, but using `string.toLowerCase()` and `string.trim()` c
 var favoriteFood = "Pizza";
 
 if (favoriteFood.toLowerCase() == "pizza") {
-  console.log("That's my favorite food!");
+    console.log("That's my favorite food!");
 }
 ```
 
@@ -570,7 +570,7 @@ That's my favorite food!
 var favoriteFood = " pizza";
 
 if (favoriteFood.trim() == "pizza") {
-  console.log("That's my favorite food!");
+    console.log("That's my favorite food!");
 }
 ```
 
@@ -587,7 +587,7 @@ You can chain these methods together to sanitize a `string` completely:
 var favoriteFood = " PIzZa  ";
 
 if (favoriteFood.trim().toLowerCase() == "pizza") {
-  console.log("That's my favorite food!");
+    console.log("That's my favorite food!");
 }
 ```
 
@@ -599,14 +599,14 @@ That's my favorite food!
 
 ### Further reading
 
-- [MDN - JavaScript Data Types and Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-- [The Modern JavaScript Tutorial - Data Types](https://javascript.info/data-types)
-- [Eloquent JavaScript - Values, Types, and Operators](https://eloquentjavascript.net/01_values.html)
-- [MDN - Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
-- [MDN - Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
-- [MDN - JavaScript Reference: Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [MDN - JavaScript Reference: String.prototype.trim()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
-- [MDN - JavaScript Reference: String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+-   [MDN - JavaScript Data Types and Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+-   [The Modern JavaScript Tutorial - Data Types](https://javascript.info/data-types)
+-   [Eloquent JavaScript - Values, Types, and Operators](https://eloquentjavascript.net/01_values.html)
+-   [MDN - Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+-   [MDN - Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
+-   [MDN - JavaScript Reference: Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+-   [MDN - JavaScript Reference: String.prototype.trim()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
+-   [MDN - JavaScript Reference: String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
 
 <hr>
 
@@ -705,7 +705,7 @@ var names = ["alecg", "danielj", "dimas"];
 
 console.log("This documentation is brought to you by:");
 for (var name of names) {
-  console.log(name);
+    console.log(name);
 }
 ```
 
@@ -725,7 +725,7 @@ var names = ["alecg", "danielj", "dimas"];
 
 console.log("This documentation is brought to you by:");
 for (var i = 0; i < names.length; i++) {
-  console.log(names[i]);
+    console.log(names[i]);
 }
 ```
 
@@ -763,13 +763,13 @@ console.log(names.includes("samh")); // False
 
 #### Further reading
 
-- [MDN - The JavaScript Reference - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-- [Eloquent JavaScript - Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html)
-- [The Modern JavaScript Tutorial - Arrays](https://javascript.info/arrays)
-- [MDN - The JavaScript Reference - Array.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-- [MDN - The JavaScript Reference - Array.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-- [MDN - The JavaScript Reference - Array.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
-- [MDN - The JavaScript Reference - Array.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+-   [MDN - The JavaScript Reference - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+-   [Eloquent JavaScript - Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html)
+-   [The Modern JavaScript Tutorial - Arrays](https://javascript.info/arrays)
+-   [MDN - The JavaScript Reference - Array.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+-   [MDN - The JavaScript Reference - Array.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+-   [MDN - The JavaScript Reference - Array.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+-   [MDN - The JavaScript Reference - Array.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
 ### `object`
 
@@ -777,9 +777,9 @@ The `object` data structure is used to store data in key/value pairs.
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 ```
 
@@ -787,9 +787,9 @@ You can use strings for the keys as well, but we'll follow the above form in the
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 ```
 
@@ -820,9 +820,9 @@ You can add an item to an `object` by providing the key/value pair (it's the sam
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 
 staff.django = "Director Of Pug Snorts";
@@ -836,9 +836,9 @@ To update an item in an `object`, you must know the key:
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 
 staff.danielj = "Burrito Taste-Tester";
@@ -852,9 +852,9 @@ To remove an item from an `object`, use the `delete` operator:
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 
 delete staff.danielj;
@@ -868,14 +868,14 @@ To loop through an `object`, you use the `for...in` loop like this:
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 
 for (var key in staff) {
-  // Note the [] used to access the value in the object
-  console.log(`${key} is a ${staff[key]}.`);
+    // Note the [] used to access the value in the object
+    console.log(`${key} is a ${staff[key]}.`);
 }
 ```
 
@@ -893,9 +893,9 @@ If you need to get all of the keys from an `object`, use the `object.keys()` met
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 
 var names = staff.keys();
@@ -915,9 +915,9 @@ If you need to get all of the values from an `object`, use the `object.values()`
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 
 var jobs = staff.values();
@@ -937,9 +937,9 @@ You can get the keys from an `object` and then use the `array.length` method to 
 
 ```javascript
 var staff = {
-  danielj: "Curriculum Developer",
-  alecg: "Curriculum Instructor",
-  dimas: "Designer",
+    danielj: "Curriculum Developer",
+    alecg: "Curriculum Instructor",
+    dimas: "Designer",
 };
 
 var numberOfStaff = staff.keys().length;
@@ -949,13 +949,13 @@ console.log(`We have ${numberOfStaff} people on our staff.`); // We have 3 peopl
 
 #### Further reading
 
-- [MDN - The JavaScript Reference - Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-- [Eloquent JavaScript - Objects and Arrays](https://eloquentjavascript.net/04_data.html)
-- [The Modern JavaScript Tutorial - Objects](https://javascript.info/object)
-- [MDN - The JavaScript Reference - for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
-- [MDN - The JavaScript Reference - Object.values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
-- [MDN - The JavaScript Reference - Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
-- [MDN - The JavaScript Reference - delete operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
+-   [MDN - The JavaScript Reference - Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+-   [Eloquent JavaScript - Objects and Arrays](https://eloquentjavascript.net/04_data.html)
+-   [The Modern JavaScript Tutorial - Objects](https://javascript.info/object)
+-   [MDN - The JavaScript Reference - for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+-   [MDN - The JavaScript Reference - Object.values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
+-   [MDN - The JavaScript Reference - Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+-   [MDN - The JavaScript Reference - delete operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
 
 <hr>
 
@@ -1005,7 +1005,7 @@ The `alert()` function allows you to alert a user with a message box.
 
 ```javascript
 function sayHi() {
-  alert("Welcome to my page!");
+    alert("Welcome to my page!");
 }
 sayHi();
 ```
@@ -1024,9 +1024,9 @@ var wizardName = prompt("Enter name");
 var nameConfirm = confirm(`Confirm ${wizardName}?`);
 
 if (nameConfirm) {
-  document.getElementById("name").innerHTML = `Welcome ${wizardName}!`;
+    document.getElementById("name").innerHTML = `Welcome ${wizardName}!`;
 } else {
-  document.getElementById("name").innerHTML = `Cancelled`;
+    document.getElementById("name").innerHTML = `Cancelled`;
 }
 ```
 
@@ -1086,10 +1086,10 @@ Line 3
 
 #### Further reading
 
-- [MDN - Web APIs: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
-- [MDN - The JavaScript Reference: parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
-- [MDN - The JavaScript Reference: parseFloat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
-- [MDN - The JavaScript Reference: window.prompt()](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
+-   [MDN - Web APIs: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
+-   [MDN - The JavaScript Reference: parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+-   [MDN - The JavaScript Reference: parseFloat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+-   [MDN - The JavaScript Reference: window.prompt()](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
 
 ### User-defined functions
 
@@ -1097,7 +1097,7 @@ You define a function using the `function` keyword. Functions definitions can go
 
 ```javascript
 function sayHello() {
-  console.log("Hello!");
+    console.log("Hello!");
 }
 ```
 
@@ -1107,7 +1107,7 @@ Defining a function does not run the statements in the body of the function. To 
 
 ```javascript
 function sayHello() {
-  console.log("Hello!");
+    console.log("Hello!");
 }
 
 sayHello(); // Hello!
@@ -1119,7 +1119,7 @@ When you define a function, you can add parameters that the function caller shou
 
 ```javascript
 function sayHello(name) {
-  console.log(`Hello, ${name}!`);
+    console.log(`Hello, ${name}!`);
 }
 ```
 
@@ -1129,7 +1129,7 @@ If a function accepts parameters, you need to pass them in when you call the fun
 
 ```javascript
 function sayHello(name) {
-  console.log(`Hello, ${name}!`);
+    console.log(`Hello, ${name}!`);
 }
 
 sayHello("Daniel"); // Hello, Daniel!
@@ -1141,8 +1141,8 @@ You can return a value from a function by using the `return` keyword:
 
 ```javascript
 function add(number1, number2) {
-  var total = number1 + number2;
-  return total;
+    var total = number1 + number2;
+    return total;
 }
 ```
 
@@ -1152,8 +1152,8 @@ If a function returns a value, you can capture it in a variable:
 
 ```javascript
 function add(number1, number2) {
-  var total = number1 + number2;
-  return total;
+    var total = number1 + number2;
+    return total;
 }
 
 var total = add(2, 3);
@@ -1164,8 +1164,8 @@ You can also use the value immediately in another function, like `console.log()`
 
 ```javascript
 function add(number1, number2) {
-  var total = number1 + number2;
-  return total;
+    var total = number1 + number2;
+    return total;
 }
 
 console.log(add(2, 3)); // 5
@@ -1178,12 +1178,12 @@ Indentation is not required in JavaScript, but you should do it for readability.
 
 ```javascript
 function sayHello(name) {
-  console.log(`Hello, ${name}!`);
-  if (name == "Daniel") {
-    console.log("That's a cool name!");
-  } else {
-    console.log("Nice to meet you!");
-  }
+    console.log(`Hello, ${name}!`);
+    if (name == "Daniel") {
+        console.log("That's a cool name!");
+    } else {
+        console.log("Nice to meet you!");
+    }
 }
 
 sayHello("Daniel");
@@ -1206,12 +1206,12 @@ A `return` statement can be used to exit a function. This is normally used when 
 
 ```javascript
 function greetCodewizard(name) {
-  var staff = ["danielj", "alecg", "dimas"];
-  if (!staff.includes(name)) {
-    console.log("I don't know you!");
-    return;
-  }
-  console.log(`Hello, ${name}!`);
+    var staff = ["danielj", "alecg", "dimas"];
+    if (!staff.includes(name)) {
+        console.log("I don't know you!");
+        return;
+    }
+    console.log(`Hello, ${name}!`);
 }
 
 greetCodewizard("danielj"); // Hello, danielj!
@@ -1220,9 +1220,9 @@ greetCodewizard("django"); // I don't know you!
 
 #### Further reading
 
-- [MDN - JavaScript Building Blocks: Functions](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
-- [EloquentJavaScript - Functions](https://eloquentjavascript.net/03_functions.html)
-- [The Modern JavaScript Tutorial - Functions](https://javascript.info/function-basics)
+-   [MDN - JavaScript Building Blocks: Functions](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
+-   [EloquentJavaScript - Functions](https://eloquentjavascript.net/03_functions.html)
+-   [The Modern JavaScript Tutorial - Functions](https://javascript.info/function-basics)
 
 <hr>
 
@@ -1237,7 +1237,7 @@ JavaScript's `for` loop is one of the more complicated pieces of syntax in the l
 ```javascript
 // header
 for (counter; loopContinuationCondition; incrementOrDecrement) {
-  // body
+    // body
 }
 ```
 
@@ -1247,7 +1247,7 @@ To see all three elements in action, consider this `for` loop, which loops 3 tim
 
 ```javascript
 for (var counter = 0; counter < 3; counter++) {
-  console.log("Hello");
+    console.log("Hello");
 }
 ```
 
@@ -1263,7 +1263,7 @@ Generally, the `counter` is called `i`. This is a shorthand that many programmer
 
 ```javascript
 for (var i = 0; i < 3; i++) {
-  console.log("Hello");
+    console.log("Hello");
 }
 ```
 
@@ -1281,7 +1281,7 @@ A `for` loop is used to loop a certain number of times (called counter-controlle
 
 ```javascript
 for (var i = 0; i < 3; i++) {
-  console.log(`${i} taco`);
+    console.log(`${i} taco`);
 }
 ```
 
@@ -1299,7 +1299,7 @@ You can use a `for` loop to loop over an `array`, but the `for...of` loop is eas
 var fruits = ["apple", "banana", "cherry"];
 
 for (var i = 0; i < fruits.length; i++) {
-  console.log(`Index number: ${i}  Fruit: ${fruits[i]}`);
+    console.log(`Index number: ${i}  Fruit: ${fruits[i]}`);
 }
 ```
 
@@ -1319,7 +1319,7 @@ The `for...of` loop is the easiest way to loop through the items in an `array`. 
 var fruits = ["apple", "banana", "cherry"];
 
 for (var fruit of fruits) {
-  console.log(fruit);
+    console.log(fruit);
 }
 ```
 
@@ -1339,9 +1339,9 @@ You can use a conditional statement inside a `for...of` loop to search for a par
 var fruits = ["orange", "banana", "cherry", "apple"];
 
 for (var fruit of fruits) {
-  if (fruit == "orange") {
-    console.log(`${fruit} is the best fruit`);
-  }
+    if (fruit == "orange") {
+        console.log(`${fruit} is the best fruit`);
+    }
 }
 ```
 
@@ -1361,9 +1361,9 @@ var fruits = ["orange", "banana", "cherry", "apple"];
 var bestFruit;
 
 for (var fruit of fruits) {
-  if (fruit == "orange") {
-    bestFruit = fruit;
-  }
+    if (fruit == "orange") {
+        bestFruit = fruit;
+    }
 }
 
 // The best fruit is orange.
@@ -1379,8 +1379,8 @@ var prices = [10, 12, 5, 8];
 var discounted_prices = [];
 
 for (var price of prices) {
-  discounted_price = price - price * 0.1;
-  discounted_prices.push(discounted_price);
+    discounted_price = price - price * 0.1;
+    discounted_prices.push(discounted_price);
 }
 
 // Here are your discounted prices: [9, 10.8, 4.5, 7.2]
@@ -1393,13 +1393,13 @@ The `for...in` loop is the easiest way to loop through the items in an `object`.
 
 ```javascript
 var users = {
-  danielj: "Admin",
-  django: "Support Staff",
-  samh: "Platform Developer",
+    danielj: "Admin",
+    django: "Support Staff",
+    samh: "Platform Developer",
 };
 
 for (var prop in users) {
-  console.log(`Username: ${prop} Role: ${users[prop]}`);
+    console.log(`Username: ${prop} Role: ${users[prop]}`);
 }
 ```
 
@@ -1413,11 +1413,11 @@ Username: samh Role: Platform Developer
 
 #### Further reading
 
-- [MDN - JavaScript Reference - for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
-- [MDN - JavaScript Reference - for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-- [MDN - JavaScript Reference - for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
-- [Eloquent JavaScript - for loops](https://eloquentjavascript.net/02_program_structure.html#h_oupMC+5FKN)
-- [The Modern JavaScript Tutorial - The "for" loop](https://javascript.info/while-for#the-for-loop)
+-   [MDN - JavaScript Reference - for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+-   [MDN - JavaScript Reference - for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+-   [MDN - JavaScript Reference - for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+-   [Eloquent JavaScript - for loops](https://eloquentjavascript.net/02_program_structure.html#h_oupMC+5FKN)
+-   [The Modern JavaScript Tutorial - The "for" loop](https://javascript.info/while-for#the-for-loop)
 
 ### `while`
 
@@ -1429,14 +1429,14 @@ For example, you can use a `while` loop to ask a user something until they answe
 var keepLooping = true; // This variable controls whether we loop or not.
 
 while (keepLooping) {
-  var userGuess = prompt("What is the meaning of life? ");
+    var userGuess = prompt("What is the meaning of life? ");
 
-  if (userGuess == "42") {
-    console.log("That's correct!");
-    keepLooping = false; // Stops the loop.
-  } else {
-    console.log("That's incorrect! Please try again.");
-  }
+    if (userGuess == "42") {
+        console.log("That's correct!");
+        keepLooping = false; // Stops the loop.
+    } else {
+        console.log("That's incorrect! Please try again.");
+    }
 }
 ```
 
@@ -1457,14 +1457,14 @@ You can also use a `break` statement instead of using a variable to control how 
 
 ```javascript
 while (true) {
-  userGuess = prompt("What is the meaning of life? ");
+    userGuess = prompt("What is the meaning of life? ");
 
-  if (userGuess == "42") {
-    console.log("That's correct!");
-    break; // Stops the loop.
-  } else {
-    console.log("That's incorrect! Please try again.");
-  }
+    if (userGuess == "42") {
+        console.log("That's correct!");
+        break; // Stops the loop.
+    } else {
+        console.log("That's incorrect! Please try again.");
+    }
 }
 ```
 
@@ -1488,8 +1488,8 @@ the `for` loop is generally preferred for this:
 var counter = 0;
 
 while (counter < 5) {
-  console.log(counter);
-  counter++; // If you forget this, you'll have an infinite loop!
+    console.log(counter);
+    counter++; // If you forget this, you'll have an infinite loop!
 }
 ```
 
@@ -1505,9 +1505,9 @@ Example Output:
 
 #### Further reading
 
-- [MDN - JavaScript Reference: while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
-- [Eloquent JavaScript - while and do loops](https://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM)
-- [The Modern JavaScript Tutorial - The "while" loop](https://javascript.info/while-for#the-while-loop)
+-   [MDN - JavaScript Reference: while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+-   [Eloquent JavaScript - while and do loops](https://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM)
+-   [The Modern JavaScript Tutorial - The "while" loop](https://javascript.info/while-for#the-while-loop)
 
 <hr>
 
@@ -1553,9 +1553,9 @@ The power operator (`**`) multiplies a number by itself a given number of times:
 
 ##### Further reading
 
-- [MDN - The JavaScript Guide: Arithmetic Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
-- [Eloquent JavaScript - Arithmetic](https://eloquentjavascript.net/01_values.html#i_RfBT3HMnYs)
-- [The Modern JavaScript Tutorial - Basic operators, maths](https://javascript.info/operators)
+-   [MDN - The JavaScript Guide: Arithmetic Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
+-   [Eloquent JavaScript - Arithmetic](https://eloquentjavascript.net/01_values.html#i_RfBT3HMnYs)
+-   [The Modern JavaScript Tutorial - Basic operators, maths](https://javascript.info/operators)
 
 <hr>
 
@@ -1576,8 +1576,8 @@ If you'd like to get a random whole number between a `min` and `max`, this helpe
 
 ```javascript
 function random(min, max) {
-  var num = Math.floor(Math.random() * (max - min + 1)) + min;
-  return num;
+    var num = Math.floor(Math.random() * (max - min + 1)) + min;
+    return num;
 }
 
 var randomNumber = random(1, 10);
@@ -1602,8 +1602,8 @@ console.log(roundedNumber); // 4
 
 ##### Further reading
 
-- [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+-   [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+-   [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 <hr>
 
@@ -1705,7 +1705,7 @@ Any variable created outside of function definition is considered a `global` var
 var score = 0;
 
 function updateScore() {
-  score = score + 1; // 1
+    score = score + 1; // 1
 }
 
 console.log(score); // 0
@@ -1722,8 +1722,8 @@ Updates to `global` variables affect the variable throughout the program. If you
 var score = 0;
 
 function updateScore() {
-  // This is a local variable, it only exists within `updateScore()`
-  var score = 1;
+    // This is a local variable, it only exists within `updateScore()`
+    var score = 1;
 }
 
 console.log(score); // 0
@@ -1735,6 +1735,6 @@ console.log(score); // 0
 
 ### Further reading
 
-- [MDN - JavaScript First Steps - Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
-- [Eloquent JavaScript - Bindings](https://eloquentjavascript.net/02_program_structure.html#h_lnOC+GBEtu)
-- [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables
+-   [MDN - JavaScript First Steps - Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
+-   [Eloquent JavaScript - Bindings](https://eloquentjavascript.net/02_program_structure.html#h_lnOC+GBEtu)
+-   [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables
