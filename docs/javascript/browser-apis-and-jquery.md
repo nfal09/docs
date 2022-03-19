@@ -959,7 +959,7 @@ setTimeout(removeEvent, 5000);
 
 ## Getting and Setting attributes
 
-### The `getAttribute()` function allows you to access the value of an element's attribute
+### The `getAttribute()` function allows you to access the attribute of an element
 
 ```html
 <!DOCTYPE html>
@@ -975,13 +975,16 @@ setTimeout(removeEvent, 5000);
 
 <div>
   <div class="object" id="one"></div>
-  <img class="object" id="two">
-
+  <img class="object" id="two" src="">
+  <input type="text" placeholder="Dog Name" id="three">
 </div>
+
 <script>
 
-  var elementAttribute = document.querySelector('div').getAttribute("id");
-  console.log("Attribute:", elementAttribute);
+  var element = document.querySelector('#three');
+
+  var elementAttribute = element.getAttribute('type');
+  console.log("The input type is " + elementAttribute)
 
 </script>
 </html>
@@ -990,7 +993,7 @@ setTimeout(removeEvent, 5000);
 Example Output:
 
 ```javascript
-Attribute: one;
+The input type is : text
 ```
 
 ### The `setAttribute()` function allows you to set or update the attribute of an element
@@ -1010,13 +1013,13 @@ Attribute: one;
 <div>
 
   <div class="object" id="one"></div>
-  <img class="object" id="two">
+  <img class="object" id="two" src="">
 
 </div>
 <script>
 
-  var insertImage = document.getElementById('two');
-  insertImage.setAttribute('src', 'dog.png');
+  var imageElement = document.getElementById('two');
+  imageElement.setAttribute('src', 'dog.png');
 
 </script>
 </html>
@@ -1030,7 +1033,7 @@ Example Output:
 <figcaption></figcaption>
 </figure>
 
-### jQuery's `attr()` function allows you access or add an attribute to an element
+### jQuery's `attr()` function allows you access or add the attribute to an element
 
 ```html
 <!DOCTYPE html>
@@ -1046,19 +1049,19 @@ Example Output:
 
 <div>
 
-  <img class="object" id="one">
-  <img class="object" id="two">
+  <img class="object" id="one" src="">
+  <img class="object" id="two" src="">
 
 </div>
 <script>
 
    function clickedPicture(event) {
-      var clicked = event.currentTarget;
+      var clicked = event.target;
 
       // Here we are grabbing the id attribute of the clicked image
       var id = $(clicked).attr('id');
 
-      if(id == 'one') {
+      if (id == 'one') {
         $('#one').attr('src', 'dog.jpg');
       } else if (id == 'two') {
         $('#two').attr('src', 'cat.jpg');
