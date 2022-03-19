@@ -2,31 +2,29 @@
 
 Python is a beginner-friendly language that we use in these courses in the core CodeWizardsHQ curriculum:
 
-|Elementary                         | Middle School                          |High School     |
-|-----------------------------------|----------------------------------------|----------------|
-|Intro to Text-Based Programming    |Introduction to Programming with Python |Intro to Python
-|Capstone 1                         |Beyond Basics with Python               |Capstone 1
-|Progamming Fundamentals with Python|Capstone 1                              |APIs and Databases
-|Logic with Python                  |Intro to Databases                      |Professional Web App Development 
-|Modular Programming with Python    |Mastering APIs                          |Capstone 2
-|Capstone 2                         |Mastering Databases                     |Mastering MVC Frameworks 
-|Python Game Development            |Capstone 3                              |Object Relational Mapping
-|                                   |                                        |DevOps and SoftwareEngineering 
-|                                   |                                        |Capstone 3
-
+| Elementary                          | Middle School                           | High School                      |
+| ----------------------------------- | --------------------------------------- | -------------------------------- |
+| Intro to Text-Based Programming     | Introduction to Programming with Python | Intro to Python                  |
+| Capstone 1                          | Beyond Basics with Python               | Capstone 1                       |
+| Progamming Fundamentals with Python | Capstone 1                              | APIs and Databases               |
+| Logic with Python                   | Intro to Databases                      | Professional Web App Development |
+| Modular Programming with Python     | Mastering APIs                          | Capstone 2                       |
+| Capstone 2                          | Mastering Databases                     | Mastering MVC Frameworks         |
+| Python Game Development             | Capstone 3                              | Object Relational Mapping        |
+|                                     |                                         | DevOps and SoftwareEngineering   |
+|                                     |                                         | Capstone 3                       |
 
 In addition to those courses, Python is used in all courses of the [Python Language Track](https://codewizardshq.com/python-language-track/).
 
 In this section of our documentation, you'll find references to most of the core Python language features and built-in functions that we use in our CodeWizardsHQ courses.
 
-You'll also find many *Further reading* sections, which pull from these excellent Python resources:
+You'll also find many _Further reading_ sections, which pull from these excellent Python resources:
 
 - [Python.org Documentation](https://www.python.org/doc/)
 - [RealPython.com](https://realpython.com/)
 - [Think Python](https://greenteapress.com/wp/think-python-2e/)
 
 <hr>
-
 
 ## Comments
 
@@ -83,15 +81,9 @@ hypotenuse = ((side_a ** 2) + (side_b ** 2)) ** 0.5
 
 <hr>
 
-
-
-
-
-
-
 ## Conditional Statements
 
-Conditional statements allow you to run a block of code when a boolean condition is true. 
+Conditional statements allow you to run a block of code when a boolean condition is true.
 
 ### `if`
 
@@ -129,7 +121,7 @@ You are legally an adult, congrats!
 
 ### `elif`
 
-The `elif` conditional statement is used to group *logically related* conditional statements together. The first conditional expression that evaluates to `True` will run:
+The `elif` conditional statement is used to group _logically related_ conditional statements together. The first conditional expression that evaluates to `True` will run:
 
 ```python
 favorite_food = "Tacos"
@@ -152,7 +144,7 @@ Time for some Mexican food!
 
 ### `else`
 
-The `else` conditional statement runs when all other conditional statements in a group are `False`. You can think of it as the *default* option:
+The `else` conditional statement runs when all other conditional statements in a group are `False`. You can think of it as the _default_ option:
 
 ```python
 favorite_food = "Hot Dogs with Cream Cheese"
@@ -173,21 +165,18 @@ else:
 I don't know what that favorite_food is!
 ```
 
-
 ### `Comparison Operators`
 
 Here are the comparison operators that you can use in conditional expressions to generate a `bool` value:
 
-
-|Operator| Description               |
-|--------|---------------------------|
-| `>`    | Greater-than              |
-| `>=`   | Greater-than or equal-to  |
-| `<`    | Less-than                 |
-| `<=`   | Less-than or equal-to     |
-| `==`   | Equal-to                  |
-| `!=`   | Not equal-to              |
-
+| Operator | Description              |
+| -------- | ------------------------ |
+| `>`      | Greater-than             |
+| `>=`     | Greater-than or equal-to |
+| `<`      | Less-than                |
+| `<=`     | Less-than or equal-to    |
+| `==`     | Equal-to                 |
+| `!=`     | Not equal-to             |
 
 ### `Complex Conditional Statements`
 
@@ -237,7 +226,7 @@ food_amount = 10
 drink_amount = 0
 
 if (
-    is_hungry  and food_amount  > 0 or 
+    is_hungry  and food_amount  > 0 or
     is_thirsty and drink_amount > 0
 ):
     enter_kitchen()
@@ -245,16 +234,15 @@ else:
     play_video_games()
 ```
 
-
 ### `Logical Operators`
 
 Logical operators allow you to combine multiple conditional expressions in a single conditional statement:
 
-|Operator| Description                                         |
-|--------|-----------------------------------------------------|
-| `and`  | `True` when both conditional expressions are `True` |
-| `or`   | `True` when either conditional expression is `True` |
-| `not`  | Reverses the value of a conditional expression      |
+| Operator | Description                                         |
+| -------- | --------------------------------------------------- |
+| `and`    | `True` when both conditional expressions are `True` |
+| `or`     | `True` when either conditional expression is `True` |
+| `not`    | Reverses the value of a conditional expression      |
 
 #### Using the `and` operator
 
@@ -335,7 +323,6 @@ You can see the secret stuff in this app.
 You can also see the SUPER secret stuff in this app.
 ```
 
-
 ### Further reading
 
 - [Real Python - Conditional Statements in Python](https://realpython.com/python-conditional-statements/)
@@ -351,18 +338,9 @@ You can also see the SUPER secret stuff in this app.
 
 <hr>
 
-
-
-
-
-
-
-
-
 ## Data Types
 
 Every value has a data type in Python. The data type determines what kinds of operations you can perform on the value. For example, you [can't perform arithmetic](#arithmetic-only-works-between-numbers) between values that aren't numeric data types.
-
 
 ### `bool`
 
@@ -392,9 +370,9 @@ if age < 18:
 
 #### Truthy and falsy values
 
-Booleans are not the only values that can be True/False. Every value in Python is either *truthy* or *falsy*, which means they can be used in conditional statements without a boolean comparison operation. Empty strings and the number 0 are *falsy*, and all other strings and numbers are *truthy*.
+Booleans are not the only values that can be True/False. Every value in Python is either _truthy_ or _falsy_, which means they can be used in conditional statements without a boolean comparison operation. Empty strings and the number 0 are _falsy_, and all other strings and numbers are _truthy_.
 
-Here's an example of a *falsy* value:
+Here's an example of a _falsy_ value:
 
 ```python
 username = ""
@@ -411,7 +389,7 @@ Example Output:
 The username is blank
 ```
 
-Here's an example of a *truthy* value:
+Here's an example of a _truthy_ value:
 
 ```python
 num_bananas = 2
@@ -427,8 +405,6 @@ Example Output:
 ```text
 We have bananas!
 ```
-
-
 
 ### `float`
 
@@ -470,7 +446,7 @@ name = "Daniel"
 
 #### String concatenation
 
-If you need to combine a variable and a `str`, you can use the `+` operator. This technique is called __string concatenation__:
+If you need to combine a variable and a `str`, you can use the `+` operator. This technique is called **string concatenation**:
 
 ```python
 name = "Daniel"
@@ -481,7 +457,7 @@ print(greeting) # Hello, Daniel
 
 #### String interpolation
 
-Another way to combine a variable and a `str` is using `f-strings`. This technique is called __string interpolation__, and it is the preferred way to combine variables and `str`:
+Another way to combine a variable and a `str` is using `f-strings`. This technique is called **string interpolation**, and it is the preferred way to combine variables and `str`:
 
 ```python
 name = "Daniel"
@@ -533,8 +509,8 @@ You can remove the initial newline from a multiline string using the `\` charact
 
 ```python
 options = """\
-    (1) View All Contacts (2) View Contact 
-    (3) Add Contact (4) Update Contact 
+    (1) View All Contacts (2) View Contact
+    (3) Add Contact (4) Update Contact
     (5) Remove Contact (6) Exit
 """
 
@@ -544,14 +520,14 @@ print(options)
 Example Output:
 
 ```text
-    (1) View All Contacts (2) View Contact 
-    (3) Add Contact (4) Update Contact 
+    (1) View All Contacts (2) View Contact
+    (3) Add Contact (4) Update Contact
     (5) Remove Contact (6) Exit
 ```
 
 #### Raw strings
 
-Raw strings (`str` prefaced with an `r`) tell Python to not interpret special `str` characters. You use them in CWHQ courses to print ASCII art and ensure it formats correctly. 
+Raw strings (`str` prefaced with an `r`) tell Python to not interpret special `str` characters. You use them in CWHQ courses to print ASCII art and ensure it formats correctly.
 
 Generally, `r` strings will also be multiline strings, but this isn't required:
 
@@ -599,7 +575,7 @@ for email_address in email_addresses:
         print(f"{email_address} is a CWHQ employee address")
     else:
         print(f"I don't know what {email_address} is for")
-        
+
 ```
 
 Example Output:
@@ -665,7 +641,6 @@ Example Output:
 That's my favorite food!
 ```
 
-
 ### Further reading
 
 - [The Python Library Reference - Text Sequence Type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
@@ -678,25 +653,13 @@ That's my favorite food!
 
 <hr>
 
-
-
-
-
-
-
-
-
-
-
-
 ## Data Structures
 
 Data structures allow you to efficiently store and access groups of items. Think of them like different storage containers you may use around the house.
 
-
 ### `list`
 
-The `list` data structure is used to store data in ordered *slots*. It is known as *mutable sequence type*, which means it can be modified after creation.
+The `list` data structure is used to store data in ordered _slots_. It is known as _mutable sequence type_, which means it can be modified after creation.
 
 Usually, the items in a `list` are homogeneous, which means they represent a group of similar items of the same data type:
 
@@ -710,8 +673,8 @@ You can write a list on multiple lines if you want. The trailing comma is recomm
 
 ```python
 foods = [
-    "tacos", 
-    "pizza", 
+    "tacos",
+    "pizza",
     "nachos",
     "ice cream",
     "asparagus",
@@ -730,8 +693,6 @@ print(names[1])  # danielj
 print(names[2])  # dimas
 ```
 
-
-
 #### Adding an item to a `list`
 
 To add an item to a `list` after it has been created, you can use the `list.append()` method. The `list.append()` method adds the item to the end of the list:
@@ -744,8 +705,6 @@ names.append("samh")
 print(names)  # ['alecg', 'danielj', 'dimas', 'samh']
 ```
 
-
-
 #### Updating an item in a `list`
 
 To update a `list` item, replace the value at the index:
@@ -757,7 +716,6 @@ names[1] = "django"
 
 print(names)  # ['alecg', 'django', 'dimas']
 ```
-
 
 #### Removing an item from a `list`
 
@@ -801,7 +759,6 @@ alecg
 danielj
 dimas
 ```
-
 
 #### Getting the number of items in a `list`
 
@@ -849,10 +806,6 @@ alecg is in the 'names' list
 samh is NOT in the 'names' list
 ```
 
-
-
-
-
 #### Further reading
 
 - [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
@@ -860,14 +813,6 @@ samh is NOT in the 'names' list
 - [The Python Library Reference - `len()`](https://docs.python.org/3/library/functions.html#len)
 - [The Python Tutorial - Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
 - [Think Python - Lists](https://greenteapress.com/thinkpython2/html/thinkpython2011.html)
-
-
-
-
-
-
-
-
 
 ### `dict`
 
@@ -912,7 +857,7 @@ dima_job = staff["dimas"]
 print(f"Dima is a {dima_job}.")  # Dima is a Designer.
 ```
 
-If you need to pull a value from a `dict` inside an `f-string`, you must use different quote characters for the key (if it's a `str`). 
+If you need to pull a value from a `dict` inside an `f-string`, you must use different quote characters for the key (if it's a `str`).
 
 ```python
 students = {
@@ -921,21 +866,19 @@ students = {
     "Tammy": "4th grade",
 }
 
-print(f"Vicki is in {students['Vicki']}") 
+print(f"Vicki is in {students['Vicki']}")
 # Vicki is in 3rd grade
 
-print(f"Sam is in {students['Sam']}")     
+print(f"Sam is in {students['Sam']}")
 # Sam is in 4th grade
 
-print(f"Tammy is in {students['Tammy']}") 
+print(f"Tammy is in {students['Tammy']}")
 # Tammy is in 4th grade
 ```
-
 
 #### Adding an item to a `dict`
 
 You can add an item to a `dict` by providing the key/value pair (it's the same syntax as updating an item):
-
 
 ```python
 staff = {
@@ -948,7 +891,6 @@ staff["django"] = "Director Of Pug Snorts"
 
 print(staff)  # {'danielj': 'Curriculum Developer', 'alecg': 'Curriculum Instructor', 'dimas': 'Designer', 'django': 'Director Of Pug Snorts'}
 ```
-
 
 #### Updating an item in a `dict`
 
@@ -966,8 +908,6 @@ staff["danielj"] = "Burrito Taste-Tester"
 print(staff)  # {'danielj': 'Burrito Taste-Tester', 'alecg': 'Curriculum Instructor', 'dimas': 'Designer'}
 ```
 
-
-
 #### Removing an item from a `dict`
 
 To remove an item from a `dict`, use the `dict.pop()` method:
@@ -983,7 +923,6 @@ staff.pop("danielj")
 
 print(staff)  # {'alecg': 'Curriculum Instructor', 'dimas': 'Designer'}
 ```
-
 
 #### Looping through a `dict`
 
@@ -1032,14 +971,9 @@ alecg
 dimas
 ```
 
-
-
-
-
 #### Getting the keys from a `dict`
 
 If you need to get all of the keys from a `dict`, use the `dict.keys()` method. Note, you'll usually want to cast the result to a `list`, which is why the `list()` function is used here:
-
 
 ```python
 staff = {
@@ -1062,7 +996,6 @@ Here are all the names in the staff dict: ['danielj', 'alecg', 'dimas']
 #### Getting the values from a `dict`
 
 If you need to get all of the values from a `dict`, use the `dict.values()` method. Note, you'll usually want to cast the result to a `list`, which is why the `list()` function is used here:
-
 
 ```python
 staff = {
@@ -1098,8 +1031,6 @@ number_of_staff = len(staff)
 print(f"We have {number_of_staff} people on our staff.")  # We have 3 people on our staff.
 ```
 
-
-
 #### Checking if an item is contained in a `dict`
 
 To check if an item is contained in a `dict`, use the `in` operator:
@@ -1109,7 +1040,7 @@ students = {
     "Vicki": "3rd grade",
     "Sam": "4th grade",
     "Tammy": "4th grade",
-}  
+}
 
 if "Vicki" in students:
     print("Vicki is a student here")
@@ -1129,7 +1060,7 @@ students = {
     "Vicki": "3rd grade",
     "Sam": "4th grade",
     "Tammy": "4th grade",
-}  
+}
 
 if "Daniel" not in students:
     print("Daniel is NOT a student here")
@@ -1151,7 +1082,7 @@ students = {
     "Vicki": "3rd grade",
     "Sam": "4th grade",
     "Tammy": "4th grade",
-}  
+}
 
 if students.get("Vicki") is not None:
     print("Vicki is a student here")
@@ -1169,7 +1100,6 @@ Vicki is a student here
 Daniel is NOT a student here
 ```
 
-
 #### Further reading
 
 - [Real Python - Dictionaries in Python](https://realpython.com/python-dicts/)
@@ -1179,20 +1109,13 @@ Daniel is NOT a student here
 
 <hr>
 
-
-
-
-
-
-
 ## Functions
 
-Functions allow you to group related statements together to perform a task. They help to implement the __D.R.Y.__(Don't Repeat Yourself) principle because they reduce unnecessary repetition.
-
+Functions allow you to group related statements together to perform a task. They help to implement the **D.R.Y.**(Don't Repeat Yourself) principle because they reduce unnecessary repetition.
 
 ### Built-in functions
 
-Python comes with many built-in functions. We'll cover some of the most common that you'll see in CodeWizardsHQ courses below. 
+Python comes with many built-in functions. We'll cover some of the most common that you'll see in CodeWizardsHQ courses below.
 
 ##### `float()`
 
@@ -1256,7 +1179,6 @@ number_of_foods = len(favorite_foods)
 print(number_of_foods)  # 4
 ```
 
-
 ##### `list()`
 
 The `list()` function creates a list from a sequence such as the result of `dict.keys()`, `dict.values()`, or a `str`:
@@ -1278,7 +1200,6 @@ jobs = list(staff.values())
 print(jobs)  # ['Curriculum Developer', 'Curriculum Instructor', 'Designer']
 ```
 
-
 ##### `print()`
 
 The `print()` function displays text on the screen:
@@ -1289,7 +1210,7 @@ print("Hello, world!")  # Hello, world!
 
 ###### Using special characters with `print()`
 
-You can use special characters such as `\n` and `\t` to format the text a bit. The `\n` adds a newline (like hitting __enter__ on your keyboard) and the `\t` adds a tab:
+You can use special characters such as `\n` and `\t` to format the text a bit. The `\n` adds a newline (like hitting **enter** on your keyboard) and the `\t` adds a tab:
 
 ```python
 print("Line 1\nLine 2\nLine 3\n")
@@ -1326,8 +1247,6 @@ names = ["alecg", "danielj", "dimas"]
 
 print(*names, sep=" -- ")  # alecg -- danielj -- dimas
 ```
-
-
 
 ##### `range()`
 
@@ -1367,8 +1286,6 @@ Example Output:
 10
 ```
 
-
-
 ##### `sorted()`
 
 The `sorted()` function is used to sort a `list`:
@@ -1398,6 +1315,7 @@ sorted_names = sorted(names, key=str.lower)
 # changed. `sort()` only uses the `key` function during the sorting process.
 print(sorted_names)  # ['alecg', 'Danielj', 'Dimas']
 ```
+
 The `reverse` keyword argument of `sort()` is used to sort from high-to-low instead of low-to-high. It expects a `bool` value:
 
 ```python
@@ -1413,7 +1331,7 @@ The `str()` function turns its argument into a `str` data type. This comes in ha
 
 ```python
 meaning_of_life = 42
-print("The meaning of life is " + str(meaning_of_life)) 
+print("The meaning of life is " + str(meaning_of_life))
 ```
 
 Example Output:
@@ -1435,18 +1353,9 @@ Example Output:
 The meaning of life is 42
 ```
 
-
 #### Further reading
 
 - [The Python Library Reference - Built-in Functions](https://docs.python.org/3/library/functions.html)
-
-
-
-
-
-
-
-
 
 ### User-defined functions
 
@@ -1461,7 +1370,7 @@ def say_hello():
 
 #### Calling a function
 
-Defining a function does not run the statements in the body of the function. To run a function, you *call* it like this:
+Defining a function does not run the statements in the body of the function. To run a function, you _call_ it like this:
 
 ```python
 def say_hello():
@@ -1484,8 +1393,7 @@ def say_hello(name):
 
 #### Passing arguments to a function
 
-If a function accepts parameters, you need to pass them in when you call the function. The values you pass to the function are called the *arguments* to the function:
-
+If a function accepts parameters, you need to pass them in when you call the function. The values you pass to the function are called the _arguments_ to the function:
 
 ```python
 def say_hello(name):
@@ -1532,7 +1440,6 @@ print(add(2, 3))  # 5
 print(f"2 + 3 = {add(2, 3)}")  # 2 + 3 = 5
 ```
 
-
 #### Indentation in functions
 
 The base-level of indentation in a function is 4 spaces. If you have another statement inside your function that also requires indentation (like a conditional statement or loop), you need to indent the body of that statement by 4 more spaces:
@@ -1560,7 +1467,6 @@ Hello, Alec!
 Nice to meet you!
 ```
 
-
 #### Using an early `return` statement to exit a function
 
 A `return` statement can be used to exit a function. This is normally used when you want to verify (with a conditional statement) that some preconditions are valid before continuing to execute a function body:
@@ -1570,7 +1476,7 @@ def greet_codewizard(name):
     if name not in ["danielj", "alecg", "dimas"]:
         print("I don't know you!")
         return
-    
+
     print(f"Hello, {name}!")
 
 
@@ -1578,8 +1484,6 @@ greet_codewizard("danielj")  # Hello, danielj!
 greet_codewizard("django")   # I don't know you!
 
 ```
-
-
 
 #### Further reading
 
@@ -1590,19 +1494,13 @@ greet_codewizard("django")   # I don't know you!
 
 <hr>
 
-
-
-
-
 ## Loops
 
 If you need to repeat something in your programs, you'll need to use one of Python's looping mechanisms.
 
-
 ### `for`
 
 A `for` loop is generally used to loop over a sequence, such as a `list`:
-
 
 ```python
 fruits = ["apple", "banana", "cherry"]
@@ -1656,7 +1554,6 @@ Example Output:
 3 potato
 ```
 
-
 #### Searching for a value in a `for` loop
 
 You can use a conditional statement inside a `for` loop to search for a particular item in a `list` and then do something. Note the indentation:
@@ -1674,7 +1571,6 @@ Example Output:
 ```text
 orange is the best fruit
 ```
-
 
 #### Finding a value in a `for` loop to use after the loop finishes
 
@@ -1694,8 +1590,6 @@ for fruit in fruits:
 # The best fruit is orange.
 print(f"The best fruit is {best_fruit}.")
 ```
-
-
 
 #### Creating a new `list` in a `for` loop
 
@@ -1736,8 +1630,6 @@ Enter fruit number 3: oranges
 Enter fruit number 4: kiwi
 ```
 
-
-
 #### Nested loops
 
 You can nest `for` loops inside of each other to perform and action once for each time in the outer `for` loop:
@@ -1763,31 +1655,12 @@ Example Output:
 3 taco
 ```
 
-
-
-
-
 #### Further reading
 
 - [Real Python - Python `for` Loops](https://realpython.com/python-for-loop/)
 - [The Python Tutorial - `for` Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
 - [The Python Tutorial - The `range()` function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
 - [Think Python - Traversal with a `for` loop](https://greenteapress.com/thinkpython2/html/thinkpython2009.html#sec94)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### `while`
 
@@ -1800,7 +1673,7 @@ keep_looping = True  # This variable controls whether we loop or not.
 
 while keep_looping:
     user_guess = input("What is the meaning of life? ")
-    
+
     if user_guess == "42":
         print("That's correct!")
         keep_looping = False  # Stops the loop.
@@ -1826,7 +1699,7 @@ You can also use a `break` statement instead of using a variable to control how 
 ```python
 while True:
     user_guess = input("What is the meaning of life? ")
-    
+
     if user_guess == "42":
         print("That's correct!")
         break  # Stops the loop.
@@ -1868,29 +1741,16 @@ Example Output:
 4
 ```
 
-
-
-
-
-
-
 #### Further reading
 
 - [Real Python - Python `while` Loops](https://realpython.com/python-while-loop/)
 - [Think Python - The `while` statement](https://greenteapress.com/thinkpython2/html/thinkpython2008.html#sec84)
 
-
 <hr>
-
-
-
-
-
 
 ## Math Operations
 
 Python is used heavily in math-related fields, so there are a large suite of tools for performing mathematical operations built-in to the language.
-
 
 ### Arithmetic Operators
 
@@ -1908,11 +1768,11 @@ print(f"8 * 2 = {product}")     # 8 * 2 = 16
 print(f"8 / 2 = {quotient}")    # 8 / 2 = 4.0
 ```
 
-Note that in the example above, division *always* produces a `float`. 
+Note that in the example above, division _always_ produces a `float`.
 
 #### Arithmetic only works between numbers
 
-Both data types *must* be numeric data types, you __cannot__ perform arithmetic between a `str` and a number.
+Both data types _must_ be numeric data types, you **cannot** perform arithmetic between a `str` and a number.
 
 ```python
 num_tacos =  2  + "1"  # no
@@ -1922,10 +1782,9 @@ num_tacos = "1" *  3   # no
 num_tacos = "1" * "3"  # no
 ```
 
-
 ### Other Operators
 
-There are a few other common operators that Pythonistas use when performing math in Python. 
+There are a few other common operators that Pythonistas use when performing math in Python.
 
 #### Modulo
 
@@ -1951,7 +1810,6 @@ The floor division operator (`//`) removes any fractional portion after divison:
 10 // 3  # 3
 ```
 
-
 #### Further reading
 
 - [The Python Tutorial - Numbers](https://docs.python.org/3/tutorial/introduction.html#numbers)
@@ -1959,16 +1817,9 @@ The floor division operator (`//`) removes any fractional portion after divison:
 
 <hr>
 
-
-
-
-
-
-
 ## Modules
 
 Python is often called a batteries-included language because of the plethora of built-in modules that the language contains. Modules are just Python files full of functionality that you don't have to write yourself; you merely import the things you want from a module and use them in your programs.
-
 
 ### Getting access to functions in modules
 
@@ -2012,23 +1863,13 @@ from module_name import some_really_long_function_name as short_name
 - [The Python Tutorial - Modules](https://docs.python.org/3/tutorial/modules.html)
 - [Real Python - Python Modules and Packages](https://realpython.com/python-modules-packages/)
 
-
-
-
-
-
-
-
-
-
-
 ### Built-in modules
 
-Python comes with 100s of built-in modules. We'll briefly cover a few that are used often at CWHQ in this section. See the *Further Reading* section for details on where you can browse all of Python's built-in modules.
+Python comes with 100s of built-in modules. We'll briefly cover a few that are used often at CWHQ in this section. See the _Further Reading_ section for details on where you can browse all of Python's built-in modules.
 
 #### random
 
-The `random` module is used to add randomness to your programs. 
+The `random` module is used to add randomness to your programs.
 
 ##### `Getting a random integer`
 
@@ -2062,14 +1903,6 @@ print(random_name)  # dima
 
 <hr>
 
-
-
-
-
-
-
-
-
 ## The `pass` statement
 
 You use the pass statement to act as a placeholder in a conditional statement or function definition. Programmers refer to this as "stubbing-out" the code block. No logic will run in the block a `pass` statement appears in. Python needs the `pass` statement because you can't have empty function or conditional blocks.
@@ -2077,7 +1910,6 @@ You use the pass statement to act as a placeholder in a conditional statement or
 #### Using `pass` in a function
 
 The `pass` statement can be used in a function definition as a placeholder before you write the main logic. This ensures your program still works but gives you a convenient way to see that you still need to implement some logic:
-
 
 ```python
 def order_pizza():
@@ -2089,7 +1921,6 @@ def order_pizza():
 
 The `pass` statement can also be used in a conditioal statement. This comes in handy if you know that you need a conditional statement but you don't have any of the logic ready yet:
 
-
 ```python
 action = input("What do you want to do? ")
 
@@ -2100,17 +1931,9 @@ elif action == "Order Tacos":
 
 ```
 
-
-
-
-
-
-
-
-
 ## Variables
 
-Variables assign a name to a value. The naming convention in Python is to use *snake_case* for variable names, and *UPPER_SNAKE_CASE* for named constants.
+Variables assign a name to a value. The naming convention in Python is to use _snake_case_ for variable names, and _UPPER_SNAKE_CASE_ for named constants.
 
 ### Creating a variable
 
@@ -2123,7 +1946,7 @@ my_age = 35
 
 ### Creating a named constant
 
-Named constants can replace *magic numbers* in your program.
+Named constants can replace _magic numbers_ in your program.
 
 For example, what does `1` and `2` represent here?
 
@@ -2135,7 +1958,7 @@ elif user_choice == 2:
 
 ```
 
-`1` and `2` in the example above are *magic numbers* because we would have to hunt down their meaning by reading more of the program. If we instead create a named constant for each, the meaning is clearer:
+`1` and `2` in the example above are _magic numbers_ because we would have to hunt down their meaning by reading more of the program. If we instead create a named constant for each, the meaning is clearer:
 
 ```python
 ORDER_TACOS = 1
@@ -2165,7 +1988,6 @@ print(score) 		# 2
 
 The same works for decreasing the value of a variable:
 
-
 ```python
 score = 3
 score = score - 1 	# 3 - 1
@@ -2176,7 +1998,6 @@ score = score - 1 	# 2 - 1
 
 print(score) 		# 1
 ```
-
 
 There's also a shorthand notation:
 
@@ -2199,14 +2020,13 @@ score -= 1    # 1 - 1
 print(score)  # 0
 ```
 
-
 ### Global variables
 
-Any variable created outside of function definition is considered a `global` variable. If you want to modify a `global` variable from *inside* a function definition, you need to use the `global` keyword:
+Any variable created outside of function definition is considered a `global` variable. If you want to modify a `global` variable from _inside_ a function definition, you need to use the `global` keyword:
 
 ```python
 # This is a global variable
-score = 0 
+score = 0
 
 def update_score():
     # Must do this to modify the variable
@@ -2214,8 +2034,6 @@ def update_score():
     # Now this is OK
     score = score + 1	# 1
 ```
-
-
 
 ### Further reading
 

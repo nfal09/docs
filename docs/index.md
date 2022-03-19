@@ -1,8 +1,8 @@
 # CWHQ Documentation
 
-Welcome to the CodeWizardsHQ documentation page! 
+Welcome to the CodeWizardsHQ documentation page!
 
-This documentation is a reference for most of the libraries and languages we use in CodeWizardsHQ courses. It is not meant to be an exhaustive reference, but rather a handy tool that covers the basics. You'll find links to further reading throughout if you want to explore a topic in more detail. 
+This documentation is a reference for most of the libraries and languages we use in CodeWizardsHQ courses. It is not meant to be an exhaustive reference, but rather a handy tool that covers the basics. You'll find links to further reading throughout if you want to explore a topic in more detail.
 
 ## Usage
 

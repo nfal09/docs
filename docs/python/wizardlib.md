@@ -2,15 +2,11 @@
 
 Here, you'll find the documentation for CodeWizardHQ's <em>Wizardlib</em> Python library. We use this library in the following courses:
 
-|Elementary              | Middle School
-|------------------------|--------------
-|Python Game Development |Introduction to Programming with Python
+| Elementary              | Middle School                           |
+| ----------------------- | --------------------------------------- |
+| Python Game Development | Introduction to Programming with Python |
 
 <hr>
-
-
-
-
 
 ### `add_audio()`
 
@@ -40,10 +36,6 @@ audio_element = add_audio("never-gonna-give-you-up.mp3")
 
 <hr>
 
-
-
-
-
 ### `add_background()`
 
 Adds a background image.
@@ -68,22 +60,16 @@ add_background("flying-cats.png")
 
 Example output:
 
-
 <figure markdown>
 ![add_background() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/flying-cats.jpg?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
-
 <hr>
-
-
-
-
 
 ### `add_background_audio()`
 
-Adds background audio which plays when you click the *Start* button.
+Adds background audio which plays when you click the _Start_ button.
 
 <hr>
 
@@ -104,9 +90,6 @@ add_background_audio("never-gonna-give-you-up.mp3")
 ```
 
 <hr>
-
-
-
 
 ### `add_button()`
 
@@ -142,11 +125,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
-
-
 
 ### `add_image()`
 
@@ -184,9 +162,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `add_text()`
 
 Adds text to the page.
@@ -223,10 +198,6 @@ Example output:
 
 <hr>
 
-
-
-
-
 ### `add_text_input()`
 
 Adds a text input to the page.
@@ -262,9 +233,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `animate_down()`
 
 Animates the `element` down by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates down and up repeatedly.
@@ -284,7 +252,6 @@ Parameters:
 - `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
 - `loop` (`bool`): Whether to repeatedly animate down and up (optional, defaults to `False`).
 
-
 Example usage:
 
 ```python
@@ -300,9 +267,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `animate_left()`
 
@@ -323,7 +287,6 @@ Parameters:
 - `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
 - `loop` (`bool`): Whether to repeatedly animate left and right (optional, defaults to `False`).
 
-
 Example usage:
 
 ```python
@@ -339,9 +302,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `animate_right()`
 
@@ -378,8 +338,6 @@ Example output:
 
 <hr>
 
-
-
 ### `animate_up()`
 
 Animates the `element` up by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates up and down repeatedly.
@@ -399,7 +357,6 @@ Parameters:
 - `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
 - `loop` (`bool`): Whether to repeatedly animate up and down (optional, defaults to `False`).
 
-
 Example usage:
 
 ```python
@@ -415,9 +372,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `check_collision()`
 
@@ -444,8 +398,8 @@ def cat_caught_taco():
     clear()
     text = add_text("The kitty caught the taco!")
     position_element(text, "center", "center")
-    
-    
+
+
 def move(key):
     if key == "w":
         move_up(cat_image, 10)
@@ -455,8 +409,8 @@ def move(key):
         move_down(cat_image, 10)
     elif key == "d":
         move_right(cat_image, 10)
-    
-    
+
+
 taco_image = add_image("taco.jpg", 100)
 position_element(taco_image, "center", "center")
 
@@ -476,9 +430,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `clear()`
 
@@ -519,9 +470,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `click()`
 
 Call `function_to_run` when `element` is clicked.
@@ -561,9 +509,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `fade_in()`
 
@@ -606,9 +551,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `fade_out()`
 
 Fades the `element` from visible to invisible.
@@ -648,9 +590,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `get_input_value()`
 
@@ -696,9 +635,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `keydown()`
 
 Runs `function_to_run` when a key is pressed. The key that is pressed will be passed as the first argument to `function_to_run` and will always be lowercase.
@@ -736,9 +672,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `move_down()`
 
@@ -786,9 +719,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `move_left()`
 
 Moves the `element` left by the given `distance`.
@@ -834,9 +764,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `move_right()`
 
@@ -884,9 +811,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `move_up()`
 
 Moves the `element` up by the given `distance`.
@@ -933,9 +857,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `play_audio()`
 
 Plays the audio that `element` represents.
@@ -961,18 +882,14 @@ play_audio(laugh_audio)
 
 <hr>
 
-
-
-
-
 ### `position_element()`
 
 Position the `element` at the given `x` and `y` position. The `x` and `y` arguments can be any `int`, or one of the position helpers:
 
-|Position | Helper1  | Helper2    | Helper3    |
-|---------|----------|------------|------------|
-|`x`      | `"left"` | `"center"` | `"right"`  |
-|`y`      | `"top"`  | `"center"` | `"bottom"` |
+| Position | Helper1  | Helper2    | Helper3    |
+| -------- | -------- | ---------- | ---------- |
+| `x`      | `"left"` | `"center"` | `"right"`  |
+| `y`      | `"top"`  | `"center"` | `"bottom"` |
 
 <hr>
 
@@ -996,9 +913,6 @@ position_element(taco_image, "center", 400)
 ```
 
 <hr>
-
-
-
 
 ### `set_background_color()`
 
@@ -1030,9 +944,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `set_element_width()`
 
@@ -1076,9 +987,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `set_font_size()`
 
 Sets the font size of the `element` to the given `font_size`.
@@ -1121,9 +1029,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `set_text_color()`
 
 Sets the `color` of the `text_element`.
@@ -1156,9 +1061,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `set_text_decoration()`
 
@@ -1194,9 +1096,6 @@ Example output:
 Read about different options for the decoration_string [here](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 
 <hr>
-
-
-
 
 ### `set_timeout()`
 
@@ -1234,9 +1133,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `update_text()`
 
@@ -1280,9 +1176,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `remove_element()`
 
 Removes the `element` from the page.
@@ -1324,9 +1217,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `rotate_element()`
 
 Rotates the `element` by the given number of `degrees`.
@@ -1342,7 +1232,7 @@ rotate_element(element, degrees)
 Parameters:
 
 - `element` (`element`): The element to rotate.
-- `degrees` (`int`): The number of degrees to rotate the `element`. 
+- `degrees` (`int`): The number of degrees to rotate the `element`.
 
 Example usage:
 
@@ -1368,9 +1258,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `vanish()`
 
