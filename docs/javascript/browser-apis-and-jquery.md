@@ -16,11 +16,11 @@ In this section of our documentation, you'll find references on how to use the b
 
 You'll also find many _Further reading_ sections, which pull from these excellent JavaScript resources:
 
-- [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [The Modern JavaScript Tutorial](https://javascript.info/)
-- [Eloquent JavaScript](https://eloquentjavascript.net/)
-- [Learn jQuery](https://learn.jquery.com/)
-- [jQuery API](https://api.jquery.com/)
+-   [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+-   [The Modern JavaScript Tutorial](https://javascript.info/)
+-   [Eloquent JavaScript](https://eloquentjavascript.net/)
+-   [Learn jQuery](https://learn.jquery.com/)
+-   [jQuery API](https://api.jquery.com/)
 
 <hr>
 
@@ -35,16 +35,16 @@ The `<script>` tag is used to insert JavaScript programs directly into an HTML p
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Inserting JavaScript with a script tag in the body</title>
-  </head>
+    <head>
+        <title>Inserting JavaScript with a script tag in the body</title>
+    </head>
 
-  <body>
-    <h1>This is HTML</h1>
-    <script>
-      // Everything in here is JavaScript
-    </script>
-  </body>
+    <body>
+        <h1>This is HTML</h1>
+        <script>
+            // Everything in here is JavaScript
+        </script>
+    </body>
 </html>
 ```
 
@@ -63,14 +63,14 @@ _index.html_
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Inserting JavaScript with a script tag in the head</title>
-    <script src="my-awesome-script.js"></script>
-  </head>
+    <head>
+        <title>Inserting JavaScript with a script tag in the head</title>
+        <script src="my-awesome-script.js"></script>
+    </head>
 
-  <body>
-    <h1>This is HTML</h1>
-  </body>
+    <body>
+        <h1>This is HTML</h1>
+    </body>
 </html>
 ```
 
@@ -81,18 +81,18 @@ The `jQuery` library is not part of the core Browser APIs and must be loaded in 
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Adding jQuery to a webpage</title>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <head>
+        <title>Adding jQuery to a webpage</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-  <body>
-    <h1>This is HTML</h1>
-  </body>
+    <body>
+        <h1>This is HTML</h1>
+    </body>
 </html>
 ```
 
@@ -127,22 +127,24 @@ Often, you'll be given a link that opens the offending file and points at the ex
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Daniel's Homepage</title>
-  </head>
+    <head>
+        <title>Daniel's Homepage</title>
+    </head>
 
-  <body>
-    <h1>Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+    <body>
+        <h1>
+            Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
+        </h1>
 
-    <!-- HTML abbreviated since it's not important -->
+        <!-- HTML abbreviated since it's not important -->
 
-    <script>
-      function thisHasAnError() {
-          // uh oh, this will throw an error!
-          vra rightBehindThis;
-      }
-    </script>
-  </body>
+        <script>
+            function thisHasAnError() {
+                // uh oh, this will throw an error!
+                vra rightBehindThis;
+            }
+        </script>
+    </body>
 </html>
 ```
 
@@ -158,23 +160,25 @@ You have access to any global variables and functions in the _Console_ tab and c
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Daniel's Homepage</title>
-  </head>
+    <head>
+        <title>Daniel's Homepage</title>
+    </head>
 
-  <body>
-    <h1>Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler</h1>
+    <body>
+        <h1>
+            Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
+        </h1>
 
-    <!-- HTML abbreviated since it's not important -->
+        <!-- HTML abbreviated since it's not important -->
 
-    <script>
-      var myFavoriteFood = "Tacos";
+        <script>
+            var myFavoriteFood = "Tacos";
 
-      function sayHello(name) {
-        console.log("Hello, " + name);
-      }
-    </script>
-  </body>
+            function sayHello(name) {
+                console.log("Hello, " + name);
+            }
+        </script>
+    </body>
 </html>
 ```
 
@@ -194,28 +198,28 @@ The `document.getElementById()` method allows you to select an HTML element by i
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Daniel's Homepage</title>
-  </head>
+    <head>
+        <title>Daniel's Homepage</title>
+    </head>
 
-  <body>
-    <!-- This is the element we'll grab from our JavaScript program -->
-    <h1 id="page-title">
-      Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
-    </h1>
+    <body>
+        <!-- This is the element we'll grab from our JavaScript program -->
+        <h1 id="page-title">
+            Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
+        </h1>
 
-    <!-- HTML abbreviated since it's not important -->
+        <!-- HTML abbreviated since it's not important -->
 
-    <script>
-      // Get the #page-title element and store it in a variable
-      var pageTitleElement = document.getElementById("page-title");
-      // Change the font color of the #page-title element
-      pageTitleElement.style.color = "blue";
+        <script>
+            // Get the #page-title element and store it in a variable
+            var pageTitleElement = document.getElementById("page-title");
+            // Change the font color of the #page-title element
+            pageTitleElement.style.color = "blue";
 
-      // Can also do everything in one line
-      document.getElementById("page-title").style.color = "blue";
-    </script>
-  </body>
+            // Can also do everything in one line
+            document.getElementById("page-title").style.color = "blue";
+        </script>
+    </body>
 </html>
 ```
 
@@ -231,31 +235,31 @@ The `document.getElementsByClassName()` method allows you to return the selected
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Home</title>
-  </head>
+    <head>
+        <title>Home</title>
+    </head>
 
-  <body>
-    <div class="container">
-      <div class="object"></div>
-      <div class="object"></div>
-      <div class="object"></div>
-    </div>
-    <script>
-      // Return all elements with the class name of `object`
-      var allObjects = document.getElementsByClassName("object");
+    <body>
+        <div class="container">
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+        </div>
+        <script>
+            // Return all elements with the class name of `object`
+            var allObjects = document.getElementsByClassName("object");
 
-      // changeBackground() will change the background color of the clicked box
-      function changeBackgroundColor(event) {
-        box = event.currentTarget;
-        box.style.backgroundColor = "#003566";
-      }
-      // Here we are looping through each element and attaching an onclick event
-      for (var object of allObjects) {
-        object.onclick = changeBackgroundColor;
-      }
-    </script>
-  </body>
+            // changeBackground() will change the background color of the clicked box
+            function changeBackgroundColor(event) {
+                box = event.currentTarget;
+                box.style.backgroundColor = "#003566";
+            }
+            // Here we are looping through each element and attaching an onclick event
+            for (var object of allObjects) {
+                object.onclick = changeBackgroundColor;
+            }
+        </script>
+    </body>
 </html>
 ```
 
@@ -271,27 +275,27 @@ The `document.getElementsByTagName()` method allows you to return the selected H
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Home</title>
-  </head>
+    <head>
+        <title>Home</title>
+    </head>
 
-  <body>
-    <div class="container">
-      <div class="object"></div>
-      <div class="object"></div>
-      <div class="object"></div>
-    </div>
+    <body>
+        <div class="container">
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+        </div>
 
-    <script>
-      //Return all elements with class name `object`
-      var allObjects = document.getElementsByTagName("div");
+        <script>
+            //Return all elements with class name `object`
+            var allObjects = document.getElementsByTagName("div");
 
-      // Add border color to all div tags
-      for (var object of allObjects) {
-        object.style.borderColor = "#ffd60a";
-      }
-    </script>
-  </body>
+            // Add border color to all div tags
+            for (var object of allObjects) {
+                object.style.borderColor = "#ffd60a";
+            }
+        </script>
+    </body>
 </html>
 ```
 
@@ -307,24 +311,24 @@ The `document.querySelector()` method allows you to return the first element wit
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Home</title>
-  </head>
+    <head>
+        <title>Home</title>
+    </head>
 
-  <body>
-    <div class="container">
-      <div class="object"></div>
-      <div class="object"></div>
-      <div class="object"></div>
-    </div>
-    <script>
-      // Return first element with class name of `object`
-      var firstElement = document.querySelector(".object");
+    <body>
+        <div class="container">
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+        </div>
+        <script>
+            // Return first element with class name of `object`
+            var firstElement = document.querySelector(".object");
 
-      // Add color to border of first element with class `object`
-      firstElement.style.borderColor = "red";
-    </script>
-  </body>
+            // Add color to border of first element with class `object`
+            firstElement.style.borderColor = "red";
+        </script>
+    </body>
 </html>
 ```
 
@@ -340,26 +344,26 @@ The `document.querySelectorAll()` method allows you to return a list of all elem
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Home</title>
-  </head>
+    <head>
+        <title>Home</title>
+    </head>
 
-  <body>
-    <div class="container">
-      <div class="object"></div>
-      <div class="object"></div>
-      <div class="object"></div>
-    </div>
-    <script>
-      // Return all elements with the class name of `object`
-      var allObjects = document.querySelectorAll(".object");
+    <body>
+        <div class="container">
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+        </div>
+        <script>
+            // Return all elements with the class name of `object`
+            var allObjects = document.querySelectorAll(".object");
 
-      // Here we are looping through each element to change the borderWidth
-      for (var object of allObjects) {
-        object.style.borderWidth = "20px";
-      }
-    </script>
-  </body>
+            // Here we are looping through each element to change the borderWidth
+            for (var object of allObjects) {
+                object.style.borderWidth = "20px";
+            }
+        </script>
+    </body>
 </html>
 ```
 
@@ -377,34 +381,34 @@ Here, we use the `id` attribute to select a single element:
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Daniel's Homepage</title>
-    <!-- Must include the jQuery library in the <head> -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <head>
+        <title>Daniel's Homepage</title>
+        <!-- Must include the jQuery library in the <head> -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-  <body>
-    <!-- This is the element we'll grab from our JavaScript program -->
-    <h1 id="page-title">
-      Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
-    </h1>
+    <body>
+        <!-- This is the element we'll grab from our JavaScript program -->
+        <h1 id="page-title">
+            Daniel Schroeder - Code Wizard and Semi-Professional Pug Wrestler
+        </h1>
 
-    <!-- HTML abbreviated since it's not important -->
+        <!-- HTML abbreviated since it's not important -->
 
-    <script>
-      // Get the #page-title element and store it in a variable
-      var pageTitleElement = $("#page-title");
-      // Change the font color of the #page-title element
-      pageTitleElement.attr("style", "color: blue");
+        <script>
+            // Get the #page-title element and store it in a variable
+            var pageTitleElement = $("#page-title");
+            // Change the font color of the #page-title element
+            pageTitleElement.attr("style", "color: blue");
 
-      // Can also do everything in one line
-      $("#page-title").attr("style", "color: blue");
-    </script>
-  </body>
+            // Can also do everything in one line
+            $("#page-title").attr("style", "color: blue");
+        </script>
+    </body>
 </html>
 ```
 
@@ -418,37 +422,37 @@ You can select multiple elements as well. For example, elements that all share t
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Daniel's Homepage</title>
-    <!-- Must include the jQuery library in the <head> -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <head>
+        <title>Daniel's Homepage</title>
+        <!-- Must include the jQuery library in the <head> -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-  <body>
-    <!-- Other HTML abbreviated since it's not important -->
+    <body>
+        <!-- Other HTML abbreviated since it's not important -->
 
-    <div>
-      <h2>About me</h2>
-      <!-- We'll grab these elements from JavaScript -->
-      <p class="likes">I like to code</p>
-      <p class="likes">I like tacos</p>
-      <p class="likes">I like pugs</p>
-    </div>
+        <div>
+            <h2>About me</h2>
+            <!-- We'll grab these elements from JavaScript -->
+            <p class="likes">I like to code</p>
+            <p class="likes">I like tacos</p>
+            <p class="likes">I like pugs</p>
+        </div>
 
-    <script>
-      // Get the .likes elements and store them in a variable
-      var likesElements = $(".likes");
-      // Change the font color of all the .likes elements
-      likesElements.attr("style", "color: red");
+        <script>
+            // Get the .likes elements and store them in a variable
+            var likesElements = $(".likes");
+            // Change the font color of all the .likes elements
+            likesElements.attr("style", "color: red");
 
-      // Can also do everything in one line
-      $(".likes").attr("style", "color: red");
-    </script>
-  </body>
+            // Can also do everything in one line
+            $(".likes").attr("style", "color: red");
+        </script>
+    </body>
 </html>
 ```
 
@@ -473,19 +477,19 @@ var timeoutID = setTimeout(callbackFunction, milliseconds);
 
 Parameters:
 
-- `callbackFunction` (`function`): The function you want to run after the given interval.
-- `milliseconds` (`number`): The amount of time before the `callbackFunction` should run.
+-   `callbackFunction` (`function`): The function you want to run after the given interval.
+-   `milliseconds` (`number`): The amount of time before the `callbackFunction` should run.
 
 Returns:
 
-- A numeric ID representing the eventual execution of the `callbackFunction`.
+-   A numeric ID representing the eventual execution of the `callbackFunction`.
 
 Example usage:
 
 ```javascript
 function addCat() {
-  var catImage = document.getElementById("cat");
-  catImage.style.opacity = 1;
+    var catImage = document.getElementById("cat");
+    catImage.style.opacity = 1;
 }
 
 // Execute the `addCat()` function after 10,000 milliseconds (10 seconds).
@@ -509,12 +513,12 @@ var intervalID = setInterval(callbackFunction, milliseconds);
 
 Parameters:
 
-- `callbackFunction` (`function`): The function to run every given `milliseconds`.
-- `milliseconds` (`number`): The amount of time between each execution of `callbackFunction`.
+-   `callbackFunction` (`function`): The function to run every given `milliseconds`.
+-   `milliseconds` (`number`): The amount of time between each execution of `callbackFunction`.
 
 Returns:
 
-- A numeric ID representing the interval executing the `callbackFunction`.
+-   A numeric ID representing the interval executing the `callbackFunction`.
 
 Example Usage:
 
@@ -522,8 +526,8 @@ Example Usage:
 var likes = 0;
 
 function increaseCatLikes() {
-  likes++;
-  document.getElementById("likes").textContent = likes;
+    likes++;
+    document.getElementById("likes").textContent = likes;
 }
 
 // Execute the `increaseCatLikes()` function every 5,000 milliseconds (5 seconds).
@@ -547,7 +551,7 @@ clearTimeout(intervalID);
 
 Parameters:
 
-- `intervalID` (`number`): The interval ID returned from `setTimeout()` or `setInterval()`.
+-   `intervalID` (`number`): The interval ID returned from `setTimeout()` or `setInterval()`.
 
 Example usage:
 
@@ -555,8 +559,8 @@ Here's how you can cancel a function that `setTimeout()` is going to execute:
 
 ```javascript
 function addCat() {
-  var catImage = document.getElementById("cat");
-  catImage.style.opacity = 1;
+    var catImage = document.getElementById("cat");
+    catImage.style.opacity = 1;
 }
 
 // Execute the `addCat()` function after 10,000 milliseconds (10 seconds).
@@ -568,7 +572,7 @@ var catTimeoutID = setTimeout(addCat, 10000);
  *   time interval (10 seconds) hand't already passed.
  */
 function stopAddCat() {
-  clearTimeout(catTimeoutID);
+    clearTimeout(catTimeoutID);
 }
 ```
 
@@ -578,14 +582,14 @@ Here's how you can cancel a function that `setInterval()` is running:
 var likes = 0;
 
 function increaseCatLikes() {
-  likes++;
-  document.getElementById("likes").textContent = likes;
+    likes++;
+    document.getElementById("likes").textContent = likes;
 
-  if (likes == 20) {
-    alert("Interval cleared");
-    // `clearInterval()` will stop executing `catLikes()` after 20 likes.
-    clearInterval(catIntervalID);
-  }
+    if (likes == 20) {
+        alert("Interval cleared");
+        // `clearInterval()` will stop executing `catLikes()` after 20 likes.
+        clearInterval(catIntervalID);
+    }
 }
 
 var catIntervalID = setInterval(increaseCatLikes, 5000);
@@ -927,7 +931,7 @@ Example Output:
 
 ```javascript
 function clickedBody() {
-  alert("You clicked on the body!");
+    alert("You clicked on the body!");
 }
 
 $("body").on("click", clickedBody);
@@ -944,8 +948,8 @@ To remove any events from an element use the `off()` method
 
 ```javascript
 function removeEvent() {
-  $("body").off("click");
-  alert("Click has been deactivated!");
+    $("body").off("click");
+    alert("Click has been deactivated!");
 }
 
 // setTimeout() will call removeEvent() after 5000 milliseconds(5 seconds)
@@ -957,9 +961,11 @@ setTimeout(removeEvent, 5000);
 <figcaption></figcaption>
 </figure>
 
-## Getting and Setting attributes
+## Getting and Setting Attributes
 
-### The `getAttribute()` function allows you to access the attribute of an element
+### `getAttribute()`
+
+The `getAttribute()` function allows you to access the attribute of an element
 
 ```html
 <!DOCTYPE html>
@@ -992,11 +998,13 @@ setTimeout(removeEvent, 5000);
 
 Example Output:
 
-```javascript
-The input type is : text
+```text
+The input type is text
 ```
 
-### The `setAttribute()` function allows you to set or update the attribute of an element
+### `setAttribute()`
+
+The `setAttribute()` function allows you to set or update the attribute of an element
 
 ```html
 <!DOCTYPE html>
@@ -1033,7 +1041,9 @@ Example Output:
 <figcaption></figcaption>
 </figure>
 
-### jQuery's `attr()` function allows you access or add the attribute to an element
+### `attr()`
+
+jQuery's `attr()` function allows you access or add the attribute to an element
 
 ```html
 <!DOCTYPE html>

@@ -2,15 +2,11 @@
 
 Here, you'll find the documentation for CodeWizardHQ's <em>Wizardlib</em> Python library. We use this library in the following courses:
 
-|Elementary              | Middle School
-|------------------------|--------------
-|Python Game Development |Introduction to Programming with Python
+| Elementary              | Middle School                           |
+| ----------------------- | --------------------------------------- |
+| Python Game Development | Introduction to Programming with Python |
 
 <hr>
-
-
-
-
 
 ### `add_audio()`
 
@@ -26,11 +22,11 @@ add_audio(filename)
 
 Parameters:
 
-- `filename` (`str`) : The filename.
+-   `filename` (`str`) : The filename.
 
 Returns:
 
-- The audio element.
+-   The audio element.
 
 Example usage:
 
@@ -39,10 +35,6 @@ audio_element = add_audio("never-gonna-give-you-up.mp3")
 ```
 
 <hr>
-
-
-
-
 
 ### `add_background()`
 
@@ -58,7 +50,7 @@ add_background(filename)
 
 Parameters:
 
-- `filename` (`str`): The filename.
+-   `filename` (`str`): The filename.
 
 Example usage:
 
@@ -68,22 +60,16 @@ add_background("flying-cats.png")
 
 Example output:
 
-
 <figure markdown>
 ![add_background() example](https://github.com/codewizardshq/docs/blob/main/docs/assets/m11-wizardlib/flying-cats.jpg?raw=true){ width="300" }
 <figcaption></figcaption>
 </figure>
 
-
 <hr>
-
-
-
-
 
 ### `add_background_audio()`
 
-Adds background audio which plays when you click the *Start* button.
+Adds background audio which plays when you click the _Start_ button.
 
 <hr>
 
@@ -95,7 +81,7 @@ add_background_audio(filename)
 
 Parameters:
 
-- `filename` (`str`): The filename.
+-   `filename` (`str`): The filename.
 
 Example usage:
 
@@ -104,9 +90,6 @@ add_background_audio("never-gonna-give-you-up.mp3")
 ```
 
 <hr>
-
-
-
 
 ### `add_button()`
 
@@ -122,11 +105,11 @@ add_button(text)
 
 Parameters:
 
-- `text` (`str`): The text on the button.
+-   `text` (`str`): The text on the button.
 
 Returns:
 
-- The button element.
+-   The button element.
 
 Example usage:
 
@@ -143,11 +126,6 @@ Example output:
 
 <hr>
 
-
-
-
-
-
 ### `add_image()`
 
 Adds an image to the page.
@@ -162,12 +140,12 @@ add_image(filename, size)
 
 Parameters:
 
-- `filename` (`str`): The filename.
-- `size` (`int`): The size, in pixels (optional).
+-   `filename` (`str`): The filename.
+-   `size` (`int`): The size, in pixels (optional).
 
 Returns:
 
-- The image element.
+-   The image element.
 
 Example usage:
 
@@ -184,9 +162,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `add_text()`
 
 Adds text to the page.
@@ -201,12 +176,12 @@ add_text(text, size)
 
 Parameters:
 
-- `text` (`str`): The text to add to the page.
-- `size` (`int`): The size, in pixels (optional, defaults to 18).
+-   `text` (`str`): The text to add to the page.
+-   `size` (`int`): The size, in pixels (optional, defaults to 18).
 
 Returns:
 
-- The text element.
+-   The text element.
 
 Example usage:
 
@@ -223,10 +198,6 @@ Example output:
 
 <hr>
 
-
-
-
-
 ### `add_text_input()`
 
 Adds a text input to the page.
@@ -241,11 +212,11 @@ add_text_input(placeholder)
 
 Parameters:
 
-- `placeholder` (`str`): The text to display in the input box.
+-   `placeholder` (`str`): The text to display in the input box.
 
 Returns:
 
-- The text input element.
+-   The text input element.
 
 Example usage:
 
@@ -262,9 +233,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `animate_down()`
 
 Animates the `element` down by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates down and up repeatedly.
@@ -279,11 +247,10 @@ animate_down(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate down and up (optional, defaults to `False`).
-
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate down and up (optional, defaults to `False`).
 
 Example usage:
 
@@ -301,9 +268,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `animate_left()`
 
 Animates the `element` left by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates left and right repeatedly.
@@ -318,11 +282,10 @@ animate_left(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate left and right (optional, defaults to `False`).
-
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate left and right (optional, defaults to `False`).
 
 Example usage:
 
@@ -340,9 +303,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `animate_right()`
 
 Animates the `element` right by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates right and left repeatedly.
@@ -357,10 +317,10 @@ animate_right(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate right and left (optional, defaults to `False`).
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate right and left (optional, defaults to `False`).
 
 Example usage:
 
@@ -378,8 +338,6 @@ Example output:
 
 <hr>
 
-
-
 ### `animate_up()`
 
 Animates the `element` up by the given `distance`. Can optionally change the amount of time the animation takes and whether the `element` animates up and down repeatedly.
@@ -394,11 +352,10 @@ animate_up(element, distance, time, loop)
 
 Parameters:
 
-- `element` (`element`): An element to animate.
-- `distance` (`int`): The distance the element should travel (in pixels).
-- `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
-- `loop` (`bool`): Whether to repeatedly animate up and down (optional, defaults to `False`).
-
+-   `element` (`element`): An element to animate.
+-   `distance` (`int`): The distance the element should travel (in pixels).
+-   `time` (`int`): The amount of seconds the animation should take (optional, defaults to 8).
+-   `loop` (`bool`): Whether to repeatedly animate up and down (optional, defaults to `False`).
 
 Example usage:
 
@@ -416,9 +373,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `check_collision()`
 
 If `element1` and `element2` collide, `function_to_run` is called.
@@ -433,9 +387,9 @@ check_collision(element1, element2, function_to_run)
 
 Parameters:
 
-- `element1` (`element`): An element to check for collisions with.
-- `element2` (`element`): An element to check for collisions with.
-- `function_to_run` (`function`): The function to run if `element1` hits `element2`.
+-   `element1` (`element`): An element to check for collisions with.
+-   `element2` (`element`): An element to check for collisions with.
+-   `function_to_run` (`function`): The function to run if `element1` hits `element2`.
 
 Example usage:
 
@@ -444,8 +398,8 @@ def cat_caught_taco():
     clear()
     text = add_text("The kitty caught the taco!")
     position_element(text, "center", "center")
-    
-    
+
+
 def move(key):
     if key == "w":
         move_up(cat_image, 10)
@@ -455,8 +409,8 @@ def move(key):
         move_down(cat_image, 10)
     elif key == "d":
         move_right(cat_image, 10)
-    
-    
+
+
 taco_image = add_image("taco.jpg", 100)
 position_element(taco_image, "center", "center")
 
@@ -476,9 +430,6 @@ Example output:
 </figure>
 
 <hr>
-
-
-
 
 ### `clear()`
 
@@ -519,9 +470,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `click()`
 
 Call `function_to_run` when `element` is clicked.
@@ -536,8 +484,8 @@ click(element, function_to_run)
 
 Parameters:
 
-- `element` (`element`): The element to click.
-- `function_to_run` (`function`): The function to run if `element` is clicked.
+-   `element` (`element`): The element to click.
+-   `function_to_run` (`function`): The function to run if `element` is clicked.
 
 Example usage:
 
@@ -562,9 +510,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `fade_in()`
 
 Fades the `element` from invisible to visible.
@@ -579,7 +524,7 @@ fade_in(element)
 
 Parameters:
 
-- `element` (`element`): The element to fade in.
+-   `element` (`element`): The element to fade in.
 
 Example usage:
 
@@ -606,9 +551,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `fade_out()`
 
 Fades the `element` from visible to invisible.
@@ -623,7 +565,7 @@ fade_out(element)
 
 Parameters:
 
-- `element` (`element`): The element to fade out.
+-   `element` (`element`): The element to fade out.
 
 Example usage:
 
@@ -649,9 +591,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `get_input_value()`
 
 Gets the value of the input `element`.
@@ -666,7 +605,7 @@ get_input_value(element)
 
 Parameters:
 
-- `element` (`element`): The element to get the value from.
+-   `element` (`element`): The element to get the value from.
 
 Example usage:
 
@@ -696,9 +635,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `keydown()`
 
 Runs `function_to_run` when a key is pressed. The key that is pressed will be passed as the first argument to `function_to_run` and will always be lowercase.
@@ -713,7 +649,7 @@ keydown(function_to_run)
 
 Parameters:
 
-- `function_to_run` (`function`): The function to run when a key is pressed.
+-   `function_to_run` (`function`): The function to run when a key is pressed.
 
 Example usage:
 
@@ -737,9 +673,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `move_down()`
 
 Moves the `element` down by the given `distance`.
@@ -754,8 +687,8 @@ move_down(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move down.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move down.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -786,9 +719,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `move_left()`
 
 Moves the `element` left by the given `distance`.
@@ -803,8 +733,8 @@ move_left(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move left.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move left.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -835,9 +765,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `move_right()`
 
 Moves the `element` right by the given `distance`.
@@ -852,8 +779,8 @@ move_right(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move right.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move right.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -884,9 +811,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `move_up()`
 
 Moves the `element` up by the given `distance`.
@@ -901,8 +825,8 @@ move_up(element, distance)
 
 Parameters:
 
-- `element` (`element`): The element to move up.
-- `distance` (`int`): The distance the `element` should travel (in pixels).
+-   `element` (`element`): The element to move up.
+-   `distance` (`int`): The distance the `element` should travel (in pixels).
 
 Example usage:
 
@@ -933,9 +857,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `play_audio()`
 
 Plays the audio that `element` represents.
@@ -950,7 +871,7 @@ play_audio(element)
 
 Parameters:
 
-- `element` (`element`): The audio element to play.
+-   `element` (`element`): The audio element to play.
 
 Example usage:
 
@@ -961,18 +882,14 @@ play_audio(laugh_audio)
 
 <hr>
 
-
-
-
-
 ### `position_element()`
 
 Position the `element` at the given `x` and `y` position. The `x` and `y` arguments can be any `int`, or one of the position helpers:
 
-|Position | Helper1  | Helper2    | Helper3    |
-|---------|----------|------------|------------|
-|`x`      | `"left"` | `"center"` | `"right"`  |
-|`y`      | `"top"`  | `"center"` | `"bottom"` |
+| Position | Helper1  | Helper2    | Helper3    |
+| -------- | -------- | ---------- | ---------- |
+| `x`      | `"left"` | `"center"` | `"right"`  |
+| `y`      | `"top"`  | `"center"` | `"bottom"` |
 
 <hr>
 
@@ -984,9 +901,9 @@ position_element(element, x, y)
 
 Parameters:
 
-- `element` (`element`): The element to position.
-- `x` (`int`|`str`): The desired x-position of the `element`.
-- `y` (`int`|`str`): The desired y-position of the `element`.
+-   `element` (`element`): The element to position.
+-   `x` (`int`|`str`): The desired x-position of the `element`.
+-   `y` (`int`|`str`): The desired y-position of the `element`.
 
 Example usage:
 
@@ -996,9 +913,6 @@ position_element(taco_image, "center", 400)
 ```
 
 <hr>
-
-
-
 
 ### `set_background_color()`
 
@@ -1014,7 +928,7 @@ set_background_color(color)
 
 Parameters:
 
-- `color` (`str`): The desired background color.
+-   `color` (`str`): The desired background color.
 
 Example usage:
 
@@ -1031,9 +945,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `set_element_width()`
 
 Sets the `element` to the given `width`.
@@ -1048,8 +959,8 @@ set_element_width(element, width)
 
 Parameters:
 
-- `element` (`element`): The element to adjust.
-- `width` (`int`): The desired width of the `element`.
+-   `element` (`element`): The element to adjust.
+-   `width` (`int`): The desired width of the `element`.
 
 Example usage:
 
@@ -1076,9 +987,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `set_font_size()`
 
 Sets the font size of the `element` to the given `font_size`.
@@ -1093,8 +1001,8 @@ set_font_size(element, font_size)
 
 Parameters:
 
-- `element` (`element`): The element to adjust.
-- `font_size` (`int`): The desired font_size of the `element`.
+-   `element` (`element`): The element to adjust.
+-   `font_size` (`int`): The desired font_size of the `element`.
 
 Example usage:
 
@@ -1121,9 +1029,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `set_text_color()`
 
 Sets the `color` of the `text_element`.
@@ -1138,8 +1043,8 @@ set_text_color(text_element, color)
 
 Parameters:
 
-- `text_element` (`element`): The text element to adjust.
-- `color` (`str`): The desired color of the `text_element`.
+-   `text_element` (`element`): The text element to adjust.
+-   `color` (`str`): The desired color of the `text_element`.
 
 Example usage:
 
@@ -1157,9 +1062,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `set_text_decoration()`
 
 Sets the text decoration of the given `text_element`.
@@ -1174,8 +1076,8 @@ set_text_decoration(text_element, decoration_string)
 
 Parameters:
 
-- `text_element` (`element`): The text element to adjust.
-- `decoration_string` (`str`): The decoration string for the CSS property.
+-   `text_element` (`element`): The text element to adjust.
+-   `decoration_string` (`str`): The decoration string for the CSS property.
 
 Example usage:
 
@@ -1195,9 +1097,6 @@ Read about different options for the decoration_string [here](https://developer.
 
 <hr>
 
-
-
-
 ### `set_timeout()`
 
 Runs `function_to_run` after `time` seconds.
@@ -1212,8 +1111,8 @@ set_timeout(function_to_run, time)
 
 Parameters:
 
-- `function_to_run` (`function`): The function to run.
-- `time` (`int`): The time (in seconds) to wait before running the `function_to_run`.
+-   `function_to_run` (`function`): The function to run.
+-   `time` (`int`): The time (in seconds) to wait before running the `function_to_run`.
 
 Example usage:
 
@@ -1235,9 +1134,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `update_text()`
 
 Changes the text in `text_element` to the `new_text`.
@@ -1252,8 +1148,8 @@ update_text(text_element, new_text)
 
 Parameters:
 
-- `text_element` (`element`): The element to adjust.
-- `new_text` (`str`): The new text for the `text_element`.
+-   `text_element` (`element`): The element to adjust.
+-   `new_text` (`str`): The new text for the `text_element`.
 
 Example usage:
 
@@ -1280,9 +1176,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `remove_element()`
 
 Removes the `element` from the page.
@@ -1297,7 +1190,7 @@ remove_element(element)
 
 Parameters:
 
-- `element` (`element`): The element to remove.
+-   `element` (`element`): The element to remove.
 
 Example usage:
 
@@ -1324,9 +1217,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `rotate_element()`
 
 Rotates the `element` by the given number of `degrees`.
@@ -1341,8 +1231,8 @@ rotate_element(element, degrees)
 
 Parameters:
 
-- `element` (`element`): The element to rotate.
-- `degrees` (`int`): The number of degrees to rotate the `element`. 
+-   `element` (`element`): The element to rotate.
+-   `degrees` (`int`): The number of degrees to rotate the `element`.
 
 Example usage:
 
@@ -1369,9 +1259,6 @@ Example output:
 
 <hr>
 
-
-
-
 ### `vanish()`
 
 Removes the `element` from the page over a 1 second interval.
@@ -1386,7 +1273,7 @@ vanish(element)
 
 Parameters:
 
-- `element` (`element`): The element to remove.
+-   `element` (`element`): The element to remove.
 
 Example usage:
 
