@@ -229,6 +229,7 @@ if ((isHungry && foodAmount > 0) || (isThirsty && drinkAmount > 0)) {
 
 Logical operators allow you to combine multiple conditional expressions in a single conditional statement:
 
+<!-- prettier-ignore -->
 | Operator   | Description                                         |
 |------------|-----------------------------------------------------|
 | `&&` (and) | `true` when both conditional expressions are `true` |
