@@ -1604,7 +1604,6 @@ console.log(roundedNumber); // 4
 ##### Further reading
 
 -   [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
--   [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 <hr>
 
@@ -1738,4 +1737,4 @@ console.log(score); // 0
 
 -   [MDN - JavaScript First Steps - Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
 -   [Eloquent JavaScript - Bindings](https://eloquentjavascript.net/02_program_structure.html#h_lnOC+GBEtu)
--   [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables
+-   [The Modern JavaScript Tutorial - Variables](https://javascript.info/variables)

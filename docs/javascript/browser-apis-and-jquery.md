@@ -961,9 +961,11 @@ setTimeout(removeEvent, 5000);
 <figcaption></figcaption>
 </figure>
 
-## Getting and Setting attributes
+## Getting and Setting Attributes
 
-### The `getAttribute()` function allows you to access the attribute of an element
+### `getAttribute()`
+
+The `getAttribute()` function allows you to access the attribute of an element
 
 ```html
 <!DOCTYPE html>
@@ -996,11 +998,13 @@ setTimeout(removeEvent, 5000);
 
 Example Output:
 
-```javascript
-The input type is : text
+```text
+The input type is text
 ```
 
-### The `setAttribute()` function allows you to set or update the attribute of an element
+### `setAttribute()`
+
+The `setAttribute()` function allows you to set or update the attribute of an element
 
 ```html
 <!DOCTYPE html>
@@ -1037,7 +1041,9 @@ Example Output:
 <figcaption></figcaption>
 </figure>
 
-### jQuery's `attr()` function allows you access or add the attribute to an element
+### `attr()`
+
+jQuery's `attr()` function allows you access or add the attribute to an element
 
 ```html
 <!DOCTYPE html>
