@@ -230,9 +230,9 @@ if ((isHungry && foodAmount > 0) || (isThirsty && drinkAmount > 0)) {
 Logical operators allow you to combine multiple conditional expressions in a single conditional statement:
 
 | Operator   | Description                                         |
-| ---------- | --------------------------------------------------- | ------ | --------------------------------------------------- |
+|------------|-----------------------------------------------------|
 | `&&` (and) | `true` when both conditional expressions are `true` |
-| `          |                                                     | ` (or) | `true` when either conditional expression is `true` |
+| `||` (or)  | `true` when either conditional expression is `true` |
 | `!` (not)  | Reverses the value of a conditional expression      |
 
 #### Using the `&&` operator
