@@ -1066,18 +1066,73 @@ jQuery's `attr()` function allows you access or add the attribute to an element
 <script>
 
    function clickedPicture(event) {
-      var clicked = event.target;
+        var clicked = event.target;
 
-      // Here we are grabbing the id attribute of the clicked image
-      var id = $(clicked).attr('id');
+        // Here we are grabbing the id attribute of the clicked image
+        var id = $(clicked).attr('id');
 
-      if (id == 'one') {
-        $('#one').attr('src', 'dog.jpg');
-      } else if (id == 'two') {
-        $('#two').attr('src', 'cat.jpg');
+        if (id == 'one') {
+            $('#one').attr('src', 'dog.jpg');
+        } else if (id == 'two') {
+            $('#two').attr('src', 'cat.jpg');
+        }
     }
-  }
     $('.object').click(clickedPicture);
+
+</script>
+</html>
+
+```
+
+<figure markdown>
+![attr example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/attr.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### Using attributes as properties
+
+When you select an element from the DOM, there are many properties that live on the element. These can be accessed with dot notation (.), and some common attributes (like `style`, `id`, and `src`) are easy to get and set as a property.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+
+  <img class="object" id="one" src="">
+  <img class="object" id="two" src="">
+
+</div>
+<script>
+
+
+    var imageOne = document.getElementById("one");
+    var imageTwo = document.getElementById("two");
+
+
+    function clickedPicture(event) {
+        var clicked = event.target;
+
+        // Here we are grabbing the id attribute of the clicked image
+        var id = clicked.id
+
+        if (id == "one") {
+            // We can use the `src` attribute directly
+            imageOne.src = "dog.jpg";
+        } else if (id == "two") {
+            imageTwo.src = "cat.jpg";
+        }
+    }
+
+    $(".object").click(clickedPicture);
 
 </script>
 </html>
