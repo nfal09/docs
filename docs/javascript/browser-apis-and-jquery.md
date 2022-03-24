@@ -98,7 +98,9 @@ The `jQuery` library is not part of the core Browser APIs and must be loaded in 
 
 ## Using The Browser's Dev Tools
 
-When working with JavaScript, the developer tools (dev tools for short) are your best friend! You should spend some time reading the documentation for the dev tools in your browser of choice. We'll use Chrome in these examples, and they have excellent documentation [here](https://developer.chrome.com/docs/devtools/).
+When working with JavaScript, the developer tools (dev tools for short) are your best friend! You should spend some time reading the documentation for the dev tools in your browser of choice.
+
+We'll use Chrome in these examples, and they have excellent documentation [here](https://developer.chrome.com/docs/devtools/).
 
 ### The JavaScript console
 
@@ -287,10 +289,10 @@ The `document.getElementsByTagName()` method allows you to return the selected H
         </div>
 
         <script>
-            //Return all elements with class name `object`
+            // Return all elements with class name `object`
             var allObjects = document.getElementsByTagName("div");
 
-            // Add border color to all div tags
+            // Add border color to all `<div>` tags
             for (var object of allObjects) {
                 object.style.borderColor = "#ffd60a";
             }
@@ -322,10 +324,13 @@ The `document.querySelector()` method allows you to return the first element wit
             <div class="object"></div>
         </div>
         <script>
-            // Return first element with class name of `object`
+            // Return the first element with the class name of `object`
             var firstElement = document.querySelector(".object");
 
-            // Add color to border of first element with class `object`
+            /*
+             * Add color to the border of the first element with
+             * the class name `object`
+             */
             firstElement.style.borderColor = "red";
         </script>
     </body>
@@ -358,7 +363,7 @@ The `document.querySelectorAll()` method allows you to return a list of all elem
             // Return all elements with the class name of `object`
             var allObjects = document.querySelectorAll(".object");
 
-            // Here we are looping through each element to change the borderWidth
+            // Here we are looping through each element to change the `borderWidth`
             for (var object of allObjects) {
                 object.style.borderWidth = "20px";
             }
@@ -612,43 +617,44 @@ The `change()` method will execute a function when the input value has changed.
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Events!</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Events!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <button id="name">Click</button>
+            <h1 id="heading">Welcome!</h1>
+            <span class="material-icons-outlined" id="wave"> waving_hand </span>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Wizard Name"
+                    id="wizardName"
+                    autocomplete="off"
+                />
+                <input id="sub" type="submit" value="Submit" />
+            </form>
+        </div>
 
-</head>
+        <script>
+            function vanishInput() {
+                $("form").fadeOut();
+            }
 
-<body>
-
-<div>
-<button id="name">Click</button>
-<h1 id="heading">Welcome!</h1>
-<span class="material-icons-outlined" id="wave">
-    waving_hand
-</span>
-<form>
-    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-    <input id="sub" type="submit" value="Submit">
-</form>
-
-
-<script>
-
-  function vanishInput() {
-      $("form").fadeOut();
-  }
-
-  // Run the `vanishInput()` function when any `<input>` element in the `<form>` is changed.
-  $("form").change(vanishInput);
-
-
-</script>
-
-</div>
-
+            /*
+             *   Run the `vanishInput()` function when any `<input>`
+             *   element in the `<form>` is changed.
+             */
+            $("form").change(vanishInput);
+        </script>
+    </body>
 </html>
-
 ```
 
 <figure markdown>
@@ -663,42 +669,45 @@ The `click()` method allows you to execute a function when element is clicked.
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Events!</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Events!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <button id="name">Click</button>
+            <h1 id="heading">Welcome!</h1>
+            <span class="material-icons-outlined" id="wave"> waving_hand </span>
 
-</head>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Wizard Name"
+                    id="wizardName"
+                    autocomplete="off"
+                />
+                <input id="sub" type="submit" value="Submit" />
+            </form>
+        </div>
 
-<body>
+        <script>
+            function clickHeading() {
+                $("#heading").show();
+                $("form").show();
+            }
 
-<div>
-<button id="name">Click</button>
-<h1 id="heading">Welcome!</h1>
-<span class="material-icons-outlined" id="wave">
-    waving_hand
-</span>
-<form>
-    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-    <input id="sub" type="submit" value="Submit">
-</form>
-
-
-<script>
-
-  function clickHeading() {
-      $("#heading").show();
-      $("form").show();
-  }
-
-  // When the button with the id of `name` is clicked, the `clickHeading()` function will run.
-  $("#name").click(clickHeading);
-
-
-</script>
-
-</div>
-
+            /*
+             *   When the button with the id of `name` is clicked,
+             *   the `clickHeading()` function will run.
+             */
+            $("#name").click(clickHeading);
+        </script>
+    </body>
 </html>
 ```
 
@@ -714,44 +723,47 @@ The `hover()` method allows you to execute a function when the cursor hovers ove
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Events!</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Events!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <button id="name">Click</button>
+            <h1 id="heading">Welcome!</h1>
+            <span class="material-icons-outlined" id="wave"> waving_hand </span>
 
-</head>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Wizard Name"
+                    id="wizardName"
+                    autocomplete="off"
+                />
+                <input id="sub" type="submit" value="Submit" />
+            </form>
+        </div>
 
-<body>
+        <script>
+            function turnToGold() {
+                var headingCSS = {
+                    color: "gold",
+                };
+                $("#heading").css(headingCss);
+            }
 
-<div>
-<button id="name">Click</button>
-<h1 id="heading">Welcome!</h1>
-<span class="material-icons-outlined" id="wave">
-    waving_hand
-</span>
-<form>
-    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-    <input id="sub" type="submit" value="Submit">
-</form>
-
-
-<script>
-
-  function turnToGold() {
-      var headingCSS = {
-          color: "gold",
-      };
-      $("#heading").css(headingCss);
-  }
-
-  // When you hover over the element with the id of `#heading` call the `turnToGold()` function.
-  $("#heading").hover(turnToGold);
-
-
-</script>
-
-</div>
-
+            /*
+             *   When you hover over the element with the id of `#heading`,
+             *   call the `turnToGold()` function.
+             */
+            $("#heading").hover(turnToGold);
+        </script>
+    </body>
 </html>
 ```
 
@@ -767,43 +779,47 @@ The `mousemove()` method allows you to execute a function when the mouse moves o
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Events!</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Events!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <button id="name">Click</button>
+            <h1 id="heading">Welcome!</h1>
+            <span class="material-icons-outlined" id="wave"> waving_hand </span>
 
-</head>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Wizard Name"
+                    id="wizardName"
+                    autocomplete="off"
+                />
+                <input id="sub" type="submit" value="Submit" />
+            </form>
+        </div>
 
-<body>
+        <script>
+            function changeLogo() {
+                var changeLogoCSS = {
+                    color: "blue",
+                };
+                $("#wave").css(changeLogoCSS);
+            }
 
-<div>
-<button id="name">Click</button>
-<h1 id="heading">Welcome!</h1>
-<span class="material-icons-outlined" id="wave">
-    waving_hand
-</span>
-<form>
-    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-    <input id="sub" type="submit" value="Submit">
-</form>
-
-
-<script>
-
-  function changeLogo() {
-      var changeLogoCSS = {
-          color: "blue",
-      };
-      $("#wave").css(changeLogoCSS);
-  }
-
-  // When the mouse moves around the element with an id of `#wave`, run the `changeLogo()` function.
-  $("#wave").mousemove(changeLogo);
-
-</script>
-
-</div>
-
+            /*
+             *   When the mouse moves around the element with an
+             *   id of `#wave`, run the `changeLogo()` function.
+             */
+            $("#wave").mousemove(changeLogo);
+        </script>
+    </body>
 </html>
 ```
 
@@ -819,44 +835,47 @@ The `mouseover()` method allows you to execute a function when the mouse is over
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Events!</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Events!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <button id="name">Click</button>
+            <h1 id="heading">Welcome!</h1>
+            <span class="material-icons-outlined" id="wave"> waving_hand </span>
 
-</head>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Wizard Name"
+                    id="wizardName"
+                    autocomplete="off"
+                />
+                <input id="sub" type="submit" value="Submit" />
+            </form>
+        </div>
 
-<body>
+        <script>
+            function changeLogo() {
+                var changeLogoCSS = {
+                    fontSize: "100px",
+                };
+                $("#wave").animate(changeLogoCSS, "2s");
+            }
 
-<div>
-<button id="name">Click</button>
-<h1 id="heading">Welcome!</h1>
-<span class="material-icons-outlined" id="wave">
-    waving_hand
-</span>
-<form>
-    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-    <input id="sub" type="submit" value="Submit">
-</form>
-
-
-<script>
-
-  function changeLogo() {
-      var changeLogoCSS = {
-          fontSize: "100px",
-      };
-      $("#wave").animate(changeLogoCSS, "2s");
-  }
-
-  // When the mouse moves over the element with an id of `#wave`, run the `changeLogo()` function.
-  $("#wave").mouseover(changeLogo);
-
-
-</script>
-
-</div>
-
+            /*
+             *   When the mouse moves over the element with an
+             *   id of `#wave`, run the `changeLogo()` function.
+             */
+            $("#wave").mouseover(changeLogo);
+        </script>
+    </body>
 </html>
 ```
 
@@ -872,43 +891,46 @@ The `submit()` method allows you to submit form values.
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Events!</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Events!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <button id="name">Click</button>
+            <h1 id="heading">Welcome!</h1>
+            <span class="material-icons-outlined" id="wave"> waving_hand </span>
 
-</head>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Wizard Name"
+                    id="wizardName"
+                    autocomplete="off"
+                />
+                <input id="sub" type="submit" value="Submit" />
+            </form>
+        </div>
 
-<body>
+        <script>
+            function submitWizardName(event) {
+                event.preventDefault();
+                var wizardName = $("#wizardName").val();
+                $("#heading").text(`Welcome ${wizardName}!`);
+            }
 
-<div>
-<button id="name">Click</button>
-<h1 id="heading">Welcome!</h1>
-<span class="material-icons-outlined" id="wave">
-    waving_hand
-</span>
-<form>
-    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-    <input id="sub" type="submit" value="Submit">
-</form>
-
-
-<script>
-
-  function submitWizardName(event) {
-      event.preventDefault();
-      var wizardName = $("#wizardName").val();
-      $("#heading").text(`Welcome ${wizardName}!`);
-  }
-
-  // When the `<form>` is submitted, run the the `submitWizardName()` function.
-  $("form").submit(submitWizardName);
-
-
-</script>
-
-</div>
-
+            /*
+             *   When the `<form>` is submitted, run the
+             *   the `submitWizardName()` function.
+             */
+            $("form").submit(submitWizardName);
+        </script>
+    </body>
 </html>
 ```
 
@@ -970,29 +992,29 @@ The `getAttribute()` function allows you to access the attribute of an element
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <div class="object" id="one"></div>
+            <img class="object" id="two" src="" />
+            <input type="text" placeholder="Dog Name" id="three" />
+        </div>
 
-</head>
+        <script>
+            var element = document.querySelector("#three");
 
-<body>
-
-<div>
-  <div class="object" id="one"></div>
-  <img class="object" id="two" src="">
-  <input type="text" placeholder="Dog Name" id="three">
-</div>
-
-<script>
-
-  var element = document.querySelector('#three');
-
-  var elementAttribute = element.getAttribute('type');
-  console.log("The input type is " + elementAttribute)
-
-</script>
+            var elementAttribute = element.getAttribute("type");
+            console.log("The input type is " + elementAttribute);
+        </script>
+    </body>
 </html>
 ```
 
@@ -1009,29 +1031,27 @@ The `setAttribute()` function allows you to set or update the attribute of an el
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <div class="object" id="one"></div>
+            <img class="object" id="two" src="" />
+        </div>
 
-</head>
-
-<body>
-
-<div>
-
-  <div class="object" id="one"></div>
-  <img class="object" id="two" src="">
-
-</div>
-<script>
-
-  var imageElement = document.getElementById('two');
-  imageElement.setAttribute('src', 'dog.png');
-
-</script>
+        <script>
+            var imageElement = document.getElementById("two");
+            imageElement.setAttribute("src", "dog.png");
+        </script>
+    </body>
 </html>
-
 ```
 
 Example Output:
@@ -1048,40 +1068,38 @@ jQuery's `attr()` function allows you access or add the attribute to an element
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <img class="object" id="one" src="" />
+            <img class="object" id="two" src="" />
+        </div>
 
-</head>
+        <script>
+            function clickedPicture(event) {
+                var clicked = event.target;
 
-<body>
+                // Here we are grabbing the id attribute of the clicked image
+                var id = $(clicked).attr("id");
 
-<div>
-
-  <img class="object" id="one" src="">
-  <img class="object" id="two" src="">
-
-</div>
-<script>
-
-   function clickedPicture(event) {
-        var clicked = event.target;
-
-        // Here we are grabbing the id attribute of the clicked image
-        var id = $(clicked).attr('id');
-
-        if (id == 'one') {
-            $('#one').attr('src', 'dog.jpg');
-        } else if (id == 'two') {
-            $('#two').attr('src', 'cat.jpg');
-        }
-    }
-    $('.object').click(clickedPicture);
-
-</script>
+                if (id == "one") {
+                    $("#one").attr("src", "dog.jpg");
+                } else if (id == "two") {
+                    $("#two").attr("src", "cat.jpg");
+                }
+            }
+            $(".object").click(clickedPicture);
+        </script>
+    </body>
 </html>
-
 ```
 
 <figure markdown>
@@ -1096,47 +1114,43 @@ When you select an element from the DOM, there are many properties that live on 
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <img class="object" id="one" src="" />
+            <img class="object" id="two" src="" />
+        </div>
 
-</head>
+        <script>
+            var imageOne = document.getElementById("one");
+            var imageTwo = document.getElementById("two");
 
-<body>
+            function clickedPicture(event) {
+                var clicked = event.target;
 
-<div>
+                // Here we are grabbing the id attribute of the clicked image
+                var id = clicked.id;
 
-  <img class="object" id="one" src="">
-  <img class="object" id="two" src="">
+                if (id == "one") {
+                    // We can use the `src` attribute directly
+                    imageOne.src = "dog.jpg";
+                } else if (id == "two") {
+                    imageTwo.src = "cat.jpg";
+                }
+            }
 
-</div>
-<script>
-
-
-    var imageOne = document.getElementById("one");
-    var imageTwo = document.getElementById("two");
-
-
-    function clickedPicture(event) {
-        var clicked = event.target;
-
-        // Here we are grabbing the id attribute of the clicked image
-        var id = clicked.id
-
-        if (id == "one") {
-            // We can use the `src` attribute directly
-            imageOne.src = "dog.jpg";
-        } else if (id == "two") {
-            imageTwo.src = "cat.jpg";
-        }
-    }
-
-    $(".object").click(clickedPicture);
-
-</script>
+            $(".object").click(clickedPicture);
+        </script>
+    </body>
 </html>
-
 ```
 
 <figure markdown>
@@ -1144,44 +1158,45 @@ When you select an element from the DOM, there are many properties that live on 
 <figcaption></figcaption>
 </figure>
 
-
-## Changing an element's content
+## Changing an Element's Content
 
 ### `element.textContent`
 
-The `textContent` property sets or return the text content of an element
+The `textContent` property sets or returns the text content of an element.
 
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <div class="object" id="one">One</div>
+            <div class="object" id="two">Two</div>
+        </div>
+        <script>
+            function changeText() {
+                var element = document.querySelector("#one");
+                /*
+                 * Here we are setting the text content of the element with the
+                 * id `one` to the new text.
+                 */
+                element.textContent = "New Text";
+            }
 
-</head>
-
-<body>
-
-<div>
-
-  <div class="object" id="one">One</div>
-  <div class="object" id="two">Two</div>
-
-</div>
-<script>
-   function changeText() {
-        var element = document.querySelector('#one');
-        // Here we are setting the text content of id `one` to the new text
-        element.textContent = "New Text";
-    }
-         
-    changeText()
-
-</script>
+            changeText();
+        </script>
+    </body>
 </html>
-
 ```
+
 <figure markdown>
 ![textContent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textContent.png?raw=true){ width="100%" }
 <figcaption></figcaption>
@@ -1189,36 +1204,34 @@ The `textContent` property sets or return the text content of an element
 
 ### `element.innerHtml`
 
-The `innerHtml` property sets or returns the HTML of an element
+The `innerHtml` property sets or returns the HTML of an element.
 
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-</head>
-
-<body>
-
-<div>
-
- <div class="container">
-    <div class="object" id="one">One</div>
-    <div class="object" id="two">Two</div>
-  </div>   
-
-</div>
-<script>
-      // Here we are adding an HTML element to the existing container 
-      var element3 = document.querySelector('.container');
-      element3.innerHTML += "<div class='object'>Three</div>";
-    
-</script>
+    <body>
+        <div>
+            <div class="container">
+                <div class="object" id="one">One</div>
+                <div class="object" id="two">Two</div>
+            </div>
+        </div>
+        <script>
+            // Here we are adding an HTML element to the existing .container element
+            var element3 = document.querySelector(".container");
+            element3.innerHTML += "<div class='object'>Three</div>";
+        </script>
+    </body>
 </html>
-
 ```
 
 <figure markdown>
@@ -1228,44 +1241,49 @@ The `innerHtml` property sets or returns the HTML of an element
 
 ### `html()`
 
-jQuery's `html()` method allows you to change the `innerHTML` of an element
+jQuery's `html()` method allows you to change the `innerHTML` of an element.
 
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<style>
-    b{
-      color: blue;
-    }
-</style>
-</head>
+        <style>
+            #one {
+                color: blue;
+            }
+        </style>
+    </head>
 
-<body>
+    <body>
+        <div>
+            <div class="container">
+                <div class="object" id="one">One</div>
+                <div class="object" id="two">Two</div>
+                <button id="change-html-button">Submit</button>
+            </div>
+        </div>
+        <script>
+            function changeHTML() {
+                /*
+                 * Here we are returning the HTML of the element with the
+                 * ID `one` and replacing the HTML of the element with the
+                 * id `two`.
+                 */
+                var newContent = $("#one").html();
+                $("#two").html(newContent);
+            }
 
-<div>
-
-  <div class="container">
-    <div class="object" id="one">One</div>
-    <div class="object" id="two">Two</div>
-    <button id="add">Submit</button>
-  </div>   
-
-</div>
-<script>
-    function changeHtml() {
-      // Here we are returning the HTML of id `one` and replacing the HTML of id `two`
-      var newContent =  $('#one').html();
-      $('#two').html(newContent);
-    }
-    $('#add').click(changeHtml);
-    
-</script>
+            $("#change-html-button").click(changeHTML);
+        </script>
+    </body>
 </html>
-
 ```
 
 <figure markdown>
@@ -1275,49 +1293,55 @@ jQuery's `html()` method allows you to change the `innerHTML` of an element
 
 ### `text()`
 
-jQuery's `text()` method allows you to change or add the text of an html element
+jQuery's `text()` method allows you to get or set the text of an HTML element.
 
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-<title>Home</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <body>
+        <div>
+            <div class="container">
+                <div class="object" id="one"></div>
+            </div>
 
-</head>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Wizard Name"
+                    id="wizardName"
+                    autocomplete="off"
+                />
+                <input id="sub" type="submit" value="Submit" />
+            </form>
+        </div>
 
-<body>
+        <script>
+            function submitName(event) {
+                event.preventDefault();
+                var wizardName = $("#wizardName").val();
+                /*
+                 * Here we are setting the text of element with the
+                 * ID `one` to the value of the input text in the `<input>`.
+                 */
+                $("#one").text(`Welcome ${wizardName}!`);
+            }
 
-<div>
-
-   <div class="container">
-    <div class="object" id="one"></div>
-  </div>   
-  <form>
-    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
-    <input id="sub" type="submit" value="Submit">
-  </form>
-
-</div>
-<script>
-    function submitName(event) {
-        event.preventDefault();
-        var wizardName = $("#wizardName").val();
-        // Here we are setting the text of id `one` to the value of the input
-        $("#one").text(`Welcome ${wizardName}!`);
-    }
-
-    $("form").submit(submitName);
-
-    
-</script>
+            $("form").submit(submitName);
+        </script>
+    </body>
 </html>
-
 ```
 
 <figure markdown>
 ![text method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/text.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
-
