@@ -1342,6 +1342,6 @@ jQuery's `text()` method allows you to get or set the text of an HTML element.
 ```
 
 <figure markdown>
-![text method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/text.gif?raw=true){ width="100%" }
+![text method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
