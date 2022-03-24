@@ -1143,3 +1143,181 @@ When you select an element from the DOM, there are many properties that live on 
 ![attr example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/attr.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+
+## Changing an element's content
+
+### `element.textContent`
+
+The `textContent` property sets or return the text content of an element
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+
+  <div class="object" id="one">One</div>
+  <div class="object" id="two">Two</div>
+
+</div>
+<script>
+   function changeText() {
+        var element = document.querySelector('#one');
+        // Here we are setting the text content of id `one` to the new text
+        element.textContent = "New Text";
+    }
+         
+    changeText()
+
+</script>
+</html>
+
+```
+<figure markdown>
+![textContent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textContent.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### `element.innerHtml`
+
+The `innerHtml` property sets or returns the HTML of an element
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+
+ <div class="container">
+    <div class="object" id="one">One</div>
+    <div class="object" id="two">Two</div>
+  </div>   
+
+</div>
+<script>
+      // Here we are adding an HTML element to the existing container 
+      var element3 = document.querySelector('.container');
+      element3.innerHTML += "<div class='object'>Three</div>";
+    
+</script>
+</html>
+
+```
+
+<figure markdown>
+![innerHTML example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/innerHTML.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### `html()`
+
+jQuery's `html()` method allows you to change the `innerHTML` of an element
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+    b{
+      color: blue;
+    }
+</style>
+</head>
+
+<body>
+
+<div>
+
+  <div class="container">
+    <div class="object" id="one">One</div>
+    <div class="object" id="two">Two</div>
+    <button id="add">Submit</button>
+  </div>   
+
+</div>
+<script>
+    function changeHtml() {
+      // Here we are returning the HTML of id `one` and replacing the HTML of id `two`
+      var newContent =  $('#one').html();
+      $('#two').html(newContent);
+    }
+    $('#add').click(changeHtml);
+    
+</script>
+</html>
+
+```
+
+<figure markdown>
+![html method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/html.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### `text()`
+
+jQuery's `text()` method allows you to change or add the text of an html element
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+
+   <div class="container">
+    <div class="object" id="one"></div>
+  </div>   
+  <form>
+    <input type="text" placeholder="Enter Wizard Name" id="wizardName" autocomplete="off">
+    <input id="sub" type="submit" value="Submit">
+  </form>
+
+</div>
+<script>
+    function submitName(event) {
+        event.preventDefault();
+        var wizardName = $("#wizardName").val();
+        // Here we are setting the text of id `one` to the value of the input
+        $("#one").text(`Welcome ${wizardName}!`);
+    }
+
+    $("form").submit(submitName);
+
+    
+</script>
+</html>
+
+```
+
+<figure markdown>
+![text method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/text.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
