@@ -1147,7 +1147,9 @@ When you select an element from the DOM, there are many properties that live on 
 
 ## Changing an element's content
 
-#### `textContent` property sets or return the text content of an element
+### `element.textContent`
+
+The `textContent` property sets or return the text content of an element
 
 ```html
 <!DOCTYPE html>
@@ -1185,7 +1187,9 @@ When you select an element from the DOM, there are many properties that live on 
 <figcaption></figcaption>
 </figure>
 
-#### `innerHtml` property sets or returns the HTML of an element
+### `element.innerHtml`
+
+The `innerHtml` property sets or returns the HTML of an element
 
 ```html
 <!DOCTYPE html>
@@ -1208,14 +1212,6 @@ When you select an element from the DOM, there are many properties that live on 
 
 </div>
 <script>
-     // Here we are accessing the HTML content of an element 
-      var element = document.querySelector('#one').innerHTML;
-      console.log(element);
-
-      // Here we are replacing the HTML of id `two` with new content
-      var element2 = document.querySelector('#two');
-      element2.innerHTML = "New content";
-
       // Here we are adding an HTML element to the existing container 
       var element3 = document.querySelector('.container');
       element3.innerHTML += "<div class='object'>Three</div>";
@@ -1230,7 +1226,9 @@ When you select an element from the DOM, there are many properties that live on 
 <figcaption></figcaption>
 </figure>
 
-#### jQuery's `html()` method allows you to change the `innerHTML` of an element
+### `html()`
+
+jQuery's `html()` method allows you to change the `innerHTML` of an element
 
 ```html
 <!DOCTYPE html>
@@ -1239,7 +1237,11 @@ When you select an element from the DOM, there are many properties that live on 
 <head>
 <title>Home</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<style>
+    b{
+      color: blue;
+    }
+</style>
 </head>
 
 <body>
@@ -1249,15 +1251,17 @@ When you select an element from the DOM, there are many properties that live on 
   <div class="container">
     <div class="object" id="one">One</div>
     <div class="object" id="two">Two</div>
+    <button id="add">Submit</button>
   </div>   
 
 </div>
 <script>
-    function replaceContent() {
-      var newContent =  "New content"
-      $('#one').html(newContent);
+    function changeHtml() {
+      // Here we are returning the HTML of id `one` and replacing the HTML of id `two`
+      var newContent =  $('#one').html();
+      $('#two').html(newContent);
     }
-    replaceContent();
+    $('#add').click(changeHtml);
     
 </script>
 </html>
@@ -1265,11 +1269,13 @@ When you select an element from the DOM, there are many properties that live on 
 ```
 
 <figure markdown>
-![html method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/html.png?raw=true){ width="100%" }
+![html method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/html.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
-#### jQuery's `text()` method allows you to change or add the text of an html element
+### `text()`
+
+jQuery's `text()` method allows you to change or add the text of an html element
 
 ```html
 <!DOCTYPE html>
