@@ -1424,7 +1424,7 @@ jQuery's `css()` method allows you to set or return the style of an element
                     borderColor: "blue",
                     backgroundImage: "linear-gradient(blue,gold,black)"
                 };
-                $("#object").css(boxCss);
+                $(".object").css(boxCss);
             }
             changeStyle();
     
