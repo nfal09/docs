@@ -1345,3 +1345,94 @@ jQuery's `text()` method allows you to get or set the text of an HTML element.
 ![text method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Styling DOM Nodes
+
+### `element.style` 
+
+The `style` property allows you to set a style to a given element. 
+
+Note: Javascript syntax for accessing style properties differs from css syntax:
+
+Examples:
+```javascript
+// Javascript Syntax
+element.borderColor = "blue";
+```
+```css
+/* Css Syntax */
+border-color: blue; 
+```
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+       
+        <div class="container">
+            <div class="object" id="one"></div>
+        </div>
+
+        <script>
+            var element = document.getElementById("one");
+            element.style.borderColor = "blue"
+            element.style.backgroundImage = "linear-gradient(blue,gold,black)"
+    
+        </script>
+    </body>
+</html>
+```
+<figure markdown>
+![styleDOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/styleDOM.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### `css()`
+
+jQuery's `css()` method allows you to set or return the style of an element
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+       
+        <div class="container">
+            <div class="object" id="one"></div>
+        </div>
+
+        <script>
+            function changeStyle() {
+                var boxCss = {
+                    borderColor: "blue",
+                    backgroundImage: "linear-gradient(blue,gold,black)"
+                };
+                $("#object").css(boxCss);
+            }
+            changeStyle();
+    
+        </script>
+    </body>
+</html>
+```
+<figure markdown>
+![cssMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cssMethod.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
