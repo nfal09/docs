@@ -37,6 +37,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.superfences
   - pymdownx.snippets
+  - admonition
+  - pymdownx.details
   - attr_list
   - md_in_html
   - tables
