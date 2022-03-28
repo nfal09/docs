@@ -8,7 +8,7 @@ extra_css:
   - stylesheets/extra.css  
 
 # Footer config
-copyright: Copyright &copy; 2016 - 2021 CodeWizardsHQ
+copyright: Copyright &copy; 2016 - 2022 CodeWizardsHQ
 extra:
   # Removes the "Made with MkDocs" from the footer
   generator: false
@@ -26,6 +26,10 @@ nav:
   - JavaScript:
     - 'JavaScript Language': javascript/javascript-language.md
     - 'Browser APIs and jQuery': javascript/browser-apis-and-jquery.md
+  - HTML:
+    - 'HTML Language': html/html.md
+  - CSS:
+    - 'CSS Language': css/css.md
 
 
 markdown_extensions:
