@@ -618,7 +618,7 @@ The `change()` method will execute a function when the input value has changed.
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Events!</title>
+        <title>The Change Event</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -670,7 +670,7 @@ The `click()` method allows you to execute a function when element is clicked.
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Events!</title>
+        <title>The Click Event</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -724,7 +724,7 @@ The `hover()` method allows you to execute a function when the cursor hovers ove
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Events!</title>
+        <title>The Hover Event</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -780,7 +780,7 @@ The `mousemove()` method allows you to execute a function when the mouse moves o
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Events!</title>
+        <title>The Mousemove Event</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -836,7 +836,7 @@ The `mouseover()` method allows you to execute a function when the mouse is over
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Events!</title>
+        <title>The Mouseover Event</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -892,7 +892,7 @@ The `submit()` method allows you to submit form values.
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Events!</title>
+        <title>Submitting Form Values</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -993,12 +993,7 @@ The `getAttribute()` function allows you to access the attribute of an element
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
+        <title>Getting Attributes</title>
     </head>
 
     <body>
@@ -1032,12 +1027,7 @@ The `setAttribute()` function allows you to set or update the attribute of an el
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
+        <title>Setting Attributes</title>
     </head>
 
     <body>
@@ -1069,7 +1059,7 @@ jQuery's `attr()` function allows you access or add the attribute to an element
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Working With Attributes</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -1115,7 +1105,7 @@ When you select an element from the DOM, there are many properties that live on 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Setting Attributes Through Element Properties</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -1168,12 +1158,7 @@ The `textContent` property sets or returns the text content of an element.
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
+        <title>Changing The Text Of An Element</title>
     </head>
 
     <body>
@@ -1197,100 +1182,6 @@ The `textContent` property sets or returns the text content of an element.
 </html>
 ```
 
-<figure markdown>
-![textContent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textContent.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-### `element.innerHtml`
-
-The `innerHtml` property sets or returns the HTML of an element.
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home</title>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
-    </head>
-
-    <body>
-        <div>
-            <div class="container">
-                <div class="object" id="one">One</div>
-                <div class="object" id="two">Two</div>
-            </div>
-        </div>
-        <script>
-            // Here we are adding an HTML element to the existing .container element
-            var element3 = document.querySelector(".container");
-            element3.innerHTML += "<div class='object'>Three</div>";
-        </script>
-    </body>
-</html>
-```
-
-<figure markdown>
-![innerHTML example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/innerHTML.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-### `html()`
-
-jQuery's `html()` method allows you to change the `innerHTML` of an element.
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home</title>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
-
-        <style>
-            #one {
-                color: blue;
-            }
-        </style>
-    </head>
-
-    <body>
-        <div>
-            <div class="container">
-                <div class="object" id="one">One</div>
-                <div class="object" id="two">Two</div>
-                <button id="change-html-button">Submit</button>
-            </div>
-        </div>
-        <script>
-            function changeHTML() {
-                /*
-                 * Here we are returning the HTML of the element with the
-                 * ID `one` and replacing the HTML of the element with the
-                 * id `two`.
-                 */
-                var newContent = $("#one").html();
-                $("#two").html(newContent);
-            }
-
-            $("#change-html-button").click(changeHTML);
-        </script>
-    </body>
-</html>
-```
-
-<figure markdown>
-![html method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/html.gif?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
 ### `text()`
 
 jQuery's `text()` method allows you to get or set the text of an HTML element.
@@ -1299,7 +1190,7 @@ jQuery's `text()` method allows you to get or set the text of an HTML element.
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Setting The Text Of An Element</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -1346,9 +1237,98 @@ jQuery's `text()` method allows you to get or set the text of an HTML element.
 <figcaption></figcaption>
 </figure>
 
+<figure markdown>
+![textContent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textContent.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### `element.innerHtml`
+
+The `innerHtml` property sets or returns the HTML of an element.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Changing The HTML Of An Element</title>
+    </head>
+
+    <body>
+        <div>
+            <div class="container">
+                <div class="object" id="one">One</div>
+                <div class="object" id="two">Two</div>
+            </div>
+        </div>
+        <script>
+            // Here we are adding an HTML element to the existing .container element
+            var element3 = document.querySelector(".container");
+            element3.innerHTML += "<div class='object'>Three</div>";
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+![innerHTML example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/innerHTML.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### `html()`
+
+jQuery's `html()` method allows you to change the `innerHTML` of an element.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Changing The HTML Of An Element</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+
+        <style>
+            #one {
+                color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div class="container">
+                <div class="object" id="one">One</div>
+                <div class="object" id="two">Two</div>
+                <button id="change-html-button">Submit</button>
+            </div>
+        </div>
+        <script>
+            function changeHTML() {
+                /*
+                 * Here we are returning the HTML of the element with the
+                 * ID `one` and replacing the HTML of the element with the
+                 * id `two`.
+                 */
+                var newContent = $("#one").html();
+                $("#two").html(newContent);
+            }
+
+            $("#change-html-button").click(changeHTML);
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+![html method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/html.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ## Styling DOM Nodes
 
-### `element.style` 
+### `element.style`
 
 The `style` property allows you to set or adjust an element's CSS styles from JavaScript.
 
@@ -1356,26 +1336,20 @@ The `style` property allows you to set or adjust an element's CSS styles from Ja
 
     JavaScript syntax for accessing style properties differs from CSS syntax.
 
-    | CSS | Javascript              |
-    | -------- | ------------------------ |
-    | background-color: blue;      | backgroundColor = "blue" ;            |
-    | background-image: url("taco.png");     | backgroundImage = "url(taco.png)" |
-    | font-size: 40px;    | fontSize = "40px"   |
+    | CSS                                | Javascript                         |
+    | -------- --------------------------| -----------------------------------|
+    | background-color: blue;            | backgroundColor = "blue";          |
+    | background-image: url("taco.png"); | backgroundImage = "url(taco.png)"; |
+    | font-size: 40px;                   | fontSize = "40px";                 |
 
 ```html
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
+        <title>Changing An Element's Style</title>
     </head>
 
     <body>
-       
         <div class="container">
             <div class="object" id="one"></div>
         </div>
@@ -1385,14 +1359,16 @@ The `style` property allows you to set or adjust an element's CSS styles from Ja
 
             function changeStyle() {
                 element.style.borderColor = "blue";
-                element.style.backgroundImage = "linear-gradient(blue,gold,black)";
+                element.style.backgroundImage =
+                    "linear-gradient(blue,gold,black)";
             }
+
             element.onclick = changeStyle;
-            
         </script>
     </body>
 </html>
 ```
+
 <figure markdown>
 ![styleDOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/styleDOM.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
@@ -1406,7 +1382,7 @@ jQuery's `css()` method allows you to set or return the style of an element
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Changing An Element's Style</title>
         <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -1415,25 +1391,25 @@ jQuery's `css()` method allows you to set or return the style of an element
     </head>
 
     <body>
-       
         <div class="container">
             <div class="object" id="one"></div>
         </div>
 
         <script>
             function changeStyle() {
-                var boxCss = {
+                var boxCSS = {
                     borderColor: "blue",
                     backgroundImage: "linear-gradient(black,blue,gold)",
                 };
-                $(".object").css(boxCss);
+                $(".object").css(boxCSS);
             }
-            $(".object").click(changeStyle)
-    
+
+            $(".object").click(changeStyle);
         </script>
     </body>
 </html>
 ```
+
 <figure markdown>
 ![cssMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cssMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
