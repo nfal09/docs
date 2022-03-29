@@ -1350,19 +1350,17 @@ jQuery's `text()` method allows you to get or set the text of an HTML element.
 
 ### `element.style` 
 
-The `style` property allows you to set a style to a given element. 
+The `style` property allows you to set or adjust an element's CSS styles from JavaScript.
 
-Note: Javascript syntax for accessing style properties differs from css syntax:
+!!! note
 
-Examples:
-```javascript
-// Javascript Syntax
-element.borderColor = "blue";
-```
-```css
-/* Css Syntax */
-border-color: blue; 
-```
+    JavaScript syntax for accessing style properties differs from CSS syntax.
+
+    | CSS | Javascript              |
+    | -------- | ------------------------ |
+    | background-color: blue;      | backgroundColor = "blue" ;            |
+    | background-image: url("taco.png");     | backgroundImage = "url(taco.png)" |
+    | font-size: 40px;    | fontSize = "40px"   |
 
 ```html
 <!DOCTYPE html>
@@ -1384,15 +1382,19 @@ border-color: blue;
 
         <script>
             var element = document.getElementById("one");
-            element.style.borderColor = "blue"
-            element.style.backgroundImage = "linear-gradient(blue,gold,black)"
-    
+
+            function changeStyle() {
+                element.style.borderColor = "blue";
+                element.style.backgroundImage = "linear-gradient(blue,gold,black)";
+            }
+            element.onclick = changeStyle;
+            
         </script>
     </body>
 </html>
 ```
 <figure markdown>
-![styleDOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/styleDOM.png?raw=true){ width="100%" }
+![styleDOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/styleDOM.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
@@ -1422,17 +1424,17 @@ jQuery's `css()` method allows you to set or return the style of an element
             function changeStyle() {
                 var boxCss = {
                     borderColor: "blue",
-                    backgroundImage: "linear-gradient(blue,gold,black)"
+                    backgroundImage: "linear-gradient(black,blue,gold)",
                 };
                 $(".object").css(boxCss);
             }
-            changeStyle();
+            $(".object").click(changeStyle)
     
         </script>
     </body>
 </html>
 ```
 <figure markdown>
-![cssMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cssMethod.png?raw=true){ width="100%" }
+![cssMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cssMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
