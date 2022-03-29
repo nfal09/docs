@@ -1345,3 +1345,96 @@ jQuery's `text()` method allows you to get or set the text of an HTML element.
 ![text method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Styling DOM Nodes
+
+### `element.style` 
+
+The `style` property allows you to set or adjust an element's CSS styles from JavaScript.
+
+!!! note
+
+    JavaScript syntax for accessing style properties differs from CSS syntax.
+
+    | CSS | Javascript              |
+    | -------- | ------------------------ |
+    | background-color: blue;      | backgroundColor = "blue" ;            |
+    | background-image: url("taco.png");     | backgroundImage = "url(taco.png)" |
+    | font-size: 40px;    | fontSize = "40px"   |
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+       
+        <div class="container">
+            <div class="object" id="one"></div>
+        </div>
+
+        <script>
+            var element = document.getElementById("one");
+
+            function changeStyle() {
+                element.style.borderColor = "blue";
+                element.style.backgroundImage = "linear-gradient(blue,gold,black)";
+            }
+            element.onclick = changeStyle;
+            
+        </script>
+    </body>
+</html>
+```
+<figure markdown>
+![styleDOM example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/styleDOM.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### `css()`
+
+jQuery's `css()` method allows you to set or return the style of an element
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+       
+        <div class="container">
+            <div class="object" id="one"></div>
+        </div>
+
+        <script>
+            function changeStyle() {
+                var boxCss = {
+                    borderColor: "blue",
+                    backgroundImage: "linear-gradient(black,blue,gold)",
+                };
+                $(".object").css(boxCss);
+            }
+            $(".object").click(changeStyle)
+    
+        </script>
+    </body>
+</html>
+```
+<figure markdown>
+![cssMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cssMethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
