@@ -1414,3 +1414,105 @@ jQuery's `css()` method allows you to set or return the style of an element
 ![cssMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cssMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+
+### `animate()`
+
+jQuery's `animate()` method allows create animations on CSS properties
+
+Syntax:
+
+`animate(properties, duration, callback)`
+
+Parameters:
+
+-   `properties` : CSS properties
+-   `animation time (optional)` : duration of animation
+-   `callback function (optional)` : function to call once animation completes
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animations</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="object" id="one"></div>
+        </div>
+
+        <script>
+            function tinyFadeOut() {
+                var animateCSS = {
+                opacity: 0,
+            };
+            $(".object").animate(animateCSS);
+        }
+
+        $(".object").click(tinyFadeOut);
+        </script>
+    </body>
+</html>
+```
+<figure markdown>
+![animateMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/animateMethod.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+`animate()` using Animation Time Parameter
+
+```javascript
+function tinyFadeOut() {
+    var animateCSS = {
+        opacity: 0,
+    };
+    // Here we can control the duration of the animation
+    var animationTime = 5000; // 5 seconds
+    
+    $(".object").animate(animateCSS, animationTime);
+}
+
+$(".object").click(tinyFadeOut);
+```
+
+<figure markdown>
+![animateTime example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/animateTime.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+`animate()` using callback function
+
+```javascript
+function moveRight() {
+    var animateCSS = {
+        // Here we are adding 200px to the left property
+        left: "+=200",
+    };
+    var animationTime = 5000; 
+    // Once the animation is complete, we run the callback function `moveLeft()`
+    $(".object").animate(animateCSS, animationTime, moveLeft);
+}
+
+function moveLeft() {
+  var animateCSS = {
+        // Here we are subtracting 200px to the left property
+        left: "-=200",
+    };
+    $(".object").animate(animateCSS);
+}
+
+$(".object").click(moveRight);
+```
+
+<figure markdown>
+![animationCallback example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/animationCallback.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
