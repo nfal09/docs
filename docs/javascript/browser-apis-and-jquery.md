@@ -1415,20 +1415,21 @@ jQuery's `css()` method allows you to set or return the style of an element
 <figcaption></figcaption>
 </figure>
 
+## Animations
 
 ### `animate()`
 
-jQuery's `animate()` method allows create animations on CSS properties
+jQuery's `animate()` method allows us to create animations on CSS properties.
 
-Syntax:
+Function signature:
 
 `animate(properties, duration, callback)`
 
 Parameters:
 
--   `properties` : CSS properties
--   `animation time (optional)` : duration of animation
--   `callback function (optional)` : function to call once animation completes
+-   `properties` (`object`): The CSS properties to animate
+-   `duration` (`number`): The duration of the animation in milliseconds (optional)
+-   `callback` (`function`): The function to call once animation completes (optional)
 
 ```html
 <!DOCTYPE html>
@@ -1450,22 +1451,25 @@ Parameters:
         <script>
             function tinyFadeOut() {
                 var animateCSS = {
-                opacity: 0,
-            };
-            $(".object").animate(animateCSS);
-        }
+                    opacity: 0,
+                };
+                $(".object").animate(animateCSS);
+            }
 
-        $(".object").click(tinyFadeOut);
+            $(".object").click(tinyFadeOut);
         </script>
     </body>
 </html>
 ```
+
 <figure markdown>
 ![animateMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/animateMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
-`animate()` using Animation Time Parameter
+#### Setting an animation time
+
+You can optionally pass in the time (in milliseconds) that an animation should run as the second parameter to the `animate()` method:
 
 ```javascript
 function tinyFadeOut() {
@@ -1474,7 +1478,7 @@ function tinyFadeOut() {
     };
     // Here we can control the duration of the animation
     var animationTime = 5000; // 5 seconds
-    
+
     $(".object").animate(animateCSS, animationTime);
 }
 
@@ -1486,7 +1490,9 @@ $(".object").click(tinyFadeOut);
 <figcaption></figcaption>
 </figure>
 
-`animate()` using callback function
+#### Running a function when the animation finishes
+
+You can optionally pass a function as the third argument to `animate()`. This function will run when the animation is complete:
 
 ```javascript
 function moveRight() {
@@ -1494,13 +1500,13 @@ function moveRight() {
         // Here we are adding 200px to the left property
         left: "+=200",
     };
-    var animationTime = 5000; 
+    var animationTime = 5000;
     // Once the animation is complete, we run the callback function `moveLeft()`
     $(".object").animate(animateCSS, animationTime, moveLeft);
 }
 
 function moveLeft() {
-  var animateCSS = {
+    var animateCSS = {
         // Here we are subtracting 200px to the left property
         left: "-=200",
     };
@@ -1511,8 +1517,6 @@ $(".object").click(moveRight);
 ```
 
 <figure markdown>
-![animationCallback example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/animationCallback.gif?raw=true){ width="100%" }
+![animationCallback example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/animateCallback.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
-
-
