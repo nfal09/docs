@@ -2,19 +2,6 @@
 
 ## Browser APIs and jQuery
 
-### Styling DOM nodes (in progress)
-
--   style property
--   jQuery's .css() method
-
-### Animations (in progress)
-
--   jQuery's .animate() method
-
-### Getting the size and position of an element (in progress)
-
--   offsetWidth, offsetHeight
--   offsetLeft, offsetTop
 
 ### Browser Dev Tools
 
