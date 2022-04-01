@@ -1536,6 +1536,15 @@ The following properties return the size and position of an element:
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"
         ></script>
+        <style>
+            #one {
+                width: 300px;
+                height: 200px;
+                position: absolute;
+                left: 250px;
+                top: 100px;
+            }
+        </style>
     </head>
 
     <body>
@@ -1560,7 +1569,7 @@ The following properties return the size and position of an element:
 
             // The offsetTop property returns an integer value for an element's top position.
             var elementTop = element.offsetTop;
-            console.log(` Element right position: ${elementTop}px`);
+            console.log(` Element top position: ${elementTop}px`);
         </script>
     </body>
 </html>
@@ -1569,11 +1578,12 @@ The following properties return the size and position of an element:
 Example Output:
 
 ```text
- Element width: 254px 
- Element height: 154px 
- Element left position: 283px 
- Element right position: 150px
+ Element width: 300px 
+ Element height: 200px 
+ Element left position: 250px 
+ Element top position: 100px
 ```
-
-
-
+<figure markdown>
+![size&position example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/sizeandposition.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
