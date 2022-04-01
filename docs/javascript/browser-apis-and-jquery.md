@@ -1520,3 +1520,70 @@ $(".object").click(moveRight);
 ![animationCallback example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/animateCallback.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+
+## Getting the size and position of an element
+
+The following properties return the size and position of an element:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Size & Position</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            #one {
+                width: 300px;
+                height: 200px;
+                position: absolute;
+                left: 250px;
+                top: 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="object" id="one"></div>
+        </div>
+
+        <script>
+            var element = document.querySelector('#one');
+
+            // The offsetWidth property returns an integer value for an element's width.
+            var elementWidth = element.offsetWidth;
+            console.log(` Element width: ${elementWidth}px`);
+
+            // The offsetHeight property returns an integer value for an element's height.
+            var elementHeight = element.offsetHeight;
+            console.log(` Element height: ${elementHeight}px`);
+
+            // The offsetLeft property returns an integer value for an element's left position.
+            var elementLeft = element.offsetLeft;
+            console.log(` Element left position: ${elementLeft}px`);
+
+            // The offsetTop property returns an integer value for an element's top position.
+            var elementTop = element.offsetTop;
+            console.log(` Element top position: ${elementTop}px`);
+        </script>
+    </body>
+</html>
+```
+
+Example Output:
+
+```text
+ Element width: 300px 
+ Element height: 200px 
+ Element left position: 250px 
+ Element top position: 100px
+```
+<figure markdown>
+![size&position example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/sizeandposition.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
