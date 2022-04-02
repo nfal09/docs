@@ -127,6 +127,38 @@
 
 ## CSS
 
+### Ways To Include CSS In HTML
+- Always in the `<head>`
+    - As an external stylesheet with the `<link>` tag
+    - Using the `<style>` tag
+
+  
+
+### CSS Rule Basics
+- Selectors
+- Body
+    - Declarations
+        - Property/Value pairs
+ 
+
+### Selectors
+- Element
+- Class
+- ID
+- Element+class (`span.my-class`)
+- Targeting multiple selectors (`p, li {}`)
+- Combinators
+    - Descendent combinator (`p em`)
+    - Adjacent sibling combinator (`h1 + p`)
+
+
+### Changing Elements Based On State
+- `:link`
+- `:hover`
+- `:visited`
+
+
+
 <hr>
 
 ## Jinja Templating
