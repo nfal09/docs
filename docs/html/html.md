@@ -256,3 +256,87 @@ The `<style>` tag can be used to add CSS directly in an HTML document instead of
     </body>
 </html>
 ```
+
+## Elements Give Text Meaning
+
+HTML elements (or tags) that you use in the `<body>` of an HTML document should be used to give text structure and meaning. Use the right tag for the right job!
+
+For example, the `<p>` tag is used to display generic text while the `<h1>` tag is used to display the top-level title or headline of your page. You use the `<img>` tag to display images.
+
+#### Well-Structured HTML
+
+If we were making a page about tacos and wanted to have a title, some text, and an image, this would be a good structure:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tacos - Homepage</title>
+    </head>
+
+    <body>
+        <h1>My Favorite Taco</h1>
+        <p>
+            I think that all tacos are amazing, but my favorite is probably the
+            Carne Asada taco. It's filled with steak, and you can add
+            onions/cilantro/lime to the top. You can optionally add guacamole as
+            well, which I highly recommend!
+        </p>
+        <img src="taco.jpg" />
+    </body>
+</html>
+```
+
+<figure markdown>
+![Taco Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/taco-example.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Poorly-Structured HTML
+
+In contrast, we could make the same page like this:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tacos - Homepage</title>
+        <style>
+            p {
+                font-size: 42px;
+            }
+            h1 {
+                font-size: 16px;
+            }
+            #taco-image {
+                background-image: url(taco.jpg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 500px;
+                height: 500px;
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>My Favorite Taco</p>
+        <h1>
+            I think that all tacos are amazing, but my favorite is probably the
+            Carne Asada taco. It's filled with steak, and you can add
+            onions/cilantro/lime to the top. You can optionally add guacamole as
+            well, which I highly recommend!
+        </h1>
+        <span id="taco-image"></span>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Taco Bad HTML Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/taco-bad-html.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+This is not well-structured HTML because we're not using the right element for the right job anywhere! Instead, we're trying to use CSS to make the `<p>` tag big and the `<h1>` tag small, and the `<span>` is holding an image instead of an `<img>` tag. Why use all of that CSS when you could use the natural element for the job? As a rule, always structure your page with the correct tags first, and then you can add CSS to style them later.
