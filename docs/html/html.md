@@ -340,3 +340,79 @@ In contrast, we could make the same page like this:
 </figure>
 
 This is not well-structured HTML because we're not using the right element for the right job anywhere! Instead, we're trying to use CSS to make the `<p>` tag big and the `<h1>` tag small, and the `<span>` is holding an image instead of an `<img>` tag. Why use all of that CSS when you could use the natural element for the job? As a rule, always structure your page with the correct tags first, and then you can add CSS to style them later.
+
+## Two Broad Categories Of Elements
+
+HTML elements fall into two broad categories, block-level and inline-level. Block-level elements appear on their own lines, and inline-level elements do not.
+
+#### Block-Level Elements
+
+Some standard block elements are `<p>`, all of the heading tags (`<h1>` through `<h6>`), the `<div>`, `<form>` elements, and many more:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Block-Level Elements</title>
+    </head>
+
+    <body>
+        <h1>All headings are block-level elements.</h1>
+        <p>Paragraph tags too.</p>
+        <form>
+            <p>Everything in this form is a single block</p>
+            <input placeholder="Enter your name" />
+            <button>Submit</button>
+        </form>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Block-Level Elements Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/block-level-elements.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Inline-Level Elements
+
+Some standard inline elements are `<span>`, `<img>`, `<button>`, and `<input>` elements, along with many others:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Block-Level Elements</title>
+        <style>
+            span {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>All headings are block-level elements.</h1>
+
+        <p>
+            The <span>span element is inline.</span>We also added some CSS to
+            make it stand out.
+        </p>
+
+        <form>
+            <p>
+                Everything in this form is a single block, but notice how the
+                input, image, and button are all on the same line.
+            </p>
+            <img src="taco.jpg" />
+            <input placeholder="Enter your name" />
+            <button>Submit</button>
+        </form>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Block-Level Elements Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/block-level-elements.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
