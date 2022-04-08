@@ -383,7 +383,7 @@ Some standard inline elements are `<span>`, `<img>`, `<button>`, and `<input>` e
 
 <html>
     <head>
-        <title>Block-Level Elements</title>
+        <title>Inline-Level Elements</title>
         <style>
             span {
                 color: red;
@@ -413,6 +413,51 @@ Some standard inline elements are `<span>`, `<img>`, `<button>`, and `<input>` e
 ```
 
 <figure markdown>
-![Block-Level Elements Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/block-level-elements.png?raw=true){ width="100%" }
+![Inline Elements Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/inline-level-elements.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## Nesting Elements
+
+Elements can be nested inside each other. This is most common with elements like the `<div>` and `<form>`, but you can also nest other tags, like adding content inside the `<a>` tag to make elements into links:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Nesting Elements</title>
+    </head>
+
+    <body>
+        <div>
+            <h2>It's common to nest things inside of a div.</h2>
+            <p>Especially when you want content to be grouped together.</p>
+        </div>
+
+        <form>
+            <p>
+                Forms rely on input elements being nested inside them so the
+                information can be sent to a webserver
+            </p>
+            <input placeholder="Enter your name" />
+            <input placeholder="Enter your password" />
+            <button>Login</button>
+        </form>
+
+        <a href="https://www.example.com">
+            <p>You can nest stuff inside of anchor tags to create links.</p>
+            <p>
+                Click on anything in this green box to get taken to
+                www.example.com
+            </p>
+            <img src="taco.jpg" />
+        </a>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Nesting Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/nesting-example.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
