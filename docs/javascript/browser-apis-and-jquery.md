@@ -1521,7 +1521,6 @@ $(".object").click(moveRight);
 <figcaption></figcaption>
 </figure>
 
-
 ## Getting the size and position of an element
 
 The following properties return the size and position of an element:
@@ -1553,7 +1552,7 @@ The following properties return the size and position of an element:
         </div>
 
         <script>
-            var element = document.querySelector('#one');
+            var element = document.querySelector("#one");
 
             // The offsetWidth property returns an integer value for an element's width.
             var elementWidth = element.offsetWidth;
@@ -1578,11 +1577,12 @@ The following properties return the size and position of an element:
 Example Output:
 
 ```text
- Element width: 300px 
- Element height: 200px 
- Element left position: 250px 
+ Element width: 300px
+ Element height: 200px
+ Element left position: 250px
  Element top position: 100px
 ```
+
 <figure markdown>
 ![size&position example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/sizeandposition.png?raw=true){ width="100%" }
 <figcaption></figcaption>
