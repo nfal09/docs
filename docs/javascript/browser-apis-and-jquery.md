@@ -74,6 +74,12 @@ _index.html_
 </html>
 ```
 
+#### Further Reading
+
+-   [MDN - Use JavaScript Within A Webpage](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_JavaScript_within_a_webpage)
+-   [The Modern JavaScript Tutorial - Hello World](https://javascript.info/hello-world)
+-   [Eloquent JavaScript - HTML and JavaScript](https://eloquentjavascript.net/13_browser.html#h_x9VDt2sTZZ)
+
 ## Adding jQuery to Webpages
 
 The `jQuery` library is not part of the core Browser APIs and must be loaded in the `<head>` of your HTML document. You can find the most recent version of the `jQuery` library on their [website](https://code.jquery.com/). Generally, you want the _minified_ version of the library, as that has all the core functionality in a smaller payload (which improves browser load times).
@@ -95,6 +101,10 @@ The `jQuery` library is not part of the core Browser APIs and must be loaded in 
     </body>
 </html>
 ```
+
+#### Further Reading
+
+-   [Using jQuery With A CDN](https://jquery.com/download/#using-jquery-with-a-cdn)
 
 ## Using The Browser's Dev Tools
 
@@ -188,6 +198,10 @@ You have access to any global variables and functions in the _Console_ tab and c
 ![mess with variables/functions example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/variables-and-functions.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+### Further Reading
+
+-   [Using the Chrome Devtools](https://developer.chrome.com/docs/devtools/)
 
 ## Selecting Elements From HTML Documents
 
@@ -466,6 +480,12 @@ You can select multiple elements as well. For example, elements that all share t
 <figcaption></figcaption>
 </figure>
 
+### Further Reading
+
+-   [The Modern JavaScript Tutorial - Searching DOM Elements](https://javascript.info/searching-elements-dom)
+-   [Eloquent JavaScript - Finding Elements](https://eloquentjavascript.net/14_dom.html#h_jS5BEpmLY0)
+-   [Learn jQuery - Selecting Elements](https://learn.jquery.com/using-jquery-core/selecting-elements/)
+
 ## Timers
 
 There are two `timer` functions that allow us to execute code at a later time.
@@ -599,6 +619,13 @@ function increaseCatLikes() {
 
 var catIntervalID = setInterval(increaseCatLikes, 5000);
 ```
+
+### Further Reading
+
+-   [The Modern JavaScript Tutorial - Scheduling](https://javascript.info/settimeout-setinterval)
+-   [Eloquent JavaScript - Timers](https://eloquentjavascript.net/15_event.html#h_hBzQOpfNhU)
+-   [MDN - setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout)
+-   [MDN - setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)
 
 <hr>
 
@@ -983,6 +1010,10 @@ setTimeout(removeEvent, 5000);
 <figcaption></figcaption>
 </figure>
 
+### Further Reading
+
+-   [Learn jQuery - Events](https://learn.jquery.com/events/)
+
 ## Getting and Setting Attributes
 
 ### `getAttribute()`
@@ -1148,6 +1179,13 @@ When you select an element from the DOM, there are many properties that live on 
 <figcaption></figcaption>
 </figure>
 
+### Further Reading
+
+-   [MDN - getAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute)
+-   [MDN - setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
+-   [The Modern JavaScript Tutorial - Attributes and Properties](https://javascript.info/dom-attributes-and-properties)
+-   [Eloquent JavaScript - Attributes](https://eloquentjavascript.net/14_dom.html#h_pmUmF/LHme)
+
 ## Changing an Element's Content
 
 ### `element.textContent`
@@ -1182,7 +1220,7 @@ The `textContent` property sets or returns the text content of an element.
 </html>
 ```
 
-### `text()`
+### `$(element).text()`
 
 jQuery's `text()` method allows you to get or set the text of an HTML element.
 
@@ -1274,7 +1312,7 @@ The `innerHtml` property sets or returns the HTML of an element.
 <figcaption></figcaption>
 </figure>
 
-### `html()`
+### `$(element).html()`
 
 jQuery's `html()` method allows you to change the `innerHTML` of an element.
 
@@ -1326,6 +1364,15 @@ jQuery's `html()` method allows you to change the `innerHTML` of an element.
 <figcaption></figcaption>
 </figure>
 
+### Further Reading
+
+-   [MDN - textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+-   [MDN - innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+-   [Eloquent JavaScript - Node Properties](https://javascript.info/basic-dom-node-properties)
+-   [Learn jQuery - Manipulating Elements](https://learn.jquery.com/using-jquery-core/manipulating-elements/)
+-   [jQuery API - text](https://api.jquery.com/text/#text)
+-   [jQuery API - html](https://api.jquery.com/html/#html)
+
 ## Styling DOM Nodes
 
 ### `element.style`
@@ -1374,7 +1421,7 @@ The `style` property allows you to set or adjust an element's CSS styles from Ja
 <figcaption></figcaption>
 </figure>
 
-### `css()`
+### `$(element).css()`
 
 jQuery's `css()` method allows you to set or return the style of an element
 
@@ -1414,6 +1461,11 @@ jQuery's `css()` method allows you to set or return the style of an element
 ![cssMethod example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/cssMethod.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+### Further Reading
+
+-   [MDN - style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
+-   [jQuery API - .css()](https://api.jquery.com/css/#css-propertyName)
 
 ## Animations
 
@@ -1521,6 +1573,11 @@ $(".object").click(moveRight);
 <figcaption></figcaption>
 </figure>
 
+### Further Reading
+
+-   [jQuery API - .animate()](https://api.jquery.com/animate/#animate-properties-duration-easing-complete)
+-   [Learn jQuery - Custom Effects with .animate()](https://learn.jquery.com/effects/custom-effects/)
+
 ## Getting the size and position of an element
 
 The following properties return the size and position of an element:
@@ -1587,3 +1644,8 @@ Example Output:
 ![size&position example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/sizeandposition.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+### Further Reading
+
+-   [The Modern JavaScript Tutorial - Element Size and Scrolling](https://javascript.info/size-and-scroll)
+-   [Eloquent JavaScript - Layout](https://eloquentjavascript.net/14_dom.html#h_lyrY2KUDl7)
