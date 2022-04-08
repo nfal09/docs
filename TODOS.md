@@ -2,7 +2,6 @@
 
 ## Browser APIs and jQuery
 
-
 ### Browser Dev Tools
 
 -   Something about how to use the `Elements` tab to adjust HTML and styling
@@ -10,39 +9,6 @@
 <hr>
 
 ## HTML
-
-    - HTML gives "meaning" to text using tags so that the browser can style/display the content in a structured way.
-
-### Basic HTML Structure (completed)
-
--   The structure of an HTML document
-    -   The `DOCTYPE`
-    -   The outer `<html>`
-    -   The `<head>`
-        -   Types of things that go in the `<head>`:
-            -   `<meta>` tags
-            -   `<title>`
-            -   `<link>`
-            -   `<script>`
-            -   `<style>`
-    -   The `<body>`
-        -   Where all the content lives
-
-### Elements Give Text Meaning (in progress)
-
--   Discuss the semantic value of things like `<h1>` and `<p>`.
--   You can use CSS to style things however you want, but the semantics of the markup are important.
--   Basically, use the write element for the job!
-
-### Two Broad Categories of Elements (in progress)
-
--   Inline
--   Block
-
-### Nesting Elements (in progress)
-
--   Give examples of nesting inline elements together
--   Examples of nesting inline elements inside of block elements
 
 ### Single-Tag Elements
 
