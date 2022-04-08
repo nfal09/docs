@@ -28,18 +28,18 @@
     -   The `<body>`
         -   Where all the content lives
 
-### Elements Give Text Meaning (in progress)
+### Elements Give Text Meaning (completed)
 
 -   Discuss the semantic value of things like `<h1>` and `<p>`.
 -   You can use CSS to style things however you want, but the semantics of the markup are important.
 -   Basically, use the write element for the job!
 
-### Two Broad Categories of Elements (in progress)
+### Two Broad Categories of Elements (completed)
 
 -   Inline
 -   Block
 
-### Nesting Elements (in progress)
+### Nesting Elements (completed)
 
 -   Give examples of nesting inline elements together
 -   Examples of nesting inline elements inside of block elements
