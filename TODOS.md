@@ -6,6 +6,9 @@
 
 -   Something about how to use the `Elements` tab to adjust HTML and styling
 
+### jQuery's `val()` function
+-   Can be in the same spot as the `attr()` stuff
+
 <hr>
 
 ## HTML
