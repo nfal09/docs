@@ -461,3 +461,38 @@ Elements can be nested inside each other. This is most common with elements like
 ![Nesting Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/nesting-example.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+
+## Single Tag Elements
+
+Elements can also be single tag elements. There is no need for a closing tag for these tags because there is no content between them. The most common single tag elements are `<img>` and `<link>`:
+
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Single Tag Elements</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+            <h1> Below is the img tag, which uses the src attribute to display the image </h1>
+
+            <hr>
+
+            <img src="taco.jpg" />
+
+            <p>  The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
+
+
+
+
+    </body>
+</html>
+```
+<figure markdown>
+![singleTagElements Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/singletagelements.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
