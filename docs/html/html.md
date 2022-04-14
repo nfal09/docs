@@ -478,6 +478,7 @@ Elements can also be single tag elements. There is no need for a closing tag for
     </head>
 
     <body>
+        <div>
             <h1> Below is the img tag, which uses the src attribute to display the image </h1>
 
             <hr>
@@ -485,7 +486,7 @@ Elements can also be single tag elements. There is no need for a closing tag for
             <img src="taco.jpg" />
 
             <p>  The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
-
+        </div>
 
 
 
@@ -496,3 +497,38 @@ Elements can also be single tag elements. There is no need for a closing tag for
 ![singleTagElements Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/singletagelements.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+
+## HTML Attributes
+
+HTML attributes allow you to provide about each element additional information. Here are a examples of common attributes:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Attributes</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div>
+            <h1 style="color: green;">Tacos!!</h1>
+
+            <hr>
+            <img src="tacos.png" id="taco"/>
+            <hr>
+   
+            <p contenteditable="true"> This paragraph can be edited! </p>
+
+            <a href="tacos.html" > Click here for more tacos! </a>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![HTMLattributes Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLattributes.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
