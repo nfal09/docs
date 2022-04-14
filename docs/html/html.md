@@ -501,7 +501,7 @@ Elements can also be single tag elements. There is no need for a closing tag for
 
 ## HTML Attributes
 
-HTML attributes allow you to provide about each element additional information. Here are a examples of common attributes:
+HTML attributes allow you to provide additional information about each element. Here are a few examples of common attributes:
 
 ```html
 <!DOCTYPE html>
