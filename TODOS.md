@@ -13,33 +13,24 @@
 
 ## HTML
 
-### Single-Tag Elements
 
--   `<img>`
--   `<link>`
-
-### Attributes
-
--   Those with values
--   Boolean attributes
-
-### HTML Comments
+### HTML Comments (in progress)
 
 -   Useful for making notes in a source file
 -   Can also use them to "turn off" some code
 -   Don't display on the page
 
-### Lists
+### Lists (in progress)
 
 -   `<ul>`
 -   `<ol>`
 
-### Headings
+### Headings (in progress)
 
 -   List all of them
 -   Should only have one `<h1>` per webpage
 
-### Body Text
+### Body Text (in progress)
 
 -   `<p>`
 -   `<span>`
