@@ -174,6 +174,8 @@
 
 [The Box Model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
+-   Two main categories: `block` and `inline`
+
 ### Values and Units
 
 [Values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
