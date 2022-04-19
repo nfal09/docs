@@ -175,10 +175,36 @@
 [The Box Model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
 -   Two main categories: `block` and `inline`
+-   Discuss how `width`, `height`, `padding`, `border`, and `margin` affect a box
+    -   Can show shorthand/longhand versions of `margin`, `border`, and `padding`
+
+[Inline Block](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#using_display_inline-block)
 
 ### Values and Units
 
 [Values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+
+-   Really only need to discuss `px` and maybe `%` for lengths.
+-   Could also show how to use seconds (for animations)
+-   Should also show that you can use raw numbers for some things (like `opacity`)
+-   Can show some of the different ways to calculate color
+-   The different `position` keywords (`top`, `bottom`, `left`, `right`)
+
+### Backgrounds
+
+[Background and Border](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
+
+-   Show how to add backgrounds using `background-color` and `background: url()`.
+    -   Can show named colors and `rgba()`
+    -   How to contain images with `background-size`
+    -   Controlling repeat with `background-repeat`
+    -   Rounding corners with `border-radius`
+
+### Overflow
+
+[Overflowing Content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
+
+-   You'll have to deal with it when you constrain a box's width/height.
 
 <hr>
 
