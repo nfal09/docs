@@ -532,3 +532,75 @@ HTML attributes allow you to provide additional information about each element. 
 <figcaption></figcaption>
 </figure>
 
+## HTML Comments 
+
+HTML comments allow us to write notes, hide content, and disable code in the event of a bug. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Comments</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div>
+            <!-- This is an important note! -->
+
+            <h1>HTML Comments</h1>
+
+            <!-- <p> This tag is now "turned off" </p> -->
+
+            <!-- You can also make 
+            multi-line comments as well! 
+            -->
+        </div>
+    </body>
+</html>
+```
+## HTML List Elements
+
+HTML lists allow you to make a structured list. Both list elements use the `<li>` tag to define each item. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lists</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- This is an unordered list element. The items on this list will be bulleted. -->
+            <div class="list1">
+                <h1>Favorite Foods</h1>
+                <ul>
+                    <li>Tacos</li>
+                    <li>Pasta</li>
+                    <li>Pizza</li>
+                </ul>
+            </div>
+
+            <!-- This is an ordered list element. The 'type' attribute can be used to adjust the order of this list, which can be either alphabetical or numerical.  -->
+            <div class="list2">
+                <h1>Favorite Snacks</h1>
+                <ol>
+                    <li>Dark Chocolate</li>
+                    <li>Sugar Cookies</li>
+                    <li>BBQ Chips</li>       
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![HTMLlists Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLlists.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
