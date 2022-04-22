@@ -14,17 +14,6 @@
 
 ## HTML
 
-### HTML Comments (in progress)
-
--   Useful for making notes in a source file
--   Can also use them to "turn off" some code
--   Don't display on the page
-
-### Lists (in progress)
-
--   `<ul>`
--   `<ol>`
-
 ### Headings (in progress)
 
 -   List all of them
@@ -38,25 +27,25 @@
 -   `<em>`
 -   `<strong>`
 
-### Links
+### Links (in progress)
 
 -   `<a>`
     -   Show embedded and block-level links
 -   Show how to link to document fragments using IDs
 -   Absolute vs. relative URLs
 
-### Containers
+### Containers (in progress)
 
 -   `<div>`
 
-### Forms
+### Forms (in progress)
 
 -   `<form>`
 -   `<input>`
     -   Show different `type`s of them
 -   `<select>`
 
-### Buttons
+### Buttons (in progress)
 
 -   `<button>`
 
