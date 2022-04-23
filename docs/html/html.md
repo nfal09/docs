@@ -603,4 +603,87 @@ HTML lists allow you to make a structured list. Both list elements use the `<li>
 <figcaption></figcaption>
 </figure>
 
+## HTML Heading Elements
 
+HTML headings allow you to define headings using section levels. `<h1>` Represents the highest level `<h6>` represents the lowest level.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Headings</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="info">
+                <!-- Note: Using only one h1 is recommended -->
+                <h1>Welcome to my page!</h1>
+                <h2>Bob the <em>Epic</em>  programmer!</h2>
+            </div>
+     
+            <div class="section2">
+                <h3>Favorite Programming Languages</h3>
+                <p>Javascript</p>
+                <p>Python</p>
+
+                <h4>Favorite Games</h4>
+                <p>Roblox</p>
+                <p>Minecraft</p>
+            </div>
+
+            <div class="projects">
+                <h5>Python Project </h5>
+                <a href="pythonproject.html" >Link</a>
+                <h6>Javascript Project</h6>
+                <a href="javascriptproject.html" >Link</a>
+            </div>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![HTMLheadings Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLheadings.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## HTML Body Text
+
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Body Text</title>
+        <link href="style.css" rel="stylesheet" />
+        <style>
+            em {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <p>
+               <em>Coding</em> teaches children how to resolve complex problems by breaking them down into smaller problems. A mastery of this process, called decomposition, is an integral life skill that benefits students whether they pursue a profession in technology or in any other field. Making mistakes, testing work, and correcting errors give kids the confidence to move beyond the problem with resilience."
+            </p>
+            <p>
+                 Learning to code is often described as tackling a new language and it may seem that this translation of symbols and information stems from the language processing part of the brain. <strong> Computer programming </strong>is also thought to employ the same skills as learning complex math problems, thereby exercising the left hemisphere. 
+             </p>
+             <p>
+                 Read more
+                 <cite><a href="https://www.codewizardshq.com/coding-cognitive-development/">4 Ways That Coding Fuels Cognitive Development</a><cite>
+             </p>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLBody Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLBody.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
