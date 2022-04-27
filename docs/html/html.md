@@ -687,3 +687,105 @@ HTML headings allow you to define headings using section levels. `<h1>` Represen
 ![HTMLBody Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLBody.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## HTML Containers
+
+HTML Containers allow you to divide your content into sections. The `<div>` element is a good illustration of how to divide two containers. They can use the class property to share styling, but they can also have their own styling and content. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Containers</title>
+        <link href="style.css" rel="stylesheet" />
+        <style>
+        .division{
+            display: inline-block;
+            text-align: center;
+        }
+        #team1{
+            background-color: rgba(255, 0, 0, 0.466);
+        }
+        #team2{
+            background-color: rgba(30, 0, 255, 0.425);
+        }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="division" id="team1">
+                <h2>Bob</h2>
+                <img src="monster1.png">
+                <p>Rank: 50</p>
+            </div>
+
+            <div class="division" id="team2">
+                <h2>Jack</h2>
+                <img src="monster2.png">
+                <p>Rank: 100</p>
+            </div>
+
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLcontainers Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLcontainers.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## HTML Links
+
+HTML Links allow you to link to other webpages using `<a>` tag with the `href` attribute. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Links</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Inline vs Block Links -->
+    
+            <!-- Inline -->
+            <a href="https://www.codewizardshq.com"> CodeWizardsHQ </a>
+
+            <!-- Block -->
+            <a href="https://www.codewizardshq.com">
+                <img src="cwhq.png" id="cwhq">
+            </a>
+  
+
+            <!-- Document fragment by id -->
+            <p id="summer">Summer Program!</p>
+            <a href="https://www.codewizardshq.com/#summer" >Summer</a>
+
+            <hr>
+            <!-- Relative vs Absolute URLs -->
+
+            <!-- Relative URL -->
+            <a href="index/index.html" >This will link us to a file within the same directory.</a> 
+      
+            <!-- Absolute URL  -->
+            <a href="https://www.codewizardshq.com" >This will link us to any page using the absolute url.</a> 
+            
+        </div>
+    </body>
+</html>
+```
+
+
+
+
+
+
+
+
