@@ -14,30 +14,6 @@
 
 ## HTML
 
-### Headings (in progress)
-
--   List all of them
--   Should only have one `<h1>` per webpage
-
-### Body Text (in progress)
-
--   `<p>`
--   `<span>`
-    -   Usually embedded in a `<p>` as a hook for special styling or JS
--   `<em>`
--   `<strong>`
-
-### Links (in progress)
-
--   `<a>`
-    -   Show embedded and block-level links
--   Show how to link to document fragments using IDs
--   Absolute vs. relative URLs
-
-### Containers (in progress)
-
--   `<div>`
-
 ### Forms (in progress)
 
 -   `<form>`
@@ -194,6 +170,9 @@
 [Overflowing Content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
 
 -   You'll have to deal with it when you constrain a box's width/height.
+
+
+
 
 <hr>
 
