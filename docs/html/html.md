@@ -765,8 +765,8 @@ HTML Links allow you to link to other webpages using `<a>` tag with the `href` a
   
 
             <!-- Document fragment by id -->
-            <p id="summer">Summer Program!</p>
-            <a href="https://www.codewizardshq.com/#summer" >Summer</a>
+            <a href="#summer" >Check out our Program Section!</a>
+            <p id="summer">Elementary, Middle School, High School</p>
 
             <hr>
             <!-- Relative vs Absolute URLs -->
@@ -775,12 +775,61 @@ HTML Links allow you to link to other webpages using `<a>` tag with the `href` a
             <a href="index/index.html" >This will link us to a file within the same directory.</a> 
       
             <!-- Absolute URL  -->
-            <a href="https://www.codewizardshq.com" >This will link us to any page using the absolute url.</a> 
+            <a href="https://www.codewizardshq.com" >This will link us to any web page using the absolute url.</a> 
             
         </div>
     </body>
 </html>
 ```
+<figure markdown>
+![HTMLlinks Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLlinks.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## HTML Forms and Buttons
+
+You can create a form section to submit information using the HTML `<form>` element.
+The `<input>` element is used within the form element, and the `type` attribute can be used to display different types of inputs. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Forms and Buttons</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Contact</h2>
+            <form>
+                <input type="text" placeholder="Enter Name" id="name" required>
+                <input type='email' id='senderEmail' placeholder="Enter Email" required>
+                <input type='number' id='senderNumber' placeholder="Enter Number" required>
+                <label>Choose Programming Language</label>
+                <select>
+                    <option>Javascript</option>
+                    <option>Python</option>
+                    <option>Java</option>
+                </select>
+                <button>Submit</button>
+            </form>          
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLforms Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/forms.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
+
+
+
+
 
 
 
