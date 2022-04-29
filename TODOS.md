@@ -14,25 +14,23 @@
 
 ## HTML
 
-### Forms (in progress)
-
--   `<form>`
--   `<input>`
-    -   Show different `type`s of them
--   `<select>`
-
-### Buttons (in progress)
-
--   `<button>`
-
-### Images
+### Images (in progress)
 
 -   `<img>`
--   `<figure>`
 
-### Video
+### Video (in progress)
 
 -   `<video>`
+
+### Line Breaks (in progress)
+
+-   `<br>`
+-   `<hr>`
+
+### Tables (in progress)
+
+-    `<table>`
+
 
 ### Directory Navigation
 
@@ -41,12 +39,7 @@
     -   Nested folder
     -   Parent folder
 
-### Line Breaks
 
--   `<br>`
--   `<hr>`
-
-### Tables
 
 <hr>
 
