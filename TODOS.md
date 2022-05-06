@@ -29,8 +29,7 @@
 
 ### Tables (in progress)
 
--    `<table>`
-
+-   `<table>`
 
 ### Directory Navigation
 
@@ -38,8 +37,6 @@
     -   Project root
     -   Nested folder
     -   Parent folder
-
-
 
 <hr>
 
@@ -133,6 +130,7 @@
 [The Box Model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
 -   Two main categories: `block` and `inline`
+    -   Can change an element's `display` to either.
 -   Discuss how `width`, `height`, `padding`, `border`, and `margin` affect a box
     -   Can show shorthand/longhand versions of `margin`, `border`, and `padding`
 
@@ -164,8 +162,20 @@
 
 -   You'll have to deal with it when you constrain a box's width/height.
 
+### Styling Text
 
+[Styling Text](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
 
+-   Need to cover things like changing font size/color/family.
+-   Could also show text decoration and text shadow.
+-   Alignment would be good too.
+
+### Layouts
+
+[Layouts](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction)
+
+-   Should cover changing the `position` property.
+-   Flexbox
 
 <hr>
 
