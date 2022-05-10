@@ -825,9 +825,65 @@ The `<input>` element is used within the form element, and the `type` attribute 
 <figcaption></figcaption>
 </figure>
 
+## HTML Image and Video 
 
+The `<img>` and `<video>` elements can be used to embed images and video. The `src` attribute is used by both elements. 
 
+```html
+<!DOCTYPE html>
 
+<html>
+    <head>
+        <title>Images and Video</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- This image is located in the child folder images -->
+            <img src="images/monster1.png" >
+           
+            <!-- The Video Element uses additional attributes controls and poster -->
+            <video src="videos/projectile.mp4" controls poster="images/projectile.png"></video>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![HTMLimg&video Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/imageandvideo.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## HTML Line Break Elements 
+
+For creating breaks in the content, use the line break `<br>` tag or the `<hr>` tag, which makes a horizontal line break. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Single Tag Elements</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> Line Break </h1>
+
+            <hr>
+
+            <img src="taco.jpg" />
+
+            <p>  The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![linebreak Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/linebreak.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 
 
