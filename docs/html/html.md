@@ -863,7 +863,7 @@ For creating breaks in the content, use the line break `<br>` tag or the `<hr>` 
 
 <html>
     <head>
-        <title>Single Tag Elements</title>
+        <title>Line Break</title>
         <link href="style.css" rel="stylesheet" />
     </head>
 
@@ -885,12 +885,51 @@ For creating breaks in the content, use the line break `<br>` tag or the `<hr>` 
 <figcaption></figcaption>
 </figure>
 
+## HTML Table 
 
+You can use the following table elements to create a structured table. 
 
+```html
+<!DOCTYPE html>
 
+<html>
+    <head>
+        <title>Tables</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
 
+    <body>
+        <div class="container">
+            <h1>Tables</h1>
+            <table>
+                <!-- Table Row -->
+                <tr>
+                    <!-- Table Headers  -->
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
 
+                <tr>
+                     <!-- Table Data -->
+                    <td>Bob</td>
+                    <td>Math</td>
+                    <td>85</td>
+                </tr>
 
-
-
+                <tr>
+                     <!-- Table Data -->
+                    <td>Abigail</td>
+                    <td>Programming</td>
+                    <td>99</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![HTMLTables Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLtables.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
