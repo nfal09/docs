@@ -118,3 +118,59 @@ In CSS you can create comments between `/* */` blocks. They can be single line o
     <body></body>
 </html>
 ```
+
+## CSS Rule Basics
+
+CSS works by selecting one or more HTML elements and then applying styles to those HTML elements. The way to select elements can be as simple as writing the HTML tag name, targeting tags with a common class or id, or even targeting tags based on some state such as being hovered over.
+
+The basic syntax is:
+
+```css
+selector {
+    property: value;
+    otherproperty: otherValue;
+    anotherproperty: value1 value2 value3;
+}
+```
+
+Notice that property/value pairs can be one-to-one or one-to-many.
+
+Here's an example of targeting a few elements and applying styles to them:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CSS Rule Basics</title>
+        <style>
+            #page-title {
+                color: green;
+                text-shadow: 20px 15px 4px black;
+            }
+
+            p {
+                color: blue;
+                text-decoration: underline;
+                border: 10px solid red;
+                padding: 24px;
+                font-size: 42px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="page-title">This text is green and has a text shadow added.</h1>
+        <p>
+            Each paragraph tag has the same styles because we targeted the "p"
+            selector.
+        </p>
+        <p>See what I mean?</p>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/css-rule-basics.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
