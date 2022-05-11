@@ -174,3 +174,118 @@ Here's an example of targeting a few elements and applying styles to them:
 ![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/css-rule-basics.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Specificity And The Cascade
+
+When applying styles to HTML elements there are two principles, specificity and the cascade, that can influence which styles are applied to a given element.
+
+### Specificity
+
+Specificity is calculated by _how_ you selected an element or group of HTML elements.
+
+For example, the element with the id `danger` below has red text, even though there's a style rule selecting all `<p>` elements and turning them blue:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Specificity and the Cascade</title>
+        <style>
+            p {
+                color: blue;
+                font-size: 32px;
+            }
+
+            #danger {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>This is blue.</p>
+        <p id="danger">This is red!</p>
+        <p>This is also blue.</p>
+        <p>But, we're all the same size.</p>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/specificity.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### The Cascade
+
+The cascade applies to _where_ in the CSS styles a style rule lies. If you are targeting a selector in two places, the one furthest down the page wins for any style rules that are conflicting.
+
+Note how there are no blue `<p>` tags in the example below because the second CSS rule overwrites the `color` property of the first:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Specificity and the Cascade</title>
+        <style>
+            p {
+                color: blue;
+                font-size: 32px;
+            }
+
+            p {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>This is red, the blue color was overwritten!</p>
+        <p>This is also red!</p>
+        <p>But, we're all the same size.</p>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/cascade.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## Inheritance
+
+Some CSS properties are passed on to children of HTML elements. For example, the `color` property will be passed to child elements. You can still override styles that are inherited by using a more specific selector for a child element.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>inheritance</title>
+        <style>
+            div {
+                color: blue;
+                font-size: 32px;
+            }
+
+            .warning {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <p>This is blue because of inheritance!</p>
+            <p class="warning">This is red because of specificity.</p>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/inheritance.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
