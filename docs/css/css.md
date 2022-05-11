@@ -93,3 +93,28 @@ You can also write CSS style rules directly in an HTML tag using the `style` att
 ![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/including-inline-css-in-html.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Comments
+
+In CSS you can create comments between `/* */` blocks. They can be single line or multiline.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CSS Comments</title>
+        <style>
+            /* This is a single line comment */
+
+            /*
+            This 
+            spans 
+            multiple lines
+            */
+        </style>
+    </head>
+
+    <body></body>
+</html>
+```
