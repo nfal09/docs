@@ -854,16 +854,82 @@ The `<img>` and `<video>` elements can be used to embed images and video. The `s
 <figcaption></figcaption>
 </figure>
 
+## HTML Line Break Elements 
 
+For creating breaks in the content, use the line break `<br>` tag or the `<hr>` tag, which makes a horizontal line break. 
 
+```html
+<!DOCTYPE html>
 
+<html>
+    <head>
+        <title>Line Break</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
 
+    <body>
+        <div class="container">
+            <h1> Line Break </h1>
 
+            <hr>
 
+            <img src="taco.jpg" />
 
+            <p>  The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![linebreak Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/linebreak.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
+## HTML Table 
 
+You can use the following table elements to create a structured table. 
 
+```html
+<!DOCTYPE html>
 
+<html>
+    <head>
+        <title>Tables</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
 
+    <body>
+        <div class="container">
+            <h1>Tables</h1>
+            <table>
+                <!-- Table Row -->
+                <tr>
+                    <!-- Table Headers  -->
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
+
+                <tr>
+                     <!-- Table Data -->
+                    <td>Bob</td>
+                    <td>Math</td>
+                    <td>85</td>
+                </tr>
+
+                <tr>
+                     <!-- Table Data -->
+                    <td>Abigail</td>
+                    <td>Programming</td>
+                    <td>99</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![HTMLTables Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLtables.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
