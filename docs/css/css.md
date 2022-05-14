@@ -379,3 +379,42 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
 ![Selectors example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/Selectors.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Styling Elements Based on State
+
+CSS allows you to change the styling of an element depending on its `state`. When an element is hovered over or visited, you can modify its styling. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Styling based on state</title>
+        <style>
+            a:link {
+                color: red;
+            }
+            a:hover{
+                color: green;
+                font-size: 65px;
+            }
+            a:visited{
+                color: teal;
+             }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <a href="page2.html"> Link </a>  
+        </div>
+
+    </body>
+</html>
+```
+
+<figure markdown>
+![changeState example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/changestate.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
