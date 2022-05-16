@@ -289,3 +289,132 @@ Some CSS properties are passed on to children of HTML elements. For example, the
 ![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/inheritance.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Selectors 
+
+CSS Selectors allow you to access HTML elements to style. Below are some of the common CSS selectors you may use. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Selectors</title>
+        <style>
+             /* Element Selector*/
+            div {
+                border: 3px groove black;
+            }
+            /* Class Selector */
+            .object {
+                border-width: 10px;
+                border-color: blueviolet;
+            }
+            /* ID Selector  */
+            #heading {
+                color: red;
+            }
+            /* Element+class */
+            div.container{
+                box-shadow: 10px 10px 10px black;
+            }
+            /* Attribute Selector */
+            input[type="text"] {
+                border: none;
+                border-bottom: 2px solid black;
+            }
+
+            /* Targeting Multiple Selectors */
+            em, span {
+                color: rgb(252, 106, 206);
+            }
+
+            /* Combinators */
+
+            /* Descendent Combinator */
+            p em:hover {
+                font-size: 30px;
+            }
+            /* Adjacent Sibling Combinator */
+            li + li  {
+                color: rgb(4, 255, 0);
+            }
+
+            /* Child Combinator */
+            .combinator > p {
+                color: red;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="object">
+                <h1 id="heading">Hello!</h1>
+                <p>Some text <em>goes here</em></p>
+                <span>Hello</span>
+            </div>
+
+            <div class="list">
+                <ol>
+                    <li>One</li>
+                    <li>Two </li>
+                    <li>Three</li>
+                </ol>
+                <input type="text" placeholder="Name">
+                <input type="submit" value="Enter">
+            </div>
+
+            <div class="combinator">
+                <h2>Heading 2 </h2>
+                <p>Some text <em>here</em> yay!</p>
+            </div>  
+        </div>
+    </body>
+</html>
+```
+<figure markdown>
+![Selectors example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/Selectors.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## Styling Elements Based on State
+
+CSS allows you to change the styling of an element depending on its `state`. When an element is hovered over or visited, you can modify its styling. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Styling based on state</title>
+        <style>
+            a:link {
+                color: red;
+            }
+            a:hover{
+                color: green;
+                font-size: 65px;
+            }
+            a:visited{
+                color: teal;
+             }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <a href="page2.html"> Link </a>  
+        </div>
+
+    </body>
+</html>
+```
+
+<figure markdown>
+![changeState example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/changestate.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
