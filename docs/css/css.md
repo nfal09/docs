@@ -418,3 +418,66 @@ CSS allows you to change the styling of an element depending on its `state`. Whe
 <figcaption></figcaption>
 </figure>
 
+## Responsive Design
+
+You can use Media Queries to define styling based on the device type, such as device width. You may use the `@media` rule to make your websites responsive by creating conditions based on device breakpoints. The condition is created using the properties `min-width` and `max-width.`
+
+     !!! note 
+
+        Browsers by default zoom out the page to fit on the screen you open. For media queries to work, we don't want this zooming out. To disable this zooming out we need to use `<meta>` tag.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Responsive Design</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            #insect{
+                height: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: bottom;
+                width:100px;
+                margin: auto;
+                margin-top:-100px;
+                background-image: url('larve.png');
+                transition: 1s all ease;
+            }
+
+            @media (min-width: 400px) and (max-width: 768px){
+                #insect{
+                    width:150px;
+                    background-image: url('caterpillar.png');
+                }
+            }
+
+            @media (min-width: 768px) and (max-width: 1100px){
+                #insect{
+                    width:170px;
+                    background-image: url('butterfly1.png');
+                }
+            }
+
+            @media (min-width: 1100px){
+                #insect{
+                    width: 250px;
+                    background-image: url('butterfly2.png');
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="insect"></div>
+
+    </body>
+</html>
+```
+
+<figure markdown>
+![responsive example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/responsive.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
