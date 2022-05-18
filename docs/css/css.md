@@ -414,7 +414,7 @@ CSS allows you to change the styling of an element depending on its `state`. Whe
 ```
 
 <figure markdown>
-![changeState example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/changestate.png?raw=true){ width="100%" }
+![changeState example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/changestate.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
