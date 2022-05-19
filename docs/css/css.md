@@ -290,9 +290,9 @@ Some CSS properties are passed on to children of HTML elements. For example, the
 <figcaption></figcaption>
 </figure>
 
-## Selectors 
+## Selectors
 
-CSS Selectors allow you to access HTML elements to style. Below are some of the common CSS selectors you may use. 
+CSS Selectors allow you to access HTML elements to style. Below are some of the common CSS selectors you may use.
 
 ```html
 <!DOCTYPE html>
@@ -301,7 +301,7 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
     <head>
         <title>Selectors</title>
         <style>
-             /* Element Selector*/
+            /* Element Selector*/
             div {
                 border: 3px groove black;
             }
@@ -315,7 +315,7 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
                 color: red;
             }
             /* Element+class */
-            div.container{
+            div.container {
                 box-shadow: 10px 10px 10px black;
             }
             /* Attribute Selector */
@@ -325,7 +325,8 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
             }
 
             /* Targeting Multiple Selectors */
-            em, span {
+            em,
+            span {
                 color: rgb(252, 106, 206);
             }
 
@@ -336,7 +337,7 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
                 font-size: 30px;
             }
             /* Adjacent Sibling Combinator */
-            li + li  {
+            li + li {
                 color: rgb(4, 255, 0);
             }
 
@@ -344,13 +345,11 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
             .combinator > p {
                 color: red;
             }
-
         </style>
     </head>
 
     <body>
         <div class="container">
-
             <div class="object">
                 <h1 id="heading">Hello!</h1>
                 <p>Some text <em>goes here</em></p>
@@ -360,21 +359,22 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
             <div class="list">
                 <ol>
                     <li>One</li>
-                    <li>Two </li>
+                    <li>Two</li>
                     <li>Three</li>
                 </ol>
-                <input type="text" placeholder="Name">
-                <input type="submit" value="Enter">
+                <input type="text" placeholder="Name" />
+                <input type="submit" value="Enter" />
             </div>
 
             <div class="combinator">
-                <h2>Heading 2 </h2>
+                <h2>Heading 2</h2>
                 <p>Some text <em>here</em> yay!</p>
-            </div>  
+            </div>
         </div>
     </body>
 </html>
 ```
+
 <figure markdown>
 ![Selectors example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/Selectors.png?raw=true){ width="100%" }
 <figcaption></figcaption>
@@ -382,7 +382,7 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
 
 ## Styling Elements Based on State
 
-CSS allows you to change the styling of an element depending on its `state`. When an element is hovered over or visited, you can modify its styling. 
+CSS allows you to change the styling of an element depending on its `state`. When an element is hovered over or visited, you can modify its styling.
 
 ```html
 <!DOCTYPE html>
@@ -394,21 +394,20 @@ CSS allows you to change the styling of an element depending on its `state`. Whe
             a:link {
                 color: red;
             }
-            a:hover{
+            a:hover {
                 color: green;
                 font-size: 65px;
             }
-            a:visited{
+            a:visited {
                 color: teal;
-             }
+            }
         </style>
     </head>
 
     <body>
         <div class="container">
-            <a href="page2.html"> Link </a>  
+            <a href="page2.html"> Link </a>
         </div>
-
     </body>
 </html>
 ```
@@ -422,9 +421,9 @@ CSS allows you to change the styling of an element depending on its `state`. Whe
 
 You can use Media Queries to define styling based on the device type, such as device width. You may use the `@media` rule to make your websites responsive by creating conditions based on device breakpoints. The condition is created using the properties `min-width` and `max-width.`
 
-     !!! note 
+!!! note
 
-        Browsers by default zoom out the page to fit on the screen you open. For media queries to work, we don't want this zooming out. To disable this zooming out we need to use `<meta>` tag.
+    Browsers by default zoom out the page to fit on the screen you open. For media queries to work, we don't want this zooming out. To disable this zooming out we need to use `<meta>` tag.
 
 ```html
 <!DOCTYPE html>
@@ -432,39 +431,39 @@ You can use Media Queries to define styling based on the device type, such as de
 <html>
     <head>
         <title>Responsive Design</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <style>
-            #insect{
+            #insect {
                 height: 100%;
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: bottom;
-                width:100px;
+                width: 100px;
                 margin: auto;
-                margin-top:-100px;
-                background-image: url('larve.png');
+                margin-top: -100px;
+                background-image: url("larve.png");
                 transition: 1s all ease;
             }
 
-            @media (min-width: 400px) and (max-width: 768px){
-                #insect{
-                    width:150px;
-                    background-image: url('caterpillar.png');
+            @media (min-width: 400px) and (max-width: 768px) {
+                #insect {
+                    width: 150px;
+                    background-image: url("caterpillar.png");
                 }
             }
 
-            @media (min-width: 768px) and (max-width: 1100px){
-                #insect{
-                    width:170px;
-                    background-image: url('butterfly1.png');
+            @media (min-width: 768px) and (max-width: 1100px) {
+                #insect {
+                    width: 170px;
+                    background-image: url("butterfly1.png");
                 }
             }
 
-            @media (min-width: 1100px){
-                #insect{
+            @media (min-width: 1100px) {
+                #insect {
                     width: 250px;
-                    background-image: url('butterfly2.png');
+                    background-image: url("butterfly2.png");
                 }
             }
         </style>
@@ -472,12 +471,256 @@ You can use Media Queries to define styling based on the device type, such as de
 
     <body>
         <div id="insect"></div>
-
     </body>
 </html>
 ```
 
 <figure markdown>
 ![responsive example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/responsive.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## Values and Units
+
+There are different types of values that CSS properties accept with varying units of measurement for those values.
+
+### Size Units
+
+When measuring size, we generally use `px` (pixels) or `%` (percentage):
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Measuring Size</title>
+
+        <style>
+            /*
+            *   The `width` and `height` properties measure the size of the box, 
+            *   so `px` is a good unit of measurement.
+            */
+            #red-box {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+
+            /*
+            *   The `%` unit is nice when you want something sized relative
+            *   to something else. Since the #blue-box is inside the #red-box
+            *   this will build a blue box that is exactly half the width and 
+            *   height of the red box.
+            */
+            #blue-box {
+                width: 50%;
+                height: 50%;
+                background-color: blue;
+            }
+
+            /*
+            *   The `%` unit also works well with the `border-radius` property
+            *   when you want to build a circle out of a `<div>`.
+            */
+            #green-circle {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: green;
+            }
+
+            /*
+            *   The `font-size` property measures how big the font will
+            *   be, and this is also a size which makes sense in `px`.
+            */
+            #about-me {
+                font-size: 24px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="red-box">
+            <div id="blue-box"></div>
+        </div>
+        <div id="green-circle"></div>
+        <p id="about-me">I like to code, eat tacos, and read!</p>
+    </body>
+</html>
+```
+
+<figure markdown>
+![size units example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/size-units.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### Color Units
+
+Measuring color is generally done using a color keyword, hex value, or RGB value. The color keywords are easier to read but give you less control over the final color. The hex/RGB values are harder to read but give you many more options for coloring an element.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Measuring Color</title>
+
+        <style>
+            /*
+            *   Using a color keyword like `red` makes it easy to read 
+            *   which color an element will be.
+            */
+            #red-box {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+
+            /*
+            *   The `rgb()` function allows you to express a color as
+            *   a mix of three numbers:
+            *
+            *   1. The amount of red in the color
+            *   2. The amount of green in the color
+            *   3. The amount of blue in the color
+            */
+            #blue-box {
+                width: 50%;
+                height: 50%;
+                background-color: rgb(54, 54, 233);
+            }
+
+            /*
+            *   Hexadecimal values (Hex for short) can express the same
+            *   variations in color that `rgb()` values do, but in a more
+            *   concise notation.
+            */
+            #green-circle {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: #40ff73;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="red-box">
+            <div id="blue-box"></div>
+        </div>
+        <div id="green-circle"></div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![color units example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/color-units.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### Time Units
+
+For animations, you need to be able to measure the amount of time an animation should run. This uses the `s` (seconds) unit of measurement:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Measuring Time</title>
+
+        <style>
+            /*
+            *   The `animation-duration` property is measured in seconds.
+            */
+            #red-box {
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                background-color: red;
+                animation-name: backAndForth;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            @keyframes backAndForth {
+                from {
+                    left: 0px;
+                }
+
+                to {
+                    left: 200px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="red-box"></div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![time units example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/time-units.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### Measurements Without Units
+
+Some properties don't have a unit of measurement but instead use a regular number. The `opacity` property is one of the common properties you'll use that use a regular number instead of a unit.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Measurements With No Units</title>
+
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                margin: 12px;
+            }
+
+            /*
+            *   This will allow 25% of the background to shine through
+            *   the red box.
+            */
+            #box-1 {
+                opacity: 0.75;
+            }
+
+            /*
+            *   This will allow 50% of the background to shine through
+            *   the red box.
+            */
+            #box-2 {
+                opacity: 0.5;
+            }
+
+            /*
+            *   This will allow 75% of the background to shine through
+            *   the red box.
+            */
+            #box-3 {
+                opacity: 0.25;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="box-1" class="box"></div>
+        <div id="box-2" class="box"></div>
+        <div id="box-3" class="box"></div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![unitless measurements example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/unitless-measurements.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
