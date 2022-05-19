@@ -724,3 +724,65 @@ Some properties don't have a unit of measurement but instead use a regular numbe
 ![unitless measurements example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/unitless-measurements.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Backgrounds
+
+HTML elements can have colors, images, or both as their backgrounds:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Working with Backgrounds</title>
+
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                margin: 10px auto;
+            }
+
+            /*
+            *   The `background-color` property allows you to add a
+            *   color to the entire background of an element.
+            */
+            #box-1 {
+                background-color: red;
+            }
+
+            /*
+            *   The `background-image` property allows you to add an
+            *   image to the background. It will repeat by default if
+            *   it is smaller than the box it is contained in.
+            */
+            #box-2 {
+                background-image: url(taco.png);
+            }
+
+            /*
+            *   The `background-repeat` and `background-position` properties
+            *   give you more control over a background image in an element.
+            */
+            #box-3 {
+                background-image: url(hot-dog.jpeg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="box-1" class="box"></div>
+        <div id="box-2" class="box"></div>
+        <div id="box-3" class="box"></div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![working-with-backgrounds](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/working-with-backgrounds.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
