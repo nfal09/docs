@@ -121,6 +121,10 @@ The `<body>` tag holds all of the HTML content that will appear on the page. Thi
 <figcaption></figcaption>
 </figure>
 
+#### Further reading
+
+-   [MDN - Anatomy of an HTML Document](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#anatomy_of_an_html_document)
+
 ## Common Additions To The Basic HTML Structure
 
 If you explore HTML documents on your favorite websites, you'll see that there are many variations on the basic HTML structure shown above. We'll discuss a few common additional tags that you'll see at CWHQ in this section, such as the `<style>`, `<link>`, `<script>`, and `<meta>` tags.
@@ -256,6 +260,10 @@ The `<style>` tag can be used to add CSS directly in an HTML document instead of
     </body>
 </html>
 ```
+
+#### Further reading
+
+-   [MDN - Metadata in HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
 
 ## Elements Give Text Meaning
 
@@ -417,6 +425,458 @@ Some standard inline elements are `<span>`, `<img>`, `<button>`, and `<input>` e
 <figcaption></figcaption>
 </figure>
 
+## Attributes
+
+HTML attributes allow you to provide additional information about each element. Here are a few examples of common attributes:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Attributes</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div>
+            <h1 style="color: green;">Tacos!!</h1>
+
+            <hr />
+            <img src="tacos.png" id="taco" />
+            <hr />
+
+            <p contenteditable="true">This paragraph can be edited!</p>
+
+            <a href="tacos.html"> Click here for more tacos! </a>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLattributes Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLattributes.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - Attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#attributes)
+
+## Body Text
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Body Text</title>
+        <link href="style.css" rel="stylesheet" />
+        <style>
+            em {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <p>
+               <em>Coding</em> teaches children how to resolve complex problems by breaking them down into smaller problems. A mastery of this process, called decomposition, is an integral life skill that benefits students whether they pursue a profession in technology or in any other field. Making mistakes, testing work, and correcting errors give kids the confidence to move beyond the problem with resilience."
+            </p>
+            <p>
+                 Learning to code is often described as tackling a new language and it may seem that this translation of symbols and information stems from the language processing part of the brain. <strong> Computer programming </strong>is also thought to employ the same skills as learning complex math problems, thereby exercising the left hemisphere.
+             </p>
+             <p>
+                 Read more
+                 <cite><a href="https://www.codewizardshq.com/coding-cognitive-development/">4 Ways That Coding Fuels Cognitive Development</a><cite>
+             </p>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLBody Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLBody.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - HTML Text Fundamentals](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals)
+
+## Comments
+
+HTML comments allow us to write notes, hide content, and disable code in the event of a bug.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Comments</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div>
+            <!-- This is an important note! -->
+
+            <h1>HTML Comments</h1>
+
+            <!-- <p> This tag is now "turned off" </p> -->
+
+            <!-- You can also make 
+            multi-line comments as well! 
+            -->
+        </div>
+    </body>
+</html>
+```
+
+#### Further reading
+
+-   [MDN - Comments](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#html_comments)
+
+## Containers
+
+HTML Containers allow you to divide your content into sections. The `<div>` element is a good illustration of how to divide two containers. They can use the class property to share styling, but they can also have their own styling and content.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Containers</title>
+        <link href="style.css" rel="stylesheet" />
+        <style>
+            .division {
+                display: inline-block;
+                text-align: center;
+            }
+            #team1 {
+                background-color: rgba(255, 0, 0, 0.466);
+            }
+            #team2 {
+                background-color: rgba(30, 0, 255, 0.425);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="division" id="team1">
+                <h2>Bob</h2>
+                <img src="monster1.png" />
+                <p>Rank: 50</p>
+            </div>
+
+            <div class="division" id="team2">
+                <h2>Jack</h2>
+                <img src="monster2.png" />
+                <p>Rank: 100</p>
+            </div>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLcontainers Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLcontainers.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - Non-semantic Wrappers](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#non-semantic_wrappers)
+
+## Forms and Buttons
+
+You can create a form section to submit information using the HTML `<form>` element.
+The `<input>` element is used within the form element, and the `type` attribute can be used to display different types of inputs.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Forms and Buttons</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Contact</h2>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Enter Name"
+                    id="name"
+                    required
+                />
+                <input
+                    type="email"
+                    id="senderEmail"
+                    placeholder="Enter Email"
+                    required
+                />
+                <input
+                    type="number"
+                    id="senderNumber"
+                    placeholder="Enter Number"
+                    required
+                />
+                <label>Choose Programming Language</label>
+                <select>
+                    <option>Javascript</option>
+                    <option>Python</option>
+                    <option>Java</option>
+                </select>
+                <button>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLforms Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/forms.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - Forms](https://developer.mozilla.org/en-US/docs/Learn/Forms)
+
+## Heading Elements
+
+HTML headings allow you to define headings using section levels. `<h1>` Represents the highest level `<h6>` represents the lowest level.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Headings</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="info">
+                <!-- Note: Using only one h1 is recommended -->
+                <h1>Welcome to my page!</h1>
+                <h2>Bob the <em>Epic</em> programmer!</h2>
+            </div>
+
+            <div class="section2">
+                <h3>Favorite Programming Languages</h3>
+                <p>Javascript</p>
+                <p>Python</p>
+
+                <h4>Favorite Games</h4>
+                <p>Roblox</p>
+                <p>Minecraft</p>
+            </div>
+
+            <div class="projects">
+                <h5>Python Project</h5>
+                <a href="pythonproject.html">Link</a>
+                <h6>Javascript Project</h6>
+                <a href="javascriptproject.html">Link</a>
+            </div>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLheadings Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLheadings.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - Headings and Paragraphs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#the_basics_headings_and_paragraphs)
+
+## Image and Video
+
+The `<img>` and `<video>` elements can be used to embed images and video. The `src` attribute is used by both elements.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Images and Video</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- This image is located in the child folder images -->
+            <img src="images/monster1.png" />
+
+            <!-- The Video Element uses additional attributes controls and poster -->
+            <video
+                src="videos/projectile.mp4"
+                controls
+                poster="images/projectile.png"
+            ></video>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLimg&video Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/imageandvideo.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - Images in HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
+-   [MDN - Video and Audio Content](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
+
+## Line Break Elements
+
+For creating breaks in the content, use the line break `<br>` tag or the `<hr>` tag, which makes a horizontal line break.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Line Break</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> Line Break </h1>
+
+            <hr>
+
+            <img src="taco.jpg" />
+
+            <p>  The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
+        </div>
+    </body>
+</html>
+```
+
+#### Further reading
+
+-   [MDN - The Line Break Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
+
+<figure markdown>
+![linebreak Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/linebreak.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## Links
+
+HTML Links allow you to link to other webpages using `<a>` tag with the `href` attribute.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Links</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Inline vs Block Links -->
+
+            <!-- Inline -->
+            <a href="https://www.codewizardshq.com"> CodeWizardsHQ </a>
+
+            <!-- Block -->
+            <a href="https://www.codewizardshq.com">
+                <img src="cwhq.png" id="cwhq" />
+            </a>
+
+            <!-- Document fragment by id -->
+            <a href="#summer">Check out our Program Section!</a>
+            <p id="summer">Elementary, Middle School, High School</p>
+
+            <hr />
+            <!-- Relative vs Absolute URLs -->
+
+            <!-- Relative URL -->
+            <a href="index/index.html"
+                >This will link us to a file within the same directory.</a
+            >
+
+            <!-- Absolute URL  -->
+            <a href="https://www.codewizardshq.com"
+                >This will link us to any web page using the absolute url.</a
+            >
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLlinks Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLlinks.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - Creating hyperlinks](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks)
+
+## List Elements
+
+HTML lists allow you to make a structured list. Both list elements use the `<li>` tag to define each item.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lists</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- This is an unordered list element. The items on this list will be bulleted. -->
+            <div class="list1">
+                <h1>Favorite Foods</h1>
+                <ul>
+                    <li>Tacos</li>
+                    <li>Pasta</li>
+                    <li>Pizza</li>
+                </ul>
+            </div>
+
+            <!-- This is an ordered list element. The 'type' attribute can be used to adjust the order of this list, which can be either alphabetical or numerical.  -->
+            <div class="list2">
+                <h1>Favorite Snacks</h1>
+                <ol>
+                    <li>Dark Chocolate</li>
+                    <li>Sugar Cookies</li>
+                    <li>BBQ Chips</li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![HTMLlists Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLlists.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Further reading
+
+-   [MDN - Lists](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#lists)
+
 ## Nesting Elements
 
 Elements can be nested inside each other. This is most common with elements like the `<div>` and `<form>`, but you can also nest other tags, like adding content inside the `<a>` tag to make elements into links:
@@ -497,418 +957,7 @@ Elements can also be single tag elements. There is no need for a closing tag for
 <figcaption></figcaption>
 </figure>
 
-## HTML Attributes
-
-HTML attributes allow you to provide additional information about each element. Here are a few examples of common attributes:
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Attributes</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div>
-            <h1 style="color: green;">Tacos!!</h1>
-
-            <hr />
-            <img src="tacos.png" id="taco" />
-            <hr />
-
-            <p contenteditable="true">This paragraph can be edited!</p>
-
-            <a href="tacos.html"> Click here for more tacos! </a>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLattributes Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLattributes.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Comments
-
-HTML comments allow us to write notes, hide content, and disable code in the event of a bug.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Comments</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div>
-            <!-- This is an important note! -->
-
-            <h1>HTML Comments</h1>
-
-            <!-- <p> This tag is now "turned off" </p> -->
-
-            <!-- You can also make 
-            multi-line comments as well! 
-            -->
-        </div>
-    </body>
-</html>
-```
-
-## HTML List Elements
-
-HTML lists allow you to make a structured list. Both list elements use the `<li>` tag to define each item.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Lists</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div class="container">
-            <!-- This is an unordered list element. The items on this list will be bulleted. -->
-            <div class="list1">
-                <h1>Favorite Foods</h1>
-                <ul>
-                    <li>Tacos</li>
-                    <li>Pasta</li>
-                    <li>Pizza</li>
-                </ul>
-            </div>
-
-            <!-- This is an ordered list element. The 'type' attribute can be used to adjust the order of this list, which can be either alphabetical or numerical.  -->
-            <div class="list2">
-                <h1>Favorite Snacks</h1>
-                <ol>
-                    <li>Dark Chocolate</li>
-                    <li>Sugar Cookies</li>
-                    <li>BBQ Chips</li>
-                </ol>
-            </div>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLlists Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLlists.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Heading Elements
-
-HTML headings allow you to define headings using section levels. `<h1>` Represents the highest level `<h6>` represents the lowest level.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Headings</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div class="container">
-            <div class="info">
-                <!-- Note: Using only one h1 is recommended -->
-                <h1>Welcome to my page!</h1>
-                <h2>Bob the <em>Epic</em> programmer!</h2>
-            </div>
-
-            <div class="section2">
-                <h3>Favorite Programming Languages</h3>
-                <p>Javascript</p>
-                <p>Python</p>
-
-                <h4>Favorite Games</h4>
-                <p>Roblox</p>
-                <p>Minecraft</p>
-            </div>
-
-            <div class="projects">
-                <h5>Python Project</h5>
-                <a href="pythonproject.html">Link</a>
-                <h6>Javascript Project</h6>
-                <a href="javascriptproject.html">Link</a>
-            </div>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLheadings Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLheadings.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Body Text
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Body Text</title>
-        <link href="style.css" rel="stylesheet" />
-        <style>
-            em {
-                color: red;
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="container">
-            <p>
-               <em>Coding</em> teaches children how to resolve complex problems by breaking them down into smaller problems. A mastery of this process, called decomposition, is an integral life skill that benefits students whether they pursue a profession in technology or in any other field. Making mistakes, testing work, and correcting errors give kids the confidence to move beyond the problem with resilience."
-            </p>
-            <p>
-                 Learning to code is often described as tackling a new language and it may seem that this translation of symbols and information stems from the language processing part of the brain. <strong> Computer programming </strong>is also thought to employ the same skills as learning complex math problems, thereby exercising the left hemisphere.
-             </p>
-             <p>
-                 Read more
-                 <cite><a href="https://www.codewizardshq.com/coding-cognitive-development/">4 Ways That Coding Fuels Cognitive Development</a><cite>
-             </p>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLBody Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLBody.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Containers
-
-HTML Containers allow you to divide your content into sections. The `<div>` element is a good illustration of how to divide two containers. They can use the class property to share styling, but they can also have their own styling and content.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Containers</title>
-        <link href="style.css" rel="stylesheet" />
-        <style>
-            .division {
-                display: inline-block;
-                text-align: center;
-            }
-            #team1 {
-                background-color: rgba(255, 0, 0, 0.466);
-            }
-            #team2 {
-                background-color: rgba(30, 0, 255, 0.425);
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="container">
-            <div class="division" id="team1">
-                <h2>Bob</h2>
-                <img src="monster1.png" />
-                <p>Rank: 50</p>
-            </div>
-
-            <div class="division" id="team2">
-                <h2>Jack</h2>
-                <img src="monster2.png" />
-                <p>Rank: 100</p>
-            </div>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLcontainers Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLcontainers.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Links
-
-HTML Links allow you to link to other webpages using `<a>` tag with the `href` attribute.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Links</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div class="container">
-            <!-- Inline vs Block Links -->
-
-            <!-- Inline -->
-            <a href="https://www.codewizardshq.com"> CodeWizardsHQ </a>
-
-            <!-- Block -->
-            <a href="https://www.codewizardshq.com">
-                <img src="cwhq.png" id="cwhq" />
-            </a>
-
-            <!-- Document fragment by id -->
-            <a href="#summer">Check out our Program Section!</a>
-            <p id="summer">Elementary, Middle School, High School</p>
-
-            <hr />
-            <!-- Relative vs Absolute URLs -->
-
-            <!-- Relative URL -->
-            <a href="index/index.html"
-                >This will link us to a file within the same directory.</a
-            >
-
-            <!-- Absolute URL  -->
-            <a href="https://www.codewizardshq.com"
-                >This will link us to any web page using the absolute url.</a
-            >
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLlinks Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLlinks.gif?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Forms and Buttons
-
-You can create a form section to submit information using the HTML `<form>` element.
-The `<input>` element is used within the form element, and the `type` attribute can be used to display different types of inputs.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Forms and Buttons</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div class="container">
-            <h2>Contact</h2>
-            <form>
-                <input
-                    type="text"
-                    placeholder="Enter Name"
-                    id="name"
-                    required
-                />
-                <input
-                    type="email"
-                    id="senderEmail"
-                    placeholder="Enter Email"
-                    required
-                />
-                <input
-                    type="number"
-                    id="senderNumber"
-                    placeholder="Enter Number"
-                    required
-                />
-                <label>Choose Programming Language</label>
-                <select>
-                    <option>Javascript</option>
-                    <option>Python</option>
-                    <option>Java</option>
-                </select>
-                <button>Submit</button>
-            </form>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLforms Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/forms.gif?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Image and Video
-
-The `<img>` and `<video>` elements can be used to embed images and video. The `src` attribute is used by both elements.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Images and Video</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div class="container">
-            <!-- This image is located in the child folder images -->
-            <img src="images/monster1.png" />
-
-            <!-- The Video Element uses additional attributes controls and poster -->
-            <video
-                src="videos/projectile.mp4"
-                controls
-                poster="images/projectile.png"
-            ></video>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![HTMLimg&video Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/imageandvideo.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Line Break Elements
-
-For creating breaks in the content, use the line break `<br>` tag or the `<hr>` tag, which makes a horizontal line break.
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Line Break</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div class="container">
-            <h1> Line Break </h1>
-
-            <hr>
-
-            <img src="taco.jpg" />
-
-            <p>  The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
-        </div>
-    </body>
-</html>
-```
-
-<figure markdown>
-![linebreak Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/linebreak.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-## HTML Table
+## Table
 
 You can use the following table elements to create a structured table.
 
@@ -956,3 +1005,7 @@ You can use the following table elements to create a structured table.
 ![HTMLTables Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/HTMLtables.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+#### Further reading
+
+-   [MDN - Table Basics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
