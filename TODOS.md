@@ -36,12 +36,6 @@
 
 [Inline Block](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#using_display_inline-block)
 
-### Overflow
-
-[Overflowing Content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
-
--   You'll have to deal with it when you constrain a box's width/height.
-
 ### Styling Text
 
 [Styling Text](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
