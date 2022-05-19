@@ -36,16 +36,6 @@
 
 [Inline Block](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#using_display_inline-block)
 
-### Values and Units
-
-[Values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
-
--   Really only need to discuss `px` and maybe `%` for lengths.
--   Could also show how to use seconds (for animations)
--   Should also show that you can use raw numbers for some things (like `opacity`)
--   Can show some of the different ways to calculate color
--   The different `position` keywords (`top`, `bottom`, `left`, `right`)
-
 ### Backgrounds
 
 [Background and Border](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
