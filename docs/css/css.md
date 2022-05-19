@@ -725,7 +725,7 @@ Some properties don't have a unit of measurement but instead use a regular numbe
 <figcaption></figcaption>
 </figure>
 
-## Backgrounds
+## Working with Backgrounds
 
 HTML elements can have colors, images, or both as their backgrounds:
 
@@ -784,5 +784,90 @@ HTML elements can have colors, images, or both as their backgrounds:
 
 <figure markdown>
 ![working-with-backgrounds](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/working-with-backgrounds.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+## Dealing with Overflow Issues
+
+When you constrain the size of an HTML element and add content into it, there's a chance that the content can overflow. The `overflow` property gives you the ability to control how overflow issues are dealt with in an element with a constrained width and/or height.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dealing With Overflow Issues</title>
+
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                display: inline-block;
+            }
+
+            /*
+            *   The `overflow` property's `scroll` setting adds a scrollbar
+            *   to an element when the content overflows which allows them
+            *   to scroll through the content.
+            */
+            #box-2 {
+                overflow: scroll;
+            }
+
+            /*
+            *   The `overflow` property's `hidden` setting hides any content
+            *   that overflows an HTML element. 
+            */
+            #box-3 {
+                overflow: hidden;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 
+            This text will overflow outside of the box since we don't use 
+            `overflow` to control it .
+        -->
+        <div id="box-1" class="box">
+            <p>
+                Bacon ipsum dolor amet kevin pancetta landjaeger beef doner,
+                turducken frankfurter burgdoggen spare ribs brisket chuck
+                sirloin. Picanha jowl meatloaf meatball sausage kevin
+                frankfurter buffalo ball tip strip steak jerky. Swine biltong
+                tenderloin, turducken short loin kevin filet mignon chislic pig
+                pork belly chicken meatball shank capicola. Sirloin turkey
+                frankfurter pig.
+            </p>
+        </div>
+        <div id="box-2" class="box">
+            <p>
+                Bacon ipsum dolor amet kevin pancetta landjaeger beef doner,
+                turducken frankfurter burgdoggen spare ribs brisket chuck
+                sirloin. Picanha jowl meatloaf meatball sausage kevin
+                frankfurter buffalo ball tip strip steak jerky. Swine biltong
+                tenderloin, turducken short loin kevin filet mignon chislic pig
+                pork belly chicken meatball shank capicola. Sirloin turkey
+                frankfurter pig.
+            </p>
+        </div>
+        <div id="box-3" class="box">
+            <p>
+                Bacon ipsum dolor amet kevin pancetta landjaeger beef doner,
+                turducken frankfurter burgdoggen spare ribs brisket chuck
+                sirloin. Picanha jowl meatloaf meatball sausage kevin
+                frankfurter buffalo ball tip strip steak jerky. Swine biltong
+                tenderloin, turducken short loin kevin filet mignon chislic pig
+                pork belly chicken meatball shank capicola. Sirloin turkey
+                frankfurter pig.
+            </p>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![overflow](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/overflow.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
