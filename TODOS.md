@@ -36,16 +36,6 @@
 
 [Inline Block](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#using_display_inline-block)
 
-### Backgrounds
-
-[Background and Border](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
-
--   Show how to add backgrounds using `background-color` and `background: url()`.
-    -   Can show named colors and `rgba()`
-    -   How to contain images with `background-size`
-    -   Controlling repeat with `background-repeat`
-    -   Rounding corners with `border-radius`
-
 ### Overflow
 
 [Overflowing Content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
