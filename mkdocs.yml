@@ -30,6 +30,8 @@ nav:
     - 'HTML Language': html/html.md
   - CSS:
     - 'CSS Language': css/css.md
+  - SQL:
+    - 'SQL Language': sql/sql-language.md
 
 
 markdown_extensions:
