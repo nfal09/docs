@@ -871,3 +871,153 @@ When you constrain the size of an HTML element and add content into it, there's 
 ![overflow](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/overflow.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Box Model
+
+The box model is used by every HTML element.  The box model has margin, border, padding, and content and is used to form a visual "box". 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Box Model</title>
+        <style>
+            .box {
+                margin: auto; 
+                border: 10px solid red;
+                padding: 20px;
+                text-align: center;
+                width: 300px;
+                height: 300px;
+                }
+            
+        </style>
+    </head>
+
+    <body>
+    
+        <div class="box">
+            <p>Content</p>
+        </div>
+ 
+    </body>
+</html>
+```
+
+<figure markdown>
+![Box Model](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/boxmodel.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+### Block and Inline 
+
+The terms `block` and `inline` refer to two different types of boxes. The width and height properties can be used on elements with the `display` property set to `block` (which is also the default display property). If the value of an element is `inline`, the box will not break on a new line, and the width and height properties will be ignored. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Box Model</title>
+        <style>
+            .box {
+                margin: auto; 
+                border: 5px solid red;
+                padding: 20px;
+                text-align: center;
+                width: 300px;
+                height: 300px;
+                }
+            .inline-box {
+                 display: inline;
+            }
+            .block-box {
+                display: inline-block;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="box">
+            <p>Content</p>
+        </div>
+
+        <div class="box">
+            <p>Content</p>
+        </div>
+
+        <div class="box inline-box">
+            <p>Content</p>
+        </div>
+
+        <div class="box inline-box">
+            <p>Content</p>
+        </div>
+
+        <div class="box block-box">
+            <p>Content</p>
+        </div>
+
+        <div class="box block-box">
+            <p>Content</p>
+        </div>
+           
+       
+    </body>
+</html>
+```
+
+<figure markdown>
+![block and inline](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/blockvsinline.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
+### Longhand Properties
+
+Margin and Padding can also be used to create specified spacing using the longhand properties:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Box Model</title>
+        <style>
+            .box {
+               
+                border: 5px solid red;
+                padding: 20px;
+                
+                text-align: center;
+                width: 200px;
+                height: 200px;
+                font-size: 30px;
+                /*  Margin Longhand Properties */
+                margin-top: 2px;
+                margin-bottom: 4px;
+                margin-left: 6px;
+                margin-right: 8px;
+                /*  Padding Longhand Properties */
+                padding-top: 2px;
+                padding-bottom: 4px;
+                padding-left: 6px;
+                padding-right: 8px;
+            }
+        </style>
+    </head>
+
+    <body>
+       <div class="box">
+            <p>Content</p>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![longhand properties](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/longhand.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
