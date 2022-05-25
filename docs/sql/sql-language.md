@@ -25,7 +25,7 @@ You'll also find many _Further reading_ sections, which pull from these excellen
 
 In a relational database, you structure your data in tables made up of rows and columns, kind of like an Excel spreadsheet. You can combine data from multiple tables using `JOIN`s or just pull data from a single table.
 
-For example, consider the two tables below:
+For example, consider the two tables below (which we'll reference throughout these docs):
 
 _users table_
 
@@ -65,3 +65,33 @@ WHERE
 There are many different relational database implementations (MySQL, Postgres, etc.) but we use SQLite at CodeWizardsHQ because it is easy to work with and supports most of the common SQL features.
 
 ## Why Do We Need SQL?
+
+When working with a database, you need a way to talk to the database and get data into/out of it. SQL is the language we use to do this in a SQLite database. Without SQL, you'd have no way to express relationships in a database in a structured way.
+
+## Why Do We Use Python And SQL Together?
+
+Although you can use raw SQL commands to talk to a SQL database, we use Python at CodeWizardsHQ because often you'll interact with databases this way in the real world. Think about apps you've used that store data about you between visits. That's using a database and a programming language (like Python) to interact with the database!
+
+The SQL portions of a Python DB query will be a Python `str`. Consider this `INSERT` statement in raw SQL:
+
+```text
+INSERT INTO users (username, password) VALUES ("djs", "myp@$$word");
+```
+
+To run that from Python, we would do this:
+
+```python
+import sqlite3
+
+con = sqlite3.connect("my-database.db")
+sql = con.cursor()
+
+query = """
+    INSERT INTO users (username, password) VALUES ("djs", "myp@$$word");
+"""
+
+sql.execute(query)
+con.commit()
+```
+
+The important thing to remember is that the `query` is just a `str` that you pass to `sql.execute()`. If you make a change to a table in the database (as we did above) then you use the `con.commit()` method to save the change.
