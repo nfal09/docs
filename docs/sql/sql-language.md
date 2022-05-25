@@ -107,3 +107,13 @@ CREATE TABLE users (
     password TEXT UNIQUE NOT NULL
 );
 ```
+
+## INSERT
+
+Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name, and notice that we leave out the `id` as this table has the `id` set to `AUTOINCREMENT`:
+
+```sql
+INSERT INTO users (username, password) VALUES ("djs", "myp@$$word");
+INSERT INTO users (username, password) VALUES ("django", "w0ff ");
+INSERT INTO users (username, password) VALUES ("alecg", "c0de");
+```
