@@ -20,3 +20,48 @@ You'll also find many _Further reading_ sections, which pull from these excellen
 -   [Python.org Documentation](https://www.python.org/doc/)
 
 <hr>
+
+## What Is A Relational Database?
+
+In a relational database, you structure your data in tables made up of rows and columns, kind of like an Excel spreadsheet. You can combine data from multiple tables using `JOIN`s or just pull data from a single table.
+
+For example, consider the two tables below:
+
+_users table_
+
+| id  | username | password   |
+| --- | -------- | ---------- |
+| 1   | djs      | myp@$$word |
+| 2   | django   | w0ff       |
+| 3   | alecg    | c0de       |
+
+_teachers table_
+
+| id  | user_id | username | is_admin |
+| --- | ------- | -------- | -------- |
+| 1   | 1       | djs      | true     |
+| 2   | 3       | alecg    | false    |
+
+We could get the password of all users that are admins like this:
+
+```sql
+SELECT
+    users.username, users.password
+FROM
+    users
+JOIN
+    teachers
+USING
+    (id)
+WHERE
+    teachers.is_admin = "true";
+┌──────────┬────────────┐
+│ username │  password  │
+├──────────┼────────────┤
+│ djs      │ myp@$$word │
+└──────────┴────────────┘
+```
+
+There are many different relational database implementations (MySQL, Postgres, etc.) but we use SQLite at CodeWizardsHQ because it is easy to work with and supports most of the common SQL features.
+
+## Why Do We Need SQL?
