@@ -117,3 +117,11 @@ INSERT INTO users (username, password) VALUES ("djs", "myp@$$word");
 INSERT INTO users (username, password) VALUES ("django", "w0ff ");
 INSERT INTO users (username, password) VALUES ("alecg", "c0de");
 ```
+
+## UPDATE
+
+If you need to change data in a SQL table, the `UPDATE` statement is used. Make sure to use a `WHERE` clause so that you only update the rows you intend to change:
+
+```sql
+UPDATE users SET username = "DJS" WHERE id = 1;
+```
