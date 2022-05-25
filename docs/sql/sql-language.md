@@ -95,3 +95,15 @@ con.commit()
 ```
 
 The important thing to remember is that the `query` is just a `str` that you pass to `sql.execute()`. If you make a change to a table in the database (as we did above) then you use the `con.commit()` method to save the change.
+
+## CREATE TABLE
+
+Relational databases are made up of tables, and you'll need to create tables to hold your data if we don't provide one for you. We use `IF NOT EXISTS` because we'll run the statement every time our Python script runs, and an error would occur if you tried to create a table that already existed. Most tables should also have a `PRIMARY KEY` integer to uniquely identify each row of data.
+
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT UNIQUE NOT NULL
+);
+```
