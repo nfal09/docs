@@ -1024,7 +1024,7 @@ Margin and Padding can also be used to create specified spacing using the longha
 
 ## Styling Text
 
-Text styling can be one of the most enjoyable aspects of web development! To add styling to the text, you can use properties like `color,` `font-size,` and `font-family`. 
+Text styling can be one of the most enjoyable aspects of web development! To add styling to the text, you can use properties like `color`, `font-size`, and `font-family`. 
 
 ```html
 <!DOCTYPE html>
