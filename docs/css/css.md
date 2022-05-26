@@ -1021,3 +1021,74 @@ Margin and Padding can also be used to create specified spacing using the longha
 ![longhand properties](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/longhand.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Styling Text
+
+Text styling can be one of the most enjoyable aspects of web development! To add styling to the text, you can use properties like `color,` `font-size,` and `font-family`. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Text Styling</title>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Chakra+Petch:wght@300&display=swap" rel="stylesheet"> 
+
+        <style>
+            body {
+                /* Changes the font style */
+                font-family: 'Amatic SC', cursive;
+                /*Changes the alignment of text */
+                text-align: center;
+            }
+            h1{
+                /* Changes the color of text */
+                color: olivedrab;
+                /* Changes the size of text */
+                font-size:60px;
+                /* Adds shadow styling to text */
+                text-shadow: 10px 10px 10px greenyellow;
+            }
+            p {
+                text-align: left;
+                font-family: 'Chakra Petch', sans-serif;
+                font-size: 20px;
+                /*Changes the height of text */
+                line-height: 25px;
+                width: 50%;
+                margin: auto;
+                padding: 10px;
+
+            }
+            span {
+              /* Adds decoration to text */
+              text-decoration: line-through;
+              text-decoration-color: red;
+              padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Hello!</h1>
+            <h2>Welcome to my website!</h2>
+            <img src="tacos.png" >
+
+            <p>
+              Every day is taco ipsum tuesday. Fish tacos: lettuce or cabbage, pico de gallo, avocado and a sour cream or citrus/mayonnaise sauce, all placed on top of a corn or flour tortilla. Tacos, again? This will be 5 times this week and it’s only Tuesday. 50 cent tacos! I’ll take 30. It’s raining tacos, from out of the sky, tacos, don’t even ask why.
+            </p>
+
+            <p>
+             Um, <span>Tabasco? </span>No thanks, do you have any Cholula? Shrimp tacos are tasty tacos! Does guac cost extra? Tacos Al pastor/De Adobada are made of thin pork steaks seasoned with adobo seasoning, then skewered and overlapped on one another on a vertical rotisserie cooked and flame-broiled as it spins. Carne asada on corn tortillas. Give me all the tacos, immediately.
+            </p>
+        </div>
+       
+    </body>
+</html>
+```
+
+<figure markdown>
+![text styling](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/textstyling.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
