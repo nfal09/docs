@@ -427,40 +427,36 @@ Some standard inline elements are `<span>`, `<img>`, `<button>`, and `<input>` e
 
 ## HTML Element References
 
-!!! note
+Below are some of the common HTML Elements you may use:
 
-    Below are some of the common HTML Elements you may use:
-
-    | Element                              | Description                                   | 
-    | ------------------------------------ | ----------------------------------------------| 
-    | <html>                               | Holds content of HTML Document                | 
-    | <head>                               | Holds information about the HTML Document     | 
-    | <title>                              | Title appears on browser tab                  |
-    | <body>                               | Holds all HTML Content                        | 
-    | <link>                               | Link external resource like CSS stylesheet    | 
-    | <meta>                               | Holds metadata about document                 | 
-    | <style>                              | Apply CSS styling to elements                 | 
-    | <h1> - <h6>                          | 6 levels of section headings                  | 
-    | <div>                                | Creates a division within the HTML Document   | 
-    | <br>                                 | Line Break                                    | 
-    | <ol>                                 | Defines an Ordered List                       | 
-    | <ul>                                 | Defines an Unordered List                     |
-    | <li>                                 | Defines list items                            |  
-    | <p>                                  | Defines paragraphs in the document            | 
-    | <a>                                  | Creates hyperlink to other webpages           | 
-    | <audio>                              | Add audio                                     | 
-    | <img>                                | Add images                                    | 
-    | <video>                              | Add video                                     | 
-    | <iframe>                             | Embeds other HTML pages in the current webpage| 
-    | <script>                             | Embeds or refers to Javascript in the document| 
-    | <table>                              | Create tables                                 | 
-    | <form>                               | Create a section for submitting a form        | 
-    | <button>                             | Adds a button used for interactivity          | 
-    | <input>                              | Creates an input field                        | 
-    | <select>                             | Creates drop down menu                        | 
-    | <option>                             | Defines an item within the select element     | 
-  
-
+| Element       | Description                                    |
+| ------------- | ---------------------------------------------- |
+| `<html>`      | Holds content of HTML Document                 |
+| `<head>`      | Holds information about the HTML Document      |
+| `<title>`     | Title appears on browser tab                   |
+| `<body>`      | Holds all HTML Content                         |
+| `<link>`      | Link external resource like CSS stylesheet     |
+| `<meta>`      | Holds metadata about document                  |
+| `<style>`     | Apply CSS styling to elements                  |
+| `<h1> - <h6>` | 6 levels of section headings                   |
+| `<div>`       | Creates a division within the HTML Document    |
+| `<br>`        | Line Break                                     |
+| `<ol>`        | Defines an Ordered List                        |
+| `<ul>`        | Defines an Unordered List                      |
+| `<li>`        | Defines list items                             |
+| `<p>`         | Defines paragraphs in the document             |
+| `<a>`         | Creates hyperlink to other webpages            |
+| `<audio>`     | Add audio                                      |
+| `<img>`       | Add images                                     |
+| `<video>`     | Add video                                      |
+| `<iframe>`    | Embeds other HTML pages in the current webpage |
+| `<script>`    | Embeds or refers to Javascript in the document |
+| `<table>`     | Create tables                                  |
+| `<form>`      | Create a section for submitting a form         |
+| `<button>`    | Adds a button used for interactivity           |
+| `<input>`     | Creates an input field                         |
+| `<select>`    | Creates drop down menu                         |
+| `<option>`    | Defines an item within the select element      |
 
 ## Attributes
 
