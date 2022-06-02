@@ -25,13 +25,13 @@ You'll also find many _Further reading_ sections, which pull from these excellen
 
 In a relational database, you structure your data in tables made up of rows and columns, kind of like an Excel spreadsheet. You can combine data from multiple tables using `JOIN`s or just pull data from a single table.
 
-For example, consider the two tables below (which we'll reference throughout these docs):
+For example, consider the two tables below:
 
 _users table_
 
 | id  | username | password   |
 | --- | -------- | ---------- |
-| 1   | djs      | myp@$$word |
+| 1   | djs      | mypa$$word |
 | 2   | django   | w0ff       |
 | 3   | alecg    | c0de       |
 
@@ -39,8 +39,8 @@ _teachers table_
 
 | id  | user_id | username | is_admin |
 | --- | ------- | -------- | -------- |
-| 1   | 1       | djs      | true     |
-| 2   | 3       | alecg    | false    |
+| 1   | 1       | djs      | 1        |
+| 2   | 3       | alecg    | 0        |
 
 We could get the password of all users that are admins like this:
 
@@ -54,11 +54,11 @@ JOIN
 USING
     (id)
 WHERE
-    teachers.is_admin = "true";
+    teachers.is_admin = 1;
 ┌──────────┬────────────┐
 │ username │  password  │
 ├──────────┼────────────┤
-│ djs      │ myp@$$word │
+│ djs      │ mypa$$word │
 └──────────┴────────────┘
 ```
 
@@ -75,7 +75,7 @@ Although you can use raw SQL commands to talk to a SQL database, we use Python a
 The SQL portions of a Python DB query will be a Python `str`. Consider this `INSERT` statement in raw SQL:
 
 ```text
-INSERT INTO users (username, password) VALUES ("djs", "myp@$$word");
+INSERT INTO users (username, password) VALUES ("djs", "mypa$$word");
 ```
 
 To run that from Python, we would do this:
@@ -87,7 +87,7 @@ con = sqlite3.connect("my-database.db")
 sql = con.cursor()
 
 query = """
-    INSERT INTO users (username, password) VALUES ("djs", "myp@$$word");
+    INSERT INTO users (username, password) VALUES ("djs", "mypa$$word");
 """
 
 sql.execute(query)
@@ -101,7 +101,7 @@ The important thing to remember is that the `query` is just a `str` that you pas
 Relational databases are made up of tables, and you'll need to create tables to hold your data if we don't provide one for you. We use `IF NOT EXISTS` because we'll run the statement every time our Python script runs, and an error would occur if you tried to create a table that already existed. Most tables should also have a `PRIMARY KEY` integer to uniquely identify each row of data.
 
 ```sql
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL,
     password TEXT UNIQUE NOT NULL
@@ -110,18 +110,98 @@ CREATE TABLE users (
 
 ## INSERT
 
-Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name, and notice that we leave out the `id` as this table has the `id` set to `AUTOINCREMENT`:
+Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name. If we're thinking of this table as the same `users` table from the previous section, you can notice we leave out the `id` in the `()` as this table has the `id` set to `AUTOINCREMENT`.
 
 ```sql
-INSERT INTO users (username, password) VALUES ("djs", "myp@$$word");
-INSERT INTO users (username, password) VALUES ("django", "w0ff ");
+INSERT INTO users (username, password) VALUES ("djs", "mypa$$word");
+INSERT INTO users (username, password) VALUES ("django", "w0ff");
 INSERT INTO users (username, password) VALUES ("alecg", "c0de");
+```
+
+## SELECT
+
+To see what data is in a SQL table, you use the `SELECT` statement. In it's simplest form, you can `SELECT *` from a table and that'll give you all of the rows in that table.
+
+```sql
+SELECT * FROM users;
+┌────┬──────────┬────────────┐
+│ id │ username │  password  │
+├────┼──────────┼────────────┤
+│ 1  │ djs      │ mypa$$word │
+│ 2  │ django   │ w0ff       │
+│ 3  │ alecg    │ c0de       │
+└────┴──────────┴────────────┘
+```
+
+If you only want certain columns returned, you can list them separated by commas after the `SELECT` keyword. Notice how the `id` column is not present in the result set in the query below.
+
+```sql
+SELECT username, password FROM users;
+┌──────────┬────────────┐
+│ username │  password  │
+├──────────┼────────────┤
+│ djs      │ mypa$$word │
+│ django   │ w0ff       │
+│ alecg    │ c0de       │
+└──────────┴────────────┘
+```
+
+## WHERE
+
+To filter the results from a SQL query, use the `WHERE` clause.
+
+```sql
+SELECT * FROM users WHERE username = "djs";
+┌────┬──────────┬────────────┐
+│ id │ username │  password  │
+├────┼──────────┼────────────┤
+│ 1  │ djs      │ mypa$$word │
+└────┴──────────┴────────────┘
 ```
 
 ## UPDATE
 
-If you need to change data in a SQL table, the `UPDATE` statement is used. Make sure to use a `WHERE` clause so that you only update the rows you intend to change:
+If you need to change data in a SQL table, the `UPDATE` statement is used. Make sure to use a `WHERE` clause so that you only update the rows you intend to change.
 
 ```sql
-UPDATE users SET username = "DJS" WHERE id = 1;
+SELECT * FROM users;
+┌────┬──────────┬────────────┐
+│ id │ username │  password  │
+├────┼──────────┼────────────┤
+│ 1  │ djs      │ mypa$$word │
+│ 2  │ django   │ w0ff       │
+│ 3  │ alecg    │ c0de       │
+└────┴──────────┴────────────┘
+UPDATE users SET username = "danielj" WHERE id = 1;
+SELECT * FROM users;
+┌────┬──────────┬────────────┐
+│ id │ username │  password  │
+├────┼──────────┼────────────┤
+│ 1  │ danielj  │ mypa$$word │
+│ 2  │ django   │ w0ff       │
+│ 3  │ alecg    │ c0de       │
+└────┴──────────┴────────────┘
+```
+
+## DELETE
+
+To remove data in a SQL table, use the `DELETE` statement. Make sure to use a `WHERE` clause so that you only delete the rows you intend to.
+
+```sql
+SELECT * FROM users;
+┌────┬──────────┬────────────┐
+│ id │ username │  password  │
+├────┼──────────┼────────────┤
+│ 1  │ djs      │ mypa$$word │
+│ 2  │ django   │ w0ff       │
+│ 3  │ alecg    │ c0de       │
+└────┴──────────┴────────────┘
+DELETE FROM users WHERE id = 3;
+SELECT * FROM users;
+┌────┬──────────┬────────────┐
+│ id │ username │  password  │
+├────┼──────────┼────────────┤
+│ 1  │ djs      │ mypa$$word │
+│ 2  │ django   │ w0ff       │
+└────┴──────────┴────────────┘
 ```
