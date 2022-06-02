@@ -20,16 +20,16 @@ edit_uri: edit/main/docs
 
 nav:
   - Home: index.md
-  - Python: 
-    - 'Python Language': python/python-language.md
-    - 'Wizardlib': python/wizardlib.md
+  - CSS:
+    - 'CSS Language': css/css.md
+  - HTML:
+    - 'HTML Language': html/html.md
   - JavaScript:
     - 'JavaScript Language': javascript/javascript-language.md
     - 'Browser APIs and jQuery': javascript/browser-apis-and-jquery.md
-  - HTML:
-    - 'HTML Language': html/html.md
-  - CSS:
-    - 'CSS Language': css/css.md
+  - Python: 
+    - 'Python Language': python/python-language.md
+    - 'Wizardlib': python/wizardlib.md
   - SQL:
     - 'SQL Language': sql/sql-language.md
 
