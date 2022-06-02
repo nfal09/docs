@@ -121,7 +121,7 @@ The `<body>` tag holds all of the HTML content that will appear on the page. Thi
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Anatomy of an HTML Document](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#anatomy_of_an_html_document)
 
@@ -261,7 +261,7 @@ The `<style>` tag can be used to add CSS directly in an HTML document instead of
 </html>
 ```
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Metadata in HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
 
@@ -492,11 +492,13 @@ HTML attributes allow you to provide additional information about each element. 
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#attributes)
 
 ## Body Text
+
+In the `<body>` of an HTML document, you can add elements that contain text which the user sees on the page. The `<p>` tag is a generic text element, but you can also use elements like `<em>`, `<strong>` and `<cite>` to give your body text meaning.
 
 ```html
 <!DOCTYPE html>
@@ -534,13 +536,13 @@ HTML attributes allow you to provide additional information about each element. 
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - HTML Text Fundamentals](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals)
 
 ## Comments
 
-HTML comments allow us to write notes, hide content, and disable code in the event of a bug.
+HTML comments allow us to write notes, hide content, and disable code in the event of a bug. They are not visible to viewers of your HTML page unless they view the page's source code.
 
 ```html
 <!DOCTYPE html>
@@ -567,13 +569,18 @@ HTML comments allow us to write notes, hide content, and disable code in the eve
 </html>
 ```
 
-#### Further reading
+<figure markdown>
+![HTML comments example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/html-comments.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+**Further Reading**
 
 -   [MDN - Comments](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#html_comments)
 
 ## Containers
 
-HTML Containers allow you to divide your content into sections. The `<div>` element is a good illustration of how to divide two containers. They can use the class property to share styling, but they can also have their own styling and content.
+HTML containers allow you to divide your content into sections. The `<div>` element is a good illustration of how to divide two containers. They can use the class property to share styling, but they can also have their own styling and content.
 
 ```html
 <!DOCTYPE html>
@@ -619,7 +626,7 @@ HTML Containers allow you to divide your content into sections. The `<div>` elem
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Non-semantic Wrappers](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#non-semantic_wrappers)
 
@@ -677,7 +684,7 @@ The `<input>` element is used within the form element, and the `type` attribute 
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Forms](https://developer.mozilla.org/en-US/docs/Learn/Forms)
 
@@ -728,7 +735,7 @@ HTML headings allow you to define headings using section levels. `<h1>` Represen
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Headings and Paragraphs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#the_basics_headings_and_paragraphs)
 
@@ -766,7 +773,7 @@ The `<img>` and `<video>` elements can be used to embed images and video. The `s
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Images in HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
 -   [MDN - Video and Audio Content](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
@@ -798,14 +805,14 @@ For creating breaks in the content, use the line break `<br>` tag or the `<hr>` 
 </html>
 ```
 
-#### Further reading
-
--   [MDN - The Line Break Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
-
 <figure markdown>
 ![linebreak Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/linebreak.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+**Further Reading**
+
+-   [MDN - The Line Break Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
 
 ## Links
 
@@ -827,12 +834,15 @@ HTML Links allow you to link to other webpages using `<a>` tag with the `href` a
             <!-- Inline -->
             <a href="https://www.codewizardshq.com"> CodeWizardsHQ </a>
 
-            <!-- Block -->
+            <!-- Block, makes the <img> tag clickable -->
             <a href="https://www.codewizardshq.com">
                 <img src="cwhq.png" id="cwhq" />
             </a>
 
-            <!-- Document fragment by id -->
+            <!-- 
+                Document fragment by id, will jump to the section 
+                of the document with the `summer` id 
+            -->
             <a href="#summer">Check out our Program Section!</a>
             <p id="summer">Elementary, Middle School, High School</p>
 
@@ -858,7 +868,7 @@ HTML Links allow you to link to other webpages using `<a>` tag with the `href` a
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Creating hyperlinks](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks)
 
@@ -877,7 +887,10 @@ HTML lists allow you to make a structured list. Both list elements use the `<li>
 
     <body>
         <div class="container">
-            <!-- This is an unordered list element. The items on this list will be bulleted. -->
+            <!-- 
+                This is an unordered list element. The items on this list 
+                will be bulleted. 
+            -->
             <div class="list1">
                 <h1>Favorite Foods</h1>
                 <ul>
@@ -887,7 +900,11 @@ HTML lists allow you to make a structured list. Both list elements use the `<li>
                 </ul>
             </div>
 
-            <!-- This is an ordered list element. The 'type' attribute can be used to adjust the order of this list, which can be either alphabetical or numerical.  -->
+            <!-- 
+                This is an ordered list element. The 'type' attribute can 
+                be used to adjust the order of this list, which can be 
+                either alphabetical or numerical.  
+            -->
             <div class="list2">
                 <h1>Favorite Snacks</h1>
                 <ol>
@@ -906,7 +923,7 @@ HTML lists allow you to make a structured list. Both list elements use the `<li>
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Lists](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#lists)
 
@@ -976,11 +993,8 @@ Elements can also be single tag elements. There is no need for a closing tag for
 
             <img src="taco.jpg" />
 
-            <p>  The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
+            <p> The line break <br> tag or the <hr> tag, which generates a horizontal line break, are two more useful single tag elements. </p>
         </div>
-
-
-
     </body>
 </html>
 ```
@@ -1039,6 +1053,6 @@ You can use the following table elements to create a structured table.
 <figcaption></figcaption>
 </figure>
 
-#### Further reading
+**Further Reading**
 
 -   [MDN - Table Basics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
