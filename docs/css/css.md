@@ -1092,3 +1092,270 @@ Text styling can be one of the most enjoyable aspects of web development! To add
 ![text styling](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/textstyling.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+## Layouts
+
+The following layout properties allow you position elements in the web page.
+### The `Position` property
+
+The position property allows you to position an element in the document. You may use `top`, `left`, `right`, `bottom` properties to position the element. 
+
+#### Position `Static`
+
+Default position property, can be moved with margin but will affect adjoining elements.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Layouts</title>
+
+
+        <style>
+            .box {
+                width:300px;
+                height:200px;
+                margin: 10px;
+                display:inline-block;
+                border: 3px solid rgb(0, 204, 255);
+                background: rgba(65, 60, 198, 0.5);
+            }
+
+            #box-1 {
+                position: static;
+                margin-top: 50px;
+                margin-left: 100px;
+                background-color: rgba(11, 255, 113, 0.5)
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> position: static </h1>
+            <div id="box-1" class="box static"></div>
+            <div id="box-2" class="box static"></div>
+            <div id="box-3" class="box static"></div>
+            <div id="box-4" class="box static"></div>
+        </div>
+       
+    </body>
+</html>
+```
+
+<figure markdown>
+![position static](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/static.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Position `Relative`
+
+Position relative changes the position of the element in respect to the adjoining elements. It overlaps over adjoining elements:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Layouts</title>
+       
+
+        <style>
+         
+            .box {
+                width: 300px;
+                height: 200px;
+                margin: 10px;
+                display: inline-block;
+                border: 3px solid rgb(0, 204, 255);
+                background: rgba(65, 60, 198, 0.5);
+             }
+
+            #box-1 {
+                position: relative;
+                top: 100px;
+                left: 40px;
+                background-color: rgba(11, 255, 113, 0.5)
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> position: relative </h1>
+            <div id="box-1" class="box relative"></div>
+            <div id="box-2" class="box relative"></div>
+            <div id="box-3" class="box relative"></div>
+            <div id="box-4" class="box relative"></div>
+        </div>
+       
+    </body>
+</html>
+```
+
+<figure markdown>
+![position relative](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/relative.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Position `Absolute`
+
+Position absolute changes the element's position in relation to the whole page:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Layouts</title>
+
+        <style>
+
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            display: inline-block;
+            border: 3px solid rgb(0, 204, 255);
+            background: rgba(65, 60, 198, 0.5);
+        }
+
+        #box-1 {
+            position: absolute;
+            top: 100px;
+            right: 40px;
+            background-color: rgba(11, 255, 113, 0.5)
+        }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> position: absolute </h1>
+            <div id="box-1" class="box absolute"></div>
+            <div id="box-2" class="box absolute"></div>
+            <div id="box-3" class="box absolute"></div>
+            <div id="box-4" class="box absolute"></div>
+        </div>
+       
+    </body>
+</html>
+```
+
+<figure markdown>
+![position absolute](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/absolute.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Position `Absolute` inside of parent element with position `relative`
+
+We can also give relative position the parent element, which will position the element in respect to the parent element rather than the whole page. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Layouts</title>
+        
+
+        <style>
+        .container {
+            width: 850px;
+            min-height: 400px;
+            border-radius: 15px;
+            padding: 20px;
+            margin: auto;
+            cursor: pointer;
+
+            /* Give position relative the parent element*/
+            position: relative;
+        }
+  
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            display: inline-block;
+            border: 3px solid rgb(0, 204, 255);
+            background: rgba(65, 60, 198, 0.5);
+        }
+
+        #box-1 {
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            background-color: rgba(11, 255, 113, 0.5)
+        }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> position: absolute with relative parent </h1>
+            <div id="box-1" class="box"></div>
+            <div id="box-2" class="box"></div>
+            <div id="box-3" class="box"></div>
+            <div id="box-4" class="box"></div>
+        </div>
+       
+    </body>
+</html>
+```
+
+<figure markdown>
+![absolute with parent](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/absolutewparent.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+#### Position `Fixed`
+
+Position fixed will position the element in respect to the window and will not move it's position:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Layouts</title>
+
+        <style>
+
+        .box {
+            width:300px;
+            height:200px;
+            margin: 10px;
+            border: 3px solid rgb(0, 204, 255);
+            background:rgba(65, 60, 198, 0.5);
+        }
+
+        #box-1 {
+            position: fixed;
+            top: 100px;
+            left: 100px;
+            background-color:rgba(11, 255, 113, 0.5)
+        }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> position: fixed </h1>
+            <div id="box-1" class="box fixed"></div>
+            <div id="box-2" class="box fixed"></div>
+            <div id="box-3" class="box fixed"></div>
+            <div id="box-4" class="box fixed"></div>
+        </div>
+       
+    </body>
+</html>
+```
+
+<figure markdown>
+![position fixed](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/fixed.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
