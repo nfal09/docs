@@ -425,6 +425,91 @@ Some standard inline elements are `<span>`, `<img>`, `<button>`, and `<input>` e
 <figcaption></figcaption>
 </figure>
 
+## Directory Navigation
+
+When linking external files like images, audio, video, or JavaScript/CSS, you need to understand where the asset is located in your project folder. Programmers generally call folders **directories**, and we'll use that term throughout this section.
+
+### Example Directory Structure
+
+Consider the following directory structure:
+
+```text
+my-website
+├── home
+│   ├── home.html
+│   ├── never-gonna-give-you-up.mp3
+│   └── scripts
+│       └── loader.js
+├── images
+│   └── profile-pic.jpg
+└── style.css
+```
+
+`my-website` is what's known as the **root** of this directory tree. To navigate to directories or files in this directory tree, you use a **path**, which is a series of directories/files separated by `/` characters.
+
+### Examples Of Different Directory Paths
+
+There are a four common ways to navigate between directories:
+
+1. Downwards
+2. Upwards
+3. Upwards and Downwards
+4. Same Directory
+
+If we're thinking from `index.html` for all of these examples, then `loader.js` is **downwards** from that file.
+
+So, the path to `loader.js` from `index.html` is:
+
+```text
+scripts/loader.js
+```
+
+You can also navigate **upward** using `../`.
+
+So, the path from `index.html` to `style.css` is:
+
+```text
+../style.css
+```
+
+Navigating upwards and downwards combines the two techniques shown above.
+
+So, the path from `index.html` to `profile-pic.jpg` is:
+
+```text
+../images/profile-pic.jpg
+```
+
+Finally, if the asset you want to include is in the same project folder, you don't need any `/` or `../`, you just reference the name of the asset.
+
+So, the path from `index.html` to `never-gonna-give-you-up.mp3` is:
+
+```text
+never-gonna-give-you-up.mp3
+```
+
+Putting this all together, here's how we could include `loader.js`, `style.css`, `profile-pic.jpg`, and `never-gonna-give-you-up.mp3` in our `index.html` file:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div>
+            <h1>Directory Navigation Example</h1>
+            <img src="../images/profile-pic.jpg" />
+            <audio src="never-gonna-give-you-up.mp3" controls></audio>
+        </div>
+        <script src="scripts/loader.js"></script>
+    </body>
+</html>
+```
+
 ## HTML Element References
 
 Below are some of the common HTML Elements you may use:
