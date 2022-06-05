@@ -24,6 +24,7 @@ You'll also find many _Further reading_ sections, which pull from these excellen
 
 -   [MDN CSS Docs](https://developer.mozilla.org/en-US/docs/Web/CSS)
 -   [web.dev Learn CSS](https://web.dev/learn/css/)
+-   [CSS Tricks](https://css-tricks.com/)
 
 <hr>
 
@@ -31,7 +32,7 @@ You'll also find many _Further reading_ sections, which pull from these excellen
 
 In order for CSS style rules to apply to an HTML document, you must include them in the document in some way.
 
-### Including CSS In The `<head>`
+#### Including CSS In The `<head>`
 
 Generally, CSS is added in the `<head>` of an HTML document. You can link an external CSS file using a `<link>` tag, or you can write CSS directly in an HTML document using the `<style>` tag. Both methods are shown below.
 
@@ -94,6 +95,11 @@ You can also write CSS style rules directly in an HTML tag using the `style` att
 <figcaption></figcaption>
 </figure>
 
+**Further Reading**
+
+-   [MDN - Applying CSS to HTML](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured#applying_css_to_html)
+-   [CSS Tricks - The Second "S" In CSS](https://css-tricks.com/css-basics-second-s-css/)
+
 ## Comments
 
 In CSS you can create comments between `/* */` blocks. They can be single line or multiline.
@@ -118,6 +124,10 @@ In CSS you can create comments between `/* */` blocks. They can be single line o
     <body></body>
 </html>
 ```
+
+**Further Reading**
+
+-   [MDN - Comments](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured#comments)
 
 ## CSS Rule Basics
 
@@ -254,6 +264,14 @@ Note how there are no blue `<p>` tags in the example below because the second CS
 <figcaption></figcaption>
 </figure>
 
+**Further Reading**
+
+-   [MDN - Understanding the Cascade](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#understanding_the_cascade)
+-   [web.dev - The Cascade](https://web.dev/learn/css/the-cascade/)
+-   [web.dev - Specificity](https://web.dev/learn/css/specificity/)
+-   [CSS Tricks - Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
+-   [CSS Tricks - The "C" in CSS: The Cascade](https://css-tricks.com/the-c-in-css-the-cascade/)
+
 ## Inheritance
 
 Some CSS properties are passed on to children of HTML elements. For example, the `color` property will be passed to child elements. You can still override styles that are inherited by using a more specific selector for a child element.
@@ -289,6 +307,11 @@ Some CSS properties are passed on to children of HTML elements. For example, the
 ![Including inline CSS in HTML](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/inheritance.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+**Further Reading**
+
+-   [MDN - Understanding Inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#understanding_inheritance)
+-   [web.dev - Inheritance](https://web.dev/learn/css/inheritance/)
 
 ## Selectors
 
@@ -380,6 +403,12 @@ CSS Selectors allow you to access HTML elements to style. Below are some of the 
 <figcaption></figcaption>
 </figure>
 
+**Further Reading**
+
+-   [MDN - CSS Selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+-   [web.dev - Selectors](https://web.dev/learn/css/selectors/)
+-   [CSS Tricks - Beginner Concepts: How CSS Selectors Work](https://css-tricks.com/how-css-selectors-work/)
+
 ## Styling Elements Based on State
 
 CSS allows you to change the styling of an element depending on its `state`. When an element is hovered over or visited, you can modify its styling.
@@ -416,6 +445,13 @@ CSS allows you to change the styling of an element depending on its `state`. Whe
 ![changeState example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/changestate.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+**Further Reading**
+
+-   [MDN - Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+-   [MDN - Styling some links](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links#styling_some_links)
+-   [web.dev - Pseudo-classes](https://web.dev/learn/css/pseudo-classes/)
+-   [CSS Tricks - Pseudo-class Selectors](https://css-tricks.com/pseudo-class-selectors/)
 
 ## Responsive Design
 
@@ -479,6 +515,11 @@ You can use Media Queries to define styling based on the device type, such as de
 ![responsive example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/responsive.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+**Further Reading**
+
+-   [MDN - Beginners Guide to Media Queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
+-   [CSS Tricks - A Complete Guide to CSS Media Queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/)
 
 ## Values and Units
 
@@ -725,6 +766,12 @@ Some properties don't have a unit of measurement but instead use a regular numbe
 <figcaption></figcaption>
 </figure>
 
+**Further Reading**
+
+-   [MDN - Values and Units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+-   [web.dev - Sizing Units](https://web.dev/learn/css/sizing/)
+-   [CSS Tricks - The Lengths of CSS](https://css-tricks.com/the-lengths-of-css/)
+
 ## Working with Backgrounds
 
 HTML elements can have colors, images, or both as their backgrounds:
@@ -786,6 +833,12 @@ HTML elements can have colors, images, or both as their backgrounds:
 ![working-with-backgrounds](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/working-with-backgrounds.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+**Further Reading**
+
+-   [MDN - Backgrounds and Borders](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
+-   [web.dev - Backgrounds](https://web.dev/learn/css/backgrounds/)
+-   [CSS Tricks - Using Multiple Backgrounds](https://css-tricks.com/css-basics-using-multiple-backgrounds/)
 
 ## Dealing with Overflow Issues
 
@@ -872,9 +925,15 @@ When you constrain the size of an HTML element and add content into it, there's 
 <figcaption></figcaption>
 </figure>
 
+**Further Reading**
+
+-   [MDN - Overflowing Content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
+-   [web.dev - Overflow](https://web.dev/learn/css/overflow/)
+-   [CSS Tricks - The CSS Overflow Property](https://css-tricks.com/the-css-overflow-property/)
+
 ## Box Model
 
-The box model is used by every HTML element.  The box model has margin, border, padding, and content and is used to form a visual "box". 
+The box model is used by every HTML element. The box model has margin, border, padding, and content and is used to form a visual "box".
 
 ```html
 <!DOCTYPE html>
@@ -884,23 +943,20 @@ The box model is used by every HTML element.  The box model has margin, border, 
         <title>Box Model</title>
         <style>
             .box {
-                margin: auto; 
+                margin: auto;
                 border: 10px solid red;
                 padding: 20px;
                 text-align: center;
                 width: 300px;
                 height: 300px;
-                }
-            
+            }
         </style>
     </head>
 
     <body>
-    
         <div class="box">
             <p>Content</p>
         </div>
- 
     </body>
 </html>
 ```
@@ -910,9 +966,9 @@ The box model is used by every HTML element.  The box model has margin, border, 
 <figcaption></figcaption>
 </figure>
 
-### Block and Inline 
+### Block and Inline
 
-The terms `block` and `inline` refer to two different types of boxes. The width and height properties can be used on elements with the `display` property set to `block` (which is also the default display property). If the value of an element is `inline`, the box will not break on a new line, and the width and height properties will be ignored. 
+The terms `block` and `inline` refer to two different types of boxes. The width and height properties can be used on elements with the `display` property set to `block` (which is also the default display property). If the value of an element is `inline`, the box will not break on a new line, and the width and height properties will be ignored.
 
 ```html
 <!DOCTYPE html>
@@ -922,20 +978,19 @@ The terms `block` and `inline` refer to two different types of boxes. The width 
         <title>Box Model</title>
         <style>
             .box {
-                margin: auto; 
+                margin: auto;
                 border: 5px solid red;
                 padding: 20px;
                 text-align: center;
                 width: 300px;
                 height: 300px;
-                }
+            }
             .inline-box {
-                 display: inline;
+                display: inline;
             }
             .block-box {
                 display: inline-block;
             }
-
         </style>
     </head>
 
@@ -963,8 +1018,6 @@ The terms `block` and `inline` refer to two different types of boxes. The width 
         <div class="box block-box">
             <p>Content</p>
         </div>
-           
-       
     </body>
 </html>
 ```
@@ -973,7 +1026,6 @@ The terms `block` and `inline` refer to two different types of boxes. The width 
 ![block and inline](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/blockvsinline.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
-
 
 ### Longhand Properties
 
@@ -987,10 +1039,9 @@ Margin and Padding can also be used to create specified spacing using the longha
         <title>Box Model</title>
         <style>
             .box {
-               
                 border: 5px solid red;
                 padding: 20px;
-                
+
                 text-align: center;
                 width: 200px;
                 height: 200px;
@@ -1010,7 +1061,7 @@ Margin and Padding can also be used to create specified spacing using the longha
     </head>
 
     <body>
-       <div class="box">
+        <div class="box">
             <p>Content</p>
         </div>
     </body>
@@ -1022,9 +1073,15 @@ Margin and Padding can also be used to create specified spacing using the longha
 <figcaption></figcaption>
 </figure>
 
+**Further Reading**
+
+-   [MDN - The Box Model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+-   [web.dev - Box Model](https://web.dev/learn/css/box-model/)
+-   [CSS Tricks - The CSS Box Model](https://css-tricks.com/the-css-box-model/)
+
 ## Styling Text
 
-Text styling can be one of the most enjoyable aspects of web development! To add styling to the text, you can use properties like `color`, `font-size`, and `font-family`. 
+Text styling can be one of the most enjoyable aspects of web development! To add styling to the text, you can use properties like `color`, `font-size`, and `font-family`.
 
 ```html
 <!DOCTYPE html>
@@ -1032,39 +1089,41 @@ Text styling can be one of the most enjoyable aspects of web development! To add
 <html>
     <head>
         <title>Text Styling</title>
-        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Chakra+Petch:wght@300&display=swap" rel="stylesheet"> 
+        <link
+            href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Chakra+Petch:wght@300&display=swap"
+            rel="stylesheet"
+        />
 
         <style>
             body {
                 /* Changes the font style */
-                font-family: 'Amatic SC', cursive;
+                font-family: "Amatic SC", cursive;
                 /*Changes the alignment of text */
                 text-align: center;
             }
-            h1{
+            h1 {
                 /* Changes the color of text */
                 color: olivedrab;
                 /* Changes the size of text */
-                font-size:60px;
+                font-size: 60px;
                 /* Adds shadow styling to text */
                 text-shadow: 10px 10px 10px greenyellow;
             }
             p {
                 text-align: left;
-                font-family: 'Chakra Petch', sans-serif;
+                font-family: "Chakra Petch", sans-serif;
                 font-size: 20px;
                 /*Changes the height of text */
                 line-height: 25px;
                 width: 50%;
                 margin: auto;
                 padding: 10px;
-
             }
             span {
-              /* Adds decoration to text */
-              text-decoration: line-through;
-              text-decoration-color: red;
-              padding: 10px;
+                /* Adds decoration to text */
+                text-decoration: line-through;
+                text-decoration-color: red;
+                padding: 10px;
             }
         </style>
     </head>
@@ -1073,17 +1132,27 @@ Text styling can be one of the most enjoyable aspects of web development! To add
         <div class="container">
             <h1>Hello!</h1>
             <h2>Welcome to my website!</h2>
-            <img src="tacos.png" >
+            <img src="tacos.png" />
 
             <p>
-              Every day is taco ipsum tuesday. Fish tacos: lettuce or cabbage, pico de gallo, avocado and a sour cream or citrus/mayonnaise sauce, all placed on top of a corn or flour tortilla. Tacos, again? This will be 5 times this week and it’s only Tuesday. 50 cent tacos! I’ll take 30. It’s raining tacos, from out of the sky, tacos, don’t even ask why.
+                Every day is taco ipsum tuesday. Fish tacos: lettuce or cabbage,
+                pico de gallo, avocado and a sour cream or citrus/mayonnaise
+                sauce, all placed on top of a corn or flour tortilla. Tacos,
+                again? This will be 5 times this week and it’s only Tuesday. 50
+                cent tacos! I’ll take 30. It’s raining tacos, from out of the
+                sky, tacos, don’t even ask why.
             </p>
 
             <p>
-             Um, <span>Tabasco? </span>No thanks, do you have any Cholula? Shrimp tacos are tasty tacos! Does guac cost extra? Tacos Al pastor/De Adobada are made of thin pork steaks seasoned with adobo seasoning, then skewered and overlapped on one another on a vertical rotisserie cooked and flame-broiled as it spins. Carne asada on corn tortillas. Give me all the tacos, immediately.
+                Um, <span>Tabasco? </span>No thanks, do you have any Cholula?
+                Shrimp tacos are tasty tacos! Does guac cost extra? Tacos Al
+                pastor/De Adobada are made of thin pork steaks seasoned with
+                adobo seasoning, then skewered and overlapped on one another on
+                a vertical rotisserie cooked and flame-broiled as it spins.
+                Carne asada on corn tortillas. Give me all the tacos,
+                immediately.
             </p>
         </div>
-       
     </body>
 </html>
 ```
@@ -1093,12 +1162,18 @@ Text styling can be one of the most enjoyable aspects of web development! To add
 <figcaption></figcaption>
 </figure>
 
+**Further Reading**
+
+-   [MDN - Fundamental Text and Font Styling](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+-   [web.dev - Text and Typography](https://web.dev/learn/css/typography/)
+
 ## Layouts
 
 The following layout properties allow you position elements in the web page.
+
 ### The `Position` property
 
-The position property allows you to position an element in the document. You may use `top`, `left`, `right`, `bottom` properties to position the element. 
+The position property allows you to position an element in the document. You may use `top`, `left`, `right`, `bottom` properties to position the element.
 
 #### Position `Static`
 
@@ -1111,13 +1186,12 @@ Default position property, can be moved with margin but will affect adjoining el
     <head>
         <title>Layouts</title>
 
-
         <style>
             .box {
-                width:300px;
-                height:200px;
+                width: 300px;
+                height: 200px;
                 margin: 10px;
-                display:inline-block;
+                display: inline-block;
                 border: 3px solid rgb(0, 204, 255);
                 background: rgba(65, 60, 198, 0.5);
             }
@@ -1126,20 +1200,19 @@ Default position property, can be moved with margin but will affect adjoining el
                 position: static;
                 margin-top: 50px;
                 margin-left: 100px;
-                background-color: rgba(11, 255, 113, 0.5)
+                background-color: rgba(11, 255, 113, 0.5);
             }
         </style>
     </head>
 
     <body>
         <div class="container">
-            <h1> position: static </h1>
+            <h1>position: static</h1>
             <div id="box-1" class="box static"></div>
             <div id="box-2" class="box static"></div>
             <div id="box-3" class="box static"></div>
             <div id="box-4" class="box static"></div>
         </div>
-       
     </body>
 </html>
 ```
@@ -1159,10 +1232,8 @@ Position relative changes the position of the element in respect to the adjoinin
 <html>
     <head>
         <title>Layouts</title>
-       
 
         <style>
-         
             .box {
                 width: 300px;
                 height: 200px;
@@ -1170,26 +1241,25 @@ Position relative changes the position of the element in respect to the adjoinin
                 display: inline-block;
                 border: 3px solid rgb(0, 204, 255);
                 background: rgba(65, 60, 198, 0.5);
-             }
+            }
 
             #box-1 {
                 position: relative;
                 top: 100px;
                 left: 40px;
-                background-color: rgba(11, 255, 113, 0.5)
+                background-color: rgba(11, 255, 113, 0.5);
             }
         </style>
     </head>
 
     <body>
         <div class="container">
-            <h1> position: relative </h1>
+            <h1>position: relative</h1>
             <div id="box-1" class="box relative"></div>
             <div id="box-2" class="box relative"></div>
             <div id="box-3" class="box relative"></div>
             <div id="box-4" class="box relative"></div>
         </div>
-       
     </body>
 </html>
 ```
@@ -1211,35 +1281,32 @@ Position absolute changes the element's position in relation to the whole page:
         <title>Layouts</title>
 
         <style>
+            .box {
+                width: 300px;
+                height: 200px;
+                margin: 10px;
+                display: inline-block;
+                border: 3px solid rgb(0, 204, 255);
+                background: rgba(65, 60, 198, 0.5);
+            }
 
-        .box {
-            width: 300px;
-            height: 200px;
-            margin: 10px;
-            display: inline-block;
-            border: 3px solid rgb(0, 204, 255);
-            background: rgba(65, 60, 198, 0.5);
-        }
-
-        #box-1 {
-            position: absolute;
-            top: 100px;
-            right: 40px;
-            background-color: rgba(11, 255, 113, 0.5)
-        }
-            
+            #box-1 {
+                position: absolute;
+                top: 100px;
+                right: 40px;
+                background-color: rgba(11, 255, 113, 0.5);
+            }
         </style>
     </head>
 
     <body>
         <div class="container">
-            <h1> position: absolute </h1>
+            <h1>position: absolute</h1>
             <div id="box-1" class="box absolute"></div>
             <div id="box-2" class="box absolute"></div>
             <div id="box-3" class="box absolute"></div>
             <div id="box-4" class="box absolute"></div>
         </div>
-       
     </body>
 </html>
 ```
@@ -1251,7 +1318,7 @@ Position absolute changes the element's position in relation to the whole page:
 
 #### Position `Absolute` inside of parent element with position `relative`
 
-We can also give relative position the parent element, which will position the element in respect to the parent element rather than the whole page. 
+We can also give relative position the parent element, which will position the element in respect to the parent element rather than the whole page.
 
 ```html
 <!DOCTYPE html>
@@ -1259,49 +1326,46 @@ We can also give relative position the parent element, which will position the e
 <html>
     <head>
         <title>Layouts</title>
-        
 
         <style>
-        .container {
-            width: 850px;
-            min-height: 400px;
-            border-radius: 15px;
-            padding: 20px;
-            margin: auto;
-            cursor: pointer;
+            .container {
+                width: 850px;
+                min-height: 400px;
+                border-radius: 15px;
+                padding: 20px;
+                margin: auto;
+                cursor: pointer;
 
-            /* Give position relative the parent element*/
-            position: relative;
-        }
-  
-        .box {
-            width: 300px;
-            height: 200px;
-            margin: 10px;
-            display: inline-block;
-            border: 3px solid rgb(0, 204, 255);
-            background: rgba(65, 60, 198, 0.5);
-        }
+                /* Give position relative the parent element*/
+                position: relative;
+            }
 
-        #box-1 {
-            position: absolute;
-            left: 100px;
-            bottom: 100px;
-            background-color: rgba(11, 255, 113, 0.5)
-        }
-            
+            .box {
+                width: 300px;
+                height: 200px;
+                margin: 10px;
+                display: inline-block;
+                border: 3px solid rgb(0, 204, 255);
+                background: rgba(65, 60, 198, 0.5);
+            }
+
+            #box-1 {
+                position: absolute;
+                left: 100px;
+                bottom: 100px;
+                background-color: rgba(11, 255, 113, 0.5);
+            }
         </style>
     </head>
 
     <body>
         <div class="container">
-            <h1> position: absolute with relative parent </h1>
+            <h1>position: absolute with relative parent</h1>
             <div id="box-1" class="box"></div>
             <div id="box-2" class="box"></div>
             <div id="box-3" class="box"></div>
             <div id="box-4" class="box"></div>
         </div>
-       
     </body>
 </html>
 ```
@@ -1323,34 +1387,31 @@ Position fixed will position the element in respect to the window and will not m
         <title>Layouts</title>
 
         <style>
+            .box {
+                width: 300px;
+                height: 200px;
+                margin: 10px;
+                border: 3px solid rgb(0, 204, 255);
+                background: rgba(65, 60, 198, 0.5);
+            }
 
-        .box {
-            width:300px;
-            height:200px;
-            margin: 10px;
-            border: 3px solid rgb(0, 204, 255);
-            background:rgba(65, 60, 198, 0.5);
-        }
-
-        #box-1 {
-            position: fixed;
-            top: 100px;
-            left: 100px;
-            background-color:rgba(11, 255, 113, 0.5)
-        }
-            
+            #box-1 {
+                position: fixed;
+                top: 100px;
+                left: 100px;
+                background-color: rgba(11, 255, 113, 0.5);
+            }
         </style>
     </head>
 
     <body>
         <div class="container">
-            <h1> position: fixed </h1>
+            <h1>position: fixed</h1>
             <div id="box-1" class="box fixed"></div>
             <div id="box-2" class="box fixed"></div>
             <div id="box-3" class="box fixed"></div>
             <div id="box-4" class="box fixed"></div>
         </div>
-       
     </body>
 </html>
 ```
@@ -1359,6 +1420,12 @@ Position fixed will position the element in respect to the window and will not m
 ![position fixed](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/fixed.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
+**Further Reading**
+
+-   [MDN - Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
+-   [web.dev - Positioning](https://web.dev/learn/css/layout/#positioning)
+-   [CSS Tricks - Absolute, Relative, Fixed Positioning: How Do They Differ?](https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/)
 
 ### Flexbox layout
 
@@ -1372,53 +1439,48 @@ CSS flexbox allows you to create a flexible layout:
         <title>Layouts</title>
 
         <style>
+            .container {
+                width: 850px;
+                min-height: 400px;
+                border-radius: 15px;
+                padding: 20px;
+                margin: auto;
+                cursor: pointer;
 
-          .container {
-            width:850px;
-            min-height:400px;
-            border-radius:15px;
-            padding:20px;
-            margin:auto;
-            cursor:pointer;
+                /* Set the display property to flex for the parent element */
+                display: flex;
 
-            /* Set the display property to flex for the parent element */
-            display: flex;
-
-            /* Grid type:
+                /* Grid type:
             Properties: row, row-reverse, column, column-reverse*/
-            flex-direction: row;
+                flex-direction: row;
 
-            /* Avoid having all children elements in the same row:
+                /* Avoid having all children elements in the same row:
             Properties: no-wrap, wrap, wrap-reverse */
-            flex-wrap: wrap;
+                flex-wrap: wrap;
 
-            /* Justify Content defines the alignment of the flex-items:
+                /* Justify Content defines the alignment of the flex-items:
             Properties: flex-start, flex-end, center, space-between, space-around, space-evenly*/
-            justify-content: space-around;
-        }
-  
+                justify-content: space-around;
+            }
 
-        .box {
-            width:300px;
-            height:200px;
-            margin: 10px;
-            border: 3px solid rgb(0, 204, 255);
-            background:rgba(65, 60, 198, 0.5);
-        }
-
-            
+            .box {
+                width: 300px;
+                height: 200px;
+                margin: 10px;
+                border: 3px solid rgb(0, 204, 255);
+                background: rgba(65, 60, 198, 0.5);
+            }
         </style>
     </head>
 
     <body>
-        <h1> Flexbox </h1>
+        <h1>Flexbox</h1>
         <div class="container">
             <div id="box-1" class="box"></div>
             <div id="box-2" class="box"></div>
             <div id="box-3" class="box"></div>
             <div id="box-4" class="box"></div>
         </div>
-       
     </body>
 </html>
 ```
@@ -1428,7 +1490,8 @@ CSS flexbox allows you to create a flexible layout:
 <figcaption></figcaption>
 </figure>
 
-<figure markdown>
-![flexbox](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/flexboxcolumn.png?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
+**Further Reading**
+
+-   [MDN - Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+-   [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+-   [web.dev - Flexbox](https://web.dev/learn/css/layout/#flexbox)
