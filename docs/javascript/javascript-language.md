@@ -1585,7 +1585,7 @@ var randomNumber = random(1, 10);
 console.log(randomNumber); // 9
 ```
 
-##### Rounding with `Math.floor()` and `Math.ceil()`
+##### Rounding numbers
 
 To round a number down, use `Math.floor()`:
 
@@ -1599,6 +1599,16 @@ To round a number up, use `Math.ceil()`:
 ```javascript
 var roundedNumber = Math.ceil(4.2);
 console.log(roundedNumber); // 4
+```
+
+To round a number to the nearest integer, use `Math.round()`:
+
+```javascript
+var roundedNumber = Math.round(4.4);
+console.log(roundedNumber); // 4
+
+roundedNumber = Math.round(4.5);
+console.log(roundedNumber); // 5
 ```
 
 ##### Further reading
