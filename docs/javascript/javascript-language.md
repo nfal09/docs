@@ -81,7 +81,7 @@ Many programmers prefer to put `*` on each line of a multiline comment and inden
 var hypotenuse = (sideA ** 2 + sideB ** 2) ** 0.5;
 ```
 
-### Further reading
+_Further Reading_
 
 -   [MDN - JavaScript Basics: Comments](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics#comments)
 -   [Eloquent JavaScript - Comments](https://eloquentjavascript.net/02_program_structure.html#h_/OBuIOX390)
@@ -320,7 +320,7 @@ You can see the secret stuff in this app.
 You can also see the SUPER secret stuff in this app.
 ```
 
-### Further reading
+_Further Reading_
 
 -   [MDN - JavaScript Building Blocks: Conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
 -   [Eloquent JavaScript - Conditional Execution](https://eloquentjavascript.net/02_program_structure.html#h_wpz5oi2dy7)
@@ -598,7 +598,7 @@ Example Output:
 That's my favorite food!
 ```
 
-### Further reading
+_Further Reading_
 
 -   [MDN - JavaScript Data Types and Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 -   [The Modern JavaScript Tutorial - Data Types](https://javascript.info/data-types)
@@ -762,7 +762,7 @@ console.log(names.includes("alecg")); // True
 console.log(names.includes("samh")); // False
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [MDN - The JavaScript Reference - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 -   [Eloquent JavaScript - Data Structures: Objects and Arrays](https://eloquentjavascript.net/04_data.html)
@@ -948,7 +948,7 @@ var numberOfStaff = staff.keys().length;
 console.log(`We have ${numberOfStaff} people on our staff.`); // We have 3 people on our staff.
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [MDN - The JavaScript Reference - Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 -   [Eloquent JavaScript - Objects and Arrays](https://eloquentjavascript.net/04_data.html)
@@ -1085,7 +1085,7 @@ Line 3
         This too.
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [MDN - Web APIs: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
 -   [MDN - The JavaScript Reference: parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
@@ -1219,7 +1219,7 @@ greetCodewizard("danielj"); // Hello, danielj!
 greetCodewizard("django"); // I don't know you!
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [MDN - JavaScript Building Blocks: Functions](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
 -   [EloquentJavaScript - Functions](https://eloquentjavascript.net/03_functions.html)
@@ -1412,7 +1412,7 @@ Username: django Role: Support Staff
 Username: samh Role: Platform Developer
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [MDN - JavaScript Reference - for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 -   [MDN - JavaScript Reference - for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
@@ -1504,7 +1504,7 @@ Example Output:
 4
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [MDN - JavaScript Reference: while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 -   [Eloquent JavaScript - while and do loops](https://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM)
@@ -1552,7 +1552,7 @@ The power operator (`**`) multiplies a number by itself a given number of times:
 3 ** 2; // 9
 ```
 
-##### Further reading
+_Further Reading_
 
 -   [MDN - The JavaScript Guide: Arithmetic Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
 -   [Eloquent JavaScript - Arithmetic](https://eloquentjavascript.net/01_values.html#i_RfBT3HMnYs)
@@ -1611,7 +1611,7 @@ roundedNumber = Math.round(4.5);
 console.log(roundedNumber); // 5
 ```
 
-##### Further reading
+_Further Reading_
 
 -   [MDN - The JavaScript Reference: Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
@@ -1743,7 +1743,7 @@ updateScore(); // Doesn't change the global `score` variable
 console.log(score); // 0
 ```
 
-### Further reading
+_Further Reading_
 
 -   [MDN - JavaScript First Steps - Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables)
 -   [Eloquent JavaScript - Bindings](https://eloquentjavascript.net/02_program_structure.html#h_lnOC+GBEtu)

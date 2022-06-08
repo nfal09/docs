@@ -73,7 +73,7 @@ so 0.5 is the square root.
 hypotenuse = ((side_a ** 2) + (side_b ** 2)) ** 0.5
 ```
 
-### Further reading
+_Further Reading_
 
 -   [The Python Tutorial](https://docs.python.org/3/tutorial/introduction.html#an-informal-introduction-to-python)
 -   [Real Python - Writing Comments in Python](https://realpython.com/python-comments-guide/)
@@ -323,7 +323,7 @@ You can see the secret stuff in this app.
 You can also see the SUPER secret stuff in this app.
 ```
 
-### Further reading
+_Further Reading_
 
 -   [Real Python - Conditional Statements in Python](https://realpython.com/python-conditional-statements/)
 -   [Real Python - Using the `not` Boolean Operator in Python](https://realpython.com/python-not-operator/)
@@ -641,7 +641,7 @@ Example Output:
 That's my favorite food!
 ```
 
-### Further reading
+_Further Reading_
 
 -   [The Python Library Reference - Text Sequence Type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 -   [The Python Library Reference - Numeric Types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
@@ -806,7 +806,7 @@ alecg is in the 'names' list
 samh is NOT in the 'names' list
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [The Python Library Reference - Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
 -   [The Python Library Reference - Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
@@ -1100,7 +1100,7 @@ Vicki is a student here
 Daniel is NOT a student here
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [Real Python - Dictionaries in Python](https://realpython.com/python-dicts/)
 -   [The Python Library Reference - Mapping Types: `dict`](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
@@ -1353,7 +1353,7 @@ Example Output:
 The meaning of life is 42
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [The Python Library Reference - Built-in Functions](https://docs.python.org/3/library/functions.html)
 
@@ -1485,7 +1485,7 @@ greet_codewizard("django")   # I don't know you!
 
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [Real Python - Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/)
 -   [The Python Tutorial - Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
@@ -1655,7 +1655,7 @@ Example Output:
 3 taco
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [Real Python - Python `for` Loops](https://realpython.com/python-for-loop/)
 -   [The Python Tutorial - `for` Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
@@ -1741,7 +1741,7 @@ Example Output:
 4
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [Real Python - Python `while` Loops](https://realpython.com/python-while-loop/)
 -   [Think Python - The `while` statement](https://greenteapress.com/thinkpython2/html/thinkpython2008.html#sec84)
@@ -1810,7 +1810,7 @@ The floor division operator (`//`) removes any fractional portion after divison:
 10 // 3  # 3
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [The Python Tutorial - Numbers](https://docs.python.org/3/tutorial/introduction.html#numbers)
 -   [Real Python - Numbers in Python](https://realpython.com/python-numbers/)
@@ -1857,7 +1857,7 @@ Sometimes, its nice to rename a function you import from a module (like when the
 from module_name import some_really_long_function_name as short_name
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [The Python Library Reference](https://docs.python.org/3/library/index.html)
 -   [The Python Tutorial - Modules](https://docs.python.org/3/tutorial/modules.html)
@@ -1896,7 +1896,7 @@ random_name = choice(names)
 print(random_name)  # dima
 ```
 
-#### Further reading
+_Further Reading_
 
 -   [The Python Standard Library](https://docs.python.org/3/library/index.html)
 -   [The Python Standard Library - `random`](https://docs.python.org/3/library/random.html)
@@ -2035,7 +2035,7 @@ def update_score():
     score = score + 1	# 1
 ```
 
-### Further reading
+_Further Reading_
 
 -   [Real Python - Variables in Python](https://realpython.com/python-variables/)
 -   [Think Python - Variables, expressions and statements](https://greenteapress.com/thinkpython2/html/thinkpython2003.html)
