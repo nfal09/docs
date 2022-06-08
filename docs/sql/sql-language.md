@@ -29,20 +29,20 @@ For example, consider the two tables below:
 
 _users table_
 
-| id  | username | password   |
-| --- | -------- | ---------- |
-| 1   | djs      | mypa$$word |
-| 2   | django   | w0ff       |
-| 3   | alecg    | c0de       |
+| user_id | username | password   |
+| ------- | -------- | ---------- |
+| 1       | djs      | mypa$$word |
+| 2       | django   | w0ff       |
+| 3       | alecg    | c0de       |
 
 _teachers table_
 
-| id  | user_id | username | is_admin |
-| --- | ------- | -------- | -------- |
-| 1   | 1       | djs      | 1        |
-| 2   | 3       | alecg    | 0        |
+| teacher_id | user_id | username | is_admin |
+| ---------- | ------- | -------- | -------- |
+| 1          | 1       | djs      | 1        |
+| 2          | 3       | alecg    | 0        |
 
-We could get the password of all users that are teachers and admins like this:
+We could get the username and password of all users that are teachers and admins like this:
 
 ```sql
 SELECT
@@ -52,7 +52,7 @@ FROM
 JOIN
     teachers
 USING
-    (id)
+    (user_id)
 WHERE
     teachers.is_admin = 1;
 ┌──────────┬────────────┐
@@ -94,19 +94,57 @@ sql.execute(query)
 con.commit()
 ```
 
-The important thing to remember is that the `query` is just a `str` that you pass to `sql.execute()`. If you make a change to a table in the database (as we did above) then you use the `con.commit()` method to save the change. The semi-colon (`;`) isn't required when using a query from Python, but we'll keep it for consistency between the raw SQL examples.
+The important thing to remember is that the `query` is just a `str` that you pass to `sql.execute()`. If you make a change to a table in the database (as we did above) then you use the `con.commit()` method to save the change (although in some CWHQ courses you merely view the results without changing the database). The semi-colon (`;`) isn't required when using a query from Python, but we'll keep it for consistency between the raw SQL examples.
+
+### Bounded Parameters
+
+When accepting user input in a Python program that modifies a SQL database, you'll use `?` as placeholders for any user-entered data and then pass the data to `sql.execute()` as a `list` like this:
+
+```python
+import sqlite3
+
+con = sqlite3.connect("my-database.db")
+sql = con.cursor()
+
+username = input("Enter your username: ")
+password = input("Enter your password: ")
+
+# Use `?` for any user-entered data
+query = """
+    INSERT INTO users (username, password) VALUES (?, ?);
+"""
+
+# The `username` and `password` are bound to the `?` in the `query`
+sql.execute(query, [username, password])
+con.commit()
+```
 
 ## CREATE TABLE
 
 Relational databases are made up of tables, and you'll need to create tables to hold your data if we don't provide one for you. We often use `IF NOT EXISTS` in CWHQ courses (except those that are full-stack **Flask** apps) when creating a table because we'll run the statement every time our Python script runs, and an error would occur if you tried to create a table that already existed. Most tables should also have a `PRIMARY KEY` integer to uniquely identify each row of data.
 
+The general format of a `CREATE TABLE` statement is:
+
+```sql
+CREATE TABLE IF NOT EXISTS table_name (
+    column_one DATATYPE OPTIONAL_CONSTRAINTS...,
+    column_two DATATYPE OPTIONAL_CONSTRAINTS...,
+    column_three DATATYPE OPTIONAL_CONSTRAINTS...
+    -- etc...
+);
+```
+
+Note that each column definition is separated by a `,` but the final column definition should _not_ have a `,`.
+
+Here's an example of a `CREATE TABLE` statement for the `users` table from the [What Is A Relational Database?](#what-is-a-relational-database) section earlier in these docs:
+
 **Raw SQL**
 
 ```sql
 CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL,
-    password TEXT UNIQUE NOT NULL
+    password TEXT NOT NULL
 );
 ```
 
@@ -120,18 +158,42 @@ sql = con.cursor()
 
 query = """
     CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT UNIQUE NOT NULL,
-        password TEXT UNIQUE NOT NULL
+        password TEXT NOT NULL
     );
 """
 
 sql.execute(query)
 ```
 
+### Column Datatypes
+
+When writing column definitions, your column can be one of 5 storage classes (which are a generic datatype) in SQLite:
+
+-   `NULL`: Represents "nothingness"
+-   `INTEGER`: Whole numbers
+-   `REAL`: Decimal numbers
+-   `TEXT`: Text data
+-   `BLOB`: Binary data (like images, music, etc.)
+
+You'll mainly use `INTEGER` and `TEXT` for CWHQ projects.
+
+### Column Constraints
+
+Besides the datatype, you can also put additional constraints on a column definition to enforce that a column is `UNIQUE`, or `NOT NULL`, or even a `PRIMARY KEY`. You can see all of those at work in this example:
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+```
+
 ## INSERT
 
-Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name. If we're thinking of this table as the same `users` table from the previous section, you can notice we leave out the `id` in the `()` as this table has the `id` set to `AUTOINCREMENT`.
+Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name. If we're thinking of this table as the same `users` table from the previous section, you can notice we leave out the `user_id` in the `()` as this table has the `user_id` set to `AUTOINCREMENT`.
 
 **Raw SQL**
 
@@ -213,13 +275,14 @@ You can `SELECT *` from a table and that'll give you all of the rows in that tab
 
 ```sql
 SELECT * FROM users;
-┌────┬──────────┬────────────┐
-│ id │ username │  password  │
-├────┼──────────┼────────────┤
-│ 1  │ djs      │ mypa$$word │
-│ 2  │ django   │ w0ff       │
-│ 3  │ alecg    │ c0de       │
-└────┴──────────┴────────────┘
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
 ```
 
 When selecting data from Python, you can fetch all of the rows by using the `fetchall()` method of the query result. Note that `fetchall()` returns a `list` of `tuples`, so you would need to do further processing from Python to get the individual rows from this `list`, such as looping through the rows.
@@ -267,7 +330,7 @@ Password: c0de
 
 ### Selecting specific columns from a table
 
-If you only want certain columns returned, you can list them separated by commas after the `SELECT` keyword. Notice how the `id` column is not present in the result set in the query below.
+If you only want certain columns returned, you can list them separated by commas after the `SELECT` keyword. Notice how the `user_id` column is not present in the result set in the query below.
 
 **Raw SQL**
 
@@ -314,11 +377,11 @@ To filter the results from a SQL query, use the `WHERE` clause.
 
 ```sql
 SELECT * FROM users WHERE username = "djs";
-┌────┬──────────┬────────────┐
-│ id │ username │  password  │
-├────┼──────────┼────────────┤
-│ 1  │ djs      │ mypa$$word │
-└────┴──────────┴────────────┘
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+└─────────┴──────────┴────────────┘
 ```
 
 **Python + SQL**
@@ -392,22 +455,23 @@ If you need to change data in a SQL table, the `UPDATE` statement is used. Make 
 
 ```sql
 SELECT * FROM users;
-┌────┬──────────┬────────────┐
-│ id │ username │  password  │
-├────┼──────────┼────────────┤
-│ 1  │ djs      │ mypa$$word │
-│ 2  │ django   │ w0ff       │
-│ 3  │ alecg    │ c0de       │
-└────┴──────────┴────────────┘
-UPDATE users SET username = "danielj" WHERE id = 1;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+UPDATE users SET username = "danielj" WHERE user_id = 1;
 SELECT * FROM users;
-┌────┬──────────┬────────────┐
-│ id │ username │  password  │
-├────┼──────────┼────────────┤
-│ 1  │ danielj  │ mypa$$word │
-│ 2  │ django   │ w0ff       │
-│ 3  │ alecg    │ c0de       │
-└────┴──────────┴────────────┘
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ danielj  │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
 ```
 
 **Python + SQL**
@@ -459,21 +523,21 @@ To remove data in a SQL table, use the `DELETE` statement. Make sure to use a `W
 
 ```sql
 SELECT * FROM users;
-┌────┬──────────┬────────────┐
-│ id │ username │  password  │
-├────┼──────────┼────────────┤
-│ 1  │ djs      │ mypa$$word │
-│ 2  │ django   │ w0ff       │
-│ 3  │ alecg    │ c0de       │
-└────┴──────────┴────────────┘
-DELETE FROM users WHERE id = 3;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+DELETE FROM users WHERE user_id = 3;
 SELECT * FROM users;
-┌────┬──────────┬────────────┐
-│ id │ username │  password  │
-├────┼──────────┼────────────┤
-│ 1  │ djs      │ mypa$$word │
-│ 2  │ django   │ w0ff       │
-└────┴──────────┴────────────┘
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+└─────────┴──────────┴────────────┘
 ```
 
 **Python + SQL**
