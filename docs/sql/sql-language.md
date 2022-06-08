@@ -191,6 +191,283 @@ CREATE TABLE IF NOT EXISTS users (
 );
 ```
 
+## DELETE
+
+To remove data in a SQL table, use the `DELETE` statement. Make sure to use a `WHERE` clause so that you only delete the rows you intend to.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+DELETE FROM users WHERE user_id = 3;
+
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+└─────────┴──────────┴────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("users-database.db")
+sql = con.cursor()
+
+# We'll use this twice, so it makes sense to be a function
+def display_all_users():
+    query = """
+        SELECT * FROM users;
+    """
+
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    print(rows)
+
+
+display_all_users()
+
+query = """
+    DELETE FROM users WHERE id = 3;
+"""
+
+sql.execute(query)
+
+# Make sure to commit the changes to the DB
+con.commit()
+
+display_all_users()
+```
+
+**Output**
+
+```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff')]
+```
+
+### Deleting all rows from a table
+
+If you leave out the `WHERE` clause in a `DELETE` statement, you remove all rows from the table. This is a handy way to clear out all the rows if you need to start with a fresh table:
+
+**Raw SQL**
+
+```sql
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+DELETE FROM users;
+
+SELECT * FROM users;
+-- nothing returned because the table is empty
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("users-database.db")
+sql = con.cursor()
+
+# We'll use this twice, so it makes sense to be a function
+def display_all_users():
+    query = """
+        SELECT * FROM users;
+    """
+
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    print(rows)
+
+
+display_all_users()
+
+query = """
+    DELETE FROM users;
+"""
+
+sql.execute(query)
+
+# Make sure to commit the changes to the DB
+con.commit()
+
+display_all_users()
+```
+
+**Output**
+
+```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+[]
+```
+
+## DISTINCT
+
+If you want to get unique column values for a set of rows, use the `DISTINCT` clause of a `SELECT` query
+
+For example, in the `products` table below, it may be hard at a glance to see what categories are present, but with `DISTINCT` it's easy to see we only have three!
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get only the unique categories for our products.
+SELECT DISTINCT product_category FROM products;
+┌──────────────────┐
+│ product_category │
+├──────────────────┤
+│ Computers        │
+│ Microphones      │
+│ Accessories      │
+└──────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+query = """
+    SELECT * FROM products;
+"""
+
+result = sql.execute(query)
+rows = result.fetchall()
+
+# Easier to read if we loop then print each row since there are 8 rows.
+for row in rows:
+    print(row)
+
+query = """
+    SELECT DISTINCT product_category FROM products;
+"""
+
+result = sql.execute(query)
+rows = result.fetchall()
+
+print("\nDistinct categories:")
+print(rows)
+```
+
+**Output**
+
+```text
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Distinct categories:
+[('Computers',), ('Microphones',), ('Accessories',)]
+```
+
+## DROP TABLE
+
+The `DROP TABLE` query deletes an entire table and it's definition from the database. You should usually use the `IF EXISTS` clause with this query to ensure an error isn't thrown if the table you're trying to drop doesn't exist.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+DROP TABLE IF EXISTS users;
+
+SELECT * FROM users;
+-- Error: no such table: users
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("users-database.db")
+sql = con.cursor()
+
+# We'll use this twice, so it makes sense to be a function
+def display_all_users():
+    query = """
+        SELECT * FROM users;
+    """
+
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    print(rows)
+
+
+display_all_users()
+
+query = """
+    DROP TABLE IF EXISTS users;
+"""
+
+sql.execute(query)
+
+# This will throw an error since the `users` table doesn't exist.
+display_all_users()
+```
+
+**Output**
+
+```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+Traceback (most recent call last):
+  File "/home/daniel/documentation-examples/main.py", line 27, in <module>
+    display_all_users()
+  File "/home/daniel/documentation-examples/main.py", line 12, in display_all_users
+    result = sql.execute(query)
+sqlite3.OperationalError: no such table: users
+```
+
 ## INSERT
 
 Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name. If we're thinking of this table as the same `users` table from the previous section, you can notice we leave out the `user_id` in the `()` as this table has the `user_id` set to `AUTOINCREMENT`.
@@ -263,6 +540,328 @@ sql.execute(query)
 con.commit()
 ```
 
+## LIMIT
+
+Sometimes, you may want to get a limited number of rows back from a `SELECT` query. The `LIMIT` clause allows you to do this:
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Only get the first 3 products in the table (by `product_id`)
+SELECT * FROM products LIMIT 3;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+# We'll use this a few times so it makes sense for it to be a function
+def fetch_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM products;
+"""
+
+fetch_and_display_rows(query)
+
+query = """
+    SELECT * FROM products LIMIT 3;
+"""
+
+print("\nThe first three products in the table:")
+fetch_and_display_rows(query)
+```
+
+**Output**
+
+```text
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+The first three products in the table:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+```
+
+## OFFSET
+
+If you've ever visited a website like Amazon.com, you know that when you search for a particular product, there are multiple pages of results. The `OFFSET` clause allows you to move the starting point of the returned rows from a query. It's usually used in conjunction with a `LIMIT` clause for things like pagination (as in the Amazon example).
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Only get the first 3 products in the table (by `product_id`)
+SELECT * FROM products LIMIT 3;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get the next 3 products in the table
+SELECT * FROM products LIMIT 3 OFFSET 3;
+┌────────────┬────────────────┬───────────────┬──────────────────┐
+│ product_id │  product_name  │ product_price │ product_category │
+├────────────┼────────────────┼───────────────┼──────────────────┤
+│ 4          │ Logitech M1    │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16 │ 2100.5        │ Computers        │
+└────────────┴────────────────┴───────────────┴──────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+# We'll use this a few times so it makes sense for it to be a function
+def fetch_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM products;
+"""
+
+fetch_and_display_rows(query)
+
+query = """
+    SELECT * FROM products LIMIT 3;
+"""
+
+print("\nThe first three products in the table:")
+fetch_and_display_rows(query)
+
+query = """
+    SELECT * FROM products LIMIT 3 OFFSET 3;
+"""
+
+print("\nThe second group of three products in the table:")
+fetch_and_display_rows(query)
+```
+
+**Output**
+
+```text
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+The first three products in the table:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+
+The second group of three products in the table:
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+```
+
+## ORDER BY
+
+The `ORDER BY` clause allows you to order rows in ascending (`ASC`) or descending (`DESC`) order alphanumerically. You use it with a `SELECT` query to order the output.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Ordering products from lowest price to highest price
+SELECT * FROM products ORDER BY product_price;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- ASC is the default, so it's the the same as doing nothing after ORDER BY
+SELECT * FROM products ORDER BY product_price ASC;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Ordering products from highest price to lowest price
+SELECT * FROM products ORDER BY product_price DESC;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+# We'll use this a few times so it makes sense for it to be a function
+def fetch_and_display_all_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM products;
+"""
+
+fetch_and_display_all_rows(query)
+
+query = """
+    SELECT * FROM products ORDER BY product_price;
+"""
+
+print("\nProducts ordered from price lowest to highest:")
+fetch_and_display_all_rows(query)
+
+query = """
+    SELECT * FROM products ORDER BY product_price DESC;
+"""
+
+print("\nProducts ordered from price highest to lowest:")
+fetch_and_display_all_rows(query)
+```
+
+**Output**
+
+```text
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Products ordered from price lowest to highest:
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+
+Products ordered from price highest to lowest:
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(4, 'Logitech M1', 34.99, 'Accessories')
+```
+
 ## SELECT
 
 To see what data is in a SQL table, you use the `SELECT` statement.
@@ -282,7 +881,6 @@ SELECT * FROM users;
 │ 2       │ django   │ w0ff       │
 │ 3       │ alecg    │ c0de       │
 └─────────┴──────────┴────────────┘
-
 ```
 
 When selecting data from Python, you can fetch all of the rows by using the `fetchall()` method of the query result. Note that `fetchall()` returns a `list` of `tuples`, so you would need to do further processing from Python to get the individual rows from this `list`, such as looping through the rows.
@@ -369,6 +967,153 @@ print(rows)
 [('djs', 'mypa$$word'), ('django', 'w0ff'), ('alecg', 'c0de')]
 ```
 
+## UPDATE
+
+If you need to change data in a SQL table, the `UPDATE` statement is used. Make sure to use a `WHERE` clause so that you only update the rows you intend to change.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+-- The `djs` user will now have `danielj` as their username.
+UPDATE users SET username = "danielj" WHERE user_id = 1;
+
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ danielj  │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("users-database.db")
+sql = con.cursor()
+
+# We'll use this twice, so it makes sense to be a function
+def display_all_users():
+    query = """
+        SELECT * FROM users;
+    """
+
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    print(rows)
+
+
+display_all_users()
+
+query = """
+    UPDATE users SET username = "danielj" WHERE id = 1;
+"""
+
+sql.execute(query)
+
+# Make sure to commit the changes to the DB
+con.commit()
+
+display_all_users()
+```
+
+**Output**
+
+```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+[(1, 'danielj', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+```
+
+### Updating multiple columns
+
+If you need to update multiple columns, you can separate the `SET` clauses with commas:
+
+**Raw SQL**
+
+```sql
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+UPDATE users
+SET
+    username = "danielj", -- note the comma here
+    password = "b3tTerpa$$w0rd"
+WHERE user_id = 1;
+
+SELECT * FROM users;
+┌─────────┬──────────┬────────────────┐
+│ user_id │ username │    password    │
+├─────────┼──────────┼────────────────┤
+│ 1       │ danielj  │ b3tTerpa$$w0rd │
+│ 2       │ django   │ w0ff           │
+│ 3       │ alecg    │ c0de           │
+└─────────┴──────────┴────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("users-database.db")
+sql = con.cursor()
+
+# We'll use this twice, so it makes sense to be a function
+def display_all_users():
+    query = """
+        SELECT * FROM users;
+    """
+
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    print(rows)
+
+
+display_all_users()
+
+query = """
+    UPDATE users
+    SET
+        username = "danielj",
+        password = "b3tTerpa$$w0rd"
+    WHERE user_id = 1;
+"""
+
+sql.execute(query)
+
+# Make sure to commit the changes to the DB
+con.commit()
+
+display_all_users()
+```
+
+**Output**
+
+```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+[(1, 'danielj', 'b3tTerpa$$w0rd'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+```
+
 ## WHERE
 
 To filter the results from a SQL query, use the `WHERE` clause.
@@ -447,31 +1192,93 @@ Username: djs
 Password: mypa$$word
 ```
 
-## UPDATE
+#### Using conditional logic with `WHERE` clauses
 
-If you need to change data in a SQL table, the `UPDATE` statement is used. Make sure to use a `WHERE` clause so that you only update the rows you intend to change.
+There are many operators available to use in a `WHERE` clause. The ones that you can use with numerical data are shown below (`=`, `IN`, and `NOT IN` can also be used with `TEXT` data):
+
+| Operator          | Description                           |
+| ----------------- | ------------------------------------- |
+| =                 | Equality (works for numbers and TEXT) |
+| >                 | Greater-than                          |
+| <                 | Less-than                             |
+| >=                | Greater-than or equal-to              |
+| <=                | Less-than or equal-to                 |
+| BETWEEN...AND     | Number is between two values          |
+| NOT BETWEEN...AND | Number is not between two values      |
+| IN (...)          | Number/Text exists in a list          |
+| NOT IN (...)      | Number/Text does not exist in a list  |
+
+Here are examples of a few of the operators on a table of `products`:
 
 **Raw SQL**
 
 ```sql
-SELECT * FROM users;
-┌─────────┬──────────┬────────────┐
-│ user_id │ username │  password  │
-├─────────┼──────────┼────────────┤
-│ 1       │ djs      │ mypa$$word │
-│ 2       │ django   │ w0ff       │
-│ 3       │ alecg    │ c0de       │
-└─────────┴──────────┴────────────┘
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
 
-UPDATE users SET username = "danielj" WHERE user_id = 1;
-SELECT * FROM users;
-┌─────────┬──────────┬────────────┐
-│ user_id │ username │  password  │
-├─────────┼──────────┼────────────┤
-│ 1       │ danielj  │ mypa$$word │
-│ 2       │ django   │ w0ff       │
-│ 3       │ alecg    │ c0de       │
-└─────────┴──────────┴────────────┘
+-- Get the product where the `product_name` is "Lenovo ThinkPad".
+SELECT * FROM products WHERE product_name = "Lenovo ThinkPad";
+┌────────────┬─────────────────┬───────────────┬──────────────────┐
+│ product_id │  product_name   │ product_price │ product_category │
+├────────────┼─────────────────┼───────────────┼──────────────────┤
+│ 8          │ Lenovo ThinkPad │ 950.75        │ Computers        │
+└────────────┴─────────────────┴───────────────┴──────────────────┘
+
+-- Get the products that cost less than $1000.
+SELECT * FROM products WHERE product_price < 1000;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get the products that cost more than $1000.
+SELECT * FROM products WHERE product_price > 1000;
+┌────────────┬────────────────────┬───────────────┬──────────────────┐
+│ product_id │    product_name    │ product_price │ product_category │
+├────────────┼────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17        │ 1599.99       │ Computers        │
+│ 3          │ System76 Thelio B1 │ 1255.55       │ Computers        │
+│ 6          │ MacBook Pro 16     │ 2100.5        │ Computers        │
+└────────────┴────────────────────┴───────────────┴──────────────────┘
+
+-- Get the products whose prices are between $50 and $300 (inclusive).
+SELECT * FROM products WHERE product_price BETWEEN 50 AND 300;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get the products that are in the "Microphones" and "Computers" categories.
+SELECT * FROM products WHERE product_category IN ("Microphones", "Computers");
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
 ```
 
 **Python + SQL**
@@ -479,65 +1286,140 @@ SELECT * FROM users;
 ```python
 import sqlite3
 
-con = sqlite3.connect("users-database.db")
+con = sqlite3.connect("products-database.db")
 sql = con.cursor()
 
-# We'll use this twice, so it makes sense to be a function
-def display_all_users():
-    query = """
-        SELECT * FROM users;
-    """
-
+# We'll use this a few times so it makes sense for it to be a function
+def fetch_and_display_all_rows(query):
     result = sql.execute(query)
     rows = result.fetchall()
 
-    print(rows)
+    for row in rows:
+        print(row)
 
-
-display_all_users()
 
 query = """
-    UPDATE users SET username = "danielj" WHERE id = 1;
+    SELECT * FROM products;
 """
 
-sql.execute(query)
+fetch_and_display_all_rows(query)
 
-# Make sure to commit the changes to the DB
-con.commit()
+query = """
+    SELECT * FROM products WHERE product_name = "Lenovo ThinkPad";
+"""
 
-display_all_users()
+print("\nLooking for the 'Lenovo ThinkPad':")
+fetch_and_display_all_rows(query)
+
+query = """
+    SELECT * FROM products WHERE product_price < 1000;
+"""
+
+print("\nProducts cheaper than $1000:")
+fetch_and_display_all_rows(query)
+
+query = """
+    SELECT * FROM products WHERE product_price > 1000;
+"""
+
+print("\nProducts more expensive than $1000:")
+fetch_and_display_all_rows(query)
+
+query = """
+    SELECT * FROM products WHERE product_price BETWEEN 50 AND 300;
+"""
+
+print("\nProducts between $50 and $300 (inclusive):")
+fetch_and_display_all_rows(query)
+
+query = """
+    SELECT * FROM products WHERE product_category IN ("Microphones", "Computers");
+"""
+
+print("\nProducts in the 'Microphones' and 'Computers' categories:")
+fetch_and_display_all_rows(query)
 ```
 
 **Output**
 
 ```text
-[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
-[(1, 'danielj', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Looking for the 'Lenovo ThinkPad':
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Products cheaper than $1000:
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Products more expensive than $1000:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+
+Products between $50 and $300 (inclusive):
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(7, 'Rode Z28', 275.99, 'Microphones')
+
+Products in the 'Microphones' and 'Computers' categories:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
 ```
 
-## DELETE
+#### Complex conditional logic with `WHERE` clauses
 
-To remove data in a SQL table, use the `DELETE` statement. Make sure to use a `WHERE` clause so that you only delete the rows you intend to.
+You can join multiple `WHERE` clauses with the logical `AND` and `OR` operators to make complex conditional statements, just like in a programming language like Python or JavaScript.
 
 **Raw SQL**
 
 ```sql
-SELECT * FROM users;
-┌─────────┬──────────┬────────────┐
-│ user_id │ username │  password  │
-├─────────┼──────────┼────────────┤
-│ 1       │ djs      │ mypa$$word │
-│ 2       │ django   │ w0ff       │
-│ 3       │ alecg    │ c0de       │
-└─────────┴──────────┴────────────┘
-DELETE FROM users WHERE user_id = 3;
-SELECT * FROM users;
-┌─────────┬──────────┬────────────┐
-│ user_id │ username │  password  │
-├─────────┼──────────┼────────────┤
-│ 1       │ djs      │ mypa$$word │
-│ 2       │ django   │ w0ff       │
-└─────────┴──────────┴────────────┘
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get all microphones less than $200.
+SELECT * FROM products WHERE product_category = "Microphones" AND product_price < 200;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get any microphones or computers less than $1000.
+SELECT * FROM products WHERE product_price < 1000 AND product_category IN ("Computers", "Microphones");
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
 ```
 
 **Python + SQL**
@@ -545,38 +1427,56 @@ SELECT * FROM users;
 ```python
 import sqlite3
 
-con = sqlite3.connect("users-database.db")
+con = sqlite3.connect("products-database.db")
 sql = con.cursor()
 
-# We'll use this twice, so it makes sense to be a function
-def display_all_users():
-    query = """
-        SELECT * FROM users;
-    """
-
+# We'll use this a few times so it makes sense for it to be a function
+def fetch_and_display_all_rows(query):
     result = sql.execute(query)
     rows = result.fetchall()
 
-    print(rows)
+    for row in rows:
+        print(row)
 
-
-display_all_users()
 
 query = """
-    DELETE FROM users WHERE id = 3;
+    SELECT * FROM products;
 """
 
-sql.execute(query)
+fetch_and_display_all_rows(query)
 
-# Make sure to commit the changes to the DB
-con.commit()
+query = """
+    SELECT * FROM products WHERE product_category = "Microphones" AND product_price < 200;
+"""
 
-display_all_users()
+print("\nGetting microphones less than $200:")
+fetch_and_display_all_rows(query)
+
+query = """
+    SELECT * FROM products WHERE product_price < 1000 AND product_category IN ("Computers", "Microphones");
+"""
+
+print("\nComputers and Microphones cheaper than $1000:")
+fetch_and_display_all_rows(query)
 ```
 
 **Output**
 
 ```text
-[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
-[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff')]
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Getting microphones less than $200:
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+
+Computers and Microphones cheaper than $1000:
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
 ```
