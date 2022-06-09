@@ -19,18 +19,38 @@ print("All products:")
 execute_query_and_display_rows(query)
 
 query = """
-    SELECT product_name || " : $" || product_price AS product_description 
-    FROM products;
+    SELECT AVG(product_price) AS average_product_price FROM products;
 """
 
-print("\nFormatted product descriptions:")
+print("\nAverage cost of all products:")
 execute_query_and_display_rows(query)
 
 query = """
-    SELECT SUM(product_price) AS total_price_computers 
-    FROM products 
-    WHERE product_category = "Computers";
+    SELECT COUNT(*) as total_products FROM products;
 """
 
-print("\nThe total price of all computers in the `products` table:")
+print("\nTotal number of products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_name || " $" || MAX(product_price) AS most_expensive_product 
+    FROM products;
+"""
+
+print("\nMost expensive product:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_name || " $" || MIN(product_price) AS least_expensive_product 
+    FROM products;
+"""
+
+print("\nLeast expensive product:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT SUM(product_price) AS total_cost_all_products FROM products;
+"""
+
+print("\nTotal cost of all products:")
 execute_query_and_display_rows(query)
