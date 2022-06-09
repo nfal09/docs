@@ -824,39 +824,50 @@ HTML headings allow you to define headings using section levels. `<h1>` Represen
 
 -   [MDN - Headings and Paragraphs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#the_basics_headings_and_paragraphs)
 
-## Image and Video
+## Image, Video and Audio
 
-The `<img>` and `<video>` elements can be used to embed images and video. The `src` attribute is used by both elements.
+The `<img>`, `<video>`, `<audio>` elements can be used to embed specific media. The `src` attribute is used by all elements.
 
 ```html
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>Images and Video</title>
+        <title>Image, Video and Audio</title>
         <link href="style.css" rel="stylesheet" />
     </head>
 
     <body>
         <div class="container">
+            <h1>Taco Party!</h1>
+
             <!-- This image is located in the child folder images -->
-            <img src="images/monster1.png" />
+            <img src="images/tacos.png" />
 
             <!-- The Video Element uses additional attributes controls and poster -->
             <video
-                src="videos/projectile.mp4"
+                src="videos/tacos.mp4"
                 controls
-                poster="images/projectile.png"
+                poster="images/tacos.png"
             ></video>
+
+            <!-- The Audio Element uses additional attributes controls, loop, autoplay -->
+            <audio
+                src="audio/never-gonna-give-you-up.mp3"
+                controls
+                loop
+                autoplay
+            ></audio>
         </div>
     </body>
 </html>
 ```
 
 <figure markdown>
-![HTMLimg&video Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/imageandvideo.png?raw=true){ width="100%" }
+![HTMLimg&video Example](https://github.com/codewizardshq/docs/blob/main/docs/assets/html/media.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
+
 
 **Further Reading**
 
