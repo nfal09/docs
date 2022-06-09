@@ -714,6 +714,201 @@ print(rows)
 [(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
 ```
 
+## JOIN
+
+Being able to combine data from related tables is one of the things that makes a relational database like SQLite so powerful.
+
+### Defining Table Relationships
+
+Before you can `JOIN` two tables, they must share a common key. Consider the following two table schemas, which represent data about authors and books:
+
+```sql
+CREATE TABLE authors (
+    author_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_name TEXT NOT NULL
+);
+
+CREATE TABLE books (
+    book_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER NOT NULL REFERENCES authors (author_id), -- the Foreign Key relationship
+    book_title TEXT UNIQUE NOT NULL
+);
+```
+
+We can relate the two tables with the `REFERENCES` keyword. The `author_id` is known as a _Foreign Key_ in the `books` table because it's merely pointing to the `PRIMARY KEY` of the `authors` table. It's the `author_id` shared between the `authors` and `books` tables that allows us to `JOIN` them together.
+
+### JOINING Tables Together
+
+Now that we have an established relationship between our `authors` and `books` tables, we can `JOIN` them together. We'll preface each column name with the table it references since we'll be referring to multiple tables like this `table_name.column_name`. This isn't always strictly required, but it makes it easier to understand which table each column references in the query.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM authors;
+┌───────────┬───────────────┐
+│ author_id │  author_name  │
+├───────────┼───────────────┤
+│ 1         │ J.D. Salinger │
+│ 2         │ Harper Lee    │
+│ 3         │ Truman Capote │
+└───────────┴───────────────┘
+
+SELECT * FROM books;
+┌─────────┬───────────┬────────────────────────┐
+│ book_id │ author_id │       book_title       │
+├─────────┼───────────┼────────────────────────┤
+│ 1       │ 2         │ To Kill a Mockingbird  │
+│ 2       │ 3         │ In Cold Blood          │
+│ 3       │ 1         │ The Catcher in the Rye │
+│ 4       │ 3         │ Breakfast at Tiffanys  │
+│ 5       │ 1         │ Franny and Zooey       │
+│ 6       │ 3         │ Summer Crossing        │
+│ 7       │ 2         │ Go Set a Watchman      │
+└─────────┴───────────┴────────────────────────┘
+
+-- Join the `authors` and `books` tables together
+SELECT authors.author_name, books.book_title
+FROM authors
+JOIN books ON authors.author_id = books.author_id;
+┌───────────────┬────────────────────────┐
+│  author_name  │       book_title       │
+├───────────────┼────────────────────────┤
+│ Harper Lee    │ To Kill a Mockingbird  │
+│ Truman Capote │ In Cold Blood          │
+│ J.D. Salinger │ The Catcher in the Rye │
+│ Truman Capote │ Breakfast at Tiffanys │
+│ J.D. Salinger │ Franny and Zooey       │
+│ Truman Capote │ Summer Crossing        │
+│ Harper Lee    │ Go Set a Watchman      │
+└───────────────┴────────────────────────┘
+
+-- Getting a bit fancier by ordering by `author_name`
+SELECT authors.author_name, books.book_title
+FROM authors
+JOIN books ON authors.author_id = books.author_id
+ORDER BY authors.author_name;
+┌───────────────┬────────────────────────┐
+│  author_name  │       book_title       │
+├───────────────┼────────────────────────┤
+│ Harper Lee    │ To Kill a Mockingbird  │
+│ Harper Lee    │ Go Set a Watchman      │
+│ J.D. Salinger │ The Catcher in the Rye │
+│ J.D. Salinger │ Franny and Zooey       │
+│ Truman Capote │ In Cold Blood          │
+│ Truman Capote │ Breakfast at Tiffanys │
+│ Truman Capote │ Summer Crossing        │
+└───────────────┴────────────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("library-database.db")
+sql = con.cursor()
+
+def execute_query_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM authors;
+"""
+
+print("All rows in the `authors` table:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT * FROM books;
+"""
+
+print("\nAll rows in the `books` table:")
+execute_query_and_display_rows(query)
+
+
+query = """
+    SELECT authors.author_name, books.book_title
+    FROM authors
+    JOIN books ON authors.author_id = books.author_id;
+"""
+
+print("\nJoining the `authors` and `books` tables:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT authors.author_name, books.book_title
+    FROM authors
+    JOIN books ON authors.author_id = books.author_id
+    ORDER BY authors.author_name;
+"""
+
+print("\nJoining and sorting the `authors` and `books` tables:")
+execute_query_and_display_rows(query)
+```
+
+**Output**
+
+```text
+All rows in the `authors` table:
+(1, 'J.D. Salinger')
+(2, 'Harper Lee')
+(3, 'Truman Capote')
+
+All rows in the `books` table:
+(1, 2, 'To Kill a Mockingbird')
+(2, 3, 'In Cold Blood')
+(3, 1, 'The Catcher in the Rye')
+(4, 3, "Breakfast at Tiffany's")
+(5, 1, 'Franny and Zooey')
+(6, 3, 'Summer Crossing')
+(7, 2, 'Go Set a Watchman')
+
+Joining the `authors` and `books` tables:
+('Harper Lee', 'To Kill a Mockingbird')
+('Truman Capote', 'In Cold Blood')
+('J.D. Salinger', 'The Catcher in the Rye')
+('Truman Capote', "Breakfast at Tiffany's")
+('J.D. Salinger', 'Franny and Zooey')
+('Truman Capote', 'Summer Crossing')
+('Harper Lee', 'Go Set a Watchman')
+
+Joining and sorting the `authors` and `books` tables:
+('Harper Lee', 'To Kill a Mockingbird')
+('Harper Lee', 'Go Set a Watchman')
+('J.D. Salinger', 'The Catcher in the Rye')
+('J.D. Salinger', 'Franny and Zooey')
+('Truman Capote', 'In Cold Blood')
+('Truman Capote', "Breakfast at Tiffany's")
+('Truman Capote', 'Summer Crossing')
+```
+
+#### The `USING()` shorthand
+
+When using a `JOIN`, you don't have to use the `ON table.column_name = other_table.column_name` syntax if the column names are the same in both tables. We could rewrite the last `JOIN` from the previous example in a shorter way with `USING()` like so:
+
+```sql
+SELECT authors.author_name, books.book_title
+FROM authors
+JOIN books USING (author_id)  -- This is a nice shorthand
+ORDER BY authors.author_name;
+┌───────────────┬────────────────────────┐
+│  author_name  │       book_title       │
+├───────────────┼────────────────────────┤
+│ Harper Lee    │ To Kill a Mockingbird  │
+│ Harper Lee    │ Go Set a Watchman      │
+│ J.D. Salinger │ The Catcher in the Rye │
+│ J.D. Salinger │ Franny and Zooey       │
+│ Truman Capote │ In Cold Blood          │
+│ Truman Capote │ Breakfast at Tiffanys │
+│ Truman Capote │ Summer Crossing        │
+└───────────────┴────────────────────────┘
+```
+
 ## LIMIT
 
 Sometimes, you may want to get a limited number of rows back from a `SELECT` query. The `LIMIT` clause allows you to do this:
