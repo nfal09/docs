@@ -231,6 +231,129 @@ Rows:
 [(1, 'djs', 'mypa$$word', 0), (2, 'django', 'w0ff', 0), (3, 'alecg', 'c0de', 0)]
 ```
 
+## AS
+
+The `AS` clause is used to alias a column or table name. We only use it at CWHQ for column aliases though, so that's all that is covered here.
+
+### Aliasing Column Names
+
+When aliasing column names, the `AS` clause comes in handy when you are using the concatenation operator (`||`) to combine multiple columns or when using _Aggregate Functions_ to perform some calculation on a group of rows.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+/*
+Build a result set that combines `product_name` and `product_price`
+into a single column
+*/
+SELECT product_name || " : $" || product_price AS product_description
+FROM products;
+┌───────────────────────────────────┐
+│        product_description        │
+├───────────────────────────────────┤
+│ Dell XPS 17 : $1599.99           │
+│ Blue Snowball Microphone : $99.5 │
+│ System76 Thelio B1 : $1255.55    │
+│ Logitech M1 : $34.99             │
+│ Seagate S1 SSD : $88.75          │
+│ MacBook Pro 16 : $2100.5         │
+│ Rode Z28 : $275.99               │
+│ Lenovo ThinkPad : $950.75        │
+└───────────────────────────────────┘
+
+-- Get the total cost of all the computers in the `products` table
+SELECT SUM(product_price) AS total_price_computers
+FROM products
+WHERE product_category = "Computers";
+┌───────────────────────┐
+│ total_price_computers │
+├───────────────────────┤
+│ 5906.79               │
+└───────────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+def execute_query_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM products;
+"""
+
+print("All products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_name || " : $" || product_price AS product_description
+    FROM products;
+"""
+
+print("\nFormatted product descriptions:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT SUM(product_price) AS total_price_computers
+    FROM products
+    WHERE product_category = "Computers";
+"""
+
+print("\nThe total price of all computers in the `products` table:")
+execute_query_and_display_rows(query)
+```
+
+**Output**
+
+```text
+All products:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Formatted product descriptions:
+('Dell XPS 17 : $1599.99',)
+('Blue Snowball Microphone : $99.5',)
+('System76 Thelio B1 : $1255.55',)
+('Logitech M1 : $34.99',)
+('Seagate S1 SSD : $88.75',)
+('MacBook Pro 16 : $2100.5',)
+('Rode Z28 : $275.99',)
+('Lenovo ThinkPad : $950.75',)
+
+The total price of all computers in the `products` table:
+(5906.79,)
+```
+
 ## CREATE TABLE
 
 Relational databases are made up of tables, and you'll need to create tables to hold your data if we don't provide one for you. We often use `IF NOT EXISTS` in CWHQ courses when creating a table because we'll run the statement every time our Python script runs, and an error would occur if you tried to create a table that already existed. Most tables should also have a `PRIMARY KEY` integer to uniquely identify each row of data.

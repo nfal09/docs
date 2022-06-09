@@ -10,6 +10,7 @@ def execute_query_and_display_rows(query):
     for row in rows:
         print(row)
 
+
 query = """
     SELECT * FROM products;
 """
@@ -18,17 +19,18 @@ print("All products:")
 execute_query_and_display_rows(query)
 
 query = """
-    SELECT product_category FROM products GROUP BY product_category;
+    SELECT product_name || " : $" || product_price AS product_description 
+    FROM products;
 """
 
-print("\nUnique `product_categories`:")
+print("\nFormatted product descriptions:")
 execute_query_and_display_rows(query)
 
 query = """
-    SELECT product_category, COUNT(*) AS num_products_per_category 
+    SELECT SUM(product_price) AS total_price_computers 
     FROM products 
-    GROUP BY product_category;
+    WHERE product_category = "Computers";
 """
 
-print("\nNumber of products per category:")
+print("\nThe total price of all computers in the `products` table:")
 execute_query_and_display_rows(query)
