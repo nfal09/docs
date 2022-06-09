@@ -119,6 +119,160 @@ sql.execute(query, [username, password])
 con.commit()
 ```
 
+## Aggregate Functions
+
+Just like programming languages such as Python and JavaScript, SQL has functions to perform common tasks on result set called _Aggregate Functions_. The example below shows the different _Aggregate Functions_ we use in CWHQ courses.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get the average price of all products
+SELECT AVG(product_price) AS average_product_price FROM products;
+┌───────────────────────┐
+│ average_product_price │
+├───────────────────────┤
+│ 800.7525              │
+└───────────────────────┘
+
+-- Count the number of products
+SELECT COUNT(*) as total_products FROM products;
+┌────────────────┐
+│ total_products │
+├────────────────┤
+│ 8              │
+└────────────────┘
+
+-- Get the most expensive product
+SELECT product_name || " $" || MAX(product_price) AS most_expensive_product
+FROM products;
+┌────────────────────────┐
+│ most_expensive_product │
+├────────────────────────┤
+│ MacBook Pro 16 $2100.5 │
+└────────────────────────┘
+
+-- Get the least expensive product
+SELECT product_name || " $" || MIN(product_price) AS least_expensive_product
+FROM products;
+┌─────────────────────────┐
+│ least_expensive_product │
+├─────────────────────────┤
+│ Logitech M1 $34.99      │
+└─────────────────────────┘
+
+-- Get the total cost of all products combined
+SELECT SUM(product_price) AS total_cost_all_products FROM products;
+┌─────────────────────────┐
+│ total_cost_all_products │
+├─────────────────────────┤
+│ 6406.02                 │
+└─────────────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+def execute_query_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM products;
+"""
+
+print("All products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT AVG(product_price) AS average_product_price FROM products;
+"""
+
+print("\nAverage cost of all products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT COUNT(*) as total_products FROM products;
+"""
+
+print("\nTotal number of products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_name || " $" || MAX(product_price) AS most_expensive_product
+    FROM products;
+"""
+
+print("\nMost expensive product:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_name || " $" || MIN(product_price) AS least_expensive_product
+    FROM products;
+"""
+
+print("\nLeast expensive product:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT SUM(product_price) AS total_cost_all_products FROM products;
+"""
+
+print("\nTotal cost of all products:")
+execute_query_and_display_rows(query)
+```
+
+**Output**
+
+```text
+All products:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Average cost of all products:
+(800.7524999999999,)
+
+Total number of products:
+(8,)
+
+Most expensive product:
+('MacBook Pro 16 $2100.5',)
+
+Least expensive product:
+('Logitech M1 $34.99',)
+
+Total cost of all products:
+(6406.0199999999995,)
+```
+
 ## ALTER TABLE
 
 After creating a table, you may need to add or rename a column. The `ALTER TABLE` command allows you to do this.
@@ -265,14 +419,14 @@ FROM products;
 ┌───────────────────────────────────┐
 │        product_description        │
 ├───────────────────────────────────┤
-│ Dell XPS 17 : $1599.99           │
-│ Blue Snowball Microphone : $99.5 │
-│ System76 Thelio B1 : $1255.55    │
-│ Logitech M1 : $34.99             │
-│ Seagate S1 SSD : $88.75          │
-│ MacBook Pro 16 : $2100.5         │
-│ Rode Z28 : $275.99               │
-│ Lenovo ThinkPad : $950.75        │
+│ Dell XPS 17 : $1599.99            │
+│ Blue Snowball Microphone : $99.5  │
+│ System76 Thelio B1 : $1255.55     │
+│ Logitech M1 : $34.99              │
+│ Seagate S1 SSD : $88.75           │
+│ MacBook Pro 16 : $2100.5          │
+│ Rode Z28 : $275.99                │
+│ Lenovo ThinkPad : $950.75         │
 └───────────────────────────────────┘
 
 -- Get the total cost of all the computers in the `products` table
@@ -352,6 +506,100 @@ Formatted product descriptions:
 
 The total price of all computers in the `products` table:
 (5906.79,)
+```
+
+## Concatenation
+
+SQLite uses the `||` operator for string concatenation. This is used at CWHQ to combine column names together (possibly with other string data) to merge the data from multiple columns into a single column. This is often used in conjunction with the `AS` clause to rename the combined columns.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+/*
+Build a result set that combines `product_name` and `product_price`
+into a single column using `||` and `AS`
+*/
+SELECT product_name || " : $" || product_price AS product_description
+FROM products;
+┌───────────────────────────────────┐
+│        product_description        │
+├───────────────────────────────────┤
+│ Dell XPS 17 : $1599.99            │
+│ Blue Snowball Microphone : $99.5  │
+│ System76 Thelio B1 : $1255.55     │
+│ Logitech M1 : $34.99              │
+│ Seagate S1 SSD : $88.75           │
+│ MacBook Pro 16 : $2100.5          │
+│ Rode Z28 : $275.99                │
+│ Lenovo ThinkPad : $950.75         │
+└───────────────────────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+def execute_query_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM products;
+"""
+
+print("All products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_name || " : $" || product_price AS product_description
+    FROM products;
+"""
+```
+
+**Output**
+
+```text
+All products:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Formatted product descriptions:
+('Dell XPS 17 : $1599.99',)
+('Blue Snowball Microphone : $99.5',)
+('System76 Thelio B1 : $1255.55',)
+('Logitech M1 : $34.99',)
+('Seagate S1 SSD : $88.75',)
+('MacBook Pro 16 : $2100.5',)
+('Rode Z28 : $275.99',)
+('Lenovo ThinkPad : $950.75',)
 ```
 
 ## CREATE TABLE
