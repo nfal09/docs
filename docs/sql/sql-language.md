@@ -119,6 +119,118 @@ sql.execute(query, [username, password])
 con.commit()
 ```
 
+## ALTER TABLE
+
+After creating a table, you may need to add or rename a column. The `ALTER TABLE` command allows you to do this.
+
+**Raw SQL**
+
+```sql
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+-- Renaming a column
+ALTER TABLE users RENAME username TO teacher_name;
+
+SELECT * FROM users;
+┌─────────┬──────────────┬────────────┐
+│ user_id │ teacher_name │  password  │
+├─────────┼──────────────┼────────────┤
+│ 1       │ djs          │ mypa$$word │
+│ 2       │ django       │ w0ff       │
+│ 3       │ alecg        │ c0de       │
+└─────────┴──────────────┴────────────┘
+
+-- Adding a new column with a default value for each row
+ALTER TABLE users ADD is_admin INTEGER DEFAULT 0;
+
+SELECT * FROM users;
+┌─────────┬──────────────┬────────────┬──────────┐
+│ user_id │ teacher_name │  password  │ is_admin │
+├─────────┼──────────────┼────────────┼──────────┤
+│ 1       │ djs          │ mypa$$word │ 0        │
+│ 2       │ django       │ w0ff       │ 0        │
+│ 3       │ alecg        │ c0de       │ 0        │
+└─────────┴──────────────┴────────────┴──────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("users-database.db")
+sql = con.cursor()
+
+def display_all_users_and_column_names():
+    # Don't worry about this, it just shows us the column names
+    query = """
+        SELECT name FROM PRAGMA_TABLE_INFO('users');
+    """
+
+    result = sql.execute(query)
+    print("\nColumn names:")
+    print(*result.fetchall())
+
+    query = """
+        SELECT * FROM users;
+    """
+
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    print("\nRows:")
+    print(rows)
+
+
+display_all_users_and_column_names()
+
+query = """
+    ALTER TABLE users RENAME username TO teacher_name;
+"""
+
+sql.execute(query)
+display_all_users_and_column_names()
+
+query = """
+    ALTER TABLE users ADD is_admin INTEGER DEFAULT 0;
+"""
+
+sql.execute(query)
+display_all_users_and_column_names()
+
+# Make sure to commit the changes to the DB
+con.commit()
+```
+
+**Output**
+
+```text
+Column names:
+('user_id',) ('username',) ('password',)
+
+Rows:
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+
+Column names:
+('user_id',) ('teacher_name',) ('password',)
+
+Rows:
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
+
+Column names:
+('user_id',) ('teacher_name',) ('password',) ('is_admin',)
+
+Rows:
+[(1, 'djs', 'mypa$$word', 0), (2, 'django', 'w0ff', 0), (3, 'alecg', 'c0de', 0)]
+```
+
 ## CREATE TABLE
 
 Relational databases are made up of tables, and you'll need to create tables to hold your data if we don't provide one for you. We often use `IF NOT EXISTS` in CWHQ courses when creating a table because we'll run the statement every time our Python script runs, and an error would occur if you tried to create a table that already existed. Most tables should also have a `PRIMARY KEY` integer to uniquely identify each row of data.
