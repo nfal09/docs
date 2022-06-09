@@ -734,6 +734,10 @@ The `textContent` property sets or returns the text content of an element.
     </body>
 </html>
 ```
+<figure markdown>
+![textContent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textContent.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
 
 ### `$(element).text()`
 
@@ -787,11 +791,6 @@ jQuery's `text()` method allows you to get or set the text of an HTML element.
 
 <figure markdown>
 ![text method example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textMethod.gif?raw=true){ width="100%" }
-<figcaption></figcaption>
-</figure>
-
-<figure markdown>
-![textContent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textContent.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
