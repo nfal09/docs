@@ -580,6 +580,113 @@ Traceback (most recent call last):
 sqlite3.OperationalError: no such table: users
 ```
 
+## GROUP BY
+
+If you need to "flatten" the results of a `SELECT` query, the `GROUP BY` clause is helpful. It let's you group the resulting rows by a particular column, effectively filtering out duplicate rows that have the same column value. You almost always use `GROUP BY` with an _Aggregate Function_ to perform some sort of calculation on a group of rows with similar column values, but you can also use it to filter a column by unique values (as we do to get the unique product categories below):
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+-- Get the unique product categories
+SELECT product_category FROM products GROUP BY product_category;
+┌──────────────────┐
+│ product_category │
+├──────────────────┤
+│ Accessories      │
+│ Computers        │
+│ Microphones      │
+└──────────────────┘
+
+-- Get the number of products in each `product_category`
+SELECT product_category, COUNT(*) AS num_products_per_category
+FROM products
+GROUP BY product_category;
+┌──────────────────┬───────────────────────────┐
+│ product_category │ num_products_per_category │
+├──────────────────┼───────────────────────────┤
+│ Accessories      │ 2                         │
+│ Computers        │ 4                         │
+│ Microphones      │ 2                         │
+└──────────────────┴───────────────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+def execute_query_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+query = """
+    SELECT * FROM products;
+"""
+
+print("All products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_category FROM products GROUP BY product_category;
+"""
+
+print("\nUnique `product_categories`:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT product_category, COUNT(*) AS num_products_per_category
+    FROM products
+    GROUP BY product_category;
+"""
+
+print("\nNumber of products per category:")
+execute_query_and_display_rows(query)
+```
+
+**Output**
+
+```text
+All products:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+
+Unique `product_categories`:
+('Accessories',)
+('Computers',)
+('Microphones',)
+
+Number of products per category:
+('Accessories', 2)
+('Computers', 4)
+('Microphones', 2)
+```
+
 ## INSERT
 
 Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name.

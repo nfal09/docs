@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Layouts</title>
+
+        <style>
+
+          .container {
+            width:850px;
+            min-height:400px;
+            border-radius:15px;
+            padding:20px;
+            margin:auto;
+            cursor:pointer;
+
+            /* Set the display property to flex for the parent element */
+            display: flex;
+
+            /* Grid type:
+            Properties: row, row-reverse, column, column-reverse*/
+            flex-direction: row;
+
+            /* Avoid having all children elements in the same row:
+            Properties: no-wrap, wrap, wrap-reverse */
+            flex-wrap: wrap;
+
+            /* Justify Content defines the alignment of the flex-items:
+            Properties: flex-start, flex-end, center, space-between, space-around, space-evenly*/
+            justify-content: space-around;
+        }
+
+
+        .box {
+            width:300px;
+            height:200px;
+            margin: 10px;
+            border: 3px solid rgb(0, 204, 255);
+            background:rgba(65, 60, 198, 0.5);
+        }
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1> Flexbox </h1>
+        <div class="container">
+            <div id="box-1" class="box"></div>
+            <div id="box-2" class="box"></div>
+            <div id="box-3" class="box"></div>
+            <div id="box-4" class="box"></div>
+        </div>
+
+    </body>
+</html>
