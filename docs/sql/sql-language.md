@@ -83,7 +83,7 @@ To run that from Python, we would do this:
 ```python
 import sqlite3
 
-con = sqlite3.connect("my-database.db")
+con = sqlite3.connect("users-database.db")
 sql = con.cursor()
 
 query = """
@@ -103,7 +103,7 @@ When accepting user input in a Python program that modifies a SQL database, you'
 ```python
 import sqlite3
 
-con = sqlite3.connect("my-database.db")
+con = sqlite3.connect("users-database.db")
 sql = con.cursor()
 
 username = input("Enter your username: ")
@@ -121,7 +121,7 @@ con.commit()
 
 ## CREATE TABLE
 
-Relational databases are made up of tables, and you'll need to create tables to hold your data if we don't provide one for you. We often use `IF NOT EXISTS` in CWHQ courses (except those that are full-stack **Flask** apps) when creating a table because we'll run the statement every time our Python script runs, and an error would occur if you tried to create a table that already existed. Most tables should also have a `PRIMARY KEY` integer to uniquely identify each row of data.
+Relational databases are made up of tables, and you'll need to create tables to hold your data if we don't provide one for you. We often use `IF NOT EXISTS` in CWHQ courses when creating a table because we'll run the statement every time our Python script runs, and an error would occur if you tried to create a table that already existed. Most tables should also have a `PRIMARY KEY` integer to uniquely identify each row of data.
 
 The general format of a `CREATE TABLE` statement is:
 
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS table_name (
 );
 ```
 
-Note that each column definition is separated by a `,` but the final column definition should _not_ have a `,`.
+Note that each column definition is separated by a comma (`,`) but the final column definition should _not_ have a comma.
 
 Here's an example of a `CREATE TABLE` statement for the `users` table from the [What Is A Relational Database?](#what-is-a-relational-database) section earlier in these docs:
 
@@ -470,7 +470,19 @@ sqlite3.OperationalError: no such table: users
 
 ## INSERT
 
-Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name. If we're thinking of this table as the same `users` table from the previous section, you can notice we leave out the `user_id` in the `()` as this table has the `user_id` set to `AUTOINCREMENT`.
+Once you've created a table, you'll want to put data in it. The `INSERT` statement is used to add data to a SQL table. You list the column names in the `()` after the table name.
+
+Consider this `users` table definition:
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+```
+
+If we wanted to fill this table with a few users, we would leave out the `user_id` in the `()` as this table has the `user_id` set to `AUTOINCREMENT`. We would need to add the other two column names in whatever order we wished, though.
 
 **Raw SQL**
 
@@ -478,6 +490,15 @@ Once you've created a table, you'll want to put data in it. The `INSERT` stateme
 INSERT INTO users (username, password) VALUES ("djs", "mypa$$word");
 INSERT INTO users (username, password) VALUES ("django", "w0ff");
 INSERT INTO users (username, password) VALUES ("alecg", "c0de");
+
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
 ```
 
 **Python + SQL**
@@ -503,7 +524,23 @@ query = """
 """
 sql.execute(query)
 
+# Make sure the changes are saved to the DB.
 con.commit()
+
+query = """
+    SELECT * FROM users;
+"""
+
+result = sql.execute(query)
+rows = result.fetchall()
+
+print(rows)
+```
+
+**Output**
+
+```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
 ```
 
 ### Inserting multiple rows into a table
@@ -518,6 +555,16 @@ VALUES
     ("djs", "mypa$$word"),
     ("django", "w0ff"),
     ("alecg", "c0de");
+
+
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
 ```
 
 **Python + SQL**
@@ -538,6 +585,21 @@ query = """
 
 sql.execute(query)
 con.commit()
+
+query = """
+    SELECT * FROM users;
+"""
+
+result = sql.execute(query)
+rows = result.fetchall()
+
+print(rows)
+```
+
+**Output**
+
+```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
 ```
 
 ## LIMIT
@@ -818,14 +880,14 @@ query = """
     SELECT * FROM products ORDER BY product_price;
 """
 
-print("\nProducts ordered from price lowest to highest:")
+print("\nProducts ordered from price lowest to highest price:")
 fetch_and_display_all_rows(query)
 
 query = """
     SELECT * FROM products ORDER BY product_price DESC;
 """
 
-print("\nProducts ordered from price highest to lowest:")
+print("\nProducts ordered from price highest to lowest price:")
 fetch_and_display_all_rows(query)
 ```
 
@@ -841,7 +903,7 @@ fetch_and_display_all_rows(query)
 (7, 'Rode Z28', 275.99, 'Microphones')
 (8, 'Lenovo ThinkPad', 950.75, 'Computers')
 
-Products ordered from price lowest to highest:
+Products ordered from price lowest to highest price:
 (4, 'Logitech M1', 34.99, 'Accessories')
 (5, 'Seagate S1 SSD', 88.75, 'Accessories')
 (2, 'Blue Snowball Microphone', 99.5, 'Microphones')
@@ -851,7 +913,7 @@ Products ordered from price lowest to highest:
 (1, 'Dell XPS 17', 1599.99, 'Computers')
 (6, 'MacBook Pro 16', 2100.5, 'Computers')
 
-Products ordered from price highest to lowest:
+Products ordered from price highest to lowest price:
 (6, 'MacBook Pro 16', 2100.5, 'Computers')
 (1, 'Dell XPS 17', 1599.99, 'Computers')
 (3, 'System76 Thelio B1', 1255.55, 'Computers')
@@ -868,7 +930,7 @@ To see what data is in a SQL table, you use the `SELECT` statement.
 
 ### Selecting all of the rows and columns from a table
 
-You can `SELECT *` from a table and that'll give you all of the rows in that table along with all the columns.
+You can `SELECT *` from a table and that'll give you all of the rows in that table along with all the columns. Be aware that the `*` means "Give me all the columns" not "Give me all the rows". All rows are returned from a `SELECT` query unless you begin using filters like `WHERE`, `LIMIT`, or `DISTINCT`.
 
 **Raw SQL**
 
@@ -903,7 +965,7 @@ rows = result.fetchall()
 print(rows)
 
 for row in rows:
-    # Using tuple unpacking to get the values from each row
+    # Using multiple assignment to get the values from each row
     user_id, username, password = row
     print(f"User ID: {user_id}")
     print(f"Username: {username}")
@@ -1039,7 +1101,7 @@ display_all_users()
 
 ### Updating multiple columns
 
-If you need to update multiple columns, you can separate the `SET` clauses with commas:
+If you need to update multiple columns, you can separate the `SET` clauses with commas. We've also put each new SQL command on a new line and added some indentation to make this longer query easier to read.
 
 **Raw SQL**
 
@@ -1121,6 +1183,16 @@ To filter the results from a SQL query, use the `WHERE` clause.
 **Raw SQL**
 
 ```sql
+SELECT * FROM users;
+┌─────────┬──────────┬────────────┐
+│ user_id │ username │  password  │
+├─────────┼──────────┼────────────┤
+│ 1       │ djs      │ mypa$$word │
+│ 2       │ django   │ w0ff       │
+│ 3       │ alecg    │ c0de       │
+└─────────┴──────────┴────────────┘
+
+
 SELECT * FROM users WHERE username = "djs";
 ┌─────────┬──────────┬────────────┐
 │ user_id │ username │  password  │
@@ -1137,19 +1209,30 @@ import sqlite3
 con = sqlite3.connect("users-database.db")
 sql = con.cursor()
 
+def run_query_and_display_results(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    print(rows)
+
+
+query = """
+    SELECT * FROM users;
+"""
+
+run_query_and_display_results(query)
+
 query = """
     SELECT * FROM users WHERE username = "djs";
 """
 
-result = sql.execute(query)
-rows = result.fetchall()
-
-print(rows)
+run_query_and_display_results(query)
 ```
 
 **Output**
 
 ```text
+[(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
 [(1, 'djs', 'mypa$$word')]
 ```
 
@@ -1403,7 +1486,8 @@ SELECT * FROM products;
 └────────────┴──────────────────────────┴───────────────┴──────────────────┘
 
 -- Get all microphones less than $200.
-SELECT * FROM products WHERE product_category = "Microphones" AND product_price < 200;
+SELECT * FROM products
+WHERE product_category = "Microphones" AND product_price < 200;
 ┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
 │ product_id │       product_name       │ product_price │ product_category │
 ├────────────┼──────────────────────────┼───────────────┼──────────────────┤
@@ -1411,7 +1495,8 @@ SELECT * FROM products WHERE product_category = "Microphones" AND product_price 
 └────────────┴──────────────────────────┴───────────────┴──────────────────┘
 
 -- Get any microphones or computers less than $1000.
-SELECT * FROM products WHERE product_price < 1000 AND product_category IN ("Computers", "Microphones");
+SELECT * FROM products
+WHERE product_price < 1000 AND product_category IN ("Computers", "Microphones");
 ┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
 │ product_id │       product_name       │ product_price │ product_category │
 ├────────────┼──────────────────────────┼───────────────┼──────────────────┤
@@ -1446,14 +1531,16 @@ query = """
 fetch_and_display_all_rows(query)
 
 query = """
-    SELECT * FROM products WHERE product_category = "Microphones" AND product_price < 200;
+    SELECT * FROM products
+    WHERE product_category = "Microphones" AND product_price < 200;
 """
 
 print("\nGetting microphones less than $200:")
 fetch_and_display_all_rows(query)
 
 query = """
-    SELECT * FROM products WHERE product_price < 1000 AND product_category IN ("Computers", "Microphones");
+    SELECT * FROM products
+    WHERE product_price < 1000 AND product_category IN ("Computers", "Microphones");
 """
 
 print("\nComputers and Microphones cheaper than $1000:")
