@@ -149,7 +149,7 @@ SELECT AVG(product_price) AS average_product_price FROM products;
 └───────────────────────┘
 
 -- Count the number of products
-SELECT COUNT(*) as total_products FROM products;
+SELECT COUNT(*) AS total_products FROM products;
 ┌────────────────┐
 │ total_products │
 ├────────────────┤
@@ -214,7 +214,7 @@ print("\nAverage cost of all products:")
 execute_query_and_display_rows(query)
 
 query = """
-    SELECT COUNT(*) as total_products FROM products;
+    SELECT COUNT(*) AS total_products FROM products;
 """
 
 print("\nTotal number of products:")
@@ -411,8 +411,8 @@ SELECT * FROM products;
 └────────────┴──────────────────────────┴───────────────┴──────────────────┘
 
 /*
-Build a result set that combines `product_name` and `product_price`
-into a single column
+*   Build a result set that combines `product_name` and `product_price`
+*   into a single column
 */
 SELECT product_name || " : $" || product_price AS product_description
 FROM products;
@@ -530,8 +530,8 @@ SELECT * FROM products;
 └────────────┴──────────────────────────┴───────────────┴──────────────────┘
 
 /*
-Build a result set that combines `product_name` and `product_price`
-into a single column using `||` and `AS`
+*   Build a result set that combines `product_name` and `product_price`
+*   into a single column using `||` and `AS`
 */
 SELECT product_name || " : $" || product_price AS product_description
 FROM products;
@@ -1466,6 +1466,215 @@ The first three products in the table:
 (1, 'Dell XPS 17', 1599.99, 'Computers')
 (2, 'Blue Snowball Microphone', 99.5, 'Microphones')
 (3, 'System76 Thelio B1', 1255.55, 'Computers')
+```
+
+## NULL
+
+The `NULL` datatype allows you to express a missing or unknown value.
+
+### Avoiding NULL Values In CREATE TABLE Statements
+
+Generally, `NULL` values should be avoided by adding a `NOT NULL` constraint to your `CREATE TABLE` definitions like so:
+
+```sql
+CREATE TABLE products (
+    product_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    product_name TEXT UNIQUE NOT NULL,
+    product_price REAL NOT NULL,
+    product_category TEXT NOT NULL
+);
+```
+
+If a column has a `NOT NULL` constraint and you try to enter a `NULL` value for that column, you'll get an error:
+
+**Raw SQL**
+
+```sql
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │ 950.75        │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+INSERT INTO products (product_name, product_price, product_category)
+VALUES ("mousepad", NULL, "Accessories");
+-- Error: NOT NULL constraint failed: products.product_price
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+query = """
+    SELECT * FROM products;
+"""
+
+print("All products:")
+result = sql.execute(query)
+rows = result.fetchall()
+
+for row in rows:
+    print(row)
+
+
+query = """
+    INSERT INTO products (product_name, product_price, product_category)
+    VALUES ("mousepad", NULL, "Accessories");
+"""
+
+# This will throw an error
+sql.execute(query)
+con.commit()
+```
+
+**Output**
+
+```text
+All products:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', 950.75, 'Computers')
+Traceback (most recent call last):
+  File "/home/daniel/documentation-examples/main.py", line 24, in <module>
+    sql.execute(query)
+sqlite3.IntegrityError: NOT NULL constraint failed: products.product_price
+```
+
+### Filtering NULL Values In SELECT Statements
+
+You can use `IS NULL` and `IS NOT NULL` to filter `SELECT` statements by columns with or without `NULL` values. This can be valuable to find rows with missing information or to only display rows with no missing information.
+
+Note that in Python, `NULL` translates to the `None` datatype.
+
+**Raw SQL**
+
+```sql
+/*
+*   We can see that the "Lenovo ThinkPad" doesn't have a `product_price`.
+*   That's because it's `NULL`!
+*/
+SELECT * FROM products;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+│ 8          │ Lenovo ThinkPad          │               │ Computers        │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+
+/*
+*   We can filter our results to find products with missing
+*   `product_price` data.
+*/
+SELECT * FROM products WHERE product_price IS NULL;
+┌────────────┬─────────────────┬───────────────┬──────────────────┐
+│ product_id │  product_name   │ product_price │ product_category │
+├────────────┼─────────────────┼───────────────┼──────────────────┤
+│ 8          │ Lenovo ThinkPad │               │ Computers        │
+└────────────┴─────────────────┴───────────────┴──────────────────┘
+
+/*
+*   We can also filter out rows that have a `NULL` value for
+*   `product_price`.
+*/
+SELECT * FROM products WHERE product_price IS NOT NULL;
+┌────────────┬──────────────────────────┬───────────────┬──────────────────┐
+│ product_id │       product_name       │ product_price │ product_category │
+├────────────┼──────────────────────────┼───────────────┼──────────────────┤
+│ 1          │ Dell XPS 17              │ 1599.99       │ Computers        │
+│ 2          │ Blue Snowball Microphone │ 99.5          │ Microphones      │
+│ 3          │ System76 Thelio B1       │ 1255.55       │ Computers        │
+│ 4          │ Logitech M1              │ 34.99         │ Accessories      │
+│ 5          │ Seagate S1 SSD           │ 88.75         │ Accessories      │
+│ 6          │ MacBook Pro 16           │ 2100.5        │ Computers        │
+│ 7          │ Rode Z28                 │ 275.99        │ Microphones      │
+└────────────┴──────────────────────────┴───────────────┴──────────────────┘
+```
+
+**Python + SQL**
+
+```python
+import sqlite3
+
+con = sqlite3.connect("products-database.db")
+sql = con.cursor()
+
+def execute_query_and_display_rows(query):
+    result = sql.execute(query)
+    rows = result.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+query = """
+    SELECT * FROM products;
+"""
+
+print("All products:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT * FROM products WHERE product_price IS NULL;
+"""
+
+print("\nProducts with `NULL` values for their price:")
+execute_query_and_display_rows(query)
+
+query = """
+    SELECT * FROM products WHERE product_price IS NOT NULL;
+"""
+
+print("\nProducts __without__ `NULL` values for their price:")
+execute_query_and_display_rows(query)
+```
+
+**Output**
+
+```text
+All products:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
+(8, 'Lenovo ThinkPad', None, 'Computers')
+
+Products with `NULL` values for their price:
+(8, 'Lenovo ThinkPad', None, 'Computers')
+
+Products __without__ `NULL` values for their price:
+(1, 'Dell XPS 17', 1599.99, 'Computers')
+(2, 'Blue Snowball Microphone', 99.5, 'Microphones')
+(3, 'System76 Thelio B1', 1255.55, 'Computers')
+(4, 'Logitech M1', 34.99, 'Accessories')
+(5, 'Seagate S1 SSD', 88.75, 'Accessories')
+(6, 'MacBook Pro 16', 2100.5, 'Computers')
+(7, 'Rode Z28', 275.99, 'Microphones')
 ```
 
 ## OFFSET
