@@ -1357,6 +1357,65 @@ jQuery has a few different methods for hiding/showing elements. Depending on you
 <figcaption></figcaption>
 </figure>
 
+## Saving Items In localStorage
+
+Web browsers allow you to save information in `localStorage`. This data will exist between page loads as long as the user doesn't clear the browser's cookies.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Adding Elements To A Webpage</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <form>
+            <label for="username">
+                Please enter your username:
+                <input type="text" id="username" name="username" />
+            </label>
+            <button type="submit">Save Username</button>
+        </form>
+
+        <div id="previous-users-container"></div>
+
+        <script>
+            $("form").submit(saveUsername);
+
+            function saveUsername(event) {
+                event.preventDefault();
+
+                var username = $("#username").val();
+                var nextUserNumber = localStorage.length;
+
+                localStorage.setItem(`userNumber-${nextUserNumber}`, username);
+
+                showPreviousUsers();
+            }
+
+            function showPreviousUsers() {
+                $("#previous-users-container").html("");
+                for (var i = 0; i < localStorage.length; i++) {
+                    var username = localStorage.getItem(`userNumber-${i}`);
+                    $("#previous-users-container").append(`<p>${username}</p>`);
+                }
+            }
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+![save items in local storage example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/local-storage-example.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ## Selecting Elements From HTML Documents
 
 The `document` object allows you to interact with HTML documents from a JavaScript program. The most important thing you'll use the `document` object for is querying an HTML document for an element or elements. There are several methods to do this using the native `document` object. `jQuery` also provides a way to query HTML documents, and we'll cover both methods below.
