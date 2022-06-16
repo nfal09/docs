@@ -203,6 +203,59 @@ You have access to any global variables and functions in the _Console_ tab and c
 
 -   [Using the Chrome Devtools](https://developer.chrome.com/docs/devtools/)
 
+## Adding Elements To A Webpage
+
+jQuery has two methods to add elements to a webpage. One adds the element before the selected element and one adds it after.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Adding Elements To A Webpage</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            button {
+                margin: 48px auto;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="button-1-container">
+            <button id="button-1">Button 1</button>
+        </div>
+
+        <button onclick="addButtonBefore();">
+            Add a button before button 1
+        </button>
+        <button onclick="addButtonAfter();">Add a button after button 1</button>
+
+        <script>
+            var button1Container = $("#button-1-container");
+
+            function addButtonBefore() {
+                button1Container.prepend("<button>Before Button 1</button>");
+            }
+
+            function addButtonAfter() {
+                button1Container.append("<button>After Button 1</button>");
+            }
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+![prepend/append example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/prepend-append.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ## Animations
 
 ### `animate()`
