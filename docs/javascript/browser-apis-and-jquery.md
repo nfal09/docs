@@ -1755,3 +1755,43 @@ var catIntervalID = setInterval(increaseCatLikes, 5000);
 -   [Eloquent JavaScript - Timers](https://eloquentjavascript.net/15_event.html#h_hBzQOpfNhU)
 -   [MDN - setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout)
 -   [MDN - setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)
+
+### Play / Pause Media
+
+Javascript `play()` and `pause()` functions allow you to control media on your webpage. 
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Audio</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <img id='taco' src='tacos.png'>
+            <audio id="audio" src="audio/never-gonna-give-you-up.mp3" preload></audio>
+            <button id="btn" style="opacity: 0;" >Stop</button>
+        </div>
+
+        <script>
+            var taco = document.getElementById('taco');
+            var audio = document.getElementById('audio');
+            var btn = document.getElementById('btn');
+
+            function play() {
+                // currentTime property controls the playback position in seconds.
+                audio.currentTime = 0;
+                audio.play();
+                btn.style.opacity = 1;
+            }
+            function pause() {
+                audio.pause();
+            }
+
+            taco.onclick = play;
+            btn.onclick = pause;
+        </script>
+    </body>
+</html>
+```
