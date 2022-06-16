@@ -1676,6 +1676,67 @@ jQuery's `css()` method allows you to set or return the style of an element
 <figcaption></figcaption>
 </figure>
 
+### `$(element).addClass()` and `$(element).removeClass()`
+
+jQuery also has two methods for adding/removing classes on an element. These can be easier to use than other methods of styling DOM nodes from JavaScript since you can write the CSS in it's own file.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Adding and Removing Classes</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            button {
+                margin: 48px auto;
+                font-size: 24px;
+            }
+
+            #button-1 {
+                position: fixed;
+                top: 100px;
+                left: 300px;
+            }
+
+            .red {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="button-1">Button 1</button>
+
+        <button onclick="addRedClass();">Add ".red" class to button 1</button>
+        <button onclick="removeRedClass();">
+            Remove ".red" class from button 1
+        </button>
+
+        <script>
+            var button1 = $("#button-1");
+
+            function addRedClass() {
+                button1.addClass("red");
+            }
+
+            function removeRedClass() {
+                button1.removeClass("red");
+            }
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+![add/remove classes example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/add-remove-classes.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 **Further Reading**
 
 -   [MDN - style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
