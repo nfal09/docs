@@ -734,6 +734,7 @@ The `textContent` property sets or returns the text content of an element.
     </body>
 </html>
 ```
+
 <figure markdown>
 ![textContent example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/textContent.png?raw=true){ width="100%" }
 <figcaption></figcaption>
@@ -1756,9 +1757,9 @@ var catIntervalID = setInterval(increaseCatLikes, 5000);
 -   [MDN - setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout)
 -   [MDN - setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)
 
-### Play / Pause Media
+## Play / Pause Media
 
-Javascript `play()` and `pause()` functions allow you to control media on your webpage. 
+Javascript `play()` and `pause()` functions allow you to control media on your webpage.
 
 ```html
 <!DOCTYPE html>
@@ -1769,15 +1770,19 @@ Javascript `play()` and `pause()` functions allow you to control media on your w
 
     <body>
         <div class="container">
-            <img id='taco' src='tacos.png'>
-            <audio id="audio" src="audio/never-gonna-give-you-up.mp3" preload></audio>
-            <button id="btn" style="opacity: 0;" >Stop</button>
+            <img id="taco" src="tacos.png" />
+            <audio
+                id="audio"
+                src="audio/never-gonna-give-you-up.mp3"
+                preload
+            ></audio>
+            <button id="btn" style="opacity: 0;">Stop</button>
         </div>
 
         <script>
-            var taco = document.getElementById('taco');
-            var audio = document.getElementById('audio');
-            var btn = document.getElementById('btn');
+            var taco = document.getElementById("taco");
+            var audio = document.getElementById("audio");
+            var btn = document.getElementById("btn");
 
             function play() {
                 // currentTime property controls the playback position in seconds.
