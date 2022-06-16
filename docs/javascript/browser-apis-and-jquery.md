@@ -1239,6 +1239,71 @@ Example Output:
 -   [The Modern JavaScript Tutorial - Element Size and Scrolling](https://javascript.info/size-and-scroll)
 -   [Eloquent JavaScript - Layout](https://eloquentjavascript.net/14_dom.html#h_lyrY2KUDl7)
 
+## Hiding and Showing Elements
+
+jQuery has a few different methods for hiding/showing elements. Depending on your needs, you may want the element to fade in/out or not.
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Hiding and Showing Elements</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            button {
+                margin: 48px auto;
+                font-size: 24px;
+            }
+
+            #button-1 {
+                position: fixed;
+                top: 100px;
+                left: 400px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="button-1">Button 1</button>
+
+        <button onclick="hideButton1();">Hide Button 1</button>
+        <button onclick="showButton1();">Show Button 1</button>
+        <button onclick="fadeOutButton1();">Fade Out Button 1</button>
+        <button onclick="fadeInButton1();">Fade In Button 1</button>
+
+        <script>
+            var button1 = $("#button-1");
+
+            function hideButton1() {
+                button1.hide();
+            }
+
+            function showButton1() {
+                button1.show();
+            }
+
+            function fadeOutButton1() {
+                button1.fadeOut();
+            }
+
+            function fadeInButton1() {
+                button1.fadeIn();
+            }
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+![hide/show buttons](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/hide-show-buttons.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ## Selecting Elements From HTML Documents
 
 The `document` object allows you to interact with HTML documents from a JavaScript program. The most important thing you'll use the `document` object for is querying an HTML document for an element or elements. There are several methods to do this using the native `document` object. `jQuery` also provides a way to query HTML documents, and we'll cover both methods below.
