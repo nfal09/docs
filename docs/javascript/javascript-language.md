@@ -1617,6 +1617,44 @@ _Further Reading_
 
 <hr>
 
+## Using `this`
+
+In JavaScript, you can use the `this` keyword to get a reference to an element when an event is triggered (like a click event).
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Using "this" in JavaScript</title>
+        <style>
+            button {
+                display: block;
+                margin: 48px auto;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="my-button" onclick="changeButtonText(this);">
+            Original Button Text
+        </button>
+
+        <script>
+            function changeButtonText(element) {
+                element.textContent = "Updated Button Text";
+            }
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+!['this' example](https://github.com/codewizardshq/docs/blob/main/docs/assets/javascript/using-this-with-onclick.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
 ## Variables
 
 Variables assign a name to a value. The naming convention in JavaScript is to use _camelCase_ for variable names.
