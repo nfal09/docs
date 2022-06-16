@@ -119,6 +119,10 @@ sql.execute(query, [username, password])
 con.commit()
 ```
 
+**Further Reading**
+
+-   [Python Documentation - sqlite3](https://docs.python.org/3/library/sqlite3.html)
+
 ## Aggregate Functions
 
 Just like programming languages such as Python and JavaScript, SQL has functions to perform common tasks on result set called _Aggregate Functions_. The example below shows the different _Aggregate Functions_ we use in CWHQ courses.
@@ -273,6 +277,11 @@ Total cost of all products:
 (6406.0199999999995,)
 ```
 
+**Further Reading**
+
+-   [SQLBolt - Queries with aggregates - Pt. 1](https://sqlbolt.com/lesson/select_queries_with_aggregates)
+-   [SQLite Tutorial - SQLite Aggregate Functions](https://www.sqlitetutorial.net/sqlite-aggregate-functions/)
+
 ## ALTER TABLE
 
 After creating a table, you may need to add or rename a column. The `ALTER TABLE` command allows you to do this.
@@ -384,6 +393,11 @@ Column names:
 Rows:
 [(1, 'djs', 'mypa$$word', 0), (2, 'django', 'w0ff', 0), (3, 'alecg', 'c0de', 0)]
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Altering Tables](https://sqlbolt.com/lesson/altering_tables)
+-   [SQLite Tutorial - SQLite Alter Table](https://www.sqlitetutorial.net/sqlite-alter-table/)
 
 ## AS
 
@@ -507,6 +521,10 @@ Formatted product descriptions:
 The total price of all computers in the `products` table:
 (5906.79,)
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Queries with expressions](https://sqlbolt.com/lesson/select_queries_with_expressions)
 
 ## Concatenation
 
@@ -674,6 +692,11 @@ CREATE TABLE IF NOT EXISTS users (
 );
 ```
 
+**Further Reading**
+
+-   [SQLBolt - Creating tables](https://sqlbolt.com/lesson/creating_tables)
+-   [SQLite Tutorial - SQLite Create Table](https://www.sqlitetutorial.net/sqlite-create-table/)
+
 ## DELETE
 
 To remove data in a SQL table, use the `DELETE` statement. Make sure to use a `WHERE` clause so that you only delete the rows you intend to.
@@ -805,6 +828,11 @@ display_all_users()
 []
 ```
 
+**Further Reading**
+
+-   [SQLBolt - Deleting rows](https://sqlbolt.com/lesson/deleting_rows)
+-   [SQLite Tutorial - SQLite Delete](https://www.sqlitetutorial.net/sqlite-delete/)
+
 ## DISTINCT
 
 If you want to get unique column values for a set of rows, use the `DISTINCT` clause of a `SELECT` query
@@ -885,6 +913,11 @@ Distinct categories:
 [('Computers',), ('Microphones',), ('Accessories',)]
 ```
 
+**Further Reading**
+
+-   [SQLBolt - Filtering and sorting Query results](https://sqlbolt.com/lesson/filtering_sorting_query_results)
+-   [SQLite Tutorial - SQLite Select Distinct](https://www.sqlitetutorial.net/sqlite-distinct/)
+
 ## DROP TABLE
 
 The `DROP TABLE` query deletes an entire table and it's definition from the database. You should usually use the `IF EXISTS` clause with this query to ensure an error isn't thrown if the table you're trying to drop doesn't exist.
@@ -950,6 +983,11 @@ Traceback (most recent call last):
     result = sql.execute(query)
 sqlite3.OperationalError: no such table: users
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Dropping tables](https://sqlbolt.com/lesson/dropping_tables)
+-   [SQLite Tutorial - SQLite Drop Table](https://www.sqlitetutorial.net/sqlite-drop-table/)
 
 ## GROUP BY
 
@@ -1057,6 +1095,11 @@ Number of products per category:
 ('Computers', 4)
 ('Microphones', 2)
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Queries with aggregates - Pt. 1](https://sqlbolt.com/lesson/select_queries_with_aggregates)
+-   [SQLite Tutorial - SQLite Group By](https://www.sqlitetutorial.net/sqlite-group-by/)
 
 ## INSERT
 
@@ -1191,6 +1234,11 @@ print(rows)
 ```text
 [(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Inserting rows](https://sqlbolt.com/lesson/inserting_rows)
+-   [SQLite Tutorial - SQLite Insert](https://www.sqlitetutorial.net/sqlite-insert/)
 
 ## JOIN
 
