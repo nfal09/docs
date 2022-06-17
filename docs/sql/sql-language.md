@@ -1435,6 +1435,11 @@ ORDER BY authors.author_name;
 └───────────────┴────────────────────────┘
 ```
 
+**Further Reading**
+
+-   [SQLBolt - Multi-table queries with JOINs](https://sqlbolt.com/lesson/select_queries_with_joins)
+-   [SQLite Tutorial - SQLite Join](https://www.sqlitetutorial.net/sqlite-join/)
+
 ## LIMIT
 
 Sometimes, you may want to get a limited number of rows back from a `SELECT` query. The `LIMIT` clause allows you to do this:
@@ -1515,6 +1520,11 @@ The first three products in the table:
 (2, 'Blue Snowball Microphone', 99.5, 'Microphones')
 (3, 'System76 Thelio B1', 1255.55, 'Computers')
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Filtering and sorting Query results](https://sqlbolt.com/lesson/filtering_sorting_query_results)
+-   [SQLite Tutorial - SQLite Limit](https://www.sqlitetutorial.net/sqlite-limit/)
 
 ## NULL
 
@@ -1725,6 +1735,11 @@ Products __without__ `NULL` values for their price:
 (7, 'Rode Z28', 275.99, 'Microphones')
 ```
 
+**Further Reading**
+
+-   [SQLBolt - A short note on NULLs](https://sqlbolt.com/lesson/select_queries_with_nulls)
+-   [SQLite Tutorial - SQLite IS NULL](https://www.sqlitetutorial.net/sqlite-is-null/)
+
 ## OFFSET
 
 If you've ever visited a website like Amazon.com, you know that when you search for a particular product, there are multiple pages of results. The `OFFSET` clause allows you to move the starting point of the returned rows from a query. It's usually used in conjunction with a `LIMIT` clause for things like pagination (as in the Amazon example).
@@ -1827,6 +1842,11 @@ The second group of three products in the table:
 (5, 'Seagate S1 SSD', 88.75, 'Accessories')
 (6, 'MacBook Pro 16', 2100.5, 'Computers')
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Filtering and sorting Query results](https://sqlbolt.com/lesson/filtering_sorting_query_results)
+-   [SQLite Tutorial - SQLite Limit](https://www.sqlitetutorial.net/sqlite-limit/)
 
 ## ORDER BY
 
@@ -1966,6 +1986,11 @@ Products ordered from price highest to lowest price:
 (4, 'Logitech M1', 34.99, 'Accessories')
 ```
 
+**Further Reading**
+
+-   [SQLBolt - Filtering and sorting Query results](https://sqlbolt.com/lesson/filtering_sorting_query_results)
+-   [SQLite Tutorial - SQLite Order By](https://www.sqlitetutorial.net/sqlite-order-by/)
+
 ## SELECT
 
 To see what data is in a SQL table, you use the `SELECT` statement.
@@ -2070,6 +2095,11 @@ print(rows)
 ```text
 [('djs', 'mypa$$word'), ('django', 'w0ff'), ('alecg', 'c0de')]
 ```
+
+**Further Reading**
+
+-   [SQLBolt - SELECT queries 101](https://sqlbolt.com/lesson/select_queries_introduction)
+-   [SQLite Tutorial - SQLite Select](https://www.sqlitetutorial.net/sqlite-select/)
 
 ## UPDATE
 
@@ -2217,6 +2247,11 @@ display_all_users()
 [(1, 'djs', 'mypa$$word'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
 [(1, 'danielj', 'b3tTerpa$$w0rd'), (2, 'django', 'w0ff'), (3, 'alecg', 'c0de')]
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Updating rows](https://sqlbolt.com/lesson/updating_rows)
+-   [SQLite Tutorial - SQLite Update](https://www.sqlitetutorial.net/sqlite-update/)
 
 ## WHERE
 
@@ -2609,3 +2644,9 @@ Computers and Microphones cheaper than $1000:
 (7, 'Rode Z28', 275.99, 'Microphones')
 (8, 'Lenovo ThinkPad', 950.75, 'Computers')
 ```
+
+**Further Reading**
+
+-   [SQLBolt - Queries with constraints - Pt. 1](https://sqlbolt.com/lesson/select_queries_with_constraints)
+-   [SQLBolt - Queries with constraints - Pt. 2](https://sqlbolt.com/lesson/select_queries_with_constraints_pt_2)
+-   [SQLite Tutorial - SQLite Where](https://www.sqlitetutorial.net/sqlite-where/)
