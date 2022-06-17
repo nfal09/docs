@@ -1495,3 +1495,81 @@ CSS flexbox allows you to create a flexible layout:
 -   [MDN - Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
 -   [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 -   [web.dev - Flexbox](https://web.dev/learn/css/layout/#flexbox)
+
+### CSS Border
+
+CSS `border` can create a styled border for elements. Below are some border examples:
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Borders</title>
+
+        <style>
+            .box {
+                width: 150px;
+                height: 150px;
+                border: 10px solid yellowgreen;
+                display: inline-block;
+                margin: 10px;
+                margin-top: 100px;
+                background-color: rgba(176, 166, 181, 0.787);
+            }
+
+            .box-1 {
+                border: 10px dotted teal;
+            }
+            .box-2 {
+                border: 10px dashed violet;
+            }
+            .box-3 {
+                border: 10px groove cyan;
+            }
+
+            /* 
+            border-radius property can be used to round edges
+            or make a complete circle for an element
+            */
+            .box-4 {
+                border-radius: 50%;
+            }
+            .box-5 {
+                border-radius: 10px;
+            }
+
+            /* 
+            Below are some longhand border properties
+            */
+            .box-6 {
+                /* Border Style Longhand */
+                border-style: double;
+                /* Border Width Longhand */
+                border-width: 20px;
+                /* Border Color Longhand */
+                border-color: rgb(24, 237, 173);
+                /* Border Bottom Longhand */
+                border-bottom: 20px double green;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="box box-1" ></div>
+            <div class="box box-2" ></div>
+            <div class="box box-3" ></div>
+            <div class="box box-4" ></div>
+            <div class="box box-5" ></div>
+            <div class="box box-6" ></div>
+        </div>
+    </body>
+</html>
+```
+
+<figure markdown>
+![CSSBorders](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/CSSborders.png?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
