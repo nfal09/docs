@@ -1270,6 +1270,7 @@ When measuring size, we generally use `px` (pixels) or `%` (percentage):
         <title>Measuring Size</title>
 
         <style>
+            
             /*
             *   The `width` and `height` properties measure the size of the box, 
             *   so `px` is a good unit of measurement.
@@ -1363,6 +1364,21 @@ Measuring color is generally done using a color keyword, hex value, or RGB value
                 height: 50%;
                 background-color: rgb(54, 54, 233);
             }
+               /*
+            *   The `rgba()` function allows you to express a color as
+            *   a mix of three numbers with the addition of Alpha value
+                which allows for the color to become transparent:
+            *   
+            *   1. The amount of red in the color
+            *   2. The amount of green in the color
+            *   3. The amount of blue in the color
+                4. Decimal value between 0 and 1
+            */
+            #pink-box {
+                width: 50%;
+                height: 50%;
+                background-color: rgba(54, 54, 233, 0.4);
+            }
 
             /*
             *   Hexadecimal values (Hex for short) can express the same
@@ -1382,13 +1398,14 @@ Measuring color is generally done using a color keyword, hex value, or RGB value
         <div id="red-box">
             <div id="blue-box"></div>
         </div>
+        <div id="pink-box"></div>
         <div id="green-circle"></div>
     </body>
 </html>
 ```
 
 <figure markdown>
-![color units example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/color-units.png?raw=true){ width="100%" }
+![color units example](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/CSSColors.png?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
