@@ -1589,3 +1589,90 @@ HTML elements can have colors, images, or both as their backgrounds:
 -   [MDN - Backgrounds and Borders](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
 -   [web.dev - Backgrounds](https://web.dev/learn/css/backgrounds/)
 -   [CSS Tricks - Using Multiple Backgrounds](https://css-tricks.com/css-basics-using-multiple-backgrounds/)
+
+## CSS Animations
+
+CSS `animation` properties allow you to create animation on elements. 
+
+```html
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Animations</title>
+
+        <style>
+            .animate {
+              width: 200px;
+              height: 200px;
+              margin: auto;
+              position: absolute;
+            
+          }
+          #green-circle {
+              border-radius: 50%;
+              background-color: #40ff73;
+              box-shadow: inset -5px -5px 10px rgb(57, 57, 57);
+              /* shorthand animation property combines all 6 animation properties */
+              /* duration easing-function delay iteration-count direction name */
+              animation: 1s ease-in 1s infinite alternate bounce;
+              
+          }
+          #red-box {
+              border-radius: 10%; 
+              top: 100px;
+              left: 600px;
+              background-color: #ff1141;
+              box-shadow: inset 5px 5px 10px rgb(57, 57, 57);
+              background-image: linear-gradient(rgb(255, 173, 187), rgb(80, 255, 211));
+              /* longhand animation properties*/
+              animation-name: rotate_box;
+              animation-duration: 4s;
+              animation-iteration-count: infinite;
+              animation-direction: alternate-reverse;
+          }
+          /* @keyframes controls the steps of the animations */
+          @keyframes bounce {
+              from {
+                top: 0px;
+              }
+              to {
+                top: 400px;
+                box-shadow: inset -5px -5px 10px rgb(57, 57, 57), -5px 10px 20px black;
+              }
+          }
+
+          @keyframes rotate_box {
+              0% {
+                transform: rotate(0deg);
+              }
+              
+              50% {
+                width: 150px;
+                height: 150px;   
+              }
+              100% {
+                  transform: rotate(180deg);
+                  background-image: linear-gradient( rgb(80, 255, 211), rgb(255, 173, 187));
+              }
+          }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="animate" id="red-box"></div>
+            <div class="animate" id="green-circle"></div>
+        </div>
+
+    </body>
+</html>
+```
+
+<figure markdown>
+![css animations](https://github.com/codewizardshq/docs/blob/main/docs/assets/css/CSSanimations.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
+
+
+
