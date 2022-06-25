@@ -2038,3 +2038,60 @@ Javascript `play()` and `pause()` functions allow you to control media on your w
     </body>
 </html>
 ```
+
+## Event Object
+
+On a clicked element, we can access several properties, including the `target` property, by using the `event` object.
+This allows us to return the clicked element's HTML: 
+
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event</title>
+        <style>
+              #red-box {
+              width: 200px;
+              height: 200px;
+              margin: auto;
+              border-radius: 10%; 
+              background-color: #ff1141;
+              box-shadow: inset -5px -5px 10px rgb(57, 57, 57);
+              background-image: linear-gradient(rgb(255, 173, 187), rgb(80, 255, 211));
+          }  
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Class name: </h1>
+            <div class="box" id="red-box"></div>
+
+        </div>
+
+        <script>
+            var box = document.querySelector('.box')
+            var heading = document.querySelector('h1')
+
+            function clickedElement(event) {
+                // here we are accessing the clicked element
+                var clickedBox = event.target;
+                console.log(clickedBox)
+                /* here we changing the text 
+                to show the class name of the clicked box 
+                */
+                heading.textContent += clickedBox.className
+            }
+            box.onclick = clickedElement;
+
+           
+        </script>
+    </body>
+</html>
+```
+
+<figure markdown>
+![event param example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/eventparam.gif?raw=true){ width="100%" }
+<figcaption></figcaption>
+</figure>
