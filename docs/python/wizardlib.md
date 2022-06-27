@@ -4,8 +4,8 @@ Here, you'll find the documentation for CodeWizardHQ's <em>Wizardlib</em> Python
 
 | Elementary                           | Middle School                           |
 | ------------------------------------ | --------------------------------------- |
-| Programming Fundamentals with Python |                                         |
-| Python Game Development              | Introduction to Programming with Python |
+| Programming Fundamentals with Python | Introduction to Programming with Python |
+| Python Game Development              |                                         |
 
 <hr>
 
