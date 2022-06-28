@@ -1651,7 +1651,7 @@ setTimeout(addCat, 10000);
 ```
 
 <figure markdown>
-![setTimeout example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/catgif.gif?raw=true){ width="100%" }
+![setTimeout example](https://github.com/codewizardshq/docs/blob/main/docs/assets/browser-apis-and-jquery/catTimeout.gif?raw=true){ width="100%" }
 <figcaption></figcaption>
 </figure>
 
