@@ -718,7 +718,7 @@ HTML containers allow you to divide your content into sections. The `<div>` elem
 ## Forms and Buttons
 
 You can create a form section to submit information using the HTML `<form>` element.
-The `<input>` element is used within the form element, and the `type` attribute can be used to display different types of inputs.
+The `<input>` element is used within the form element, and the `type` attribute can be used to display different types of inputs. We are also using the `<button>` tag to submit the form. 
 
 ```html
 <!DOCTYPE html>
