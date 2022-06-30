@@ -641,6 +641,21 @@ Example Output:
 That's my favorite food!
 ```
 
+#### String Multiplication
+
+You can multiply a `str` by a number if you want to make copies of a `str`:
+
+```python
+num_hamburgers = 3
+“🍔” * num_hamburgers
+```
+
+Example Output:
+
+```text
+🍔🍔🍔
+```
+
 _Further Reading_
 
 -   [The Python Library Reference - Text Sequence Type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
