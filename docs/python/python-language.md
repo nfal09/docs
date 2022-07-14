@@ -472,6 +472,31 @@ Example Output:
 I'm Daniel and I'm 35 years old.
 ```
 
+You can also use multiline f-strings if you have a large block of text that you want to insert variables into:
+
+```python
+name = "Brandon"
+planet_name = "Krypton"
+number = "250"
+animal = "Zebra"
+
+story = f"""
+Hello, my name is astronaut {name}, and I am on my way to planet
+{planet_name}. I will be gone for {number} days. Please take care of my
+{animal} for me.
+"""
+
+print(story)
+```
+
+Example Output:
+
+```text
+Hello, my name is astronaut Brandon, and I am on my way to planet
+Krypton. I will be gone for 250 days. Please take care of my
+Zebra for me.
+```
+
 #### Multiline strings
 
 Multiline strings allow you to write large blocks of text in a single `print()` statement:
